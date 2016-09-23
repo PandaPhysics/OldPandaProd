@@ -1,0 +1,8 @@
+*.swp
+*.root
+*.d
+*pcm
+*.pyc
+*.log
+*.err
+SDAlgorithm/
