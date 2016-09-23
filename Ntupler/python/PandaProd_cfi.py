@@ -5,9 +5,9 @@ import os
 
 
 #------------------------------------------------------
-SCRAMJet = cms.EDAnalyzer("Producer",
+PandaNtupler = cms.EDAnalyzer("Ntupler",
 
-    info = cms.string("SCRAMJet"),
+    info = cms.string("PandaNtupler"),
     cmssw = cms.string( os.environ['CMSSW_VERSION'] ) , # no need to ship it with the grid option
 
     vertices = cms.InputTag("offlineSlimmedPrimaryVertices"),
