@@ -20,6 +20,10 @@ void EventFiller::init(TTree *t) {
 }
 
 int EventFiller::analyze(const edm::Event& iEvent){
+    if (skipEvent!=0 && *skipEvent) {
+      return 0;
+    }
+
     data->runNumber     = iEvent.id().run();
     data->lumiNumber    = iEvent.luminosityBlock();
     data->eventNumber   = iEvent.id().event();

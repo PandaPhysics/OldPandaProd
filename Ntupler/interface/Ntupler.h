@@ -3,6 +3,7 @@
 
 #include "Includes.h"
 #include "BaseFiller.h"
+#include "EventFiller.h"
 
 class Ntupler : public edm::EDAnalyzer {
     public:
@@ -20,11 +21,14 @@ class Ntupler : public edm::EDAnalyzer {
         virtual void beginLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&) override;
         virtual void endLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&) override;
 
-        TTree *tree_;
+        TTree *tree_, *all_;
 
         edm::Service<TFileService> fileService_;
 
         std::vector<panda::BaseFiller*> obj;
+        panda::EventFiller *allFiller;
+
+        bool *skipEvent;
 };
 
 
