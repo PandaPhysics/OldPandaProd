@@ -3,7 +3,7 @@ import FWCore.ParameterSet.VarParsing as VarParsing
 import re
 import os
 
-process = cms.Process("SCRAMJet")
+process = cms.Process("PandaNtupler")
 cmssw_base = os.environ['CMSSW_BASE']
 
 
@@ -33,7 +33,7 @@ if isData:
        ]
 else:
    fileList = [
-       '/store/mc/RunIISpring16MiniAODv2/ZprimeToWW_narrow_M-1000_13TeV-madgraph/MINIAODSIM/PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/00000/54EEF262-7B27-E611-9468-A0369F7FC070.root'
+       'file:/tmp/snarayan/test_miniaod.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
@@ -46,7 +46,7 @@ process.source = cms.Source("PoolSource",
 # ---- define the output file -------------------------------------------
 process.TFileService = cms.Service("TFileService",
         closeFileFast = cms.untracked.bool(True),
-        fileName = cms.string("scramjet.root"),
+        fileName = cms.string("panda.root"),
         )
 
 ##----------------GLOBAL TAG ---------------------------
@@ -74,7 +74,7 @@ if isData and not options.isGrid and False: ## dont load the lumiMaks, will be c
     process.source.lumisToProcess = LumiList.LumiList(filename='/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions15/13TeV/Cert_246908-260627_13TeV_PromptReco_Collisions15_25ns_JSON_Silver_v2.txt').getVLuminosityBlockRange()
     print "FIX JSON"
 
-process.load('SCRAMJet.Producer.SCRAMJet_cfi')
+process.load('PandaProd.Ntupler.PandaProd_cfi')
 
 #### RECOMPUTE JEC From GT ###
 from PhysicsTools.PatAlgos.tools.jetTools import updateJetCollection
@@ -85,7 +85,7 @@ if options.isData:
  
 updateJetCollection(
     process,
-    jetSource = process.SCRAMJet.chsAK4,
+    jetSource = process.PandaNtupler.chsAK4,
     labelName = 'UpdatedJEC',
     jetCorrections = ('AK4PFchs', cms.vstring(jecLevels), 'None')  # Do not forget 'L2L3Residual' on data!
 )
@@ -93,14 +93,14 @@ updateJetCollection(
 '''
 updateJetCollection(
     process,
-    jetSource = process.SCRAMJet.chsAK8,
+    jetSource = process.PandaNtupler.chsAK8,
     labelName = 'UpdatedJECAK8',
     jetCorrections = ('AK8PFchs', cms.vstring(jecLevels), 'None')  # Do not forget 'L2L3Residual' on data!
 )
 '''
 
-process.SCRAMJet.chsAK4=cms.InputTag('updatedPatJetsUpdatedJEC')
-#process.SCRAMJet.chsAK8=cms.InputTag('updatedPatJetsUpdatedJECAK8')
+process.PandaNtupler.chsAK4=cms.InputTag('updatedPatJetsUpdatedJEC')
+#process.PandaNtupler.chsAK8=cms.InputTag('updatedPatJetsUpdatedJECAK8')
 process.jecSequence = cms.Sequence( process.patJetCorrFactorsUpdatedJEC* process.updatedPatJetsUpdatedJEC)
 #process.jecSequence = cms.Sequence( process.patJetCorrFactorsUpdatedJEC* process.updatedPatJetsUpdatedJEC* process.patJetCorrFactorsUpdatedJECAK8* process.updatedPatJetsUpdatedJECAK8)
 
@@ -281,7 +281,7 @@ process.type1PuppiMET = cms.EDProducer("CorrectedPFMETProducer",
 process.puppiJetMETSequence += process.puppiMETcorr
 process.puppiJetMETSequence += process.type1PuppiMET
 
-from SCRAMJet.Producer.makeFatJets_cff import *
+from PandaProd.Ntupler.makeFatJets_cff import *
 fatjetInitSequence = initFatJets(process,isData)
 process.jetSequence += fatjetInitSequence
 
@@ -308,7 +308,7 @@ process.p = cms.Path(
                         process.puppiSequence *
                         process.puppiJetMETSequence *
                         process.jetSequence *
-                        process.SCRAMJet
+                        process.PandaNtupler
                     )
 
 ## DEBUG -- dump the event content with all the value maps ..

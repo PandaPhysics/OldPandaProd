@@ -10,13 +10,17 @@ namespace panda
   class PJet : public PObject
   {
     public:
+      enum JetID {
+        kLoose   = 1UL<<0,
+        kTight   = 1UL<<1
+      };
       PJet():
         PObject(),
         rawPt(0),
         csv(-1),
         qgl(-1),
         constituents(0),
-        jetid(-1)
+        id(-1)
       {  }
     ~PJet(){ delete constituents; }
     
@@ -25,7 +29,7 @@ namespace panda
     // TClonesArray *constituents=0;
     //VPFCand *constituents;
     std::vector<UShort_t> *constituents;
-    int jetid;
+    unsigned int id;
 
     PPFCand *getPFCand(unsigned int ipf, VPFCand *vpf) { return vpf->at(constituents->at(ipf)); }
 

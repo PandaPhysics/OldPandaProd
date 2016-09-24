@@ -1,21 +1,21 @@
-#include "PandaProd/Ntupler/interface/Skimmer.h"
+#include "PandaProd/Ntupler/interface/JetSkimmer.h"
 #include "PandaProd/Ntupler/interface/Ntupler.h"
 
 using namespace panda;
 
-Skimmer::Skimmer(TString n):
+JetSkimmer::JetSkimmer(TString n):
     BaseFiller()
 {
   treename = n;
 }
 
-Skimmer::~Skimmer(){
+JetSkimmer::~JetSkimmer(){
 }
 
-void Skimmer::init(TTree *t) {
+void JetSkimmer::init(TTree *t) {
 }
 
-int Skimmer::analyze(const edm::Event& iEvent){
+int JetSkimmer::analyze(const edm::Event& iEvent){
     bool skip=true;
 
     iEvent.getByToken(chsAK8_token, chsAK8_handle);

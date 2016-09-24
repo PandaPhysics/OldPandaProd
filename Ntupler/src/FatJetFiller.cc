@@ -87,12 +87,6 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
 
       if (this_pt < minPt || this_rawpt < minPt) continue;
 
-      // const int idx = data->GetEntries();
-      // assert(idx<data->GetSize());
-
-      // new((*data)[idx]) PFatJet();
-      // PFatJet *jet = (PFatJet*)data->At(idx);
-
       PFatJet *jet = new PFatJet();
 
       jet->pt = this_pt;
@@ -106,9 +100,6 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       jet->tau3 = j.userFloat(treename+"Njettiness:tau3");
       jet->mSD  = j.userFloat(treename+"SDKinematics:Mass");
 
-      //jet->firstSubjet = subjet_data->size();
-      //jet->nSubjets = 0;
-
       jet->subjets = new VJet();
       VJet *subjet_data = jet->subjets;
 
@@ -116,8 +107,6 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
 
         if (reco::deltaR(i->eta(),i->phi(),j.eta(),j.phi())>jetRadius) 
           continue;
-
-        //jet->nSubjets++;
 
         PJet *subjet = new PJet();
 
@@ -137,7 +126,6 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       if (pfcands!=0) {
         const std::map<const reco::Candidate*,UShort_t> &pfmap = pfcands->get_map();
 
-        //std::vector<reco::PFCandidatePtr> constituentPtrs = j.getPFConstituents();
         std::vector<edm::Ptr<reco::Candidate>> constituentPtrs = j.getJetConstituents();
         jet->constituents = new std::vector<UShort_t>();
         std::vector<UShort_t> *constituents = jet->constituents;
@@ -148,7 +136,7 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
 
           auto result_ = pfmap.find(constituent);
           if (result_ == pfmap.end()) {
-            fprintf(stderr,"could not PF [%s] ...\n",treename.Data());
+            PError("PandaProdNtupler::FatJetFiller",TString::Format("could not PF [%s] ...\n",treename.Data()));
           } else {
             constituents->push_back(result_->second);
           }

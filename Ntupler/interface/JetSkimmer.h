@@ -1,5 +1,5 @@
-#ifndef Skimmer_H
-#define Skimmer_H
+#ifndef JetSkimmer_H
+#define JetSkimmer_H
 
 #include "BaseFiller.h"
 #include "PandaProd/Objects/interface/PFatJet.h"
@@ -9,13 +9,13 @@
 
 
 namespace panda {
-class Skimmer : virtual public BaseFiller
+class JetSkimmer : virtual public BaseFiller
 {
     public:
-        Skimmer(TString n);
-        ~Skimmer();
+        JetSkimmer(TString n);
+        ~JetSkimmer();
         int analyze(const edm::Event& iEvent);
-        virtual inline string name(){return "Skimmer";};
+        virtual inline string name(){return "JetSkimmer";};
         void init(TTree *t);
 
         edm::Handle<pat::JetCollection> chsAK8_handle; 

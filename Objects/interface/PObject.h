@@ -1,7 +1,7 @@
 #ifndef PANDA_POBJECT
 #define PANDA_POBJECT
 
-#include "Common.h"
+#include "PandaCore/Tools/interface/Common.h"
 #include <TObject.h>
 #include <TClonesArray.h>
 

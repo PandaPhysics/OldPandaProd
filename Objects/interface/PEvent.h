@@ -16,7 +16,8 @@ namespace panda
         eventNumber(0),
         isData(false),
         npv(0),
-        mcWeight(-1)
+        mcWeight(-1),
+        metFilters(0)
         {}
     ~PEvent(){}
     
@@ -25,6 +26,7 @@ namespace panda
     bool isData;
     int npv;
     float mcWeight;
+    int metFilters;
     ClassDef(PEvent,1)
   };
 }

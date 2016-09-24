@@ -5,6 +5,10 @@
 #include "PandaProd/Objects/interface/PPFCand.h"
 #include "PandaProd/Objects/interface/PJet.h"
 #include "PandaProd/Objects/interface/PFatJet.h"
+#include "PandaProd/Objects/interface/PElectron.h"
+#include "PandaProd/Objects/interface/PMuon.h"
+#include "PandaProd/Objects/interface/PTau.h"
+#include "PandaProd/Objects/interface/PPhoton.h"
 #include "PandaProd/Objects/interface/PGenParticle.h"
 #endif
 
@@ -22,8 +26,16 @@
 #pragma link C++ class panda::PJet+;
 #pragma link C++ class panda::PFatJet+;
 #pragma link C++ class panda::PGenParticle+;
+#pragma link C++ class panda::PElectron+;
+#pragma link C++ class panda::PMuon+;
+#pragma link C++ class panda::PTau+;
+#pragma link C++ class panda::PPhoton+;
 #pragma link C++ class panda::VPFCand+;
 #pragma link C++ class panda::VJet+;
 #pragma link C++ class panda::VFatJet+;
 #pragma link C++ class panda::VGenParticle+;
+#pragma link C++ class panda::VElectron+;
+#pragma link C++ class panda::VMuon+;
+#pragma link C++ class panda::VTau+;
+#pragma link C++ class panda::VPhoton+;
 #endif
