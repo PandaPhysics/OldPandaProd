@@ -1,6 +1,9 @@
 #include "PandaProd/Ntupler/interface/EventFiller.h"
 #include "PandaProd/Ntupler/interface/Ntupler.h"
 
+#include "DataFormats/HLTReco/interface/TriggerTypeDefs.h"
+
+
 using namespace panda;
 
 EventFiller::EventFiller(TString n):
@@ -36,6 +39,57 @@ int EventFiller::analyze(const edm::Event& iEvent){
 
     iEvent.getByToken(vtx_token,vtx_handle);
     data->npv = vtx_handle->size();
+    pvtx = &(vtx_handle->front());
+
+    // tiggers and met filters
+    if (!minimal) {
+      unsigned int nP = trigger_paths.size();
+      if (data->isData) {
+        data->tiggers->resize(trigger_paths.size(),false);
+
+        iEvent.getByToken(trigger_token,trigger_handle);      
+        const edm::TriggerNames &tn = iEvent.triggerNames(*trigger_handle);
+
+        unsigned int nT = tn.size();
+        for (unsigned int iT=0; iT!=nT; ++iT) {
+          string name = tn.triggerName(iT);
+          for (unsigned int jP=0; jP!=nP; ++jP) {
+            if (name.find(trigger_paths[jP]) != string::npos) {
+              data->tiggers->at(jP) = trigger_handle->accept(jP);
+            } // if paths match
+          } // loop over saved triggers
+        } // loop over all triggers
+      }
+      
+      // met filters
+      iEvent.getByToken(metfilter_token,metfilter_handle);
+      nP = metfilter_paths.size();
+      data->metfilters->resize(nP+3);  // +1 for allrec and +2 for bad ch/pfmu
+      const edm::TriggerNames &fn = iEvent.triggerNames(*metfilter_handle);
+      unsigned int nF = fn.size();
+
+      bool passesAll=true;
+      for (unsigned int iF=0; iF!=nF; ++iF) {
+        int jP = std::find(metfilter_paths.begin(),
+                           metfilter_paths.end(),
+                           fn.triggerName(iF)) - metfilter_paths.begin();
+        if (jP<(int)nP) {
+          // found the met filter
+          bool passes = metfilter_handle->accept(jP);
+          data->metfilters->at(jP+1) = passes;
+          passesAll = passesAll && passes;
+        }
+      } // loop over stored filters
+
+      // bad ch/pfmu
+      iEvent.getByToken(badchcand_token,badchcand_handle);
+      iEvent.getByToken(badpfmuon_token,badpfmuon_handle);
+      bool passes_badchcand = *badchcand_handle; data->metfilters->at(nP+1) = passes_badchcand;
+      bool passes_badpfmuon = *badpfmuon_handle; data->metfilters->at(nP+2) = passes_badpfmuon;
+      passesAll = passesAll && (passes_badpfmuon && passes_badchcand);
+
+      data->metfilters->at(0) = passesAll; // AND of all required filters
+    } // isData
 
     return 0;
 }

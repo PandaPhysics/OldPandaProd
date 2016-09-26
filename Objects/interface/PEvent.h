@@ -16,17 +16,19 @@ namespace panda
         eventNumber(0),
         isData(false),
         npv(0),
-        mcWeight(-1),
-        metFilters(0)
-        {}
-    ~PEvent(){}
+        mcWeight(-1)
+        {
+          metfilters = new std::vector<bool>;
+          tiggers = new std::vector<bool>;
+        }
+    ~PEvent(){ delete metfilters; delete tiggers; }
     
     int runNumber, lumiNumber;
     ULong64_t eventNumber;
     bool isData;
     int npv;
     float mcWeight;
-    int metFilters;
+    std::vector<bool> *metfilters, *tiggers;
     ClassDef(PEvent,1)
   };
 }

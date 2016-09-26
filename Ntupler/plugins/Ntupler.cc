@@ -3,6 +3,7 @@
 #include "PandaProd/Ntupler/interface/JetSkimmer.h"
 #include "PandaProd/Ntupler/interface/EventFiller.h"
 #include "PandaProd/Ntupler/interface/PFCandFiller.h"
+#include "PandaProd/Ntupler/interface/MuonFiller.h"
 #include "PandaProd/Ntupler/interface/JetFiller.h"
 #include "PandaProd/Ntupler/interface/FatJetFiller.h"
 #include "PandaProd/Ntupler/interface/GenParticleFiller.h"
@@ -15,6 +16,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     allFiller = new EventFiller("event");
     allFiller->gen_token   = consumes<GenEventInfoProduct>(iConfig.getParameter<edm::InputTag>("generator"));
     allFiller->vtx_token   = mayConsume<reco::VertexCollection>(edm::InputTag("offlineSlimmedPrimaryVertices"));
+    allFiller->minimal = true;
 
     skipEvent = new bool(false);
 
@@ -35,11 +37,22 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       obj.push_back(skim);
     }
 
-    EventFiller *event = new EventFiller("event");
-    event->gen_token   = consumes<GenEventInfoProduct>(iConfig.getParameter<edm::InputTag>("generator"));
-    event->vtx_token   = mayConsume<reco::VertexCollection>(edm::InputTag("offlineSlimmedPrimaryVertices"));
-    event->skipEvent   = skipEvent;
+    EventFiller *event      = new EventFiller("event");
+    event->gen_token        = consumes<GenEventInfoProduct>(iConfig.getParameter<edm::InputTag>("generator"));
+    event->vtx_token        = mayConsume<reco::VertexCollection>(edm::InputTag("offlineSlimmedPrimaryVertices"));
+    event->skipEvent        = skipEvent;
+    event->trigger_paths    = iConfig.getParameter<std::vector<std::string>>("triggerPaths");
+    event->trigger_token    = consumes<edm::TriggerResults>(iConfig.getParameter<edm::InputTag>("trigger"));
+    event->metfilter_paths  = iConfig.getParameter<std::vector<std::string>>("metfilterPaths");
+    event->metfilter_token  = consumes<edm::TriggerResults>(iConfig.getParameter<edm::InputTag>("metfilter"));
+    event->badchcand_token  = consumes<bool>(iConfig.getParameter<edm::InputTag>("chcandfilter"));
+    event->badpfmuon_token  = consumes<bool>(iConfig.getParameter<edm::InputTag>("pfmuonfilter"));
     obj.push_back(event);
+
+    MuonFiller *muon = new MuonFiller("muon");
+    muon->evt = event;
+    muon->mu_token = consumes<pat::MuonCollection>(iConfig.getParameter<edm::InputTag>("muons"));
+    obj.push_back(muon);
 
     PFCandFiller *puppicands=0, *pfcands=0;
 

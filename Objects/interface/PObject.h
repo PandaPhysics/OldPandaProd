@@ -22,5 +22,9 @@ namespace panda
     float pt,eta, phi, m;
     ClassDef(PObject,1)
   };
+
+  inline bool SortPObjects(PObject *o1, PObject *o2) {
+    return o1->pt > o2->pt;
+  }
 }
 #endif
