@@ -5,6 +5,7 @@
 #include "PandaProd/Ntupler/interface/PFCandFiller.h"
 #include "PandaProd/Ntupler/interface/MuonFiller.h"
 #include "PandaProd/Ntupler/interface/ElectronFiller.h"
+#include "PandaProd/Ntupler/interface/TauFiller.h"
 #include "PandaProd/Ntupler/interface/PhotonFiller.h"
 #include "PandaProd/Ntupler/interface/JetFiller.h"
 #include "PandaProd/Ntupler/interface/FatJetFiller.h"
@@ -72,6 +73,11 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     electron->el_mediumid_token = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleMediumIdMap"));
     electron->el_tightid_token  = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleTightIdMap"));
     obj.push_back(electron);
+
+    TauFiller *tau            = new TauFiller("tau");
+    tau->skipEvent            = skipEvent;
+    tau->tau_token            = consumes<pat::TauCollection>(iConfig.getParameter<edm::InputTag>("taus"));
+    obj.push_back(tau);
 
     // PHOTON FILLER --------------------------------------------
     PhotonFiller *photon        = new PhotonFiller("photon");
