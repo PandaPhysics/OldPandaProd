@@ -43,6 +43,9 @@ int EventFiller::analyze(const edm::Event& iEvent){
 
     // tiggers and met filters
     if (!minimal) {
+      iEvent.getByToken(rho_token,rho_handle);
+      rho_ = *rho_handle;
+
       unsigned int nP = trigger_paths.size();
       if (data->isData) {
         data->tiggers->resize(trigger_paths.size(),false);

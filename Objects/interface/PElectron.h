@@ -19,13 +19,17 @@ namespace panda
         PObject(),
         q(0),
         id(0),
-        iso(0)
+        iso(0),
+        chiso(0),
+        nhiso(0),
+        phoiso(0),
+        puiso(0)
       {  }
     ~PElectron(){ }
     
     int q;
     unsigned int id;
-    float iso;
+    float iso, chiso, nhiso, phoiso, puiso;
 
     ClassDef(PElectron,1)
   };

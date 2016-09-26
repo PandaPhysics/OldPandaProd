@@ -100,6 +100,7 @@ int JetFiller::analyze(const edm::Event& iEvent){
 
     }
 
+    std::sort(data->begin(),data->end(),SortPObjects);
 
     return 0;
 }

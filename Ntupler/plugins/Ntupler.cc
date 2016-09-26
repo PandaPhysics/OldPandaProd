@@ -4,6 +4,7 @@
 #include "PandaProd/Ntupler/interface/EventFiller.h"
 #include "PandaProd/Ntupler/interface/PFCandFiller.h"
 #include "PandaProd/Ntupler/interface/MuonFiller.h"
+#include "PandaProd/Ntupler/interface/ElectronFiller.h"
 #include "PandaProd/Ntupler/interface/JetFiller.h"
 #include "PandaProd/Ntupler/interface/FatJetFiller.h"
 #include "PandaProd/Ntupler/interface/GenParticleFiller.h"
@@ -13,6 +14,8 @@ using namespace panda;
 Ntupler::Ntupler(const edm::ParameterSet& iConfig) 
 
 {
+
+    // ALL FILLER --------------------------------------------
     allFiller = new EventFiller("event");
     allFiller->gen_token   = consumes<GenEventInfoProduct>(iConfig.getParameter<edm::InputTag>("generator"));
     allFiller->vtx_token   = mayConsume<reco::VertexCollection>(edm::InputTag("offlineSlimmedPrimaryVertices"));
@@ -20,6 +23,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
 
     skipEvent = new bool(false);
 
+    // SKIMS --------------------------------------------
     if (iConfig.getParameter<bool>("doJetSkim")) {
       JetSkimmer *skim         = new JetSkimmer("skimmer");
       if (iConfig.getParameter<bool>("doCHSAK8"))
@@ -37,9 +41,11 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       obj.push_back(skim);
     }
 
+    // EVENT FILLER --------------------------------------------
     EventFiller *event      = new EventFiller("event");
     event->gen_token        = consumes<GenEventInfoProduct>(iConfig.getParameter<edm::InputTag>("generator"));
     event->vtx_token        = mayConsume<reco::VertexCollection>(edm::InputTag("offlineSlimmedPrimaryVertices"));
+    event->rho_token        = consumes<double>(iConfig.getParameter<edm::InputTag>("rho"));
     event->skipEvent        = skipEvent;
     event->trigger_paths    = iConfig.getParameter<std::vector<std::string>>("triggerPaths");
     event->trigger_token    = consumes<edm::TriggerResults>(iConfig.getParameter<edm::InputTag>("trigger"));
@@ -49,11 +55,22 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     event->badpfmuon_token  = consumes<bool>(iConfig.getParameter<edm::InputTag>("pfmuonfilter"));
     obj.push_back(event);
 
+    // LEPTON FILLERS --------------------------------------------
     MuonFiller *muon = new MuonFiller("muon");
     muon->evt = event;
     muon->mu_token = consumes<pat::MuonCollection>(iConfig.getParameter<edm::InputTag>("muons"));
     obj.push_back(muon);
 
+    ElectronFiller *electron = new ElectronFiller("electron");
+    electron->evt = event;
+    electron->el_token          = consumes<pat::ElectronCollection>(iConfig.getParameter<edm::InputTag>("electrons"));
+    electron->el_vetoid_token   = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleVetoIdMap"));
+    electron->el_looseid_token  = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleLooseIdMap"));
+    electron->el_mediumid_token = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleMediumIdMap"));
+    electron->el_tightid_token  = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleTightIdMap"));
+    obj.push_back(electron);
+
+    // PFCAND FILLERS --------------------------------------------
     PFCandFiller *puppicands=0, *pfcands=0;
 
     if (iConfig.getParameter<bool>("savePuppiCands")) {
@@ -72,6 +89,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       obj.push_back(pfcands);
     }
 
+    // JET FILLERS --------------------------------------------
     if (iConfig.getParameter<bool>("doCHSAK4")) {
       JetFiller *chsAK4     = new JetFiller("chsAK4");
       chsAK4->rho_token     = consumes<double>(iConfig.getParameter<edm::InputTag>("rho"));
@@ -165,7 +183,9 @@ void Ntupler::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
     allFiller->analyze(iEvent);
     all_->Fill();
 
+    PInfo("PandaProd::Ntupler::Analyze","starting...");
     for(auto o : obj) {
+        PInfo("PandaProd::Ntupler::Analyze",o->name().c_str());
         if (o->analyze(iEvent, iSetup) ) return; 
     }
 
@@ -179,8 +199,9 @@ void Ntupler::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 void Ntupler::beginJob()
 {
     tree_ = fileService_->make<TTree>("events", "events");
-    for(auto o : obj)
+    for(auto o : obj) {
         o->init(tree_);
+    }
 
     all_ = fileService_->make<TTree>("all","all");
     allFiller->init(all_);

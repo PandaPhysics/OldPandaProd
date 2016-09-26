@@ -23,9 +23,14 @@ class EventFiller : virtual public BaseFiller
         edm::Handle<GenEventInfoProduct> gen_handle;
         
         // vertices
-        edm::Handle<reco::VertexCollection> vtx_handle;
         edm::EDGetTokenT<reco::VertexCollection> vtx_token;
+        edm::Handle<reco::VertexCollection> vtx_handle;
         const reco::Vertex *pv() const { return pvtx; }
+
+        // rho
+        edm::EDGetTokenT<double> rho_token;
+        edm::Handle<double> rho_handle;
+        float rho() const { return rho_; }
 
         // triggers
         std::vector<std::string> trigger_paths;
@@ -44,6 +49,7 @@ class EventFiller : virtual public BaseFiller
         edm::EDGetTokenT<edm::TriggerResults> metfilter_token;
         edm::Handle<edm::TriggerResults> metfilter_handle;
     private:
+        float rho_;
         const reco::Vertex *pvtx;
         panda::PEvent *data;
         TString treename;

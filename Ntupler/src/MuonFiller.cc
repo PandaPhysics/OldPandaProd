@@ -56,9 +56,9 @@ int MuonFiller::analyze(const edm::Event& iEvent){
       muon->puiso = puiso;
 
       muon->id = 0;
-      muon->id |= (mu.isLooseMuon()*PMuon::kLoose);
-      muon->id |= (mu.isMediumMuon()*PMuon::kMedium);
-      muon->id |= (mu.isTightMuon(* evt->pv())*PMuon::kTight);
+      muon->id |= (unsigned(mu.isLooseMuon())*PMuon::kLoose);
+      muon->id |= (unsigned(mu.isMediumMuon())*PMuon::kMedium);
+      muon->id |= (unsigned(mu.isTightMuon(* evt->pv()))*PMuon::kTight);
 
       data->push_back(muon);
 

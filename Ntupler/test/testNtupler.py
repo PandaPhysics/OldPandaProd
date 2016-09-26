@@ -25,7 +25,7 @@ process.load("FWCore.MessageService.MessageLogger_cfi")
 # the size of the output by prescaling the report of the event number
 process.MessageLogger.cerr.FwkReport.reportEvery = 1
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(20) )
 
 if isData:
    fileList = [
@@ -33,7 +33,7 @@ if isData:
        ]
 else:
    fileList = [
-       'file:/tmp/snarayan/test_miniaod.root'
+       'file:/tmp/snarayan/test_tt_miniaod.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
@@ -76,6 +76,15 @@ if isData and not options.isGrid and False: ## dont load the lumiMaks, will be c
 
 process.load('PandaProd.Ntupler.PandaProd_cfi')
 
+#-----------------------ELECTRON ID-------------------------------
+from PandaProd.Ntupler.egammavid_cfi import *
+
+initEGammaVID(process,options)
+
+### ##ISO
+process.load("RecoEgamma/PhotonIdentification/PhotonIDValueMapProducer_cfi")
+process.load("RecoEgamma/ElectronIdentification/ElectronIDValueMapProducer_cfi")
+
 #### RECOMPUTE JEC From GT ###
 from PhysicsTools.PatAlgos.tools.jetTools import updateJetCollection
  
@@ -89,15 +98,6 @@ updateJetCollection(
     labelName = 'UpdatedJEC',
     jetCorrections = ('AK4PFchs', cms.vstring(jecLevels), 'None')  # Do not forget 'L2L3Residual' on data!
 )
-
-'''
-updateJetCollection(
-    process,
-    jetSource = process.PandaNtupler.chsAK8,
-    labelName = 'UpdatedJECAK8',
-    jetCorrections = ('AK8PFchs', cms.vstring(jecLevels), 'None')  # Do not forget 'L2L3Residual' on data!
-)
-'''
 
 process.PandaNtupler.chsAK4=cms.InputTag('updatedPatJetsUpdatedJEC')
 #process.PandaNtupler.chsAK8=cms.InputTag('updatedPatJetsUpdatedJECAK8')
@@ -236,7 +236,6 @@ process.jec =  cms.ESSource("PoolDBESSource",
 
         )  
 if isData:
-  #process.jec.connect = cms.string('sqlite:////'+cmssw_base+'/src/NeroProducer/Nero/test/jec/Spring16_25nsV6_DATA.db')
   process.jec.connect = cms.string('sqlite:jec/Spring16_25nsV6_DATA.db')
 else:
   process.jec.connect = cms.string('sqlite:jec/Spring16_25nsV6_MC.db')
@@ -318,6 +317,10 @@ process.jetSequence += ca15CHSSequence
 process.p = cms.Path(
                         process.jecSequence *
 #                        process.fullPatMetSequence *
+                        process.egmGsfElectronIDSequence *
+                        process.egmPhotonIDSequence *
+                        process.photonIDValueMapProducer * ## ISO MAP FOR PHOTONS
+                        process.electronIDValueMapProducer *  ## ISO MAP FOR PHOTONS
                         process.puppiSequence *
                         process.puppiJetMETSequence *
                         process.jetSequence *
