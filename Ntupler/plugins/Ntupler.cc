@@ -5,6 +5,7 @@
 #include "PandaProd/Ntupler/interface/PFCandFiller.h"
 #include "PandaProd/Ntupler/interface/MuonFiller.h"
 #include "PandaProd/Ntupler/interface/ElectronFiller.h"
+#include "PandaProd/Ntupler/interface/PhotonFiller.h"
 #include "PandaProd/Ntupler/interface/JetFiller.h"
 #include "PandaProd/Ntupler/interface/FatJetFiller.h"
 #include "PandaProd/Ntupler/interface/GenParticleFiller.h"
@@ -56,19 +57,30 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     obj.push_back(event);
 
     // LEPTON FILLERS --------------------------------------------
-    MuonFiller *muon = new MuonFiller("muon");
-    muon->evt = event;
-    muon->mu_token = consumes<pat::MuonCollection>(iConfig.getParameter<edm::InputTag>("muons"));
+    MuonFiller *muon           = new MuonFiller("muon");
+    muon->skipEvent            = skipEvent;
+    muon->evt                  = event;
+    muon->mu_token             = consumes<pat::MuonCollection>(iConfig.getParameter<edm::InputTag>("muons"));
     obj.push_back(muon);
 
-    ElectronFiller *electron = new ElectronFiller("electron");
-    electron->evt = event;
+    ElectronFiller *electron    = new ElectronFiller("electron");
+    electron->evt               = event;
+    electron->skipEvent         = skipEvent;
     electron->el_token          = consumes<pat::ElectronCollection>(iConfig.getParameter<edm::InputTag>("electrons"));
     electron->el_vetoid_token   = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleVetoIdMap"));
     electron->el_looseid_token  = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleLooseIdMap"));
     electron->el_mediumid_token = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleMediumIdMap"));
     electron->el_tightid_token  = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleTightIdMap"));
     obj.push_back(electron);
+
+    // PHOTON FILLER --------------------------------------------
+    PhotonFiller *photon        = new PhotonFiller("photon");
+    photon->skipEvent           = skipEvent;
+    photon->pho_token           = consumes<pat::PhotonCollection>(iConfig.getParameter<edm::InputTag>("photons"));
+    photon->pho_looseid_token   = consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoLooseIdMap"));
+    photon->pho_mediumid_token  = consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoMediumIdMap"));
+    photon->pho_tightid_token   = consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoTightIdMap"));
+    obj.push_back(photon);
 
     // PFCAND FILLERS --------------------------------------------
     PFCandFiller *puppicands=0, *pfcands=0;
