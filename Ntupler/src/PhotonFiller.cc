@@ -41,8 +41,8 @@ int PhotonFiller::analyze(const edm::Event& iEvent){
     unsigned int iA=0;
     for (const pat::Photon& pho : *pho_handle) {
 
-      if (pho.pt()<minPt || fabs(pho.pt())>maxEta || 
-          pho.chargedHadronIso()/pho.pt()>0.3)
+      if (pho.pt()<minPt || fabs(pho.eta())>maxEta 
+          || pho.chargedHadronIso()/pho.pt()>0.3)
         continue;
 
       edm::RefToBase<pat::Photon> ref ( edm::Ref< pat::PhotonCollection >(pho_handle, iA) ) ;
@@ -56,6 +56,8 @@ int PhotonFiller::analyze(const edm::Event& iEvent){
       bool loose = (*pho_looseid_handle)[ref];
       bool tight = (*pho_tightid_handle)[ref];
 
+      if (!loose)
+        continue;
 
       // fill
       PPhoton *photon = new PPhoton();
@@ -70,6 +72,7 @@ int PhotonFiller::analyze(const edm::Event& iEvent){
       photon->id |= (unsigned(loose)*PPhoton::kLoose);
       photon->id |= (unsigned(medium)*PPhoton::kMedium);
       photon->id |= (unsigned(tight)*PPhoton::kTight);
+
 
       data->push_back(photon);
 

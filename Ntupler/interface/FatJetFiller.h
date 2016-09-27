@@ -9,6 +9,19 @@
 #include "CondFormats/JetMETObjects/interface/FactorizedJetCorrector.h"
 #include "CondFormats/JetMETObjects/interface/JetCorrectionUncertainty.h"
 
+// fastjet
+#include "fastjet/PseudoJet.hh"
+#include "fastjet/JetDefinition.hh"
+#include "fastjet/GhostedAreaSpec.hh"
+#include "fastjet/AreaDefinition.hh"
+#include "fastjet/ClusterSequenceArea.hh"
+#include "fastjet/contrib/SoftDrop.hh"
+#include "fastjet/contrib/NjettinessPlugin.hh"
+#include "fastjet/contrib/MeasureDefinition.hh"
+#include "fastjet/contrib/EnergyCorrelator.hh"
+
+#include "functions/EnergyCorrelations.h"
+
 #include <map>
 #include <string>
 
@@ -43,16 +56,30 @@ class FatJetFiller : virtual public BaseFiller
 
         PFCandFiller *pfcands=0; // pointer to the relevant pf cand filler, used to get a map
 
+        bool minimal = false;
+        float radius=1.5;
+
     private:
         // TClonesArray *data;
         panda::VFatJet *data;
         //panda::VJet    *subjet_data;
         TString treename;
 
-        FactorizedJetCorrector *mMCJetCorrector;   // needed for puppi fat jets
+        FactorizedJetCorrector *mMCJetCorrector;   
         FactorizedJetCorrector *mDataJetCorrector; 
 
+        fastjet::AreaDefinition *areaDef;
+        fastjet::GhostedAreaSpec *activeArea;
+        fastjet::JetDefinition *jetDefCA=0;
+        fastjet::contrib::SoftDrop *softdrop=0;
+        fastjet::contrib::Njettiness *tau=0;
+
+        ECFNManager *ecfnmanager;
+
 };
+
+typedef std::vector<fastjet::PseudoJet> VPseudoJet;
+
 }
 
 

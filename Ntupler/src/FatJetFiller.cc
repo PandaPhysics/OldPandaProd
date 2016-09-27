@@ -7,20 +7,28 @@ FatJetFiller::FatJetFiller(TString n):
     BaseFiller()
 {
   data = new VFatJet();
-  //subjet_data = new VJet(); 
-  // data = new TClonesArray("panda::PFatJet",100);
   treename = n;
+
+  int activeAreaRepeats = 1;
+  double ghostArea = 0.01;
+  double ghostEtaMax = 7.0;
+  activeArea = new fastjet::GhostedAreaSpec(ghostEtaMax,activeAreaRepeats,ghostArea);
+  areaDef = new fastjet::AreaDefinition(fastjet::active_area_explicit_ghosts,*activeArea);
+
+  ecfnmanager = new ECFNManager();
 }
 
 FatJetFiller::~FatJetFiller(){
   delete data;
-  //delete subjet_data;
+  delete activeArea;
+  delete areaDef;
+  delete jetDefCA;
+  delete softdrop;
+  delete tau;
 }
 
 void FatJetFiller::init(TTree *t) {
-  // PFatJet::Class()->IgnoreTObjectStreamer();
   t->Branch(treename.Data(),&data,99);
-  //t->Branch((treename+"Subjets").Data(),&subjet_data,99);
   std::string jecDir = "jec/";
  
   std::vector<JetCorrectorParameters> mcParams;
@@ -37,18 +45,24 @@ void FatJetFiller::init(TTree *t) {
   dataParams.push_back(JetCorrectorParameters(jecDir + "Spring16_25nsV6_DATA_L2L3Residual_AK8PFPuppi.txt"));
   mDataJetCorrector = new FactorizedJetCorrector(dataParams);
 
+  jetDefCA = new fastjet::JetDefinition(fastjet::cambridge_algorithm, radius);
+
+  double sdZcut, sdBeta;
+  if (radius<1) {
+    sdZcut=0.1; sdBeta=0.;
+  } else {
+    sdZcut=0.15; sdBeta=1.;
+  }
+  softdrop = new fastjet::contrib::SoftDrop(sdBeta,sdZcut,radius);
+
+  fastjet::contrib::OnePass_KT_Axes onepass;
+  tau = new fastjet::contrib::Njettiness(onepass, fastjet::contrib::NormalizedMeasure(1., radius));
 }
 
 int FatJetFiller::analyze(const edm::Event& iEvent){
     for (auto d : *data)
       delete d;
     data->clear();
-
-    /*
-    for (auto d : *subjet_data)
-      delete d;
-    subjet_data->clear();
-    */
 
     if (skipEvent!=0 && *skipEvent) {
       return 0;
@@ -100,6 +114,8 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       jet->tau3 = j.userFloat(treename+"Njettiness:tau3");
       jet->mSD  = j.userFloat(treename+"SDKinematics:Mass");
 
+      jet->set_ecf(2,2,2,999.);
+
       jet->subjets = new VJet();
       VJet *subjet_data = jet->subjets;
 
@@ -123,25 +139,77 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
         
       }
 
-      if (pfcands!=0) {
-        const std::map<const reco::Candidate*,UShort_t> &pfmap = pfcands->get_map();
+      if (pfcands!=0 || (!minimal && data->size()==0)) {
+        // either we want to associate to pf cands OR compute extra info about the first jet
 
         std::vector<edm::Ptr<reco::Candidate>> constituentPtrs = j.getJetConstituents();
-        jet->constituents = new std::vector<UShort_t>();
-        std::vector<UShort_t> *constituents = jet->constituents;
 
-        for (auto ptr : constituentPtrs) {
-          //const reco::PFCandidate *constituent = ptr.get();
-          const reco::Candidate *constituent = ptr.get();
+        if (pfcands!=0) { // associate to pf cands in tree
+          const std::map<const reco::Candidate*,UShort_t> &pfmap = pfcands->get_map();
+          jet->constituents = new std::vector<UShort_t>();
+          std::vector<UShort_t> *constituents = jet->constituents;
 
-          auto result_ = pfmap.find(constituent);
-          if (result_ == pfmap.end()) {
-            PError("PandaProdNtupler::FatJetFiller",TString::Format("could not PF [%s] ...\n",treename.Data()));
-          } else {
-            constituents->push_back(result_->second);
+          for (auto ptr : constituentPtrs) {
+            //const reco::PFCandidate *constituent = ptr.get();
+            const reco::Candidate *constituent = ptr.get();
+
+            auto result_ = pfmap.find(constituent);
+            if (result_ == pfmap.end()) {
+              PError("PandaProdNtupler::FatJetFiller",TString::Format("could not PF [%s] ...\n",treename.Data()));
+            } else {
+              constituents->push_back(result_->second);
+            }
           }
-        }
+        } 
 
+        if (!minimal && data->size()==0) { 
+        // calculate ECFs, groomed tauN
+          VPseudoJet vjet;
+          for (auto ptr : constituentPtrs) { 
+            // create vector of PseudoJets
+            const reco::Candidate *constituent = ptr.get();
+            if (constituent->pt()<0.01) 
+              continue;
+            vjet.emplace_back(constituent->px(),constituent->py(),constituent->pz(),constituent->energy());
+          }
+          fastjet::ClusterSequenceArea seq(vjet, *jetDefCA, *areaDef); 
+          VPseudoJet alljets = fastjet::sorted_by_pt(seq.inclusive_jets(0.1));
+          if (alljets.size()>0){
+            fastjet::PseudoJet *leadingJet = &(alljets[0]);
+            fastjet::PseudoJet sdJet = (*softdrop)(*leadingJet);
+            PDebug("PandaProd::Ntupler::FatJetFiller",TString::Format("mSD = %.3f =?= %.3f",jet->mSD,sdJet.m()));
+
+            // get and filter constituents of groomed jet
+            VPseudoJet sdconsts = fastjet::sorted_by_pt(sdJet.constituents());
+            int nFilter = TMath::Min(100,(int)sdconsts.size());
+            VPseudoJet sdconstsFiltered(sdconsts.begin(),sdconsts.begin()+nFilter);
+
+            // calculate ECFs
+            std::vector<float> betas = {0.5,1.,2.,4.};
+            std::vector<int> Ns = {1,2,3,4};
+            std::vector<int> orders = {1,2,3};
+            for (unsigned int iB=0; iB!=4; ++iB) {
+              calcECFN(betas[iB],sdconstsFiltered,ecfnmanager);
+              for (auto N : Ns) {
+                for (auto o : orders) {
+                  float x = ecfnmanager->ecfns[TString::Format("%i_%i",N,o)];
+                  int r = jet->set_ecf(o,N,iB,x);
+                  if (r) {
+                    PError("PandaProd::Ntupler::FatJetFiller",TString::Format("Could not save o=%i, N=%i, iB=%i",o,N,(int)iB));
+                  }
+                }
+              }
+            }
+
+            jet->tau3SD = tau->getTau(3,sdconsts);
+            jet->tau2SD = tau->getTau(2,sdconsts);
+            jet->tau1SD = tau->getTau(1,sdconsts);
+             
+          } else {
+            PError("PandaProd::Ntupler::FatJetFiller","Jet could not be clustered");
+          }
+
+        } 
       }
 
       data->push_back(jet);

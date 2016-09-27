@@ -25,7 +25,7 @@ process.load("FWCore.MessageService.MessageLogger_cfi")
 # the size of the output by prescaling the report of the event number
 process.MessageLogger.cerr.FwkReport.reportEvery = 1
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(20) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
 
 if isData:
    fileList = [
@@ -297,15 +297,19 @@ from PandaProd.Ntupler.makeFatJets_cff import *
 fatjetInitSequence = initFatJets(process,isData)
 process.jetSequence += fatjetInitSequence
 
-ak8PuppiSequence  = makeFatJets(process,isData=isData,pfCandidates='puppi',algoLabel='AK',jetRadius=0.8)
-ak8CHSSequence    = makeFatJets(process,isData=isData,pfCandidates='pfCHS',algoLabel='AK',jetRadius=0.8)
-ca15PuppiSequence = makeFatJets(process,isData=isData,pfCandidates='puppi',algoLabel='CA',jetRadius=1.5)
-ca15CHSSequence   = makeFatJets(process,isData=isData,pfCandidates='pfCHS',algoLabel='CA',jetRadius=1.5)
+if process.PandaNtupler.doCHSAK8:
+  ak8CHSSequence    = makeFatJets(process,isData=isData,pfCandidates='pfCHS',algoLabel='AK',jetRadius=0.8)
+  process.jetSequence += ak8CHSSequence
+if process.PandaNtupler.doPuppiAK8:
+  ak8PuppiSequence  = makeFatJets(process,isData=isData,pfCandidates='puppi',algoLabel='AK',jetRadius=0.8)
+  process.jetSequence += ak8PuppiSequence
+if process.PandaNtupler.doCHSCA15:
+  ca15CHSSequence   = makeFatJets(process,isData=isData,pfCandidates='pfCHS',algoLabel='CA',jetRadius=1.5)
+  process.jetSequence += ca15CHSSequence
+if process.PandaNtupler.doPuppiCA15:
+  ca15PuppiSequence = makeFatJets(process,isData=isData,pfCandidates='puppi',algoLabel='CA',jetRadius=1.5)
+  process.jetSequence += ca15PuppiSequence
 
-process.jetSequence += ak8PuppiSequence
-process.jetSequence += ak8CHSSequence
-process.jetSequence += ca15PuppiSequence
-process.jetSequence += ca15CHSSequence
 
 
 ###############################
