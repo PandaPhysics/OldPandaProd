@@ -2,6 +2,7 @@
 #include "PandaProd/Ntupler/interface/BaseFiller.h"
 #include "PandaProd/Ntupler/interface/JetSkimmer.h"
 #include "PandaProd/Ntupler/interface/EventFiller.h"
+#include "PandaProd/Ntupler/interface/METFiller.h"
 #include "PandaProd/Ntupler/interface/PFCandFiller.h"
 #include "PandaProd/Ntupler/interface/MuonFiller.h"
 #include "PandaProd/Ntupler/interface/ElectronFiller.h"
@@ -56,6 +57,20 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     event->badchcand_token  = consumes<bool>(iConfig.getParameter<edm::InputTag>("chcandfilter"));
     event->badpfmuon_token  = consumes<bool>(iConfig.getParameter<edm::InputTag>("pfmuonfilter"));
     obj.push_back(event);
+
+    // MET FILLERS -----------------------------------------------
+    METFiller *pfmet           = new METFiller("pfmet");
+    pfmet->skipEvent           = skipEvent;
+    pfmet->rerun               = false;
+    pfmet->met_token           = consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("mets"));
+    obj.push_back(pfmet);
+
+    METFiller *puppimet         = new METFiller("puppimet");
+    puppimet->skipEvent         = skipEvent;
+    puppimet->rerun             = true;
+    puppimet->remet_token       = consumes<reco::PFMETCollection>(iConfig.getParameter<edm::InputTag>("metsPuppi"));
+    puppimet->remetuncorr_token = consumes<reco::PFMETCollection>(iConfig.getParameter<edm::InputTag>("metsPuppiUncorrected"));
+    obj.push_back(puppimet);
 
     // LEPTON FILLERS --------------------------------------------
     MuonFiller *muon           = new MuonFiller("muon");

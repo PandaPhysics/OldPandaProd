@@ -3,6 +3,7 @@
 #include "PandaProd/Objects/interface/PObject.h"
 #include "PandaProd/Objects/interface/PEvent.h"
 #include "PandaProd/Objects/interface/PPFCand.h"
+#include "PandaProd/Objects/interface/PMET.h"
 #include "PandaProd/Objects/interface/PJet.h"
 #include "PandaProd/Objects/interface/PFatJet.h"
 #include "PandaProd/Objects/interface/PElectron.h"
