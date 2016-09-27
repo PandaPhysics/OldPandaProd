@@ -20,7 +20,7 @@ class TauFiller : virtual public BaseFiller
         edm::EDGetTokenT<pat::TauCollection> tau_token;
         edm::Handle<pat::TauCollection> tau_handle;
 
-        float minPt=10, maxEta=2.5, maxIso=5;
+        float minPt=10, maxEta=2.5, maxIso=7;
 
     private:
         // TClonesArray *data;

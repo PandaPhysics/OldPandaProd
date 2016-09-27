@@ -36,13 +36,13 @@ int TauFiller::analyze(const edm::Event& iEvent){
       if (tau.pt()<minPt || fabs(tau.eta())>maxEta) 
         continue;
 
-      if (!(tau.tauID("decayModeFinding")))
-        continue;
-
-      if (tau.tauID("byCombinedIsolationDeltaBetaCorrRaw3Hits")>maxIso)
+      if (!(tau.tauID("decayModeFindingNewDMs")))
         continue;
 
       float isodbcorr = tau.tauID("byCombinedIsolationDeltaBetaCorrRaw3Hits");
+
+      if (isodbcorr>maxIso)
+        continue;
 
       float phoiso = 0.; for(auto cand : tau.isolationGammaCands() ) phoiso += cand->pt();
       float chiso  = 0.; for(auto cand : tau.isolationChargedHadrCands() ) chiso += cand->pt();
@@ -61,9 +61,9 @@ int TauFiller::analyze(const edm::Event& iEvent){
       tauon->isoDeltaBetaCorr = isodbcorr;
 
       tauon->id = 0;
-      tauon->id |= (unsigned(tau.tauID("decayModeFinding"))*PTau::kBaseline);
-      tauon->id |= (unsigned(tau.tauID("decayModeFinding"))*PTau::kDecayModeFinding);
+      tauon->id |= (unsigned(tau.tauID("decayModeFindingNewDMs"))*PTau::kBaseline);
       tauon->id |= (unsigned(tau.tauID("decayModeFindingNewDMs"))*PTau::kDecayModeFindingNewDMs);
+      tauon->id |= (unsigned(tau.tauID("decayModeFinding"))*PTau::kDecayModeFinding);
 
       data->push_back(tauon);
 

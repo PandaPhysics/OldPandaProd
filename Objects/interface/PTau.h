@@ -11,8 +11,8 @@ namespace panda
     public:
       enum TauID {
         kBaseline                = 1UL<<0,
-        kDecayModeFinding        = 1UL<<1,
-        kDecayModeFindingNewDMs  = 1UL<<2
+        kDecayModeFindingNewDMs  = 1UL<<1,
+        kDecayModeFinding        = 1UL<<2
       };
       PTau():
         PObject(),
