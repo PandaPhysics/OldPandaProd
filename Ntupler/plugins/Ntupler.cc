@@ -216,9 +216,7 @@ void Ntupler::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
     allFiller->analyze(iEvent);
     all_->Fill();
 
-    PInfo("PandaProd::Ntupler::Analyze","starting...");
     for(auto o : obj) {
-        PInfo("PandaProd::Ntupler::Analyze",o->name().c_str());
         if (o->analyze(iEvent, iSetup) ) return; 
     }
 

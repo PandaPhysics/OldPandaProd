@@ -177,7 +177,6 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
           if (alljets.size()>0){
             fastjet::PseudoJet *leadingJet = &(alljets[0]);
             fastjet::PseudoJet sdJet = (*softdrop)(*leadingJet);
-            PDebug("PandaProd::Ntupler::FatJetFiller",TString::Format("mSD = %.3f =?= %.3f",jet->mSD,sdJet.m()));
 
             // get and filter constituents of groomed jet
             VPseudoJet sdconsts = fastjet::sorted_by_pt(sdJet.constituents());

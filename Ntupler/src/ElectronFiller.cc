@@ -39,8 +39,10 @@ int ElectronFiller::analyze(const edm::Event& iEvent){
     unsigned int iE=0;
     for (const pat::Electron& el : *el_handle) {
 
-      if (el.pt()<minPt || fabs(el.eta())>maxEta || !(el.passConversionVeto()) ) 
+      if (el.pt()<minPt || fabs(el.eta())>maxEta || !(el.passConversionVeto()) ) {
+        // PDebug("PandaProd::Ntupler::ElectronFiller","Rejecting at first step...");
         continue;
+      }
 
       edm::RefToBase<pat::Electron> ref ( edm::Ref< pat::ElectronCollection >(el_handle, iE) ) ;
 
@@ -49,8 +51,10 @@ int ElectronFiller::analyze(const edm::Event& iEvent){
       bool loose = (*el_looseid_handle)[ref];
       bool tight = (*el_tightid_handle)[ref];
 
-      if (!veto)
+      if (!veto) {
+        // PDebug("PandaProd::Ntupler::ElectronFiller","Rejecting at second step...");
         continue;
+      }
 
       // compute isolation
       float chiso = el.pfIsolationVariables().sumChargedHadronPt;
@@ -83,6 +87,7 @@ int ElectronFiller::analyze(const edm::Event& iEvent){
       electron->puiso = puiso;
 
       electron->id = 0;
+      electron->id |= (unsigned(veto)*PElectron::kVeto);
       electron->id |= (unsigned(loose)*PElectron::kLoose);
       electron->id |= (unsigned(medium)*PElectron::kMedium);
       electron->id |= (unsigned(tight)*PElectron::kTight);
