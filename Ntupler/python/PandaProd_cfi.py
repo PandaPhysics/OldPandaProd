@@ -17,7 +17,7 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
     taus = cms.InputTag("slimmedTaus"),
     photons = cms.InputTag("slimmedPhotons"),
 
-    # skimming
+    # offline skimming
     doJetSkim = cms.bool(False),
 
     # jet toggles

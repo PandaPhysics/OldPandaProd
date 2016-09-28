@@ -33,7 +33,7 @@ if isData:
        ]
 else:
    fileList = [
-       'file:/tmp/snarayan/test_miniaod.root'
+       'file:/tmp/snarayan/test_tt_miniaod.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
@@ -46,7 +46,7 @@ process.source = cms.Source("PoolSource",
 # ---- define the output file -------------------------------------------
 process.TFileService = cms.Service("TFileService",
         closeFileFast = cms.untracked.bool(True),
-        fileName = cms.string("scramjet.root"),
+        fileName = cms.string("panda.root"),
         )
 
 ##----------------GLOBAL TAG ---------------------------
@@ -74,7 +74,19 @@ if isData and not options.isGrid and False: ## dont load the lumiMaks, will be c
     process.source.lumisToProcess = LumiList.LumiList(filename='/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions15/13TeV/Cert_246908-260627_13TeV_PromptReco_Collisions15_25ns_JSON_Silver_v2.txt').getVLuminosityBlockRange()
     print "FIX JSON"
 
+### LOAD CONFIGURATION
+process.load('PandaProd.Filter.infoProducerSequence_cff')
+process.load('PandaProd.Filter.MonoXFilterSequence_cff')
 process.load('PandaProd.Ntupler.PandaProd_cfi')
+
+#-----------------------ELECTRON ID-------------------------------
+from PandaProd.Ntupler.egammavid_cfi import *
+
+initEGammaVID(process,options)
+
+### ##ISO
+process.load("RecoEgamma/PhotonIdentification/PhotonIDValueMapProducer_cfi")
+process.load("RecoEgamma/ElectronIdentification/ElectronIDValueMapProducer_cfi")
 
 #### RECOMPUTE JEC From GT ###
 from PhysicsTools.PatAlgos.tools.jetTools import updateJetCollection
@@ -90,15 +102,6 @@ updateJetCollection(
     jetCorrections = ('AK4PFchs', cms.vstring(jecLevels), 'None')  # Do not forget 'L2L3Residual' on data!
 )
 
-'''
-updateJetCollection(
-    process,
-    jetSource = process.PandaNtupler.chsAK8,
-    labelName = 'UpdatedJECAK8',
-    jetCorrections = ('AK8PFchs', cms.vstring(jecLevels), 'None')  # Do not forget 'L2L3Residual' on data!
-)
-'''
-
 process.PandaNtupler.chsAK4=cms.InputTag('updatedPatJetsUpdatedJEC')
 #process.PandaNtupler.chsAK8=cms.InputTag('updatedPatJetsUpdatedJECAK8')
 process.jecSequence = cms.Sequence( process.patJetCorrFactorsUpdatedJEC* process.updatedPatJetsUpdatedJEC)
@@ -109,10 +112,12 @@ from PhysicsTools.PatUtils.tools.runMETCorrectionsAndUncertainties import runMet
 runMetCorAndUncFromMiniAOD(process,
            isData=isData,
            )
+
 if not options.isData:
   process.PandaNtupler.metfilter = cms.InputTag('TriggerResults','','PAT')
 
 process.load('RecoMET.METFilters.BadPFMuonFilter_cfi')
+
 process.BadPFMuonFilter.muons = cms.InputTag("slimmedMuons")
 process.BadPFMuonFilter.PFCandidates = cms.InputTag("packedPFCandidates")
 
@@ -121,7 +126,6 @@ process.BadChargedCandidateFilter.muons = cms.InputTag("slimmedMuons")
 process.BadChargedCandidateFilter.PFCandidates = cms.InputTag("packedPFCandidates")
 
 process.metfilterSequence = cms.Sequence(process.BadPFMuonFilter*process.BadChargedCandidateFilter)
-
 
 ############ RUN CLUSTERING ##########################
 process.puppiSequence = cms.Sequence()
@@ -236,7 +240,6 @@ process.jec =  cms.ESSource("PoolDBESSource",
 
         )  
 if isData:
-  #process.jec.connect = cms.string('sqlite:////'+cmssw_base+'/src/NeroProducer/Nero/test/jec/Spring16_25nsV6_DATA.db')
   process.jec.connect = cms.string('sqlite:jec/Spring16_25nsV6_DATA.db')
 else:
   process.jec.connect = cms.string('sqlite:jec/Spring16_25nsV6_MC.db')
@@ -298,15 +301,19 @@ from PandaProd.Ntupler.makeFatJets_cff import *
 fatjetInitSequence = initFatJets(process,isData)
 process.jetSequence += fatjetInitSequence
 
-ak8PuppiSequence  = makeFatJets(process,isData=isData,pfCandidates='puppi',algoLabel='AK',jetRadius=0.8)
-ak8CHSSequence    = makeFatJets(process,isData=isData,pfCandidates='pfCHS',algoLabel='AK',jetRadius=0.8)
-ca15PuppiSequence = makeFatJets(process,isData=isData,pfCandidates='puppi',algoLabel='CA',jetRadius=1.5)
-ca15CHSSequence   = makeFatJets(process,isData=isData,pfCandidates='pfCHS',algoLabel='CA',jetRadius=1.5)
+if process.PandaNtupler.doCHSAK8:
+  ak8CHSSequence    = makeFatJets(process,isData=isData,pfCandidates='pfCHS',algoLabel='AK',jetRadius=0.8)
+  process.jetSequence += ak8CHSSequence
+if process.PandaNtupler.doPuppiAK8:
+  ak8PuppiSequence  = makeFatJets(process,isData=isData,pfCandidates='puppi',algoLabel='AK',jetRadius=0.8)
+  process.jetSequence += ak8PuppiSequence
+if process.PandaNtupler.doCHSCA15:
+  ca15CHSSequence   = makeFatJets(process,isData=isData,pfCandidates='pfCHS',algoLabel='CA',jetRadius=1.5)
+  process.jetSequence += ca15CHSSequence
+if process.PandaNtupler.doPuppiCA15:
+  ca15PuppiSequence = makeFatJets(process,isData=isData,pfCandidates='puppi',algoLabel='CA',jetRadius=1.5)
+  process.jetSequence += ca15PuppiSequence
 
-process.jetSequence += ak8PuppiSequence
-process.jetSequence += ak8CHSSequence
-process.jetSequence += ca15PuppiSequence
-process.jetSequence += ca15CHSSequence
 
 
 ###############################
@@ -316,10 +323,16 @@ process.jetSequence += ca15CHSSequence
 ##print "Process=",process, process.__dict__.keys()
 #------------------------------------------------------
 process.p = cms.Path(
+                        process.infoProducerSequence *
                         process.jecSequence *
 #                        process.fullPatMetSequence *
+                        process.egmGsfElectronIDSequence *
+                        process.egmPhotonIDSequence *
+                        process.photonIDValueMapProducer * ## ISO MAP FOR PHOTONS
+                        process.electronIDValueMapProducer *  ## ISO MAP FOR PHOTONS
                         process.puppiSequence *
                         process.puppiJetMETSequence *
+                        process.monoXFilterSequence *
                         process.jetSequence *
                         process.metfilterSequence *
                         process.PandaNtupler

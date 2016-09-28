@@ -1,5 +1,4 @@
 #include "PandaProd/Ntupler/interface/TauFiller.h"
-#include "PandaProd/Ntupler/interface/Ntupler.h"
 
 using namespace panda;
 

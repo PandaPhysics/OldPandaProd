@@ -1,5 +1,4 @@
 #include "PandaProd/Ntupler/interface/EventFiller.h"
-#include "PandaProd/Ntupler/interface/Ntupler.h"
 
 #include "DataFormats/HLTReco/interface/TriggerTypeDefs.h"
 
@@ -18,7 +17,6 @@ EventFiller::~EventFiller(){
 }
 
 void EventFiller::init(TTree *t) {
-//  PEvent::Class()->IgnoreTObjectStreamer();
   t->Branch(treename.Data(),&data,99);
 }
 

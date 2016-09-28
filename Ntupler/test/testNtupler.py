@@ -74,6 +74,9 @@ if isData and not options.isGrid and False: ## dont load the lumiMaks, will be c
     process.source.lumisToProcess = LumiList.LumiList(filename='/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions15/13TeV/Cert_246908-260627_13TeV_PromptReco_Collisions15_25ns_JSON_Silver_v2.txt').getVLuminosityBlockRange()
     print "FIX JSON"
 
+### LOAD CONFIGURATION
+process.load('PandaProd.Filter.infoProducerSequence_cff')
+process.load('PandaProd.Filter.MonoXFilterSequence_cff')
 process.load('PandaProd.Ntupler.PandaProd_cfi')
 
 #-----------------------ELECTRON ID-------------------------------
@@ -114,6 +117,7 @@ if not options.isData:
   process.PandaNtupler.metfilter = cms.InputTag('TriggerResults','','PAT')
 
 process.load('RecoMET.METFilters.BadPFMuonFilter_cfi')
+
 process.BadPFMuonFilter.muons = cms.InputTag("slimmedMuons")
 process.BadPFMuonFilter.PFCandidates = cms.InputTag("packedPFCandidates")
 
@@ -319,6 +323,7 @@ if process.PandaNtupler.doPuppiCA15:
 ##print "Process=",process, process.__dict__.keys()
 #------------------------------------------------------
 process.p = cms.Path(
+                        process.infoProducerSequence *
                         process.jecSequence *
 #                        process.fullPatMetSequence *
                         process.egmGsfElectronIDSequence *
@@ -327,6 +332,7 @@ process.p = cms.Path(
                         process.electronIDValueMapProducer *  ## ISO MAP FOR PHOTONS
                         process.puppiSequence *
                         process.puppiJetMETSequence *
+                        process.monoXFilterSequence *
                         process.jetSequence *
                         process.metfilterSequence *
                         process.PandaNtupler

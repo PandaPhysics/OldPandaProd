@@ -3,6 +3,7 @@
 
 #include "Includes.h"
 #include "BaseFiller.h"
+#include "InfoFiller.h" 
 #include "EventFiller.h"
 
 class Ntupler : public edm::EDAnalyzer {
@@ -25,8 +26,9 @@ class Ntupler : public edm::EDAnalyzer {
 
         edm::Service<TFileService> fileService_;
 
-        std::vector<panda::BaseFiller*> obj;
-        panda::EventFiller *allFiller;
+        std::vector<panda::BaseFiller*> obj; // collection of objects to be run every event
+        panda::InfoFiller *info; // this saves the all tree
+        panda::EventFiller *event; // this goes into obj, but is also used in beginJob()
 
         bool *skipEvent;
 };

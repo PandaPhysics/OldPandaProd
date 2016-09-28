@@ -18,11 +18,10 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
 
 {
 
-    // ALL FILLER --------------------------------------------
-    allFiller = new EventFiller("event");
-    allFiller->gen_token   = consumes<GenEventInfoProduct>(iConfig.getParameter<edm::InputTag>("generator"));
-    allFiller->vtx_token   = mayConsume<reco::VertexCollection>(edm::InputTag("offlineSlimmedPrimaryVertices"));
-    allFiller->minimal = true;
+    // INFO FILLER --------------------------------------------
+    info = new InfoFiller("info");
+    info->events_token   = consumes<std::vector<long>,edm::InLumi>( edm::InputTag("InfoProducer","vecEvents") ) ;
+    info->weights_token  = consumes<std::vector<float>,edm::InLumi>( edm::InputTag("InfoProducer","vecMcWeights") ) ;
 
     skipEvent = new bool(false);
 
@@ -45,7 +44,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     }
 
     // EVENT FILLER --------------------------------------------
-    EventFiller *event      = new EventFiller("event");
+    event                   = new EventFiller("event");
     event->gen_token        = consumes<GenEventInfoProduct>(iConfig.getParameter<edm::InputTag>("generator"));
     event->vtx_token        = mayConsume<reco::VertexCollection>(edm::InputTag("offlineSlimmedPrimaryVertices"));
     event->rho_token        = consumes<double>(iConfig.getParameter<edm::InputTag>("rho"));
@@ -57,6 +56,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     event->badchcand_token  = consumes<bool>(iConfig.getParameter<edm::InputTag>("chcandfilter"));
     event->badpfmuon_token  = consumes<bool>(iConfig.getParameter<edm::InputTag>("pfmuonfilter"));
     obj.push_back(event);
+
 
     // MET FILLERS -----------------------------------------------
     METFiller *pfmet           = new METFiller("pfmet");
@@ -71,6 +71,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     puppimet->remet_token       = consumes<reco::PFMETCollection>(iConfig.getParameter<edm::InputTag>("metsPuppi"));
     puppimet->remetuncorr_token = consumes<reco::PFMETCollection>(iConfig.getParameter<edm::InputTag>("metsPuppiUncorrected"));
     obj.push_back(puppimet);
+
 
     // LEPTON FILLERS --------------------------------------------
     MuonFiller *muon           = new MuonFiller("muon");
@@ -94,6 +95,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     tau->tau_token            = consumes<pat::TauCollection>(iConfig.getParameter<edm::InputTag>("taus"));
     obj.push_back(tau);
 
+
     // PHOTON FILLER --------------------------------------------
     PhotonFiller *photon        = new PhotonFiller("photon");
     photon->skipEvent           = skipEvent;
@@ -102,6 +104,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     photon->pho_mediumid_token  = consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoMediumIdMap"));
     photon->pho_tightid_token   = consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoTightIdMap"));
     obj.push_back(photon);
+
 
     // PFCAND FILLERS --------------------------------------------
     PFCandFiller *puppicands=0, *pfcands=0;
@@ -121,6 +124,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       pfcands->skipEvent    = skipEvent;
       obj.push_back(pfcands);
     }
+
 
     // JET FILLERS --------------------------------------------
     if (iConfig.getParameter<bool>("doCHSAK4")) {
@@ -195,6 +199,8 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       obj.push_back(puppiCA15);
     }
 
+
+    // GEN FILLER -------------------------------------------
     GenParticleFiller *gen   = new GenParticleFiller("gen");
     gen->packed_token        = consumes<edm::View<pat::PackedGenParticle> >(iConfig.getParameter<edm::InputTag>("packedgen"));
     gen->pruned_token        = consumes<edm::View<reco::GenParticle> >(iConfig.getParameter<edm::InputTag>("prunedgen")) ;
@@ -213,8 +219,7 @@ void Ntupler::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 {
     using namespace edm;
 
-    allFiller->analyze(iEvent);
-    all_->Fill();
+    (*skipEvent) = false; // reset for every event
 
     for(auto o : obj) {
         if (o->analyze(iEvent, iSetup) ) return; 
@@ -235,8 +240,25 @@ void Ntupler::beginJob()
     }
 
     all_ = fileService_->make<TTree>("all","all");
-    allFiller->init(all_);
+    info->init(all_);
+    info->hDTotalMCWeight = fileService_->make<TH1D>("hDTotalMCWeight","hDTotalMCWeight",1,0,1); 
+    info->hDTotalEvents = fileService_->make<TH1D>("hDTotalEvents","hDTotalEvents",1,0,1); 
 
+    TString triggerTable("");
+    std::vector<std::string> trigger_paths = event->trigger_paths;
+    for (unsigned int iT=0; iT!=trigger_paths.size(); ++iT) {
+      triggerTable += TString::Format("%i:%s\n",int(iT),trigger_paths.at(iT).c_str());
+    }
+    fileService_->make<TNamed>("triggerTable",triggerTable.Data());
+
+    TString metFilterTable("0:AllFilters\n");
+    std::vector<std::string> metfilter_paths = event->metfilter_paths;
+    for (unsigned int iF=0; iF!=metfilter_paths.size(); ++iF) {
+      metFilterTable += TString::Format("%i:%s\n",int(iF+1),metfilter_paths.at(iF).c_str());
+    }
+    metFilterTable += TString::Format("%i:BadChargedCandidateFilter\n",int(metfilter_paths.size()+1));
+    metFilterTable += TString::Format("%i:BadPFMuonFilter\n",int(metfilter_paths.size()+2));
+    fileService_->make<TNamed>("metFilterTable",metFilterTable.Data());
 } 
 
 
@@ -264,6 +286,7 @@ void Ntupler::beginLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup 
 
 void Ntupler::endLuminosityBlock(edm::LuminosityBlock const&iLumi, edm::EventSetup const&)
 {
+  info->analyzeLumi(iLumi,all_);
 }
 
 

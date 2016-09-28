@@ -1,5 +1,4 @@
 #include "PandaProd/Ntupler/interface/JetSkimmer.h"
-#include "PandaProd/Ntupler/interface/Ntupler.h"
 
 using namespace panda;
 
