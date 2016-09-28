@@ -22,6 +22,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     info = new InfoFiller("info");
     info->events_token   = consumes<std::vector<long>,edm::InLumi>( edm::InputTag("InfoProducer","vecEvents") ) ;
     info->weights_token  = consumes<std::vector<float>,edm::InLumi>( edm::InputTag("InfoProducer","vecMcWeights") ) ;
+    obj.push_back(info);
 
     skipEvent = new bool(false);
 

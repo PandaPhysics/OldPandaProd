@@ -29,7 +29,7 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
 
 if isData:
    fileList = [
-       '/store/data/Run2016B/MET/MINIAOD/PromptReco-v2/000/273/150/00000/2CF02CDC-D819-E611-AA68-02163E011A52.root'
+       'file:/tmp/snarayan/test_met_miniaod.root'
        ]
 else:
    fileList = [
