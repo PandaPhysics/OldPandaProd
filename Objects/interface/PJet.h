@@ -37,5 +37,9 @@ namespace panda
   };
 
   typedef std::vector<PJet*> VJet;
+
+  inline bool SortPJetByCSV(PJet *o1, PJet *o2) {
+    return o1->csv > o2->csv;
+  }
 }
 #endif
