@@ -56,7 +56,7 @@ int EventFiller::analyze(const edm::Event& iEvent){
           string name = tn.triggerName(iT);
           for (unsigned int jP=0; jP!=nP; ++jP) {
             if (name.find(trigger_paths[jP]) != string::npos) {
-              data->tiggers->at(jP) = trigger_handle->accept(jP);
+              data->tiggers->at(jP) = trigger_handle->accept(iT);
             } // if paths match
           } // loop over saved triggers
         } // loop over all triggers

@@ -93,8 +93,6 @@ int GenParticleFiller::analyze(const edm::Event& iEvent){
         particle->parent = motherIdx;
     }
 
-    std::sort(data->begin(),data->end(),SortPObjects);
-
     return 0;
 }
 
