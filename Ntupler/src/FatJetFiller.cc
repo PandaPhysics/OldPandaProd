@@ -113,8 +113,6 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       jet->tau3 = j.userFloat(treename+"Njettiness:tau3");
       jet->mSD  = j.userFloat(treename+"SDKinematics:Mass");
 
-      jet->set_ecf(2,2,2,999.);
-
       jet->subjets = new VJet();
       VJet *subjet_data = jet->subjets;
 

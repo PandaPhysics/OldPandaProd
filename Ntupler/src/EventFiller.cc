@@ -76,7 +76,7 @@ int EventFiller::analyze(const edm::Event& iEvent){
                            fn.triggerName(iF)) - metfilter_paths.begin();
         if (jP<(int)nP) {
           // found the met filter
-          bool passes = metfilter_handle->accept(jP);
+          bool passes = metfilter_handle->accept(iF);
           data->metfilters->at(jP+1) = passes;
           passesAll = passesAll && passes;
         }
