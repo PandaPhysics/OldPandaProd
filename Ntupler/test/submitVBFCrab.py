@@ -42,7 +42,7 @@ config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = 10
 config.Data.totalUnits = -1
 
-config.Data.outLFNDirBase = '/store/group/phys_exotica/monotop/pandaprod/v5/' 
+config.Data.outLFNDirBase = '/store/group/phys_exotica/monotop/pandavbf/v0/' 
 #config.Data.outLFNDirBase = '/store/user/%s/scramjet/' % (getUsernameFromSiteDB())
 config.Data.publication = False
 config.Data.outputDatasetTag ='PandA'
@@ -120,6 +120,12 @@ if __name__ == '__main__':
     ###################################################
     config.Data.unitsPerJob = 40
 
+    submitList([
+            '/SingleElectron/Run2016D-PromptReco-v2/MINIAOD',
+            '/SingleElectron/Run2016C-PromptReco-v2/MINIAOD',
+            '/SingleElectron/Run2016B-PromptReco-v2/MINIAOD',
+        ])
+
     '''
     submitList([
             '/MET/Run2016D-PromptReco-v2/MINIAOD',
@@ -145,15 +151,15 @@ if __name__ == '__main__':
     ###################################################
 
     config.Data.unitsPerJob = 1
+    '''
+    config.Data.unitsPerJob = 1
+
     submitList([
                 '/WJetsToLNu_Pt-100To250_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
                 '/WJetsToLNu_Pt-400To600_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
                 '/WJetsToLNu_Pt-250To400_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
                 '/WJetsToLNu_Pt-600ToInf_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
         ])
-
-    '''
-    config.Data.unitsPerJob = 1
 
     submitList([
            '/TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/MINIAODSIM',
