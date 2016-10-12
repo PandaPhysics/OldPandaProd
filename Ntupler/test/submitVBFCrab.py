@@ -28,7 +28,7 @@ config.General.transferLogs = False
 
 ## JobType
 config.JobType.pluginName = 'Analysis'
-config.JobType.psetName = 'runNtupler.py'
+config.JobType.psetName = 'runVBFNtupler.py'
 config.JobType.pyCfgParams=['isGrid=True','isData=False']
 
 config.JobType.inputFiles=['jec']
@@ -42,7 +42,7 @@ config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = 10
 config.Data.totalUnits = -1
 
-config.Data.outLFNDirBase = '/store/group/phys_exotica/monotop/pandavbf/v0/' 
+config.Data.outLFNDirBase = '/store/group/phys_exotica/monotop/pandavbf/v1/' 
 #config.Data.outLFNDirBase = '/store/user/%s/scramjet/' % (getUsernameFromSiteDB())
 config.Data.publication = False
 config.Data.outputDatasetTag ='PandA'

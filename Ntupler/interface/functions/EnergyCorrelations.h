@@ -95,9 +95,9 @@ void calcECF(double beta, std::vector<fastjet::PseudoJet> &constituents, double 
   }
 
   // cleanup
-  delete pTs;
+  delete[] pTs;
   for (unsigned int iC=0; iC!=nC; ++iC) {
-    delete dRs[iC];
+    delete[] dRs[iC];
   }
 }
 
@@ -273,9 +273,9 @@ void calcECFN(double beta, std::vector<fastjet::PseudoJet> &constituents, ECFNMa
   }
 
   // cleanup
-  delete pTs;
+  delete[] pTs;
   for (unsigned int iC=0; iC!=nC; ++iC) {
-    delete dRs[iC];
+    delete[] dRs[iC];
   }
 }
 
