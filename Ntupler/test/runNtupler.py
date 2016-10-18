@@ -337,7 +337,7 @@ process.p = cms.Path(
                         process.electronIDValueMapProducer *  ## ISO MAP FOR PHOTONS
                         process.puppiSequence *
                         process.puppiJetMETSequence *
-#                        process.monoXFilterSequence *
+                        process.monoXFilterSequence *
                         process.jetSequence *
                         process.metfilterSequence *
                         process.genJetSequence *

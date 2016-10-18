@@ -213,7 +213,6 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     genjet->genjet_token        = mayConsume<reco::GenJetCollection>(edm::InputTag("ak4GenJetsYesNu"));
     genjet->skipEvent           = skipEvent;
     obj.push_back(genjet);
-
 }
 
 
