@@ -25,7 +25,7 @@ process.load("FWCore.MessageService.MessageLogger_cfi")
 # the size of the output by prescaling the report of the event number
 process.MessageLogger.cerr.FwkReport.reportEvery = 10
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1000) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
 
 if isData:
    fileList = [
@@ -33,7 +33,7 @@ if isData:
        ]
 else:
    fileList = [
-       'file:/tmp/snarayan/test_tt_miniaod.root'
+       'file:/tmp/snarayan/miniaod_ttdm.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
@@ -314,6 +314,11 @@ if process.PandaNtupler.doPuppiCA15:
   ca15PuppiSequence = makeFatJets(process,isData=isData,pfCandidates='puppi',algoLabel='CA',jetRadius=1.5)
   process.jetSequence += ca15PuppiSequence
 
+if not isData:
+  process.ak4GenJetsYesNu = ak4GenJets.clone(src = 'packedGenParticles')
+  process.genJetSequence = cms.Sequence(process.ak4GenJetsYesNu)
+else:
+  process.genJetSequence = cms.Sequence()
 
 
 ###############################
@@ -335,6 +340,7 @@ process.p = cms.Path(
 #                        process.monoXFilterSequence *
                         process.jetSequence *
                         process.metfilterSequence *
+                        process.genJetSequence *
                         process.PandaNtupler
                     )
 

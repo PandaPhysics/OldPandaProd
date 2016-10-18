@@ -11,6 +11,7 @@
 #include "PandaProd/Objects/interface/PTau.h"
 #include "PandaProd/Objects/interface/PPhoton.h"
 #include "PandaProd/Objects/interface/PGenParticle.h"
+#include "PandaProd/Objects/interface/PGenJet.h"
 #endif
 
 #ifdef __CLING__
@@ -28,6 +29,7 @@
 #pragma link C++ class panda::PJet+;
 #pragma link C++ class panda::PFatJet+;
 #pragma link C++ class panda::PGenParticle+;
+#pragma link C++ class panda::PGenJet+;
 #pragma link C++ class panda::PElectron+;
 #pragma link C++ class panda::PMuon+;
 #pragma link C++ class panda::PTau+;
@@ -36,6 +38,7 @@
 #pragma link C++ class panda::VJet+;
 #pragma link C++ class panda::VFatJet+;
 #pragma link C++ class panda::VGenParticle+;
+#pragma link C++ class panda::VGenJet+;
 #pragma link C++ class panda::VElectron+;
 #pragma link C++ class panda::VMuon+;
 #pragma link C++ class panda::VTau+;
