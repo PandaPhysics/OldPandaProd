@@ -1,4 +1,6 @@
-#include "PandaProd/Ntupler/interface/JetFiller.h"
+#include "..//interface/JetFiller.h"
+#include "../interface/functions/JetIDFunc.h"
+
 
 using namespace panda;
 
@@ -96,9 +98,11 @@ int JetFiller::analyze(const edm::Event& iEvent){
       jet->csv = j.bDiscriminator("pfCombinedInclusiveSecondaryVertexV2BJetTags");
 
       jet->id = 0;
-      jet->id |= JetId(j,"loose") * PJet::kLoose;
-      jet->id |= JetId(j,"tight") * PJet::kTight;
-      jet->id |= JetId(j,"monojet") * PJet::kMonojet;
+      jet->id |= PassJetID(j,PJet::kLoose) * PJet::kLoose;
+      jet->id |= PassJetID(j,PJet::kTight) * PJet::kTight;
+      jet->id |= PassJetID(j,PJet::kMonojet) * PJet::kMonojet;
+      jet->nhf = j.neutralHadronEnergyFraction();
+      jet->chf = j.chargedHadronEnergyFraction();
       
       data->push_back(jet);
 
@@ -109,6 +113,7 @@ int JetFiller::analyze(const edm::Event& iEvent){
     return 0;
 }
 
+/*
 bool JetFiller::JetId(const pat::Jet &j, std::string id)
 {
   // https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetID
@@ -151,3 +156,4 @@ bool JetFiller::JetId(const pat::Jet &j, std::string id)
 
   return jetid;
 }
+*/

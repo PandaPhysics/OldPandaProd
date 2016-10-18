@@ -32,10 +32,14 @@ int GenJetFiller::analyze(const edm::Event& iEvent){
 
     for (auto &gen : *genjet_handle) {
         int pdg = gen.pdgId();
+        float pt = gen.pt();
+
+        if (pt<minPt)
+          continue;
 
         PGenJet *particle = new PGenJet();
 
-        particle->pt = gen.pt();
+        particle->pt = pt;
         particle->eta = gen.eta();
         particle->phi = gen.phi();
         particle->m = gen.mass();

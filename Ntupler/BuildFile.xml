@@ -36,6 +36,8 @@
 <use name="JetMETCorrections/Objects"/>
 <!-- JER UNC -->
 <use name="JetMETCorrections/Modules"/>
+<!-- SUBSTRUCTRE -->
+<use name="RecoJets/JetAlgorithms"/>
 <!--  -->
 <use name="clhep"/>
 <use name="RooFit"/>

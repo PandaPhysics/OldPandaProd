@@ -17,7 +17,7 @@ class GenJetFiller : virtual public BaseFiller
         edm::Handle<reco::GenJetCollection> genjet_handle;
         edm::EDGetTokenT<reco::GenJetCollection> genjet_token;
 
-        float minPt=5;
+        float minPt=15;
 
     private:
         panda::VGenJet *data;

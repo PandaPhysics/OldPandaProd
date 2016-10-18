@@ -21,6 +21,7 @@
 #include "fastjet/contrib/EnergyCorrelator.hh"
 
 #include "functions/EnergyCorrelations.h"
+#include "functions/HEPTopTaggerWrapperV2.h"
 
 #include <map>
 #include <string>
@@ -76,6 +77,7 @@ class FatJetFiller : virtual public BaseFiller
         fastjet::contrib::Njettiness *tau=0;
 
         ECFNManager *ecfnmanager;
+        fastjet::HEPTopTaggerV2 *htt=0;
 
 };
 
