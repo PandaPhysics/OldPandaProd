@@ -31,6 +31,7 @@ class FatJetFiller : virtual public BaseFiller
     public:
         FatJetFiller(TString n);
         ~FatJetFiller();
+	static bool JetId(const pat::Jet &, string id);
         int analyze(const edm::Event& iEvent);
         virtual inline string name(){return "FatJetFiller";};
         void init(TTree *t);

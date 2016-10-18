@@ -95,6 +95,7 @@ int JetFiller::analyze(const edm::Event& iEvent){
       jet->m = j.mass();
       jet->csv = j.bDiscriminator("pfCombinedInclusiveSecondaryVertexV2BJetTags");
 
+      jet->id = 0;
       jet->id |= JetId(j,"loose") * PJet::kLoose;
       jet->id |= JetId(j,"tight") * PJet::kTight;
       jet->id |= JetId(j,"monojet") * PJet::kMonojet;
