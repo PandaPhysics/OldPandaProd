@@ -1,0 +1,6 @@
+<use name="root"/>
+<use name="PandaCore/Tools"/>
+<flags CXXFLAGS="-g -Wall"/>
+<export>
+  <lib   name="1"/>
+</export>
