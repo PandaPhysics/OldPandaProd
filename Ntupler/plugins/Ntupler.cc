@@ -11,6 +11,7 @@
 #include "PandaProd/Ntupler/interface/JetFiller.h"
 #include "PandaProd/Ntupler/interface/FatJetFiller.h"
 #include "PandaProd/Ntupler/interface/GenParticleFiller.h"
+#include "PandaProd/Ntupler/interface/GenJetFiller.h"
 
 using namespace panda;
 
@@ -207,6 +208,11 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     gen->pruned_token        = consumes<edm::View<reco::GenParticle> >(iConfig.getParameter<edm::InputTag>("prunedgen")) ;
     gen->skipEvent           = skipEvent;
     obj.push_back(gen);
+
+    GenJetFiller *genjet        = new GenJetFiller("genjet");
+    genjet->genjet_token        = mayConsume<reco::GenJetCollection>(edm::InputTag("ak4GenJetsYesNu"));
+    genjet->skipEvent           = skipEvent;
+    obj.push_back(genjet);
 
 }
 

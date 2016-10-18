@@ -25,7 +25,7 @@ process.load("FWCore.MessageService.MessageLogger_cfi")
 # the size of the output by prescaling the report of the event number
 process.MessageLogger.cerr.FwkReport.reportEvery = 10
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1000) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
 
 if isData:
    fileList = [
@@ -340,7 +340,7 @@ process.p = cms.Path(
 #                        process.monoXFilterSequence *
                         process.jetSequence *
                         process.metfilterSequence *
-                        proccess.genJetSequence *
+                        process.genJetSequence *
                         process.PandaNtupler
                     )
 
