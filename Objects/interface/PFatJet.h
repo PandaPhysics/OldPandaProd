@@ -22,7 +22,7 @@ namespace panda
         htt_frec(-1),
        subjets(0)
       { }
-    ~PFatJet() { }
+    ~PFatJet() { for (auto *s : *subjets) delete s; delete subjets; }
 
     float tau1, tau2, tau3;
     float mSD, tau1SD=-1, tau2SD=-1, tau3SD=-1;

@@ -23,9 +23,9 @@ isData = options.isData
 process.load("FWCore.MessageService.MessageLogger_cfi")
 # If you run over many samples and you save the log, remember to reduce
 # the size of the output by prescaling the report of the event number
-process.MessageLogger.cerr.FwkReport.reportEvery = 10
+process.MessageLogger.cerr.FwkReport.reportEvery = 100
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(7000) )
 
 if isData:
    fileList = [
@@ -33,7 +33,7 @@ if isData:
        ]
 else:
    fileList = [
-       'file:/tmp/snarayan/miniaod_ttdm.root'
+       'file:/afs/cern.ch/work/s/snarayan/dyll.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
@@ -78,6 +78,7 @@ if isData and not options.isGrid and False: ## dont load the lumiMaks, will be c
 process.load('PandaProd.Filter.infoProducerSequence_cff')
 process.load('PandaProd.Filter.MonoXFilterSequence_cff')
 process.load('PandaProd.Ntupler.PandaProd_cfi')
+#process.load('PandaProd.Ntupler.VBF_cfi')
 
 #-----------------------ELECTRON ID-------------------------------
 from PandaProd.Ntupler.egammavid_cfi import *
@@ -337,7 +338,7 @@ process.p = cms.Path(
                         process.electronIDValueMapProducer *  ## ISO MAP FOR PHOTONS
                         process.puppiSequence *
                         process.puppiJetMETSequence *
-#                        process.monoXFilterSequence *
+                        process.monoXFilterSequence *
                         process.jetSequence *
                         process.metfilterSequence *
                         process.genJetSequence *
