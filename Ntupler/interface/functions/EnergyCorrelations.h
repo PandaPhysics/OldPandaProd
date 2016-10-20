@@ -36,7 +36,7 @@ void calcECF(double beta, std::vector<fastjet::PseudoJet> &constituents, double 
 
   // cache kinematics
   std::vector<double> pTs(nC);
-  std::vector<std::vector<double>> dRs(nC)
+  std::vector<std::vector<double>> dRs(nC);
   for (unsigned int iC=0; iC!=nC; ++iC) {
     dRs[iC].resize(iC);
   }
@@ -127,7 +127,7 @@ void calcECFN(double beta, std::vector<fastjet::PseudoJet> &constituents, ECFNMa
 
   // cache kinematics
   std::vector<double> pTs(nC);
-  std::vector<std::vector<double>> dRs(nC)
+  std::vector<std::vector<double>> dRs(nC);
   for (unsigned int iC=0; iC!=nC; ++iC) {
     dRs[iC].resize(iC);
   }
