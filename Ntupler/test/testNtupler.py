@@ -29,7 +29,7 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
 
 if isData:
    fileList = [
-       'file:/tmp/snarayan/test_met_miniaod.root'
+       'file:/afs/cern.ch/work/s/snarayan/met_miniaod.root'
        ]
 else:
    fileList = [

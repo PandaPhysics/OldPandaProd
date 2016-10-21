@@ -74,6 +74,8 @@ MuMuJJFilter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup)
 {
     using namespace edm;
     iEvent.getByToken(jet_token, jet_handle);
+    iEvent.getByToken(mu_token, mu_handle);
+    iEvent.getByToken(vtx_token, vtx_handle);
 
     int nFwdJet=0;
     int nCentralJet=0;
@@ -97,8 +99,6 @@ MuMuJJFilter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup)
     if (nCentralJet!=1 || nBJet!=1 || nFwdJet==0)
       return false;
 
-    iEvent.getByToken(mu_token, mu_handle);
-    iEvent.getByToken(vtx_token, vtx_handle);
     const reco::Vertex pvtx = vtx_handle->front();
 
     for (pat::MuonCollection::const_iterator muon = mu_handle->begin(); muon!=mu_handle->end(); muon++){
@@ -114,6 +114,7 @@ MuMuJJFilter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup)
     if (nMuons!=2 || mu1Charge+mu2Charge!=0)
       return false;
 
+    printf("accepting event...\n");
     return true;
 
 }
