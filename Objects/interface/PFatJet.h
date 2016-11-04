@@ -24,6 +24,7 @@ namespace panda
 
     float tau1, tau2, tau3;
     float mSD, tau1SD=-1, tau2SD=-1, tau3SD=-1;
+    float Double_sub=-3;
 
     // beta = .5, 1, 2, 4
     float ecfs[3][4][4]; // [o-1][N-1][beta] = x

@@ -55,6 +55,8 @@ using namespace std;
 #include "DataFormats/PatCandidates/interface/TriggerEvent.h"
 #include "PhysicsTools/PatUtils/interface/TriggerHelper.h"
 
+// B-TAG
+#include "DataFormats/BTauReco/interface/BoostedDoubleSVTagInfo.h"
 
 // ROOT
 #include "TTree.h"
