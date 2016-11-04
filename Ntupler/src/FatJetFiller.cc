@@ -67,6 +67,25 @@ void FatJetFiller::init(TTree *t) {
 
   fWeightFile  =  (cmssw_base_src + "BaconProd/Utils/data/BoostedSVDoubleCA15_withSubjet_v4.weights.xml");
   initBoostedBtaggingJetId();
+
+  //htt
+
+  bool optimalR=true; bool doHTTQ=false;
+  double minSJPt=0.; double minCandPt=0.;
+  double sjmass=30.; double mucut=0.8;
+  double filtR=0.3; int filtN=5;
+  int mode=4; double minCandMass=0.;
+  double maxCandMass=9999999.; double massRatioWidth=9999999.;
+  double minM23Cut=0.; double minM13Cut=0.;
+  double maxM13Cut=9999999.;  bool rejectMinR=false;
+  htt = new fastjet::HEPTopTaggerV2(optimalR,doHTTQ,
+				    minSJPt,minCandPt,
+				    sjmass,mucut,
+				    filtR,filtN,
+				    mode,minCandMass,
+				    maxCandMass,massRatioWidth,
+				    minM23Cut,minM13Cut,
+				    maxM13Cut,rejectMinR);
 }
 
 int FatJetFiller::analyze(const edm::Event& iEvent){
@@ -190,7 +209,7 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       jet->Double_sub = fJetBoostedBtaggingMVACalc.mvaValue(massPruned_, flavour_, nbHadrons_, ptPruned_, etaPruned_,SubJet_csv_,z_ratio_,trackSipdSig_3_,trackSipdSig_2_,trackSipdSig_1_,trackSipdSig_0_,trackSipdSig_1_0_,trackSipdSig_0_0_,trackSipdSig_1_1_,trackSipdSig_0_1_,trackSip2dSigAboveCharm_0_,trackSip2dSigAboveBottom_0_,trackSip2dSigAboveBottom_1_,tau0_trackEtaRel_0_,tau0_trackEtaRel_1_,tau0_trackEtaRel_2_,tau1_trackEtaRel_0_,tau1_trackEtaRel_1_,tau1_trackEtaRel_2_,tau_vertexMass_0_,tau_vertexEnergyRatio_0_,tau_vertexDeltaR_0_,tau_flightDistance2dSig_0_,tau_vertexMass_1_,tau_vertexEnergyRatio_1_,tau_flightDistance2dSig_1_,jetNTracks_,nSV_, true);
 
 
-      if (pfcands!=0 || (!minimal && data->size()==0)) {
+      if (pfcands!=0 || (!minimal && data->size()<2)) {
         // either we want to associate to pf cands OR compute extra info about the first jet
 
         std::vector<edm::Ptr<reco::Candidate>> constituentPtrs = j.getJetConstituents();
