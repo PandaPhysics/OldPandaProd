@@ -17,6 +17,7 @@ class JetFiller : virtual public BaseFiller
     public:
         JetFiller(TString n);
         ~JetFiller();
+        static bool JetId(const pat::Jet &, string id);
         int analyze(const edm::Event& iEvent);
         virtual inline string name(){return "JetFiller";};
         void init(TTree *t);

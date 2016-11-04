@@ -29,11 +29,11 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 
 if isData:
    fileList = [
-       '/store/data/Run2016B/MET/MINIAOD/PromptReco-v2/000/273/150/00000/2CF02CDC-D819-E611-AA68-02163E011A52.root'
+       'file:/tmp/snarayan/test_met_miniaod.root'
        ]
 else:
    fileList = [
-       'file:/tmp/snarayan/test_tt_miniaod.root'
+       'file:/tmp/snarayan/miniaod_ttdm.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
@@ -314,6 +314,11 @@ if process.PandaNtupler.doPuppiCA15:
   ca15PuppiSequence = makeFatJets(process,isData=isData,pfCandidates='puppi',algoLabel='CA',jetRadius=1.5)
   process.jetSequence += ca15PuppiSequence
 
+if not isData:
+  process.ak4GenJetsYesNu = ak4GenJets.clone(src = 'packedGenParticles')
+  process.genJetSequence = cms.Sequence(process.ak4GenJetsYesNu)
+else:
+  process.genJetSequence = cms.Sequence()
 
 
 ###############################
@@ -335,6 +340,7 @@ process.p = cms.Path(
                         process.monoXFilterSequence *
                         process.jetSequence *
                         process.metfilterSequence *
+                        process.genJetSequence *
                         process.PandaNtupler
                     )
 

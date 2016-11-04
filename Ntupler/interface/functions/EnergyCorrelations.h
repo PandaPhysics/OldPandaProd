@@ -35,11 +35,12 @@ void calcECF(double beta, std::vector<fastjet::PseudoJet> &constituents, double 
   }
 
   // cache kinematics
-  double *pTs = new double[nC];
-  double **dRs = new double*[nC];
+  std::vector<double> pTs(nC);
+  std::vector<std::vector<double>> dRs(nC);
   for (unsigned int iC=0; iC!=nC; ++iC) {
-    dRs[iC] = new double[iC];
+    dRs[iC].resize(iC);
   }
+
   for (unsigned int iC=0; iC!=nC; ++iC) {
     fastjet::PseudoJet iconst = constituents[iC];
     pTs[iC] = iconst.perp();
@@ -94,11 +95,6 @@ void calcECF(double beta, std::vector<fastjet::PseudoJet> &constituents, double 
     *n4 = val;
   }
 
-  // cleanup
-  delete[] pTs;
-  for (unsigned int iC=0; iC!=nC; ++iC) {
-    delete[] dRs[iC];
-  }
 }
 
 class ECFNManager {
@@ -130,11 +126,12 @@ void calcECFN(double beta, std::vector<fastjet::PseudoJet> &constituents, ECFNMa
   calcECF(beta,constituents,&baseNorm,0,0,0);
 
   // cache kinematics
-  double *pTs = new double[nC];
-  double **dRs = new double*[nC];
+  std::vector<double> pTs(nC);
+  std::vector<std::vector<double>> dRs(nC);
   for (unsigned int iC=0; iC!=nC; ++iC) {
-    dRs[iC] = new double[iC];
+    dRs[iC].resize(iC);
   }
+
   for (unsigned int iC=0; iC!=nC; ++iC) {
     fastjet::PseudoJet iconst = constituents[iC];
     pTs[iC] = iconst.perp();
@@ -272,10 +269,5 @@ void calcECFN(double beta, std::vector<fastjet::PseudoJet> &constituents, ECFNMa
     manager->ecfns["4_3"] = 0;
   }
 
-  // cleanup
-  delete[] pTs;
-  for (unsigned int iC=0; iC!=nC; ++iC) {
-    delete[] dRs[iC];
-  }
 }
 

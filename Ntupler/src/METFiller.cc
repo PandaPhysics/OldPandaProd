@@ -34,6 +34,8 @@ int METFiller::analyze(const edm::Event& iEvent){
       data->sumETRaw = met.uncorSumEt();
       data->raw_pt = met.uncorPt();
       data->raw_phi = met.uncorPhi(); 
+      data->calo_pt = met.caloMETPt();
+      data->calo_phi = met.caloMETPhi();
     } else {
       iEvent.getByToken(remet_token,remet_handle);
       iEvent.getByToken(remetuncorr_token,remetuncorr_handle);
@@ -44,44 +46,55 @@ int METFiller::analyze(const edm::Event& iEvent){
       data->sumETRaw = metuncorr.sumEt();
       data->raw_pt = metuncorr.pt();
       data->raw_phi = metuncorr.phi();
+      data->calo_pt = -1; data->calo_phi = -999;
     }
 
     if (minimal)
       return 0;
 
-    // TODO: write function to produce different METs
-    // if (which_cand==kPat) {
-    //   iEvent.getByToken(pat_token,pat_handle);
-    //   assert(pat_handle.isValid());
+    std::vector<const reco::Candidate*> pfcands;
+    if (which_cand==kPat) {
+      iEvent.getByToken(pat_token,pat_handle);
+      const pat::PackedCandidateCollection *pfCol = pat_handle.product();
+      for(pat::PackedCandidateCollection::const_iterator iPF = pfCol->begin(); 
+            iPF!=pfCol->end(); ++iPF) {
+        pfcands.push_back( (const reco::Candidate*)&(*iPF) );
+      }
+    } else if (which_cand==kRecoPF) {
+      iEvent.getByToken(recopf_token,recopf_handle);
+      const reco::PFCandidateCollection *pfCol = recopf_handle.product();
+      for (reco::PFCandidateCollection::const_iterator iPF=pfCol->begin();
+            iPF!=pfCol->end(); ++iPF) {
+        pfcands.push_back( (const reco::Candidate*)&(*iPF) );
+      }
+    }
 
-    //   const pat::PackedCandidateCollection *pfCol = pat_handle.product();
+    TVector2 metnomu, tkmet, ntrlmet, phomet, hfmet;
+    metnomu.SetMagPhi(data->pt,data->phi);
+    for (auto *cand : pfcands) {
+      
+      if (std::abs(cand->pdgId())==13)
+        metnomu += TVector2(cand->px(),cand->py());
 
-    //   for(pat::PackedCandidateCollection::const_iterator iPF = pfCol->begin(); 
-    //         iPF!=pfCol->end(); ++iPF) {
-    //     fillCand((const reco::Candidate*)&(*iPF));      
-    //   }
-    // } else if (which_cand==kRecoPF) {
-    //   iEvent.getByToken(recopf_token,recopf_handle);
-    //   assert(recopf_handle.isValid());
+      if (cand->charge()!=0)
+        tkmet += TVector2(-cand->px(),-cand->py());
 
-    //   const reco::METidateCollection *pfCol = recopf_handle.product();
+      if (cand->pdgId()==130)
+        ntrlmet += TVector2(-cand->px(),-cand->py());
 
-    //   for (reco::METidateCollection::const_iterator iPF=pfCol->begin();
-    //         iPF!=pfCol->end(); ++iPF) {
-    //     fillCand((const reco::Candidate*)&(*iPF));      
-    //   }
-    // } else if (which_cand==kReco) {
-    //   return 0;
-    //   iEvent.getByToken(reco_token,reco_handle);
-    //   assert(reco_handle.isValid());
+      if (cand->pdgId()==22) 
+        phomet += TVector2(-cand->px(),-cand->py());
 
-    //   const reco::CandidateCollection *pfCol = reco_handle.product();
+      if (cand->pdgId()==1||cand->pdgId()==2)
+        hfmet += TVector2(-cand->px(),-cand->py());
 
-    //   for (reco::CandidateCollection::const_iterator iPF=pfCol->begin();
-    //         iPF!=pfCol->end(); ++iPF) {
-    //     fillCand((const reco::Candidate*)&(*iPF));      
-    //   }
-    // }
+    }
+
+    data->noMu_pt = metnomu.Mod(); data->noMu_phi = metnomu.Phi();
+    data->hf_pt = hfmet.Mod(); data->hf_phi = hfmet.Phi();
+    data->trk_pt = tkmet.Mod(); data->trk_phi = tkmet.Phi();
+    data->neutral_pt = ntrlmet.Mod(); data->neutral_phi = ntrlmet.Phi();
+    data->photon_pt = phomet.Mod(); data->photon_phi = phomet.Phi(); 
 
 
     return 0;

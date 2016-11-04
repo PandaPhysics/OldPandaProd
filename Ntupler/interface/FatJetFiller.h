@@ -22,6 +22,7 @@
 #include "fastjet/contrib/EnergyCorrelator.hh"
 
 #include "functions/EnergyCorrelations.h"
+#include "functions/HEPTopTaggerWrapperV2.h"
 
 #include <map>
 #include <string>
@@ -32,6 +33,7 @@ class FatJetFiller : virtual public BaseFiller
     public:
         FatJetFiller(TString n);
         ~FatJetFiller();
+        static bool JetId(const pat::Jet &, string id);
         int analyze(const edm::Event& iEvent);
         virtual inline string name(){return "FatJetFiller";};
 	void initBoostedBtaggingJetId();
@@ -80,6 +82,7 @@ class FatJetFiller : virtual public BaseFiller
         fastjet::contrib::Njettiness *tau=0;
 
         ECFNManager *ecfnmanager;
+        fastjet::HEPTopTaggerV2 *htt=0;
 
 };
 

@@ -1,4 +1,5 @@
-#include "PandaProd/Ntupler/interface/FatJetFiller.h"
+#include "../interface/FatJetFiller.h"
+#include "../interface/functions/JetIDFunc.h"
 
 using namespace panda;
 
@@ -24,6 +25,8 @@ FatJetFiller::~FatJetFiller(){
   delete jetDefCA;
   delete softdrop;
   delete tau;
+  delete ecfnmanager;
+  delete htt;
 }
 void FatJetFiller::initBoostedBtaggingJetId(){
   fJetBoostedBtaggingMVACalc.initialize(
@@ -61,7 +64,6 @@ void FatJetFiller::init(TTree *t) {
 
   fastjet::contrib::OnePass_KT_Axes onepass;
   tau = new fastjet::contrib::Njettiness(onepass, fastjet::contrib::NormalizedMeasure(1., radius));
-
   std::string cmssw_base_src = getenv("CMSSW_BASE");
   cmssw_base_src += "/src/";
 
@@ -143,6 +145,18 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       jet->tau3 = j.userFloat(treename+"Njettiness:tau3");
       jet->mSD  = j.userFloat(treename+"SDKinematics:Mass");
 
+      jet->id = 0;
+      /*
+      jet->id |= JetId(j,"loose") * PJet::kLoose;
+      jet->id |= JetId(j,"tight") * PJet::kTight;
+      jet->id |= JetId(j,"monojet") * PJet::kMonojet;
+      */
+      jet->id |= PassJetID(j,PJet::kLoose) * PJet::kLoose;
+      jet->id |= PassJetID(j,PJet::kTight) * PJet::kTight;
+      jet->id |= PassJetID(j,PJet::kMonojet) * PJet::kMonojet;
+      jet->nhf = j.neutralHadronEnergyFraction();
+      jet->chf = j.chargedHadronEnergyFraction();
+
       jet->subjets = new VJet();
       VJet *subjet_data = jet->subjets;
 
@@ -208,9 +222,8 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
     
       jet->Double_sub = fJetBoostedBtaggingMVACalc.mvaValue(massPruned_, flavour_, nbHadrons_, ptPruned_, etaPruned_,SubJet_csv_,z_ratio_,trackSipdSig_3_,trackSipdSig_2_,trackSipdSig_1_,trackSipdSig_0_,trackSipdSig_1_0_,trackSipdSig_0_0_,trackSipdSig_1_1_,trackSipdSig_0_1_,trackSip2dSigAboveCharm_0_,trackSip2dSigAboveBottom_0_,trackSip2dSigAboveBottom_1_,tau0_trackEtaRel_0_,tau0_trackEtaRel_1_,tau0_trackEtaRel_2_,tau1_trackEtaRel_0_,tau1_trackEtaRel_1_,tau1_trackEtaRel_2_,tau_vertexMass_0_,tau_vertexEnergyRatio_0_,tau_vertexDeltaR_0_,tau_flightDistance2dSig_0_,tau_vertexMass_1_,tau_vertexEnergyRatio_1_,tau_flightDistance2dSig_1_,jetNTracks_,nSV_, true);
 
-
       if (pfcands!=0 || (!minimal && data->size()<2)) {
-        // either we want to associate to pf cands OR compute extra info about the first jet
+        // either we want to associate to pf cands OR compute extra info about the first or second jet
 
         std::vector<edm::Ptr<reco::Candidate>> constituentPtrs = j.getJetConstituents();
 
@@ -232,7 +245,7 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
           }
         } 
 
-        if (!minimal && data->size()==0) { 
+        if (!minimal && data->size()<2) { 
         // calculate ECFs, groomed tauN
           VPseudoJet vjet;
           for (auto ptr : constituentPtrs) { 
@@ -264,7 +277,8 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
                   float x = ecfnmanager->ecfns[TString::Format("%i_%i",N,o)];
                   int r = jet->set_ecf(o,N,iB,x);
                   if (r) {
-                    PError("PandaProd::Ntupler::FatJetFiller",TString::Format("Could not save o=%i, N=%i, iB=%i",o,N,(int)iB));
+                    PError("PandaProd::Ntupler::FatJetFiller",
+                        TString::Format("Could not save o=%i, N=%i, iB=%i",o,N,(int)iB));
                   }
                 }
               }
@@ -273,7 +287,16 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
             jet->tau3SD = tau->getTau(3,sdconsts);
             jet->tau2SD = tau->getTau(2,sdconsts);
             jet->tau1SD = tau->getTau(1,sdconsts);
-             
+
+            // HTT
+            fastjet::PseudoJet httJet = htt->result(*leadingJet);
+            if (httJet!=0) {
+              fastjet::HEPTopTaggerV2Structure *s = 
+                (fastjet::HEPTopTaggerV2Structure*)httJet.structure_non_const_ptr();
+              jet->htt_mass = s->top_mass();
+              jet->htt_frec = s->fRec();
+            }
+	    
           } else {
             PError("PandaProd::Ntupler::FatJetFiller","Jet could not be clustered");
           }
@@ -289,3 +312,38 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
     return 0;
 }
 
+/*
+bool FatJetFiller::JetId(const pat::Jet &j, std::string id)
+{
+
+  bool jetid = false;
+
+  float NHF    = j.neutralHadronEnergyFraction();
+  float NEMF   = j.neutralEmEnergyFraction();
+  float CHF    = j.chargedHadronEnergyFraction();
+  //float MUF    = j.muonEnergyFraction();                                                                                                                                                                
+  float CEMF   = j.chargedEmEnergyFraction();
+  int NumConst = j.chargedMultiplicity()+j.neutralMultiplicity();
+  int CHM      = j.chargedMultiplicity();
+  int NumNeutralParticle =j.neutralMultiplicity();
+  float eta = j.eta();
+
+  if (id=="loose" || id=="monojet" )
+    {
+      jetid = (NHF<0.99 && NEMF<0.99 && NumConst>1) && ((fabs(eta)<=2.4 && CHF>0 && CHM>0 && CEMF<0.99) || fabs(eta)>2.4) && fabs(eta)<=3.0;
+      jetid = jetid || (NEMF<0.90 && NumNeutralParticle>10 && fabs(eta)>3.0);
+    }
+
+  if (id=="tight")
+    {
+      jetid = (NHF<0.90 && NEMF<0.90 && NumConst>1) && ((fabs(eta)<=2.4 && CHF>0 && CHM>0 && CEMF<0.99) || fabs(eta)>2.4) && fabs(eta)<=3.0;
+      jetid = jetid || (NEMF<0.90 && NumNeutralParticle>10 && fabs(eta)>3.0 );
+    }
+
+  if (id=="monojet")
+    jetid = jetid && (NHF < 0.8 && CHF > 0.1);
+
+  return jetid;
+  
+}
+*/

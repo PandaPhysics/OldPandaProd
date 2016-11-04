@@ -25,15 +25,16 @@ process.load("FWCore.MessageService.MessageLogger_cfi")
 # the size of the output by prescaling the report of the event number
 process.MessageLogger.cerr.FwkReport.reportEvery = 10
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1000) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10) )
 
 if isData:
    fileList = [
-       'file:/tmp/snarayan/test_met_miniaod.root'
+       'file:/afs/cern.ch/work/s/snarayan/met_miniaod.root'
        ]
 else:
    fileList = [
-       'file:/tmp/snarayan/test_tt_miniaod.root'
+       'file:/afs/cern.ch/user/b/bmaier/public/MonoHiggs/prod/CMSSW_8_0_11/src/PandaProd/Ntupler/test/F8B66ADC-7722-E611-BB94-44A84225D36F.root'
+#       'file:/afs/cern.ch/work/s/snarayan/dyll.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
@@ -78,6 +79,7 @@ if isData and not options.isGrid and False: ## dont load the lumiMaks, will be c
 process.load('PandaProd.Filter.infoProducerSequence_cff')
 process.load('PandaProd.Filter.MonoXFilterSequence_cff')
 process.load('PandaProd.Ntupler.PandaProd_cfi')
+#process.load('PandaProd.Ntupler.VBF_cfi')
 
 #-----------------------ELECTRON ID-------------------------------
 from PandaProd.Ntupler.egammavid_cfi import *
@@ -314,6 +316,11 @@ if process.PandaNtupler.doPuppiCA15:
   ca15PuppiSequence = makeFatJets(process,isData=isData,pfCandidates='puppi',algoLabel='CA',jetRadius=1.5)
   process.jetSequence += ca15PuppiSequence
 
+if not isData:
+  process.ak4GenJetsYesNu = ak4GenJets.clone(src = 'packedGenParticles')
+  process.genJetSequence = cms.Sequence(process.ak4GenJetsYesNu)
+else:
+  process.genJetSequence = cms.Sequence()
 
 
 ###############################
@@ -332,9 +339,10 @@ process.p = cms.Path(
                         process.electronIDValueMapProducer *  ## ISO MAP FOR PHOTONS
                         process.puppiSequence *
                         process.puppiJetMETSequence *
-#                        process.monoXFilterSequence *
+                        process.monoXFilterSequence *
                         process.jetSequence *
                         process.metfilterSequence *
+                        process.genJetSequence *
                         process.PandaNtupler
                     )
 
