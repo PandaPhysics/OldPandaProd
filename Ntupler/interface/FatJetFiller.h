@@ -10,6 +10,8 @@
 #include "CondFormats/JetMETObjects/interface/FactorizedJetCorrector.h"
 #include "CondFormats/JetMETObjects/interface/JetCorrectionUncertainty.h"
 
+#include "DataFormats/BTauReco/interface/BoostedDoubleSVTagInfo.h"
+
 // fastjet
 #include "fastjet/PseudoJet.hh"
 #include "fastjet/JetDefinition.hh"
@@ -51,6 +53,9 @@ class FatJetFiller : virtual public BaseFiller
 
         edm::Handle<reco::JetTagCollection> btags_handle;
         edm::EDGetTokenT<reco::JetTagCollection> btags_token;
+
+	edm::Handle<reco::BoostedDoubleSVTagInfoCollection> doubleb_handle;
+	edm::EDGetTokenT<reco::BoostedDoubleSVTagInfoCollection>  doubleb_token;
 
         edm::Handle<edm::ValueMap<float>> qgl_handle;
         edm::EDGetTokenT<edm::ValueMap<float>> qgl_token;

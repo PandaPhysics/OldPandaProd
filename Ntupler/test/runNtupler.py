@@ -33,7 +33,8 @@ if isData:
        ]
 else:
    fileList = [
-       'file:/tmp/snarayan/miniaod_ttdm.root'
+#       'file:/tmp/snarayan/miniaod_ttdm.root'
+       'file:/tmp/mcremone/30F60D71-0626-E611-ADA0-003048F5ADEC.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
@@ -289,10 +290,7 @@ process.puppiMETcorr = cms.EDProducer("PFJetMETcorrInputProducer",
 )
 process.type1PuppiMET = cms.EDProducer("CorrectedPFMETProducer",
     src = cms.InputTag('pfMETPuppi'),
-    applyType0Corrections = cms.bool(False),
-    applyType1Corrections = cms.bool(True),
     srcCorrections = cms.VInputTag(cms.InputTag('puppiMETcorr', 'type1')),
-    applyType2Corrections = cms.bool(False)
 )   
 process.puppiJetMETSequence += process.puppiMETcorr
 process.puppiJetMETSequence += process.type1PuppiMET

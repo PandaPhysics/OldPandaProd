@@ -1,4 +1,3 @@
-
 import FWCore.ParameterSet.Config as cms
 #-----------------------FAT JET CLUSTERING-----------------------
 from RecoJets.JetProducers.ak4PFJets_cfi import ak4PFJets

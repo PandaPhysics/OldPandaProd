@@ -1,0 +1,14 @@
+*.swp
+*.root
+*.d
+*pcm
+*.pyc
+*.log
+*.err*.swp
+*.root
+*.d
+*pcm
+*.pyc
+*.log
+*.err
+SDAlgorithm/
