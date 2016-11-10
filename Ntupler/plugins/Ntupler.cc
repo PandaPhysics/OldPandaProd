@@ -65,6 +65,9 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     pfmet->skipEvent           = skipEvent;
     pfmet->rerun               = false;
     pfmet->met_token           = consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("mets"));
+    pfmet->pat_token           = consumes<pat::PackedCandidateCollection>(iConfig.getParameter<edm::InputTag>("chsPFCands")); // these are not actually CHS
+    pfmet->which_cand          = METFiller::kPat;
+    pfmet->minimal             = false;
     obj.push_back(pfmet);
 
     METFiller *puppimet         = new METFiller("puppimet");

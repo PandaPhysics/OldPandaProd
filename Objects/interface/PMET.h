@@ -16,6 +16,7 @@ namespace panda
     
     float sumETRaw;
     float raw_pt, raw_phi;
+    float calo_pt, calo_phi;
     float noMu_pt, noMu_phi;
     float noHF_pt, noHF_phi;
     float trk_pt, trk_phi;

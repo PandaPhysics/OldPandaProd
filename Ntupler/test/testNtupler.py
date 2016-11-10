@@ -25,7 +25,7 @@ process.load("FWCore.MessageService.MessageLogger_cfi")
 # the size of the output by prescaling the report of the event number
 process.MessageLogger.cerr.FwkReport.reportEvery = 10
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10) )
 
 if isData:
    fileList = [
@@ -33,7 +33,8 @@ if isData:
        ]
 else:
    fileList = [
-       'file:/afs/cern.ch/work/s/snarayan/dyll.root'
+       'file:/afs/cern.ch/user/b/bmaier/public/MonoHiggs/prod/CMSSW_8_0_11/src/PandaProd/Ntupler/test/F8B66ADC-7722-E611-BB94-44A84225D36F.root'
+#       'file:/afs/cern.ch/work/s/snarayan/dyll.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
