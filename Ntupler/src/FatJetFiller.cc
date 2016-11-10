@@ -27,6 +27,8 @@ FatJetFiller::~FatJetFiller(){
   delete tau;
   delete ecfnmanager;
   delete htt;
+  delete mMCJetCorrector;
+  delete mDataJetCorrector;
 }
 
 void FatJetFiller::init(TTree *t) {
@@ -128,7 +130,7 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       jet->rawPt = this_rawpt;
       jet->eta = j.eta();
       jet->phi = j.phi();
-      jet->m = j.mass();
+      jet->m = j.mass()*jecFactor;
       
       jet->tau1 = j.userFloat(treename+"Njettiness:tau1");
       jet->tau2 = j.userFloat(treename+"Njettiness:tau2");
@@ -136,11 +138,6 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       jet->mSD  = j.userFloat(treename+"SDKinematics:Mass");
 
       jet->id = 0;
-      /*
-      jet->id |= JetId(j,"loose") * PJet::kLoose;
-      jet->id |= JetId(j,"tight") * PJet::kTight;
-      jet->id |= JetId(j,"monojet") * PJet::kMonojet;
-      */
       jet->id |= PassJetID(j,PJet::kLoose) * PJet::kLoose;
       jet->id |= PassJetID(j,PJet::kTight) * PJet::kTight;
       jet->id |= PassJetID(j,PJet::kMonojet) * PJet::kMonojet;
