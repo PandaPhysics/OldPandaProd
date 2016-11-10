@@ -130,7 +130,7 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       jet->rawPt = this_rawpt;
       jet->eta = j.eta();
       jet->phi = j.phi();
-      jet->m = j.mass()*jecFactor;
+      jet->m = j.mass();
       
       jet->tau1 = j.userFloat(treename+"Njettiness:tau1");
       jet->tau2 = j.userFloat(treename+"Njettiness:tau2");
