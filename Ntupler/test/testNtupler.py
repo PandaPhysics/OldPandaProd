@@ -29,11 +29,12 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10) )
 
 if isData:
    fileList = [
-       'file:/afs/cern.ch/work/s/snarayan/met_miniaod.root'
+       'file:/tmp/6CA25B7B-CD46-E611-BDEC-02163E01354A.root'
        ]
 else:
    fileList = [
-       'file:/afs/cern.ch/user/b/bmaier/public/MonoHiggs/prod/CMSSW_8_0_11/src/PandaProd/Ntupler/test/F8B66ADC-7722-E611-BB94-44A84225D36F.root'
+       #'file:/afs/cern.ch/user/b/bmaier/public/MonoHiggs/prod/CMSSW_8_0_11/src/PandaProd/Ntupler/test/F8B66ADC-7722-E611-BB94-44A84225D36F.root'
+       'file:/tmp/6CA25B7B-CD46-E611-BDEC-02163E01354A.root'
 #       'file:/afs/cern.ch/work/s/snarayan/dyll.root'
        ]
 ### do not remove the line below!
