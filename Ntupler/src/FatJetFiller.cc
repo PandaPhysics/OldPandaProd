@@ -184,13 +184,8 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       }
 
       //Bosted b tagging for CA15
-      std::cout << "il" << std::endl;
-      //      reco::BoostedDoubleSVTagInfo const *bdsvTagInfo = static_cast<reco::BoostedDoubleSVTagInfo const *>(j.tagInfoBoostedDoubleSV("pfBoostedDoubleSVCA15"));
-      reco::BoostedDoubleSVTagInfo const *bdsvTagInfo = j.tagInfoBoostedDoubleSV();
-      //      const reco::BoostedDoubleSVTagInfo & bdsvTagInfo = tagInfo.get<reco::BoostedDoubleSVTagInfo>(0);
-      std::cout << "cazzo"<< std::endl;
+      reco::BoostedDoubleSVTagInfo const *bdsvTagInfo = static_cast<reco::BoostedDoubleSVTagInfo const *>(j.tagInfo("pfBoostedDoubleSVCA15"));
       const reco::TaggingVariableList vars = bdsvTagInfo.taggingVariables();
-      std::cout << "negro"<< std::endl;
       // iEvent.getByToken(doubleb_token,doubleb_handle);  // 
       // std::cout << doubleb_handle.isValid() << std::endl;
   
