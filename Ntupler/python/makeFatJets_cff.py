@@ -218,10 +218,24 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
       )
     )
   )
+
+  ### double b###  
+  setattr(process, customLabel+'PFImpactParameterDoubleSVTagInfos', 
+      pfImpactParameterTagInfos.clone(
+            jets      = cms.InputTag("PFJets"+customLabel),
+            primaryVertex = cms.InputTag('offlineSlimmedPrimaryVertices'),
+            maxDeltaR = cms.double(1.5),
+            candidates = cms.InputTag('packedPFCandidates')
+      ))
+  setattr(process, customLabel+'PFInclusiveSecondaryVertexFinderDoubleSVTagInfos',
+      pfInclusiveSecondaryVertexFinderTagInfos.clone(
+           trackIPTagInfos = cms.InputTag(customLabel+"PFImpactParameterDoubleSVTagInfos"),
+           extSVCollection = cms.InputTag('slimmedSecondaryVertices')
+      ))
   setattr(process, customLabel+'PFBoostedDoubleSVTagInfos',
-    pfBoostedDoubleSVCA15TagInfos.clone(
-      svTagInfos = cms.InputTag(customLabel+'PFInclusiveSecondaryVertexFinderTagInfos')
-    )
+      pfBoostedDoubleSVCA15TagInfos.clone(
+           svTagInfos = cms.InputTag(customLabel+'PFInclusiveSecondaryVertexFinderDoubleSVTagInfos')
+      )
   )
   setattr(process, customLabel+'PFBoostedDoubleSecondaryVertexBJetTags',
     pfBoostedDoubleSecondaryVertexCA15BJetTags.clone(
@@ -234,6 +248,8 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
   newSeq += getattr(process,customLabel+'PFImpactParameterTagInfos')
   newSeq += getattr(process,customLabel+'PFInclusiveSecondaryVertexFinderTagInfos')
   newSeq += getattr(process,customLabel+'PFCombinedInclusiveSecondaryVertexV2BJetTags')
+  newSeq += getattr(process,customLabel+'PFImpactParameterDoubleSVTagInfos')
+  newSeq += getattr(process,customLabel+'PFInclusiveSecondaryVertexFinderDoubleSVTagInfos')
   newSeq += getattr(process,customLabel+'PFBoostedDoubleSVTagInfos')
   newSeq += getattr(process,customLabel+'PFBoostedDoubleSecondaryVertexBJetTags')
   

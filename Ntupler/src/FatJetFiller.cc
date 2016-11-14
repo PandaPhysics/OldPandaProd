@@ -184,67 +184,68 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       }
 
       //Bosted b tagging for CA15
-      reco::BoostedDoubleSVTagInfo const *bdsvTagInfo = static_cast<reco::BoostedDoubleSVTagInfo const *>(j.tagInfo("pfBoostedDoubleSVCA15"));
-      const reco::TaggingVariableList vars = bdsvTagInfo.taggingVariables();
-      // iEvent.getByToken(doubleb_token,doubleb_handle);  // 
+      // reco::BoostedDoubleSVTagInfo const *bdsvTagInfo = static_cast<reco::BoostedDoubleSVTagInfo const *>(j.tagInfo("pfBoostedDoubleSVCA15"));
+      // const reco::TaggingVariableList vars = bdsvTagInfo.taggingVariables();
+      iEvent.getByToken(doubleb_token,doubleb_handle);
       // std::cout << doubleb_handle.isValid() << std::endl;
   
       // //match to jet 
-      // reco::BoostedDoubleSVTagInfoCollection::const_iterator matchTI = doubleb_handle->end();
-      // for( reco::BoostedDoubleSVTagInfoCollection::const_iterator itTI = doubleb_handle->begin(); itTI != doubleb_handle->end(); ++itTI )
-      // 	{
-      // 	  const reco::JetBaseRef jetTI = itTI->jet();
-  
-      // 	  //	  if( jetTI->px() ==  jetBaseRef->px()  && jetTI->pz() ==  jetBaseRef->pz() )
-      // 	  std::cout << "jetTI->px() = " << jetTI->px() << ", j.px() = " << j.px() << ", jetTI->pz() = " << jetTI->pz() << ", j.pz() = " << j.pz() << std::endl;
-      // 	  if( (jetTI->px()-j.px()) < 0.01*j.px()  && (jetTI->pz()-j.pz()) < 0.01*j.pz() )
-      // 	    {
-      // 	      matchTI = itTI;
-      // 	      break;
-      // 	    }
-      // 	}
-      // if( matchTI != doubleb_handle->end() ) {
+      reco::BoostedDoubleSVTagInfoCollection::const_iterator matchTI = doubleb_handle->end();
+      for( reco::BoostedDoubleSVTagInfoCollection::const_iterator itTI = doubleb_handle->begin(); itTI != doubleb_handle->end(); ++itTI )
+       	{
+       	  const reco::JetBaseRef jetTI = itTI->jet();
+	  // 	  //	  if( jetTI->px() ==  jetBaseRef->px()  && jetTI->pz() ==  jetBaseRef->pz() )
+	  std::cout << "jetTI->px() = " << jetTI->px() << ", j.px() = " << j.px() << ", jetTI->pz() = " << jetTI->pz() << ", j.pz() = " << j.pz() << std::endl;
+     	  if( fabs((jetTI->px()-j.px())/j.px()) < 0.01  && fabs((jetTI->pz()-j.pz())/j.pz()) < 0.01 )
+     	    {
+	      matchTI = itTI;
+	      std::cout << "found" << std::endl;
+     	      break;
+     	    }
+     	}
+      if( matchTI != doubleb_handle->end() ) {
       
-      //	const reco::TaggingVariableList vars = matchTI->taggingVariables();
-      std::sort(subjet_data->begin(),subjet_data->end(),SortPJetByCSV);
-      float SubJet_csv_ =  subjet_data->back()->csv ;
-      float z_ratio_ = vars.get(reco::btau::z_ratio);
-      float trackSipdSig_3_ = vars.get(reco::btau::trackSip3dSig_3);
-      float trackSipdSig_2_ = vars.get(reco::btau::trackSip3dSig_2);
-      float trackSipdSig_1_ = vars.get(reco::btau::trackSip3dSig_1);
-      float trackSipdSig_0_ = vars.get(reco::btau::trackSip3dSig_0);
-      float trackSipdSig_1_0_ = vars.get(reco::btau::tau2_trackSip3dSig_0);
-      float trackSipdSig_0_0_ = vars.get(reco::btau::tau1_trackSip3dSig_0);
-      float trackSipdSig_1_1_ = vars.get(reco::btau::tau2_trackSip3dSig_1);
-      float trackSipdSig_0_1_ = vars.get(reco::btau::tau1_trackSip3dSig_1);
-      float trackSip2dSigAboveCharm_0_ = vars.get(reco::btau::trackSip2dSigAboveCharm);
-      float trackSip2dSigAboveBottom_0_ = vars.get(reco::btau::trackSip2dSigAboveBottom_0);
-      float trackSip2dSigAboveBottom_1_ = vars.get(reco::btau::trackSip2dSigAboveBottom_1);
-      float tau1_trackEtaRel_0_ = vars.get(reco::btau::tau2_trackEtaRel_0);
-      float tau1_trackEtaRel_1_ = vars.get(reco::btau::tau2_trackEtaRel_1);
-      float tau1_trackEtaRel_2_ = vars.get(reco::btau::tau2_trackEtaRel_2);
-      float tau0_trackEtaRel_0_ = vars.get(reco::btau::tau1_trackEtaRel_0);
-      float tau0_trackEtaRel_1_ = vars.get(reco::btau::tau1_trackEtaRel_1);
-      float tau0_trackEtaRel_2_ = vars.get(reco::btau::tau1_trackEtaRel_2);
-      float tau_vertexMass_0_ = vars.get(reco::btau::tau1_vertexMass);
-      float tau_vertexEnergyRatio_0_ = vars.get(reco::btau::tau1_vertexEnergyRatio);
-      float tau_vertexDeltaR_0_ = vars.get(reco::btau::tau1_vertexDeltaR);
-      float tau_flightDistance2dSig_0_ = vars.get(reco::btau::tau1_flightDistance2dSig);
-      float tau_vertexMass_1_ = vars.get(reco::btau::tau2_vertexMass);
-      float tau_vertexEnergyRatio_1_ = vars.get(reco::btau::tau2_vertexEnergyRatio);
-      float tau_flightDistance2dSig_1_ = vars.get(reco::btau::tau2_flightDistance2dSig);
-      float jetNTracks_ = vars.get(reco::btau::jetNTracks);
-      float nSV_ = vars.get(reco::btau::jetNSecondaryVertices);
-      float massPruned_ =jet->m;
-      float flavour_ = -1;//j.partonFlavor();   // they're spectator variables
-      float nbHadrons_ = -1;//j.hadronFlavor(); // 
-      float ptPruned_ =j.pt();
-      float etaPruned_ =j.eta();
-
-      jet->Double_sub = fJetBoostedBtaggingMVACalc.mvaValue(massPruned_, flavour_, nbHadrons_, ptPruned_, etaPruned_,SubJet_csv_,z_ratio_,trackSipdSig_3_,trackSipdSig_2_,trackSipdSig_1_,trackSipdSig_0_,trackSipdSig_1_0_,trackSipdSig_0_0_,trackSipdSig_1_1_,trackSipdSig_0_1_,trackSip2dSigAboveCharm_0_,trackSip2dSigAboveBottom_0_,trackSip2dSigAboveBottom_1_,tau0_trackEtaRel_0_,tau0_trackEtaRel_1_,tau0_trackEtaRel_2_,tau1_trackEtaRel_0_,tau1_trackEtaRel_1_,tau1_trackEtaRel_2_,tau_vertexMass_0_,tau_vertexEnergyRatio_0_,tau_vertexDeltaR_0_,tau_flightDistance2dSig_0_,tau_vertexMass_1_,tau_vertexEnergyRatio_1_,tau_flightDistance2dSig_1_,jetNTracks_,nSV_, true);
-      // }
-      // else std::cout<< "   not found matched double-b tag info  "<<std::endl;
-
+	const reco::TaggingVariableList vars = matchTI->taggingVariables();
+	std::sort(subjet_data->begin(),subjet_data->end(),SortPJetByCSV);
+	float SubJet_csv_ =  subjet_data->back()->csv ;
+	if ((SubJet_csv_ < -1) || (SubJet_csv_ > 1)) SubJet_csv_ = -1;
+	float z_ratio_ = vars.get(reco::btau::z_ratio);
+	float trackSipdSig_3_ = vars.get(reco::btau::trackSip3dSig_3);
+	float trackSipdSig_2_ = vars.get(reco::btau::trackSip3dSig_2);
+	float trackSipdSig_1_ = vars.get(reco::btau::trackSip3dSig_1);
+	float trackSipdSig_0_ = vars.get(reco::btau::trackSip3dSig_0);
+	float trackSipdSig_1_0_ = vars.get(reco::btau::tau2_trackSip3dSig_0);
+	float trackSipdSig_0_0_ = vars.get(reco::btau::tau1_trackSip3dSig_0);
+	float trackSipdSig_1_1_ = vars.get(reco::btau::tau2_trackSip3dSig_1);
+	float trackSipdSig_0_1_ = vars.get(reco::btau::tau1_trackSip3dSig_1);
+	float trackSip2dSigAboveCharm_0_ = vars.get(reco::btau::trackSip2dSigAboveCharm);
+	float trackSip2dSigAboveBottom_0_ = vars.get(reco::btau::trackSip2dSigAboveBottom_0);
+	float trackSip2dSigAboveBottom_1_ = vars.get(reco::btau::trackSip2dSigAboveBottom_1);
+	float tau1_trackEtaRel_0_ = vars.get(reco::btau::tau2_trackEtaRel_0);
+	float tau1_trackEtaRel_1_ = vars.get(reco::btau::tau2_trackEtaRel_1);
+	float tau1_trackEtaRel_2_ = vars.get(reco::btau::tau2_trackEtaRel_2);
+	float tau0_trackEtaRel_0_ = vars.get(reco::btau::tau1_trackEtaRel_0);
+	float tau0_trackEtaRel_1_ = vars.get(reco::btau::tau1_trackEtaRel_1);
+	float tau0_trackEtaRel_2_ = vars.get(reco::btau::tau1_trackEtaRel_2);
+	float tau_vertexMass_0_ = vars.get(reco::btau::tau1_vertexMass);
+	float tau_vertexEnergyRatio_0_ = vars.get(reco::btau::tau1_vertexEnergyRatio);
+	float tau_vertexDeltaR_0_ = vars.get(reco::btau::tau1_vertexDeltaR);
+	float tau_flightDistance2dSig_0_ = vars.get(reco::btau::tau1_flightDistance2dSig);
+	float tau_vertexMass_1_ = vars.get(reco::btau::tau2_vertexMass);
+	float tau_vertexEnergyRatio_1_ = vars.get(reco::btau::tau2_vertexEnergyRatio);
+	float tau_flightDistance2dSig_1_ = vars.get(reco::btau::tau2_flightDistance2dSig);
+	float jetNTracks_ = vars.get(reco::btau::jetNTracks);
+	float nSV_ = vars.get(reco::btau::jetNSecondaryVertices);
+	float massPruned_ =jet->m;
+	float flavour_ = -1;//j.partonFlavor();   // they're spectator variables
+	float nbHadrons_ = -1;//j.hadronFlavor(); // 
+	float ptPruned_ =j.pt();
+	float etaPruned_ =j.eta();
+	
+	jet->Double_sub = fJetBoostedBtaggingMVACalc.mvaValue(massPruned_, flavour_, nbHadrons_, ptPruned_, etaPruned_,SubJet_csv_,z_ratio_,trackSipdSig_3_,trackSipdSig_2_,trackSipdSig_1_,trackSipdSig_0_,trackSipdSig_1_0_,trackSipdSig_0_0_,trackSipdSig_1_1_,trackSipdSig_0_1_,trackSip2dSigAboveCharm_0_,trackSip2dSigAboveBottom_0_,trackSip2dSigAboveBottom_1_,tau0_trackEtaRel_0_,tau0_trackEtaRel_1_,tau0_trackEtaRel_2_,tau1_trackEtaRel_0_,tau1_trackEtaRel_1_,tau1_trackEtaRel_2_,tau_vertexMass_0_,tau_vertexEnergyRatio_0_,tau_vertexDeltaR_0_,tau_flightDistance2dSig_0_,tau_vertexMass_1_,tau_vertexEnergyRatio_1_,tau_flightDistance2dSig_1_,jetNTracks_,nSV_, true);
+      }
+      else std::cout<< "   not found matched double-b tag info  "<<std::endl;
+	
       if (pfcands!=0 || (!minimal && data->size()<2)) {
         // either we want to associate to pf cands OR compute extra info about the first or second jet
 

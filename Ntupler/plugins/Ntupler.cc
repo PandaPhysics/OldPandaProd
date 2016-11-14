@@ -200,7 +200,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       puppiCA15->jet_token     = consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("puppiCA15"));
       puppiCA15->subjets_token = mayConsume<reco::PFJetCollection>(edm::InputTag("PFJetsSoftDroppuppiCA15","SubJets"));
       puppiCA15->btags_token   = mayConsume<reco::JetTagCollection>(edm::InputTag("puppiCA15PFCombinedInclusiveSecondaryVertexV2BJetTags") ) ;
-      //      puppiCA15->doubleb_token = consumes<reco::BoostedDoubleSVTagInfoCollection> (iConfig.getUntrackedParameter<std::string>("boostedDoubleSVTagInfoName","puppiCA15PFBoostedDoubleSVTagInfos"));
+      puppiCA15->doubleb_token = consumes<reco::BoostedDoubleSVTagInfoCollection> (iConfig.getUntrackedParameter<std::string>("boostedDoubleSVTagInfoName","puppiCA15PFBoostedDoubleSVTagInfos"));
       puppiCA15->qgl_token     = mayConsume<edm::ValueMap<float>>(edm::InputTag("puppiCA15SubQGTag","qgLikelihood") ) ;
       puppiCA15->jetRadius     = 1.5;
       puppiCA15->skipEvent     = skipEvent;

@@ -54,8 +54,8 @@ class FatJetFiller : virtual public BaseFiller
         edm::Handle<reco::JetTagCollection> btags_handle;
         edm::EDGetTokenT<reco::JetTagCollection> btags_token;
 
-	/* edm::Handle<reco::BoostedDoubleSVTagInfoCollection> doubleb_handle; */
-	/* edm::EDGetTokenT<reco::BoostedDoubleSVTagInfoCollection>  doubleb_token; */
+	edm::Handle<reco::BoostedDoubleSVTagInfoCollection> doubleb_handle;
+	edm::EDGetTokenT<reco::BoostedDoubleSVTagInfoCollection>  doubleb_token; 
 
         edm::Handle<edm::ValueMap<float>> qgl_handle;
         edm::EDGetTokenT<edm::ValueMap<float>> qgl_token;

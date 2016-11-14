@@ -25,16 +25,16 @@ process.load("FWCore.MessageService.MessageLogger_cfi")
 # the size of the output by prescaling the report of the event number
 process.MessageLogger.cerr.FwkReport.reportEvery = 10
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1000) )
 
 if isData:
    fileList = [
-       'file:/afs/cern.ch/work/s/snarayan/met_miniaod.root'
+       'file:/tmp/snarayan/test_met_miniaod.root'
        ]
 else:
    fileList = [
-       'file:/afs/cern.ch/user/b/bmaier/public/MonoHiggs/prod/CMSSW_8_0_11/src/PandaProd/Ntupler/test/F8B66ADC-7722-E611-BB94-44A84225D36F.root'
-#       'file:/afs/cern.ch/work/s/snarayan/dyll.root'
+#       'file:/tmp/snarayan/miniaod_ttdm.root'
+       'file:/tmp/mcremone/30F60D71-0626-E611-ADA0-003048F5ADEC.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
@@ -79,7 +79,6 @@ if isData and not options.isGrid and False: ## dont load the lumiMaks, will be c
 process.load('PandaProd.Filter.infoProducerSequence_cff')
 process.load('PandaProd.Filter.MonoXFilterSequence_cff')
 process.load('PandaProd.Ntupler.PandaProd_cfi')
-#process.load('PandaProd.Ntupler.VBF_cfi')
 
 #-----------------------ELECTRON ID-------------------------------
 from PandaProd.Ntupler.egammavid_cfi import *
@@ -291,10 +290,7 @@ process.puppiMETcorr = cms.EDProducer("PFJetMETcorrInputProducer",
 )
 process.type1PuppiMET = cms.EDProducer("CorrectedPFMETProducer",
     src = cms.InputTag('pfMETPuppi'),
-    applyType0Corrections = cms.bool(False),
-    applyType1Corrections = cms.bool(True),
     srcCorrections = cms.VInputTag(cms.InputTag('puppiMETcorr', 'type1')),
-    applyType2Corrections = cms.bool(False)
 )   
 process.puppiJetMETSequence += process.puppiMETcorr
 process.puppiJetMETSequence += process.type1PuppiMET

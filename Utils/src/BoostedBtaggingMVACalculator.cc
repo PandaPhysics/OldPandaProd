@@ -93,6 +93,7 @@ float BoostedBtaggingMVACalculator::mvaValue(
 	_ptPruned=ptPruned;
 	_etaPruned=etaPruned;
 	_z_ratio=z_ratio;
+	_SubJet_csv = SubJet_csv;
 	_trackSipdSig_3=trackSipdSig_3;
 	_trackSipdSig_2=trackSipdSig_2;
 	_trackSipdSig_1=trackSipdSig_1;
