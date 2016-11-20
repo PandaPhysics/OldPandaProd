@@ -9,7 +9,7 @@ cmssw_base = os.environ['CMSSW_BASE']
 
 options = VarParsing.VarParsing ('analysis')
 options.register('isData',
-        False,
+        True,
         VarParsing.VarParsing.multiplicity.singleton,
         VarParsing.VarParsing.varType.bool,
         "True if running on Data, False if running on MC")
@@ -25,11 +25,11 @@ process.load("FWCore.MessageService.MessageLogger_cfi")
 # the size of the output by prescaling the report of the event number
 process.MessageLogger.cerr.FwkReport.reportEvery = 10
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1000) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(500) )
 
 if isData:
    fileList = [
-       'file:/tmp/snarayan/test_met_miniaod.root'
+       'file:/tmp/mcremone/2CF02CDC-D819-E611-AA68-02163E011A52.root'
        ]
 else:
    fileList = [
