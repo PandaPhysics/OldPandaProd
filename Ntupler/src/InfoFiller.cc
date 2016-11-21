@@ -30,7 +30,7 @@ int InfoFiller::analyzeLumi(const edm::LuminosityBlock &iLumi, TTree *t) {
     // iLumi.getByToken( putrue_token, putrue_handle);
 
     unsigned int nE = events_handle->size();
-    if (nE>0 && weights_handle->size()==0) {
+    if (!isData && nE>0 && weights_handle->size()==0) {
       // this means no events passed previous EDFilters
       // which means isData was never set in analyze()
       // this is a hack

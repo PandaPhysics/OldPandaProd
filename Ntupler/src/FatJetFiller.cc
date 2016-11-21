@@ -30,6 +30,8 @@ FatJetFiller::~FatJetFiller(){
   delete tau;
   delete ecfnmanager;
   delete htt;
+  delete mMCJetCorrector;
+  delete mDataJetCorrector;
 }
 void FatJetFiller::initBoostedBtaggingJetId(){
   fJetBoostedBtaggingMVACalc.initialize(
@@ -149,11 +151,6 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       jet->mSD  = j.userFloat(treename+"SDKinematics:Mass");
 
       jet->id = 0;
-      /*
-      jet->id |= JetId(j,"loose") * PJet::kLoose;
-      jet->id |= JetId(j,"tight") * PJet::kTight;
-      jet->id |= JetId(j,"monojet") * PJet::kMonojet;
-      */
       jet->id |= PassJetID(j,PJet::kLoose) * PJet::kLoose;
       jet->id |= PassJetID(j,PJet::kTight) * PJet::kTight;
       jet->id |= PassJetID(j,PJet::kMonojet) * PJet::kMonojet;
