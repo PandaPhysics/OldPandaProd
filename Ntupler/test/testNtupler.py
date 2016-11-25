@@ -33,22 +33,20 @@ if isData:
        ]
 else:
    fileList = [
-       #'file:/afs/cern.ch/user/b/bmaier/public/MonoHiggs/prod/CMSSW_8_0_11/src/PandaProd/Ntupler/test/F8B66ADC-7722-E611-BB94-44A84225D36F.root'
-       'file:/tmp/6CA25B7B-CD46-E611-BDEC-02163E01354A.root'
-#       'file:/afs/cern.ch/work/s/snarayan/dyll.root'
+       'file:/data/t3home000/snarayan/test/tt_8020.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
 
 process.source = cms.Source("PoolSource",
-	skipEvents = cms.untracked.uint32(0),
-    	fileNames = cms.untracked.vstring(fileList)
+        	skipEvents = cms.untracked.uint32(0),
+        	fileNames = cms.untracked.vstring(fileList)
         )
 
 # ---- define the output file -------------------------------------------
 process.TFileService = cms.Service("TFileService",
-        closeFileFast = cms.untracked.bool(True),
-        fileName = cms.string("panda.root"),
+          closeFileFast = cms.untracked.bool(True),
+          fileName = cms.string("panda.root"),
         )
 
 ##----------------GLOBAL TAG ---------------------------
@@ -60,9 +58,12 @@ process.load("Configuration.StandardSequences.MagneticField_cff")
 #mc https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideFrontierConditions#Global_Tags_for_Run2_MC_Producti
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
 if (isData):
-        process.GlobalTag.globaltag = '80X_dataRun2_Prompt_v8'
+    # sept reprocessing
+    process.GlobalTag.globaltag = '80X_dataRun2_2016SeptRepro_v3'
 else:
-        process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_miniAODv2'
+    ## tranch IV v6 ... is this correct?
+    process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_miniAODv2' # for 8011 MC? 
+    # process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_TrancheIV_v6'
 
 ### LOAD DATABASE
 from CondCore.DBCommon.CondDBSetup_cfi import *
@@ -81,6 +82,81 @@ process.load('PandaProd.Filter.infoProducerSequence_cff')
 process.load('PandaProd.Filter.MonoXFilterSequence_cff')
 process.load('PandaProd.Ntupler.PandaProd_cfi')
 #process.load('PandaProd.Ntupler.VBF_cfi')
+
+#-----------------------JES/JER----------------------------------
+if isData:
+  jeclabel = 'Spring16_25nsV6_DATA'
+else:
+  jeclabel = 'Spring16_25nsV6_MC'
+process.jec =  cms.ESSource("PoolDBESSource",
+                    CondDBSetup,
+                    toGet = cms.VPSet(
+              cms.PSet(record  = cms.string('JetCorrectionsRecord'),
+                       tag     = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK4PFPuppi'),
+                       label   = cms.untracked.string('AK4Puppi')
+                       ),
+               cms.PSet(record  = cms.string('JetCorrectionsRecord'),
+                        tag     = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK8PFPuppi'),
+                        label   = cms.untracked.string('AK8Puppi')
+                        ),
+              cms.PSet(record  = cms.string('JetCorrectionsRecord'),
+                       tag     = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK4PFchs'),
+                       label   = cms.untracked.string('AK4chs')
+                       ),
+              cms.PSet(record  = cms.string('JetCorrectionsRecord'),
+                       tag     = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK8PFchs'),
+                       label   = cms.untracked.string('AK8chs')
+                       ),
+              cms.PSet(record  = cms.string('JetCorrectionsRecord'),
+                       tag     = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK4PF'),
+                       label   = cms.untracked.string('AK4')
+                       ),
+               cms.PSet(record  = cms.string('JetCorrectionsRecord'),
+                        tag     = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK8PF'),
+                        label   = cms.untracked.string('AK8')
+                        )
+               ),
+
+        )  
+process.jec.connect = cms.string('sqlite:jec/%s.db'%jeclabel)
+process.es_prefer_jec = cms.ESPrefer('PoolDBESSource', 'jec')
+
+if isData:
+  jerlabel = 'Spring16_25nsV8_DATA'
+else:
+  jerlabel = 'Spring16_25nsV8_MC'
+process.jer = cms.ESSource("PoolDBESSource",
+                  CondDBSetup,
+                  toGet = cms.VPSet(
+              cms.PSet(record  = cms.string('JetResolutionRcd'),
+                       tag     = cms.string('JR_%s_PtResolution_AK4PFchs'%jerlabel),
+                       label   = cms.untracked.string('AK4PFchs_pt'),
+                      ),
+              cms.PSet(record  = cms.string('JetResolutionRcd'),
+                       tag     = cms.string('JR_%s_PhiResolution_AK4PFchs'%jerlabel),
+                       label   = cms.untracked.string('AK4PFchs_phi'),
+                      ),
+              cms.PSet(record  = cms.string('JetResolutionRcd'),
+                       tag     = cms.string('JR_%s_SF_AK4PFchs'%jerlabel),
+                       label   = cms.untracked.string('AK4PFchs'),
+                      ),
+              cms.PSet(record  = cms.string('JetResolutionRcd'),
+                       tag     = cms.string('JR_%s_PtResolution_AK4PFPuppi'%jerlabel),
+                       label   = cms.untracked.string('AK4PFPuppi_pt'),
+                      ),
+              cms.PSet(record  = cms.string('JetResolutionRcd'),
+                       tag     = cms.string('JR_%s_PhiResolution_AK4PFPuppi'%jerlabel),
+                       label   = cms.untracked.string('AK4PFPuppi_phi'),
+                      ),
+              cms.PSet(record  = cms.string('JetResolutionRcd'),
+                       tag     = cms.string('JR_%s_SF_AK4PFPuppi'%jerlabel),
+                       label   = cms.untracked.string('AK4PFPuppi'),
+                      ),
+             )
+        )
+process.jer.connect = cms.string('sqlite:jer/%s.db'%jerlabel)
+process.es_prefer_jer = cms.ESPrefer('PoolDBESSource', 'jer')
+
 
 #-----------------------ELECTRON ID-------------------------------
 from PandaProd.Ntupler.egammavid_cfi import *
@@ -211,42 +287,6 @@ process.pfMETPuppi.calculateSignificance = False
 process.puppiJetMETSequence += process.pfMETPuppi
 
 # correct puppi jets
-jeclabel = 'DATA' if isData else 'MC'
-process.jec =  cms.ESSource("PoolDBESSource",
-                    CondDBSetup,
-                    toGet = cms.VPSet(
-              cms.PSet(record  = cms.string('JetCorrectionsRecord'),
-                       tag     = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_'+jeclabel+'_AK4PFPuppi'),
-                       label   = cms.untracked.string('AK4Puppi')
-                       ),
-               cms.PSet(record  = cms.string('JetCorrectionsRecord'),
-                        tag     = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_'+jeclabel+'_AK8PFPuppi'),
-                        label   = cms.untracked.string('AK8Puppi')
-                        ),
-              cms.PSet(record  = cms.string('JetCorrectionsRecord'),
-                       tag     = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_'+jeclabel+'_AK4PFchs'),
-                       label   = cms.untracked.string('AK4chs')
-                       ),
-              cms.PSet(record  = cms.string('JetCorrectionsRecord'),
-                       tag     = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_'+jeclabel+'_AK8PFchs'),
-                       label   = cms.untracked.string('AK8chs')
-                       ),
-              cms.PSet(record  = cms.string('JetCorrectionsRecord'),
-                       tag     = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_'+jeclabel+'_AK4PF'),
-                       label   = cms.untracked.string('AK4')
-                       ),
-               cms.PSet(record  = cms.string('JetCorrectionsRecord'),
-                        tag     = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_'+jeclabel+'_AK8PF'),
-                        label   = cms.untracked.string('AK8')
-                        )
-               ),
-
-        )  
-if isData:
-  process.jec.connect = cms.string('sqlite:jec/Spring16_25nsV6_DATA.db')
-else:
-  process.jec.connect = cms.string('sqlite:jec/Spring16_25nsV6_MC.db')
-process.es_prefer_jec = cms.ESPrefer('PoolDBESSource', 'jec')
 
 from JetMETCorrections.Configuration.JetCorrectorsAllAlgos_cff  import *
 jetlabel='AK4PFPuppi'
