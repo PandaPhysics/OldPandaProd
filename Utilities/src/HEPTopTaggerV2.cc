@@ -1,4 +1,4 @@
-#include "../interface/functions/HEPTopTaggerV2.h"
+#include "../interface/HEPTopTaggerV2.h"
 
 // Do not change next line, it's needed by the sed-code that makes the tagger CMSSW-compatible.
 namespace external {

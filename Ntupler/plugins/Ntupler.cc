@@ -64,17 +64,17 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     METFiller *pfmet           = new METFiller("pfmet");
     pfmet->skipEvent           = skipEvent;
     pfmet->rerun               = false;
-    pfmet->met_token           = consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("mets"));
-    pfmet->pat_token           = consumes<pat::PackedCandidateCollection>(iConfig.getParameter<edm::InputTag>("chsPFCands")); // these are not actually CHS
+    pfmet->met_token           = consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("pfmet"));
+    pfmet->pat_token           = consumes<pat::PackedCandidateCollection>(iConfig.getParameter<edm::InputTag>("chsPFCands")); // these are not actually CHS, so don't worry
     pfmet->which_cand          = METFiller::kPat;
     pfmet->minimal             = false;
     obj.push_back(pfmet);
 
     METFiller *puppimet         = new METFiller("puppimet");
     puppimet->skipEvent         = skipEvent;
-    puppimet->rerun             = true;
-    puppimet->remet_token       = consumes<reco::PFMETCollection>(iConfig.getParameter<edm::InputTag>("metsPuppi"));
-    puppimet->remetuncorr_token = consumes<reco::PFMETCollection>(iConfig.getParameter<edm::InputTag>("metsPuppiUncorrected"));
+    puppimet->rerun             = false;
+    puppimet->met_token         = consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("puppimet"));
+    puppimet->minimal           = true;
     obj.push_back(puppimet);
 
 
@@ -93,6 +93,11 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     electron->el_looseid_token  = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleLooseIdMap"));
     electron->el_mediumid_token = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleMediumIdMap"));
     electron->el_tightid_token  = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleTightIdMap"));
+    electron->effArea.reset(
+      new EffectiveAreas(
+        edm::FileInPath(iConfig.getParameter<std::string>("eleEA")).fullPath()
+        )
+      );
     obj.push_back(electron);
 
     TauFiller *tau            = new TauFiller("tau");

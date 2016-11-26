@@ -5,8 +5,11 @@
 #include "EventFiller.h"
 #include "PandaProd/Objects/interface/PElectron.h"
 
+#include "RecoEgamma/EgammaTools/interface/EffectiveAreas.h"
+
 #include <map>
 #include <string>
+#include <memory>
 
 namespace panda {
 class ElectronFiller : virtual public BaseFiller
@@ -29,6 +32,8 @@ class ElectronFiller : virtual public BaseFiller
         edm::Handle<edm::ValueMap<bool> > el_mediumid_handle;
         edm::EDGetTokenT<edm::ValueMap<bool> >  el_tightid_token;
         edm::Handle<edm::ValueMap<bool> > el_tightid_handle;
+
+        std::unique_ptr<EffectiveAreas> effArea;
 
         const EventFiller *evt=0;
 

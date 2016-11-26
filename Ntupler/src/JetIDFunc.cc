@@ -1,4 +1,4 @@
-#include "../interface/functions/JetIDFunc.h"
+#include "../interface/JetIDFunc.h"
 
 bool PassJetID(const pat::Jet &j, panda::PJet::JetID id) {
   // https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetID

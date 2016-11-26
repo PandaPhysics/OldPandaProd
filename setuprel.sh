@@ -2,7 +2,8 @@
 
 # fixes for MET
 git cms-merge-topic -u cms-met:fromCMSSW_8_0_20_postICHEPfilter
-git cms-merge-topic ahinzmann:METRecipe_8020_Moriond17
+git cms-merge-topic ahinzmann:METRecipe_8020_Spring16
+#git cms-merge-topic ahinzmann:METRecipe_8020_Moriond17
 git cms-merge-topic cms-met:METRecipe_8020
 
 # something ECAL smearing - did we need this?

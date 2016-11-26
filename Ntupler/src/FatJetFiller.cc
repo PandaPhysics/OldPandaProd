@@ -1,5 +1,5 @@
 #include "../interface/FatJetFiller.h"
-#include "../interface/functions/JetIDFunc.h"
+#include "../interface/JetIDFunc.h"
 
 using namespace panda;
 

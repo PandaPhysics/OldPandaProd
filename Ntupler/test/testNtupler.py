@@ -23,9 +23,9 @@ isData = options.isData
 process.load("FWCore.MessageService.MessageLogger_cfi")
 # If you run over many samples and you save the log, remember to reduce
 # the size of the output by prescaling the report of the event number
-process.MessageLogger.cerr.FwkReport.reportEvery = 10
+process.MessageLogger.cerr.FwkReport.reportEvery = 1
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
 
 if isData:
    fileList = [
@@ -122,9 +122,9 @@ process.jec.connect = cms.string('sqlite:jec/%s.db'%jeclabel)
 process.es_prefer_jec = cms.ESPrefer('PoolDBESSource', 'jec')
 
 if isData:
-  jerlabel = 'Spring16_25nsV8_DATA'
+  jerlabel = 'Spring16_25nsV6_DATA'
 else:
-  jerlabel = 'Spring16_25nsV8_MC'
+  jerlabel = 'Spring16_25nsV6_MC'
 process.jer = cms.ESSource("PoolDBESSource",
                   CondDBSetup,
                   toGet = cms.VPSet(
@@ -136,7 +136,7 @@ process.jer = cms.ESSource("PoolDBESSource",
                        tag     = cms.string('JR_%s_PhiResolution_AK4PFchs'%jerlabel),
                        label   = cms.untracked.string('AK4PFchs_phi'),
                       ),
-              cms.PSet(record  = cms.string('JetResolutionRcd'),
+              cms.PSet(record  = cms.string('JetResolutionScaleFactorRcd'),
                        tag     = cms.string('JR_%s_SF_AK4PFchs'%jerlabel),
                        label   = cms.untracked.string('AK4PFchs'),
                       ),
@@ -148,7 +148,7 @@ process.jer = cms.ESSource("PoolDBESSource",
                        tag     = cms.string('JR_%s_PhiResolution_AK4PFPuppi'%jerlabel),
                        label   = cms.untracked.string('AK4PFPuppi_phi'),
                       ),
-              cms.PSet(record  = cms.string('JetResolutionRcd'),
+              cms.PSet(record  = cms.string('JetResolutionScaleFactorRcd'),
                        tag     = cms.string('JR_%s_SF_AK4PFPuppi'%jerlabel),
                        label   = cms.untracked.string('AK4PFPuppi'),
                       ),
@@ -172,89 +172,80 @@ from PhysicsTools.PatAlgos.tools.jetTools import updateJetCollection
  
 jecLevels= ['L1FastJet',  'L2Relative', 'L3Absolute']
 if options.isData:
-        jecLevels =['L1FastJet',  'L2Relative', 'L3Absolute', 'L2L3Residual']
+        jecLevels.append('L2L3Residual')
  
 updateJetCollection(
     process,
     jetSource = process.PandaNtupler.chsAK4,
     labelName = 'UpdatedJEC',
-    jetCorrections = ('AK4PFchs', cms.vstring(jecLevels), 'None')  # Do not forget 'L2L3Residual' on data!
+    jetCorrections = ('AK4PFchs', cms.vstring(jecLevels), 'None')  
 )
 
-process.PandaNtupler.chsAK4=cms.InputTag('updatedPatJetsUpdatedJEC')
-#process.PandaNtupler.chsAK8=cms.InputTag('updatedPatJetsUpdatedJECAK8')
+process.PandaNtupler.chsAK4=cms.InputTag('updatedPatJetsUpdatedJEC') # replace CHS with updated JEC-corrected
+
 process.jecSequence = cms.Sequence( process.patJetCorrFactorsUpdatedJEC* process.updatedPatJetsUpdatedJEC)
-#process.jecSequence = cms.Sequence( process.patJetCorrFactorsUpdatedJEC* process.updatedPatJetsUpdatedJEC* process.patJetCorrFactorsUpdatedJECAK8* process.updatedPatJetsUpdatedJECAK8)
 
-############ RECOMPUTE MET #######################
-from PhysicsTools.PatUtils.tools.runMETCorrectionsAndUncertainties import runMetCorAndUncFromMiniAOD
-runMetCorAndUncFromMiniAOD(process,
-           isData=isData,
-           )
-
-if not options.isData:
-  process.PandaNtupler.metfilter = cms.InputTag('TriggerResults','','PAT')
-
+########### MET Filter ################
 process.load('RecoMET.METFilters.BadPFMuonFilter_cfi')
-
 process.BadPFMuonFilter.muons = cms.InputTag("slimmedMuons")
 process.BadPFMuonFilter.PFCandidates = cms.InputTag("packedPFCandidates")
+process.BadPFMuonFilter.taggingMode = cms.bool(True)
 
 process.load('RecoMET.METFilters.BadChargedCandidateFilter_cfi')
 process.BadChargedCandidateFilter.muons = cms.InputTag("slimmedMuons")
 process.BadChargedCandidateFilter.PFCandidates = cms.InputTag("packedPFCandidates")
+process.BadChargedCandidateFilter.taggingMode = cms.bool(True)
 
-process.metfilterSequence = cms.Sequence(process.BadPFMuonFilter*process.BadChargedCandidateFilter)
+process.metfilterSequence = cms.Sequence(process.BadPFMuonFilter
+                                          *process.BadChargedCandidateFilter)
+
+if not options.isData:
+  process.PandaNtupler.metfilter = cms.InputTag('TriggerResults','','PAT')
+
+############ RECOMPUTE PUPPI/MET #######################
+from PhysicsTools.PatUtils.tools.runMETCorrectionsAndUncertainties import runMetCorAndUncFromMiniAOD
+from PhysicsTools.PatAlgos.slimming.puppiForMET_cff import makePuppiesFromMiniAOD
+
+makePuppiesFromMiniAOD(process,True)
+process.puppi.useExistingWeights = False # I still don't trust miniaod...
+process.puppiNoLep.useExistingWeights = False
+
+runMetCorAndUncFromMiniAOD(process,         ## PF MET
+                            isData=isData)
+runMetCorAndUncFromMiniAOD(process,         ## Puppi MET
+                            isData=options.isData,
+                            metType="Puppi",
+                            pfCandColl=cms.InputTag("puppiForMET"),
+                            recoMetFromPFCs=True,
+                            jetFlavor="AK4PFPuppi",
+                            postfix="Puppi")
+process.PandaNtupler.pfmet = cms.InputTag('slimmedMETs','','PandaNtupler')
+process.PandaNtupler.puppimet = cms.InputTag('slimmedMETsPuppi','','PandaNtupler')
 
 ############ RUN CLUSTERING ##########################
-process.puppiSequence = cms.Sequence()
-process.puppiJetMETSequence = cms.Sequence()
 process.jetSequence = cms.Sequence()
 
-# run puppi algo
-process.load('CommonTools.PileupAlgos.Puppi_cff')
-
-process.puppi.candName   = cms.InputTag('packedPFCandidates')
-process.puppi.vertexName = cms.InputTag('offlineSlimmedPrimaryVertices')
-
-process.puppiNoLep = process.puppi.clone()
-process.puppi.useExistingWeights = False
-process.puppiNoLep.useExistingWeights = False
-process.puppiNoLep.useWeightsNoLep = True
-
-process.load('CommonTools/PileupAlgos/PhotonPuppi_cff')
-process.puppiPhoton.weightsName = 'puppiNoLep'
-process.puppiForMET = cms.EDProducer("CandViewMerger",src = cms.VInputTag( 'puppiPhoton'))
-
-process.puppiSequence += process.puppi
-process.puppiSequence += process.puppiNoLep
-process.puppiSequence += process.puppiPhoton
-process.puppiSequence += process.puppiForMET
-
-# recompute ak4 jets
-from RecoJets.JetProducers.ak4PFJets_cfi import ak4PFJets
+# btag and patify puppi AK$ jets
 from RecoJets.JetProducers.ak4GenJets_cfi import ak4GenJets
 from PhysicsTools.PatAlgos.tools.pfTools import *
 
-process.ak4PFJetsPuppi = ak4PFJets.clone(src=cms.InputTag('puppiNoLep'))
-process.puppiJetMETSequence += process.ak4PFJetsPuppi
 if not isData:
     process.packedGenParticlesForJetsNoNu = cms.EDFilter("CandPtrSelector", 
       src = cms.InputTag("packedGenParticles"), 
       cut = cms.string("abs(pdgId) != 12 && abs(pdgId) != 14 && abs(pdgId) != 16")
     )
     process.ak4GenJetsNoNu = ak4GenJets.clone(src = 'packedGenParticlesForJetsNoNu')
-    process.puppiJetMETSequence += process.packedGenParticlesForJetsNoNu
-    process.puppiJetMETSequence += process.ak4GenJetsNoNu
+    process.jetSequence += process.packedGenParticlesForJetsNoNu
+    process.jetSequence += process.ak4GenJetsNoNu
 
 # btag and patify jets for access later
 addJetCollection(
   process,
   labelName = 'PFAK4Puppi',
-  jetSource=cms.InputTag('ak4PFJetsPuppi'),
+  jetSource=cms.InputTag('ak4PFJetsPuppi'), # this is constructed in runMetCorAndUncFromMiniAOD
   algo='AK4',
   rParam=0.4,
-  pfCandidates = cms.InputTag('packedPFCandidates'),
+  pfCandidates = cms.InputTag("puppiForMET"),
   pvSource = cms.InputTag('offlineSlimmedPrimaryVertices'),
   svSource = cms.InputTag('slimmedSecondaryVertices'),
   muSource = cms.InputTag('slimmedMuons'),
@@ -272,129 +263,79 @@ addJetCollection(
 )
 
 if not isData:
-  process.puppiJetMETSequence += process.patJetPartonMatchPFAK4Puppi
-  process.puppiJetMETSequence += process.patJetGenJetMatchPFAK4Puppi
-process.puppiJetMETSequence += process.pfImpactParameterTagInfosPFAK4Puppi
-process.puppiJetMETSequence += process.pfInclusiveSecondaryVertexFinderTagInfosPFAK4Puppi
-process.puppiJetMETSequence += process.pfCombinedInclusiveSecondaryVertexV2BJetTagsPFAK4Puppi
-process.puppiJetMETSequence += process.patJetsPFAK4Puppi
+  process.jetSequence += process.patJetPartonMatchPFAK4Puppi
+  process.jetSequence += process.patJetGenJetMatchPFAK4Puppi
+process.jetSequence += process.pfImpactParameterTagInfosPFAK4Puppi
+process.jetSequence += process.pfInclusiveSecondaryVertexFinderTagInfosPFAK4Puppi
+process.jetSequence += process.pfCombinedInclusiveSecondaryVertexV2BJetTagsPFAK4Puppi
+process.jetSequence += process.patJetsPFAK4Puppi
 
-# compute puppi MET
-from RecoMET.METProducers.PFMET_cfi import pfMet
-process.pfMETPuppi = pfMet.clone()
-process.pfMETPuppi.src = cms.InputTag('puppiForMET')
-process.pfMETPuppi.calculateSignificance = False
-process.puppiJetMETSequence += process.pfMETPuppi
-
-# correct puppi jets
-
-from JetMETCorrections.Configuration.JetCorrectorsAllAlgos_cff  import *
-jetlabel='AK4PFPuppi'
-process.ak4PuppiL1  = ak4PFCHSL1FastjetCorrector.clone (algorithm = cms.string(jetlabel))
-process.ak4PuppiL2  = ak4PFCHSL2RelativeCorrector.clone(algorithm = cms.string(jetlabel))
-process.ak4PuppiL3  = ak4PFCHSL3AbsoluteCorrector.clone(algorithm = cms.string(jetlabel))
-process.ak4PuppiRes = ak4PFCHSResidualCorrector.clone  (algorithm = cms.string(jetlabel))
-process.puppiJetMETSequence += process.ak4PuppiL1
-process.puppiJetMETSequence += process.ak4PuppiL2
-process.puppiJetMETSequence += process.ak4PuppiL3
-
-process.ak4PuppiCorrector = ak4PFL1FastL2L3Corrector.clone(
-        correctors = cms.VInputTag("ak4PuppiL1", 
-                                    "ak4PuppiL2",
-                                    "ak4PuppiL3")
-    )
-process.ak4PuppiCorrectorRes = ak4PFL1FastL2L3Corrector.clone(
-        correctors = cms.VInputTag("ak4PuppiL1", 
-                                    "ak4PuppiL2",
-                                    "ak4PuppiL3",
-                                    'ak4PuppiRes')
-    )
-if isData:
-    process.puppiJetMETSequence += process.ak4PuppiRes
-    process.puppiJetMETSequence += process.ak4PuppiCorrectorRes
-    correctorLabel = 'ak4PuppiCorrectorRes'
-else:
-    process.puppiJetMETSequence += process.ak4PuppiCorrector
-    correctorLabel = 'ak4PuppiCorrector'
-
-# correct puppi MET
-process.puppiMETcorr = cms.EDProducer("PFJetMETcorrInputProducer",
-    src = cms.InputTag('ak4PFJetsPuppi'),
-    offsetCorrLabel = cms.InputTag('ak4PuppiL1'),
-    jetCorrLabel = cms.InputTag(correctorLabel),
-    jetCorrLabelRes = cms.InputTag('ak4PuppiCorrectorRes'),
-    jetCorrEtaMax = cms.double(9.9),
-    type1JetPtThreshold = cms.double(15.0),
-    skipEM = cms.bool(True),
-    skipEMfractionThreshold = cms.double(0.90),
-    skipMuons = cms.bool(True),
-    skipMuonSelection = cms.string("isGlobalMuon | isStandAloneMuon")
-)
-process.type1PuppiMET = cms.EDProducer("CorrectedPFMETProducer",
-    src = cms.InputTag('pfMETPuppi'),
-    applyType0Corrections = cms.bool(False),
-    applyType1Corrections = cms.bool(True),
-    srcCorrections = cms.VInputTag(cms.InputTag('puppiMETcorr', 'type1')),
-    applyType2Corrections = cms.bool(False)
-)   
-process.puppiJetMETSequence += process.puppiMETcorr
-process.puppiJetMETSequence += process.type1PuppiMET
+##################### FAT JETS #############################
 
 from PandaProd.Ntupler.makeFatJets_cff import *
 fatjetInitSequence = initFatJets(process,isData)
 process.jetSequence += fatjetInitSequence
 
 if process.PandaNtupler.doCHSAK8:
-  ak8CHSSequence    = makeFatJets(process,isData=isData,pfCandidates='pfCHS',algoLabel='AK',jetRadius=0.8)
+  ak8CHSSequence    = makeFatJets(process,
+                                  isData=isData,
+                                  pfCandidates='pfCHS',
+                                  algoLabel='AK',
+                                  jetRadius=0.8)
   process.jetSequence += ak8CHSSequence
 if process.PandaNtupler.doPuppiAK8:
-  ak8PuppiSequence  = makeFatJets(process,isData=isData,pfCandidates='puppi',algoLabel='AK',jetRadius=0.8)
+  ak8PuppiSequence  = makeFatJets(process,
+                                  isData=isData,
+                                  pfCandidates='puppi',
+                                  algoLabel='AK',
+                                  jetRadius=0.8)
   process.jetSequence += ak8PuppiSequence
 if process.PandaNtupler.doCHSCA15:
-  ca15CHSSequence   = makeFatJets(process,isData=isData,pfCandidates='pfCHS',algoLabel='CA',jetRadius=1.5)
+  ca15CHSSequence   = makeFatJets(process,
+                                  isData=isData,
+                                  pfCandidates='pfCHS',
+                                  algoLabel='CA',
+                                  jetRadius=1.5)
   process.jetSequence += ca15CHSSequence
 if process.PandaNtupler.doPuppiCA15:
-  ca15PuppiSequence = makeFatJets(process,isData=isData,pfCandidates='puppi',algoLabel='CA',jetRadius=1.5)
+  ca15PuppiSequence = makeFatJets(process,
+                                  isData=isData,
+                                  pfCandidates='puppi',
+                                  algoLabel='CA',
+                                  jetRadius=1.5)
   process.jetSequence += ca15PuppiSequence
 
 if not isData:
   process.ak4GenJetsYesNu = ak4GenJets.clone(src = 'packedGenParticles')
-  process.genJetSequence = cms.Sequence(process.ak4GenJetsYesNu)
-else:
-  process.genJetSequence = cms.Sequence()
-
+  process.jetSequence += process.ak4GenJetsYesNu
 
 ###############################
 
+DEBUG=False
+if DEBUG:
+  print "Process=",process, process.__dict__.keys()
 
-##DEBUG
-##print "Process=",process, process.__dict__.keys()
-#------------------------------------------------------
 process.p = cms.Path(
                         process.infoProducerSequence *
                         process.jecSequence *
-#                        process.fullPatMetSequence *
                         process.egmGsfElectronIDSequence *
                         process.egmPhotonIDSequence *
-                        process.photonIDValueMapProducer * ## ISO MAP FOR PHOTONS
-                        process.electronIDValueMapProducer *  ## ISO MAP FOR PHOTONS
-                        process.puppiSequence *
-                        process.puppiJetMETSequence *
-                        process.monoXFilterSequence *
-                        process.jetSequence *
+                        process.photonIDValueMapProducer *     # iso map for photons
+                        process.electronIDValueMapProducer *   # iso map for photons
+                        process.fullPatMetSequence *           # pf MET 
+                        process.puppiMETSequence *             # builds all the puppi collections
+                        process.egmPhotonIDSequence *          # baseline photon ID for puppi correction
+                        process.fullPatMetSequencePuppi *      # puppi MET
+                        # process.monoXFilterSequence *          # filter
+                        process.jetSequence *                  # patify ak4puppi and do all fatjet stuff
                         process.metfilterSequence *
-                        process.genJetSequence *
                         process.PandaNtupler
                     )
 
-## DEBUG -- dump the event content with all the value maps ..
-# process.output = cms.OutputModule(
-#                 "PoolOutputModule",
-#                       fileName = cms.untracked.string('pool.root'),
-#                       )
-# process.output_step = cms.EndPath(process.output)
-# 
-# process.schedule = cms.Schedule(
-# 		process.p,
-# 		process.output_step)
-##
+if DEBUG:
+  process.output = cms.OutputModule("PoolOutputModule",
+                                    fileName = cms.untracked.string('pool.root'))
+  process.output_step = cms.EndPath(process.output)
+
+  process.schedule = cms.Schedule(process.p,
+  		                            process.output_step)

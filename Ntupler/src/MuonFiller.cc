@@ -32,7 +32,7 @@ int MuonFiller::analyze(const edm::Event& iEvent){
     iEvent.getByToken(mu_token, mu_handle);
 
     for (const pat::Muon& mu : *mu_handle) {
-      if (mu.pt()<minPt || fabs(mu.eta())>maxEta || !(mu.isLooseMuon()) ) 
+      if (mu.pt()<minPt || fabs(mu.eta())>maxEta) 
         continue;
 
       float chiso  = mu.pfIsolationR04().sumChargedHadronPt;
