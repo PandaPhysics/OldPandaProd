@@ -167,6 +167,18 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
         
       }
 
+      // reset the ECFs
+      std::vector<float> betas = {0.5,1.,2.,4.};
+      std::vector<int> Ns = {1,2,3,4};
+      std::vector<int> orders = {1,2,3};
+      for (unsigned int iB=0; iB!=4; ++iB) {
+        for (auto N : Ns) {
+          for (auto o : orders) {
+            jet->set_ecf(o,N,iB,-1);
+          }
+        }
+      }
+
       if (pfcands!=0 || (!minimal && data->size()<2)) {
         // either we want to associate to pf cands OR compute extra info about the first or second jet
 
@@ -212,9 +224,6 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
             VPseudoJet sdconstsFiltered(sdconsts.begin(),sdconsts.begin()+nFilter);
 
             // calculate ECFs
-            std::vector<float> betas = {0.5,1.,2.,4.};
-            std::vector<int> Ns = {1,2,3,4};
-            std::vector<int> orders = {1,2,3};
             for (unsigned int iB=0; iB!=4; ++iB) {
               calcECFN(betas[iB],sdconstsFiltered,ecfnmanager);
               for (auto N : Ns) {
@@ -257,38 +266,3 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
     return 0;
 }
 
-/*
-bool FatJetFiller::JetId(const pat::Jet &j, std::string id)
-{
-
-  bool jetid = false;
-
-  float NHF    = j.neutralHadronEnergyFraction();
-  float NEMF   = j.neutralEmEnergyFraction();
-  float CHF    = j.chargedHadronEnergyFraction();
-  //float MUF    = j.muonEnergyFraction();                                                                                                                                                                
-  float CEMF   = j.chargedEmEnergyFraction();
-  int NumConst = j.chargedMultiplicity()+j.neutralMultiplicity();
-  int CHM      = j.chargedMultiplicity();
-  int NumNeutralParticle =j.neutralMultiplicity();
-  float eta = j.eta();
-
-  if (id=="loose" || id=="monojet" )
-    {
-      jetid = (NHF<0.99 && NEMF<0.99 && NumConst>1) && ((fabs(eta)<=2.4 && CHF>0 && CHM>0 && CEMF<0.99) || fabs(eta)>2.4) && fabs(eta)<=3.0;
-      jetid = jetid || (NEMF<0.90 && NumNeutralParticle>10 && fabs(eta)>3.0);
-    }
-
-  if (id=="tight")
-    {
-      jetid = (NHF<0.90 && NEMF<0.90 && NumConst>1) && ((fabs(eta)<=2.4 && CHF>0 && CHM>0 && CEMF<0.99) || fabs(eta)>2.4) && fabs(eta)<=3.0;
-      jetid = jetid || (NEMF<0.90 && NumNeutralParticle>10 && fabs(eta)>3.0 );
-    }
-
-  if (id=="monojet")
-    jetid = jetid && (NHF < 0.8 && CHF > 0.1);
-
-  return jetid;
-  
-}
-*/

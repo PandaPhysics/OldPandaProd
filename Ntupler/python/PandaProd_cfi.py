@@ -27,7 +27,7 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
     doPuppiAK4 = cms.bool(True),
     doPuppiCA15 = cms.bool(True),
     doCHSCA15 = cms.bool(False),
-    doPuppiAK8 = cms.bool(False),
+    doPuppiAK8 = cms.bool(True),
     doCHSAK8 = cms.bool(False),
 
     chsAK4 = cms.InputTag("slimmedJets"),
