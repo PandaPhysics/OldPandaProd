@@ -167,6 +167,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       chsAK8->jetRadius     = 0.8;
       chsAK8->skipEvent     = skipEvent;
       chsAK8->pfcands       = pfcands;
+      chsAK8->minimal       = true;
       obj.push_back(chsAK8);
     }
 
@@ -180,6 +181,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       puppiAK8->jetRadius     = 0.8;
       puppiAK8->skipEvent     = skipEvent;
       puppiAK8->pfcands       = puppicands;
+      puppiAK8->minimal       = true;
       obj.push_back(puppiAK8);
     }
 
@@ -193,6 +195,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       chsCA15->jetRadius     = 1.5;
       chsCA15->skipEvent     = skipEvent;
       chsCA15->pfcands       = pfcands;
+      chsCA15->minimal       = false;
       obj.push_back(chsCA15);
     }
 
@@ -206,6 +209,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       puppiCA15->jetRadius     = 1.5;
       puppiCA15->skipEvent     = skipEvent;
       puppiCA15->pfcands       = puppicands;
+      puppiCA15->minimal       = false;
       obj.push_back(puppiCA15);
     }
 

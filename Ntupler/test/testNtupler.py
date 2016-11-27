@@ -29,7 +29,7 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
 
 if isData:
    fileList = [
-       'file:/tmp/6CA25B7B-CD46-E611-BDEC-02163E01354A.root'
+       'file:/data/t3home000/snarayan/test/met_8020.root'
        ]
 else:
    fileList = [
