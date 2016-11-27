@@ -23,7 +23,7 @@ isData = options.isData
 process.load("FWCore.MessageService.MessageLogger_cfi")
 # If you run over many samples and you save the log, remember to reduce
 # the size of the output by prescaling the report of the event number
-process.MessageLogger.cerr.FwkReport.reportEvery = 10000
+process.MessageLogger.cerr.FwkReport.reportEvery = 5000
 
 process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 
@@ -33,7 +33,7 @@ if isData:
        ]
 else:
    fileList = [
-       'file:/data/t3home000/snarayan/test/tt_8020.root'
+       'file:/data/t3home000/snarayan/test/tt_8011.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
