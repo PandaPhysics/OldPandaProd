@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 MonoXFilter = cms.EDFilter("MonoXFilter",
                              met = cms.InputTag("slimmedMETs"),
-                             puppimet = cms.InputTag("type1PuppiMET"),
+                             puppimet = cms.InputTag("slimmedMETsPuppi"),
                              muons = cms.InputTag("slimmedMuons"),
                              electrons = cms.InputTag("slimmedElectrons"),
                              photons = cms.InputTag("slimmedPhotons"),
