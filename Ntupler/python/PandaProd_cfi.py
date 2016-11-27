@@ -37,19 +37,20 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
     chsCA15 = cms.InputTag("packedPatJetsPFchsCA15"),
     puppiCA15 = cms.InputTag("packedPatJetsPFpuppiCA15"),
 
-    mets = cms.InputTag("slimmedMETs"),
-    metsPuppi = cms.InputTag("type1PuppiMET"),
-    metsPuppiUncorrected = cms.InputTag("pfMETPuppi"),
+    pfmet = cms.InputTag("slimmedMETs"),
+    puppimet = cms.InputTag("slimmedMETsPuppi"),
+    # metsPuppiUncorrected = cms.InputTag("pfMETPuppi"), # should be removed soon, going to be deprecated
 
     puppiPFCands = cms.InputTag("puppi"),
     chsPFCands = cms.InputTag('packedPFCandidates'),
     #chsPFCands = cms.InputTag('pfCHS'),
 
-    # egm IDs
-    eleVetoIdMap   = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Spring15-%(bx)s-%(vs)s-standalone-veto"),
-    eleLooseIdMap  = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Spring15-%(bx)s-%(vs)s-standalone-loose"),
-    eleMediumIdMap = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Spring15-%(bx)s-%(vs)s-standalone-medium"),
-    eleTightIdMap  = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Spring15-%(bx)s-%(vs)s-standalone-tight"),
+    # egm stuffs
+    eleEA = cms.string("RecoEgamma/ElectronIdentification/data/Summer16/effAreaElectrons_cone03_pfNeuHadronsAndPhotons_80X.txt"),
+    eleVetoIdMap   = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-%(vs)s-veto"),
+    eleLooseIdMap  = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-%(vs)s-loose"),
+    eleMediumIdMap = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-%(vs)s-medium"),
+    eleTightIdMap  = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-%(vs)s-tight"),
     phoLooseIdMap  = cms.InputTag("egmPhotonIDs:cutBasedPhotonID-Spring15-%(bx)s-%(vs)s-standalone-loose"),
     phoMediumIdMap = cms.InputTag("egmPhotonIDs:cutBasedPhotonID-Spring15-%(bx)s-%(vs)s-standalone-medium"),
     phoTightIdMap  = cms.InputTag("egmPhotonIDs:cutBasedPhotonID-Spring15-%(bx)s-%(vs)s-standalone-tight"),

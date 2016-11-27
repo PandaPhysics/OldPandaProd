@@ -22,7 +22,7 @@
 #include "DataFormats/METReco/interface/PFMET.h"
 #include "DataFormats/METReco/interface/PFMETCollection.h"
 
-#include "PandaCore/Tools/interface/Common.h"
+#include "PandaUtilities/Common/interface/Common.h"
 
 //
 // class declaration

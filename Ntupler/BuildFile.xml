@@ -17,7 +17,6 @@
 <use name="SimDataFormats/PileupSummaryInfo"/>
 <!--  -->
 <use name="CondFormats/JetMETObjects"/>
-<use name="PandaProd/Objects"/>
 <!-- SC-FPR -->
 <use name="DataFormats/GsfTrackReco"/>
 <use name="DataFormats/Math"/>
@@ -32,6 +31,8 @@
 <use name="DataFormats/EcalRecHit"/>
 <use name="MagneticField/Records"/>
 <use name="MagneticField/Engine"/>
+<!-- EGM -->
+<use name="RecoEgamma/EgammaTools"/>
 <!-- JES UNC -->
 <use name="JetMETCorrections/Objects"/>
 <!-- JER UNC -->
@@ -39,6 +40,8 @@
 <!-- SUBSTRUCTRE -->
 <use name="RecoJets/JetAlgorithms"/>
 <!--  -->
+<use name="PandaProd/Objects"/>
+<use name="PandaProd/Utilities"/>
 <use name="clhep"/>
 <use name="RooFit"/>
 <use name="root"/>

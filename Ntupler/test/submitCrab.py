@@ -32,7 +32,7 @@ config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'runNtupler.py'
 config.JobType.pyCfgParams=['isGrid=True','isData=False']
 
-config.JobType.inputFiles=['jec']
+config.JobType.inputFiles=['jec','jer']
 
 ### DATA configuration
 config.Data.inputDataset = '/HplusToTauNu-M500/amarini-amarini_PrivateMC_HPlusToTauNu_June2015-16aa19d591b8b49c55c4508e7a7c9233/USER'

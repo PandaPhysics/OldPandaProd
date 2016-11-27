@@ -17,7 +17,7 @@
 //      59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //----------------------------------------------------------------------
 
-#include "../interface/functions/HEPTopTaggerWrapperV2.h"
+#include "../interface/HEPTopTaggerWrapperV2.h"
 
 #include <fastjet/Error.hh>
 #include <fastjet/JetDefinition.hh>
@@ -31,7 +31,7 @@
 #include <cassert>
 using namespace std;
 
-#include "../interface/functions/HEPTopTaggerV2.h"
+#include "../interface/HEPTopTaggerV2.h"
 
 
 FASTJET_BEGIN_NAMESPACE

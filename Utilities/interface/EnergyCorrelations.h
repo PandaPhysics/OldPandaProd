@@ -2,6 +2,11 @@
 #include <vector>
 #include <map>
 #include "TMath.h"
+#include "TString.h"
+#include "PandaUtilities/Common/interface/Common.h"
+
+#ifndef ECF_H
+#define ECF_H
 
 double DeltaR2(fastjet::PseudoJet j1, fastjet::PseudoJet j2) {
   return DeltaR2(j1.eta(),j1.phi(),j2.eta(),j2.phi());
@@ -271,3 +276,4 @@ void calcECFN(double beta, std::vector<fastjet::PseudoJet> &constituents, ECFNMa
 
 }
 
+#endif
