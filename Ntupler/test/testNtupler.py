@@ -221,6 +221,8 @@ runMetCorAndUncFromMiniAOD(process,         ## Puppi MET
                             postfix="Puppi")
 process.PandaNtupler.pfmet = cms.InputTag('slimmedMETs','','PandaNtupler')
 process.PandaNtupler.puppimet = cms.InputTag('slimmedMETsPuppi','','PandaNtupler')
+process.MonoXFilter.met = cms.InputTag('slimmedMETs','','PandaNtupler')
+process.MonoXFilter.puppimet = cms.InputTag('slimmedMETsPuppi','','PandaNtupler')
 
 ############ RUN CLUSTERING ##########################
 process.jetSequence = cms.Sequence()
@@ -326,7 +328,7 @@ process.p = cms.Path(
                         process.puppiMETSequence *             # builds all the puppi collections
                         process.egmPhotonIDSequence *          # baseline photon ID for puppi correction
                         process.fullPatMetSequencePuppi *      # puppi MET
-                        # process.monoXFilterSequence *          # filter
+                        process.monoXFilterSequence *          # filter
                         process.jetSequence *                  # patify ak4puppi and do all fatjet stuff
                         process.metfilterSequence *
                         process.PandaNtupler
