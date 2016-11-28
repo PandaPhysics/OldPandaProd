@@ -70,29 +70,35 @@ int RecoilFilter::analyze(const edm::Event& iEvent){
     for (unsigned iM=0; iM!=2; ++iM) {
         reco::Candidate::LorentzVector met = mets.at(iM);
         U = met.pt();
-        maxRecoil = std::max((float)U,maxRecoil);
+        if (U>maxRecoil)
+          maxRecoil = U;
+          whichRecoil = 2*0+iM;
+        }
         if (U>minU) {
           keep = true;
-          whichRecoil = 2*0+iM;
         }
         
         // loop over leptons to get W+jets events
         for (pat::MuonCollection::const_iterator muon = mu_handle->begin(); muon!=mu_handle->end(); muon++){
             if (not isGoodMuon(*muon)) continue;
             U = (met+muon->p4()).pt();
-            maxRecoil = std::max((float)U,maxRecoil);
+            if (U>maxRecoil) {
+              maxRecoil = U;
+              whichRecoil = 2*1+iM;
+            }
             if (U>minU) {
               keep = true;
-              whichRecoil = 2*1+iM;
             }
         }
         for (pat::ElectronCollection::const_iterator ele = el_handle->begin(); ele!=el_handle->end(); ele++){
             if (not isGoodElectron(*ele)) continue;
             U = (met+ele->p4()).pt();
-            maxRecoil = std::max((float)U,maxRecoil);
+            if (U>maxRecoil) {
+              maxRecoil = U;
+              whichRecoil = 2*2+iM;
+            }
             if (U>minU) {
               keep = true;
-              whichRecoil = 2*2+iM;
             }
         }
 
@@ -102,10 +108,12 @@ int RecoilFilter::analyze(const edm::Event& iEvent){
             for (unsigned int jmuon=imuon+1; jmuon<mu_handle->size(); jmuon++){
                 if (not isGoodMuon(mu_handle->at(jmuon))) continue;
                 U = (met+mu_handle->at(imuon).p4()+mu_handle->at(jmuon).p4()).pt();
-                maxRecoil = std::max((float)U,maxRecoil);
+                if (U>maxRecoil) {
+                  maxRecoil = U;
+                  whichRecoil = 2*3+iM;
+                }
                 if (U>minU) {
                   keep = true;
-                  whichRecoil = 2*3+iM;
                 }
             }           
         }
@@ -114,10 +122,12 @@ int RecoilFilter::analyze(const edm::Event& iEvent){
             for (unsigned int jele=iele+1; jele<el_handle->size(); jele++){
                 if (not isGoodElectron(el_handle->at(jele))) continue;
                 U = (met+el_handle->at(iele).p4()+el_handle->at(jele).p4()).pt();
-                maxRecoil = std::max((float)U,maxRecoil);
+                if (U>maxRecoil) {
+                  maxRecoil = U;
+                  whichRecoil = 2*4+iM;
+                }
                 if (U>minU) {
                   keep = true;
-                  whichRecoil = 2*4+iM;
                 }
             }           
         }
@@ -125,10 +135,12 @@ int RecoilFilter::analyze(const edm::Event& iEvent){
         for (unsigned int ipho=0; ipho<ph_handle->size(); ipho++){
             if (not isGoodPhoton(ph_handle->at(ipho))) continue;
             U = (met+ph_handle->at(ipho).p4()).pt();
-            maxRecoil = std::max((float)U,maxRecoil);
+            if (U>maxRecoil) {
+              maxRecoil = U;
+              whichRecoil = 2*5+iM;
+            }
             if (U>minU) {
               keep = true;
-              whichRecoil = 2*5+iM;
             }
         }
     }
