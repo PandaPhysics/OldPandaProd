@@ -46,6 +46,7 @@ int EventFiller::analyze(const edm::Event& iEvent){
 
       unsigned int nP = trigger_paths.size();
       if (data->isData) {
+        data->tiggers->clear(); // just in case, so the next line initializes to false
         data->tiggers->resize(trigger_paths.size(),false);
 
         iEvent.getByToken(trigger_token,trigger_handle);      
@@ -53,6 +54,8 @@ int EventFiller::analyze(const edm::Event& iEvent){
 
         unsigned int nT = tn.size();
         for (unsigned int iT=0; iT!=nT; ++iT) {
+          if (!trigger_handle->accept(iT))
+            continue;
           string name = tn.triggerName(iT);
           for (unsigned int jP=0; jP!=nP; ++jP) {
             if (name.find(trigger_paths[jP]) != string::npos) {

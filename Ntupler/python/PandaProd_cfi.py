@@ -19,6 +19,7 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
 
     # offline skimming
     doJetSkim = cms.bool(False),
+    doRecoilFilter = cms.bool(True),
 
     # jet toggles
     savePuppiCands = cms.bool(False),
@@ -39,11 +40,9 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
 
     pfmet = cms.InputTag("slimmedMETs"),
     puppimet = cms.InputTag("slimmedMETsPuppi"),
-    # metsPuppiUncorrected = cms.InputTag("pfMETPuppi"), # should be removed soon, going to be deprecated
 
     puppiPFCands = cms.InputTag("puppi"),
     chsPFCands = cms.InputTag('packedPFCandidates'),
-    #chsPFCands = cms.InputTag('pfCHS'),
 
     # egm stuffs
     eleEA = cms.string("RecoEgamma/ElectronIdentification/data/Summer16/effAreaElectrons_cone03_pfNeuHadronsAndPhotons_80X.txt"),
@@ -111,7 +110,6 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
     metfilterPaths = cms.vstring([
                                   'Flag_HBHENoiseFilter', 
                                   'Flag_HBHENoiseIsoFilter', 
-                                  'Flag_CSCTightHalo2015Filter', 
                                   'Flag_EcalDeadCellTriggerPrimitiveFilter', 
                                   'Flag_goodVertices', 
                                   'Flag_eeBadScFilter',
