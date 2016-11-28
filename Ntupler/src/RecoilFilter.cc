@@ -70,7 +70,7 @@ int RecoilFilter::analyze(const edm::Event& iEvent){
     for (unsigned iM=0; iM!=2; ++iM) {
         reco::Candidate::LorentzVector met = mets.at(iM);
         U = met.pt();
-        if (U>maxRecoil)
+        if (U>maxRecoil) {
           maxRecoil = U;
           whichRecoil = 2*0+iM;
         }
