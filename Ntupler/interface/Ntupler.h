@@ -30,7 +30,7 @@ class Ntupler : public edm::EDAnalyzer {
         panda::InfoFiller *info; // this saves the all tree
         panda::EventFiller *event; // this goes into obj, but is also used in beginJob()
 
-        bool *skipEvent;
+        bool *skipEvent, *reduceEvent;
 };
 
 

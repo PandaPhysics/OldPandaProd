@@ -326,7 +326,7 @@ process.p = cms.Path(
                         process.puppiMETSequence *             # builds all the puppi collections
                         process.egmPhotonIDSequence *          # baseline photon ID for puppi correction
                         process.fullPatMetSequencePuppi *      # puppi MET
-                        process.monoXFilterSequence *          # filter
+                        # process.monoXFilterSequence *          # filter
                         process.jetSequence *                  # patify ak4puppi and do all fatjet stuff
                         process.metfilterSequence *
                         process.PandaNtupler

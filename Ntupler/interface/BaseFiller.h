@@ -14,9 +14,20 @@ class BaseFiller
         virtual int  analyze(const edm::Event &) = 0 ;
         virtual int  analyze(const edm::Event &iEvent,const edm::EventSetup& iSetup) { return analyze(iEvent) ; } ;
         virtual inline string name(){return "BaseFiller";};
+        virtual void endJob() { return; }
         virtual void init(TTree *t) = 0;
 
         bool *skipEvent=0;
+        bool *reduceEvent=0;
+
+        /**
+         * \brief Skip the event if the pointer is set and false
+         */
+        bool SkipEvent() { return ((skipEvent!=0) && (*skipEvent)); }
+        /**
+         * \brief Reduce the event content if the pointer is set and false
+         */
+        bool ReduceEvent() { return ((reduceEvent!=0) && (*reduceEvent)); }
 };
 }
 #endif

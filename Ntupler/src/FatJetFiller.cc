@@ -87,9 +87,8 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       delete d;
     data->clear();
 
-    if (skipEvent!=0 && *skipEvent) {
+    if (SkipEvent())
       return 0;
-    }
 
     iEvent.getByToken(jet_token, jet_handle);
     iEvent.getByToken(rho_token,rho_handle);
@@ -179,7 +178,7 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
         }
       }
 
-      if (pfcands!=0 || (!minimal && data->size()<2)) {
+      if (!ReduceEvent() && (pfcands!=0 || (!minimal && data->size()<2))) {
         // either we want to associate to pf cands OR compute extra info about the first or second jet
 
         std::vector<edm::Ptr<reco::Candidate>> constituentPtrs = j.getJetConstituents();

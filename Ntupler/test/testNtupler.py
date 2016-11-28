@@ -23,9 +23,9 @@ isData = options.isData
 process.load("FWCore.MessageService.MessageLogger_cfi")
 # If you run over many samples and you save the log, remember to reduce
 # the size of the output by prescaling the report of the event number
-process.MessageLogger.cerr.FwkReport.reportEvery = 1
+process.MessageLogger.cerr.FwkReport.reportEvery = 10
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(200) )
 
 if isData:
    fileList = [
@@ -328,7 +328,7 @@ process.p = cms.Path(
                         process.puppiMETSequence *             # builds all the puppi collections
                         process.egmPhotonIDSequence *          # baseline photon ID for puppi correction
                         process.fullPatMetSequencePuppi *      # puppi MET
-                        process.monoXFilterSequence *          # filter
+                        # process.monoXFilterSequence *          # filter
                         process.jetSequence *                  # patify ak4puppi and do all fatjet stuff
                         process.metfilterSequence *
                         process.PandaNtupler
