@@ -25,7 +25,7 @@ process.load("FWCore.MessageService.MessageLogger_cfi")
 # the size of the output by prescaling the report of the event number
 process.MessageLogger.cerr.FwkReport.reportEvery = 10
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(200) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1000) )
 
 if isData:
    fileList = [
@@ -71,11 +71,9 @@ from CondCore.DBCommon.CondDBSetup_cfi import *
 
 ######## LUMI MASK
 if isData and not options.isGrid and False: ## dont load the lumiMaks, will be called by crab
-    #pass
     import FWCore.PythonUtilities.LumiList as LumiList
-    ## SILVER
-    process.source.lumisToProcess = LumiList.LumiList(filename='/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions15/13TeV/Cert_246908-260627_13TeV_PromptReco_Collisions15_25ns_JSON_Silver_v2.txt').getVLuminosityBlockRange()
-    print "FIX JSON"
+    process.source.lumisToProcess = LumiList.LumiList(filename='Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt').getVLuminosityBlockRange()
+    print "Using local JSON"
 
 ### LOAD CONFIGURATION
 process.load('PandaProd.Filter.infoProducerSequence_cff')
@@ -227,7 +225,7 @@ process.MonoXFilter.puppimet = cms.InputTag('slimmedMETsPuppi','','PandaNtupler'
 ############ RUN CLUSTERING ##########################
 process.jetSequence = cms.Sequence()
 
-# btag and patify puppi AK$ jets
+# btag and patify puppi AK4 jets
 from RecoJets.JetProducers.ak4GenJets_cfi import ak4GenJets
 from PhysicsTools.PatAlgos.tools.pfTools import *
 
@@ -328,7 +326,7 @@ process.p = cms.Path(
                         process.puppiMETSequence *             # builds all the puppi collections
                         process.egmPhotonIDSequence *          # baseline photon ID for puppi correction
                         process.fullPatMetSequencePuppi *      # puppi MET
-                        # process.monoXFilterSequence *          # filter
+                        process.monoXFilterSequence *          # filter
                         process.jetSequence *                  # patify ak4puppi and do all fatjet stuff
                         process.metfilterSequence *
                         process.PandaNtupler
