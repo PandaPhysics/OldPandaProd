@@ -36,9 +36,8 @@ int EventFiller::analyze(const edm::Event& iEvent){
     if (firstEntry) {
       firstEntry = false;
       if (!data->isData) {
-        // if this is MC, don't bother saving triggers or metfilters
+        // if this is MC, don't bother saving triggers 
         data->tiggers->clear();
-        data->metfilters->clear();
       }
     }
 
