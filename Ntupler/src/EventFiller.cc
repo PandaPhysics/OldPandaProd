@@ -18,6 +18,9 @@ EventFiller::~EventFiller(){
 
 void EventFiller::init(TTree *t) {
   t->Branch(treename.Data(),&data,99);
+  // resize once when initializing. will be undone once for MC
+  data->tiggers->resize(trigger_paths.size(),false);
+  data->metfilters->resize(metfilter_paths.size()+3,false);
 }
 
 int EventFiller::analyze(const edm::Event& iEvent){
@@ -29,6 +32,14 @@ int EventFiller::analyze(const edm::Event& iEvent){
     data->lumiNumber    = iEvent.luminosityBlock();
     data->eventNumber   = iEvent.id().event();
     data->isData        = iEvent.isRealData();
+
+    if (firstEntry) {
+      firstEntry = false;
+      if (!data->isData) {
+        // if this is MC, don't bother saving triggers 
+        data->tiggers->clear();
+      }
+    }
 
     if (!(data->isData)) {
       iEvent.getByToken(gen_token,gen_handle); 
@@ -46,8 +57,9 @@ int EventFiller::analyze(const edm::Event& iEvent){
 
       unsigned int nP = trigger_paths.size();
       if (data->isData) {
-        data->tiggers->clear(); // just in case, so the next line initializes to false
-        data->tiggers->resize(trigger_paths.size(),false);
+        for (unsigned int jP=0; jP!=nP; ++jP) {
+          data->tiggers->at(jP) = false;
+        }
 
         iEvent.getByToken(trigger_token,trigger_handle);      
         const edm::TriggerNames &tn = iEvent.triggerNames(*trigger_handle);
@@ -68,7 +80,10 @@ int EventFiller::analyze(const edm::Event& iEvent){
       // met filters
       iEvent.getByToken(metfilter_token,metfilter_handle);
       nP = metfilter_paths.size();
-      data->metfilters->resize(nP+3);  // +1 for allrec and +2 for bad ch/pfmu
+      for (unsigned int jP=0; jP!=nP+3; ++jP) {
+        // +1 for allrec and +2 for bad ch/pfmu
+        data->metfilters->at(jP) = false;
+      }
       const edm::TriggerNames &fn = iEvent.triggerNames(*metfilter_handle);
       unsigned int nF = fn.size();
 

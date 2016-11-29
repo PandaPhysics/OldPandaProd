@@ -28,6 +28,10 @@ class BaseFiller
          * \brief Reduce the event content if the pointer is set and false
          */
         bool ReduceEvent() { return ((reduceEvent!=0) && (*reduceEvent)); }
+        
+    protected:
+
+        bool firstEntry=true; //!< used by inherited classes to track whether this is the first time analyze() is called
 };
 }
 #endif

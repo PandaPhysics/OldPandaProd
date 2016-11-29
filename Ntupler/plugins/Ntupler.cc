@@ -250,6 +250,8 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
 
 Ntupler::~Ntupler()
 {
+  delete skipEvent;
+  delete reduceEvent;
 }
 
 

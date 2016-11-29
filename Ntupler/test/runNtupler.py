@@ -221,6 +221,8 @@ runMetCorAndUncFromMiniAOD(process,         ## Puppi MET
                             postfix="Puppi")
 process.PandaNtupler.pfmet = cms.InputTag('slimmedMETs','','PandaNtupler')
 process.PandaNtupler.puppimet = cms.InputTag('slimmedMETsPuppi','','PandaNtupler')
+process.MonoXFilter.met = cms.InputTag('slimmedMETs','','PandaNtupler')
+process.MonoXFilter.puppimet = cms.InputTag('slimmedMETsPuppi','','PandaNtupler')
 
 ############ RUN CLUSTERING ##########################
 process.jetSequence = cms.Sequence()
