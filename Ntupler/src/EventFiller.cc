@@ -18,6 +18,7 @@ EventFiller::~EventFiller(){
 
 void EventFiller::init(TTree *t) {
   t->Branch(treename.Data(),&data,99);
+  // resize once when initializing. will be undone once for MC
   data->tiggers->resize(trigger_paths.size(),false);
   data->metfilters->resize(metfilter_paths.size()+3,false);
 }
@@ -31,6 +32,15 @@ int EventFiller::analyze(const edm::Event& iEvent){
     data->lumiNumber    = iEvent.luminosityBlock();
     data->eventNumber   = iEvent.id().event();
     data->isData        = iEvent.isRealData();
+
+    if (firstEntry) {
+      firstEntry = false;
+      if (!data->isData) {
+        // if this is MC, don't bother saving triggers or metfilters
+        data->tiggers->clear();
+        data->metfilters->clear();
+      }
+    }
 
     if (!(data->isData)) {
       iEvent.getByToken(gen_token,gen_handle); 
