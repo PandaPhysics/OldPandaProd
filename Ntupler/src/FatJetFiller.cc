@@ -233,6 +233,7 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
 	float tau_flightDistance2dSig_1_ = vars.get(reco::btau::tau2_flightDistance2dSig);
 	float jetNTracks_ = vars.get(reco::btau::jetNTracks);
 	float nSV_ = vars.get(reco::btau::jetNSecondaryVertices);
+	std::cout << "jetNTracks_= " << jetNTracks_ << ", nSV_= " << nSV_ << std::endl;
 	float massPruned_ =jet->m;
 	float flavour_ = -1;//j.partonFlavor();   // they're spectator variables
 	float nbHadrons_ = -1;//j.hadronFlavor(); // 
