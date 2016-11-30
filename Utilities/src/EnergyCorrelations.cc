@@ -1,13 +1,15 @@
-#include "fastjet/PseudoJet.hh"
-#include <vector>
-#include <map>
-#include "TMath.h"
+/**
+ * \file EnergyCorrelations.cc
+ * \brief Optimized code to calculate energy correlation functions. Based on code from fj-contrib
+ * \author S.Narayanan
+ */
+#include "../interface/EnergyCorrelations.h"
 
 double DeltaR2(fastjet::PseudoJet j1, fastjet::PseudoJet j2) {
   return DeltaR2(j1.eta(),j1.phi(),j2.eta(),j2.phi());
 }
 
-void calcECF(double beta, std::vector<fastjet::PseudoJet> &constituents, double *n1=0, double *n2=0, double *n3=0, double *n4=0) {
+void calcECF(double beta, std::vector<fastjet::PseudoJet> &constituents, double *n1/*=0*/, double *n2/*=0*/, double *n3/*=0*/, double *n4/*=0*/) {
   unsigned int nC = constituents.size();
   double halfBeta = beta/2.;
 
@@ -97,27 +99,8 @@ void calcECF(double beta, std::vector<fastjet::PseudoJet> &constituents, double 
 
 }
 
-class ECFNManager {
-public:
-  // just a bunch of floats and bools to hold different values of normalized ECFs
-  ECFNManager() {
-    flags["3_1"]=true; 
-    flags["3_2"]=true; 
-    flags["3_3"]=true; 
-    flags["4_1"]=true; 
-    flags["4_2"]=true; 
-    flags["4_3"]=false; 
-  }
-  ~ECFNManager() {}
-
-  std::map<TString,double> ecfns; // maps "N_I" to ECFN
-  std::map<TString,bool>   flags; // maps "N_I" to flag
-
-  bool doN1=true, doN2=true, doN3=true, doN4=true;
-
-};
-
-void calcECFN(double beta, std::vector<fastjet::PseudoJet> &constituents, ECFNManager *manager, bool useMin=true) {
+/* TODO: switch from manual sort to std::partial_sort for readability*/
+void calcECFN(double beta, std::vector<fastjet::PseudoJet> &constituents, ECFNManager *manager, bool useMin/*=true*/) {
   unsigned int nC = constituents.size();
   double halfBeta = beta/2.;
 
@@ -152,9 +135,10 @@ void calcECFN(double beta, std::vector<fastjet::PseudoJet> &constituents, ECFNMa
     double val=0;
     for (unsigned int iC=0; iC!=nC; ++iC) {
       for (unsigned int jC=0; jC!=iC; ++jC) {
-        val += pTs[iC] * pTs[jC] * dRs[iC][jC] / norm; 
+        val += pTs[iC] * pTs[jC] * dRs[iC][jC]; 
       } // jC
     } // iC
+    val /= norm;
     manager->ecfns["2_1"] = val;
     manager->ecfns["2_2"] = val;
     manager->ecfns["2_3"] = val;
@@ -181,8 +165,7 @@ void calcECFN(double beta, std::vector<fastjet::PseudoJet> &constituents, ECFNMa
           if (doI1||doI2||doI3) {
             double angle_1=999; unsigned int index_1=999;
             for (unsigned int iA=0; iA!=nAngles; ++iA) {
-              if ((useMin && angles[iA]<angle_1)  || 
-                  (!useMin && angles[iA]>angle_1)) {
+              if (angles[iA]<angle_1) {
                 angle_1 = angles[iA];
                 index_1 = iA;
               }
@@ -191,24 +174,24 @@ void calcECFN(double beta, std::vector<fastjet::PseudoJet> &constituents, ECFNMa
               double angle_2=999; 
               for (unsigned int jA=0; jA!=nAngles; ++jA) {
                 if (jA==index_1) continue;
-                if ((useMin && angles[jA]<angle_2)  || 
-                    (!useMin && angles[jA]>angle_2)) {
+                if (angles[jA]<angle_2) {
                   angle_2 = angles[jA];
                 }
               }
               if (doI3) {
-                val3 += val_ij * pTs[kC] * angles[0] * angles[1] * angles[2] / norm;
+                val3 += val_ij * pTs[kC] * angles[0] * angles[1] * angles[2];
               }
               if (doI2)
-                val2 += val_ij * pTs[kC] * angle_1 * angle_2 / norm;
+                val2 += val_ij * pTs[kC] * angle_1 * angle_2;
             }
             if (doI1)
-              val1 += val_ij * pTs[kC] * angle_1 / norm;
+              val1 += val_ij * pTs[kC] * angle_1;
           }
 
         } // kC
       } // jC
     } // iC
+    val1 /= norm; val2 /= norm; val3 /= norm;
     manager->ecfns["3_1"] = val1;
     manager->ecfns["3_2"] = val2;
     manager->ecfns["3_3"] = val3;
@@ -240,8 +223,7 @@ void calcECFN(double beta, std::vector<fastjet::PseudoJet> &constituents, ECFNMa
             if (doI1||doI2) {
               double angle_1=999; unsigned int index_1=999;
               for (unsigned int iA=0; iA!=nAngles; ++iA) {
-                if ((useMin && angles[iA]<angle_1)  || 
-                    (!useMin && angles[iA]>angle_1)) {
+                if (angles[iA]<angle_1) {
                   angle_1 = angles[iA];
                   index_1 = iA;
                 }
@@ -250,24 +232,23 @@ void calcECFN(double beta, std::vector<fastjet::PseudoJet> &constituents, ECFNMa
                 double angle_2=999; 
                 for (unsigned int jA=0; jA!=nAngles; ++jA) {
                   if (jA==index_1) continue;
-                  if ((useMin && angles[jA]<angle_2)  || 
-                      (!useMin && angles[jA]>angle_2)) {
+                  if (angles[jA]<angle_2) {
                     angle_2 = angles[jA];
                   }
                 }
-                val2 += val_ijk * pTs[lC] * angle_1 * angle_2 / norm;
+                val2 += val_ijk * pTs[lC] * angle_1 * angle_2;
               }
               if (doI1)
-                val1 += val_ijk * pTs[lC] * angle_1 / norm;
+                val1 += val_ijk * pTs[lC] * angle_1;
             }
           } // lC
         } // kC
       } // jC
     } // iC
+    val1 /= norm; val2 /= norm;
     manager->ecfns["4_1"] = val1;
     manager->ecfns["4_2"] = val2;
     manager->ecfns["4_3"] = 0;
   }
 
 }
-

@@ -22,7 +22,7 @@
 #include "DataFormats/METReco/interface/PFMET.h"
 #include "DataFormats/METReco/interface/PFMETCollection.h"
 
-#include "PandaCore/Tools/interface/Common.h"
+#include "PandaUtilities/Common/interface/Common.h"
 
 //
 // class declaration
@@ -44,8 +44,8 @@ private:
     edm::EDGetTokenT<pat::METCollection> met_token ;    
     edm::Handle<pat::METCollection> met_handle;
 
-    edm::EDGetTokenT<reco::PFMETCollection> puppimet_token;
-    edm::Handle<reco::PFMETCollection> puppimet_handle;
+    edm::EDGetTokenT<pat::METCollection> puppimet_token;
+    edm::Handle<pat::METCollection> puppimet_handle;
 
     edm::EDGetTokenT<pat::MuonCollection> mu_token;
     edm::Handle<pat::MuonCollection> mu_handle;
@@ -64,7 +64,7 @@ private:
 
 MonoXFilter::MonoXFilter(const edm::ParameterSet& iConfig):
     met_token( consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("met")) ),
-    puppimet_token( consumes<reco::PFMETCollection>(iConfig.getParameter<edm::InputTag>("puppimet")) ),
+    puppimet_token( consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("puppimet")) ),
     mu_token(  consumes<pat::MuonCollection>(iConfig.getParameter<edm::InputTag>("muons")) ),
     el_token(  consumes<pat::ElectronCollection>(iConfig.getParameter<edm::InputTag>("electrons")) ),
     ph_token(  consumes<pat::PhotonCollection>(iConfig.getParameter<edm::InputTag>("photons")) ),

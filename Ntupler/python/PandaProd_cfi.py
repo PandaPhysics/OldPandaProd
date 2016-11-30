@@ -19,6 +19,7 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
 
     # offline skimming
     doJetSkim = cms.bool(False),
+    doRecoilFilter = cms.bool(True),
 
     # jet toggles
     savePuppiCands = cms.bool(False),
@@ -37,19 +38,18 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
     chsCA15 = cms.InputTag("packedPatJetsPFchsCA15"),
     puppiCA15 = cms.InputTag("packedPatJetsPFpuppiCA15"),
 
-    mets = cms.InputTag("slimmedMETs"),
-    metsPuppi = cms.InputTag("type1PuppiMET"),
-    metsPuppiUncorrected = cms.InputTag("pfMETPuppi"),
+    pfmet = cms.InputTag("slimmedMETs"),
+    puppimet = cms.InputTag("slimmedMETsPuppi"),
 
     puppiPFCands = cms.InputTag("puppi"),
     chsPFCands = cms.InputTag('packedPFCandidates'),
-    #chsPFCands = cms.InputTag('pfCHS'),
 
-    # egm IDs
-    eleVetoIdMap   = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Spring15-%(bx)s-%(vs)s-standalone-veto"),
-    eleLooseIdMap  = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Spring15-%(bx)s-%(vs)s-standalone-loose"),
-    eleMediumIdMap = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Spring15-%(bx)s-%(vs)s-standalone-medium"),
-    eleTightIdMap  = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Spring15-%(bx)s-%(vs)s-standalone-tight"),
+    # egm stuffs
+    eleEA = cms.string("RecoEgamma/ElectronIdentification/data/Summer16/effAreaElectrons_cone03_pfNeuHadronsAndPhotons_80X.txt"),
+    eleVetoIdMap   = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-%(vs)s-veto"),
+    eleLooseIdMap  = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-%(vs)s-loose"),
+    eleMediumIdMap = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-%(vs)s-medium"),
+    eleTightIdMap  = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-%(vs)s-tight"),
     phoLooseIdMap  = cms.InputTag("egmPhotonIDs:cutBasedPhotonID-Spring15-%(bx)s-%(vs)s-standalone-loose"),
     phoMediumIdMap = cms.InputTag("egmPhotonIDs:cutBasedPhotonID-Spring15-%(bx)s-%(vs)s-standalone-medium"),
     phoTightIdMap  = cms.InputTag("egmPhotonIDs:cutBasedPhotonID-Spring15-%(bx)s-%(vs)s-standalone-tight"),
@@ -110,7 +110,6 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
     metfilterPaths = cms.vstring([
                                   'Flag_HBHENoiseFilter', 
                                   'Flag_HBHENoiseIsoFilter', 
-                                  'Flag_CSCTightHalo2015Filter', 
                                   'Flag_EcalDeadCellTriggerPrimitiveFilter', 
                                   'Flag_goodVertices', 
                                   'Flag_eeBadScFilter',

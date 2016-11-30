@@ -4,5 +4,5 @@
 <use name="DataFormats/PatCandidates"/>
 <use name="SimDataFormats/GeneratorProducts" />
 <use name="SimDataFormats/PileupSummaryInfo" />
-<use name="PandaCore/Tools" />
+<use name="PandaUtilities/Common" />
 <flags EDM_PLUGIN="1"/>

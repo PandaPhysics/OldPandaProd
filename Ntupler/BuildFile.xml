@@ -33,6 +33,8 @@
 <use name="DataFormats/EcalRecHit"/>
 <use name="MagneticField/Records"/>
 <use name="MagneticField/Engine"/>
+<!-- EGM -->
+<use name="RecoEgamma/EgammaTools"/>
 <!-- JES UNC -->
 <use name="JetMETCorrections/Objects"/>
 <!-- JER UNC -->
@@ -40,6 +42,9 @@
 <!-- SUBSTRUCTRE -->
 <use name="RecoJets/JetAlgorithms"/>
 <!--  -->
+<use name="PandaUtilities/Common"/>
+<use name="PandaProd/Objects"/>
+<use name="PandaProd/Utilities"/>
 <use name="clhep"/>
 <use name="RooFit"/>
 <use name="root"/>

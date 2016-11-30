@@ -1,6 +1,7 @@
 #include "PandaProd/Ntupler/interface/Ntupler.h"
 #include "PandaProd/Ntupler/interface/BaseFiller.h"
 #include "PandaProd/Ntupler/interface/JetSkimmer.h"
+#include "PandaProd/Ntupler/interface/RecoilFilter.h"
 #include "PandaProd/Ntupler/interface/EventFiller.h"
 #include "PandaProd/Ntupler/interface/METFiller.h"
 #include "PandaProd/Ntupler/interface/PFCandFiller.h"
@@ -26,6 +27,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     obj.push_back(info);
 
     skipEvent = new bool(false);
+    reduceEvent = new bool(false);
 
     // SKIMS --------------------------------------------
     if (iConfig.getParameter<bool>("doJetSkim")) {
@@ -43,6 +45,20 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       skim->minMass         = 0;
       skim->maxEta          = 2.5;
       obj.push_back(skim);
+    }
+
+
+    // EVENT REDUCERS-------------------------------------------
+    if (iConfig.getParameter<bool>("doRecoilFilter")) {
+      RecoilFilter *filter      = new RecoilFilter("filter");
+      filter->met_token         = consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("pfmet"));
+      filter->puppimet_token    = consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("puppimet"));
+      filter->mu_token          = consumes<pat::MuonCollection>(iConfig.getParameter<edm::InputTag>("muons"));
+      filter->el_token          = consumes<pat::ElectronCollection>(iConfig.getParameter<edm::InputTag>("electrons"));
+      filter->ph_token          = consumes<pat::PhotonCollection>(iConfig.getParameter<edm::InputTag>("photons"));
+      filter->minU              = 175;
+      filter->reduceEvent       = reduceEvent;
+      obj.push_back(filter);
     }
 
     // EVENT FILLER --------------------------------------------
@@ -64,17 +80,17 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     METFiller *pfmet           = new METFiller("pfmet");
     pfmet->skipEvent           = skipEvent;
     pfmet->rerun               = false;
-    pfmet->met_token           = consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("mets"));
-    pfmet->pat_token           = consumes<pat::PackedCandidateCollection>(iConfig.getParameter<edm::InputTag>("chsPFCands")); // these are not actually CHS
+    pfmet->met_token           = consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("pfmet"));
+    pfmet->pat_token           = consumes<pat::PackedCandidateCollection>(iConfig.getParameter<edm::InputTag>("chsPFCands")); // these are not actually CHS, so don't worry
     pfmet->which_cand          = METFiller::kPat;
     pfmet->minimal             = false;
     obj.push_back(pfmet);
 
     METFiller *puppimet         = new METFiller("puppimet");
     puppimet->skipEvent         = skipEvent;
-    puppimet->rerun             = true;
-    puppimet->remet_token       = consumes<reco::PFMETCollection>(iConfig.getParameter<edm::InputTag>("metsPuppi"));
-    puppimet->remetuncorr_token = consumes<reco::PFMETCollection>(iConfig.getParameter<edm::InputTag>("metsPuppiUncorrected"));
+    puppimet->rerun             = false;
+    puppimet->met_token         = consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("puppimet"));
+    puppimet->minimal           = true;
     obj.push_back(puppimet);
 
 
@@ -93,6 +109,11 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     electron->el_looseid_token  = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleLooseIdMap"));
     electron->el_mediumid_token = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleMediumIdMap"));
     electron->el_tightid_token  = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleTightIdMap"));
+    electron->effArea.reset(
+      new EffectiveAreas(
+        edm::FileInPath(iConfig.getParameter<std::string>("eleEA")).fullPath()
+        )
+      );
     obj.push_back(electron);
 
     TauFiller *tau            = new TauFiller("tau");
@@ -162,7 +183,9 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       chsAK8->qgl_token     = mayConsume<edm::ValueMap<float>>(edm::InputTag("chsAK8SubQGTag","qgLikelihood") ) ;
       chsAK8->jetRadius     = 0.8;
       chsAK8->skipEvent     = skipEvent;
+      chsAK8->reduceEvent   = reduceEvent;
       chsAK8->pfcands       = pfcands;
+      chsAK8->minimal       = true;
       obj.push_back(chsAK8);
     }
 
@@ -176,7 +199,9 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       puppiAK8->qgl_token     = mayConsume<edm::ValueMap<float>>(edm::InputTag("puppiAK8SubQGTag","qgLikelihood") ) ;
       puppiAK8->jetRadius     = 0.8;
       puppiAK8->skipEvent     = skipEvent;
+      puppiAK8->reduceEvent   = reduceEvent;
       puppiAK8->pfcands       = puppicands;
+      puppiAK8->minimal       = true;
       obj.push_back(puppiAK8);
     }
 
@@ -190,7 +215,9 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       chsCA15->qgl_token     = mayConsume<edm::ValueMap<float>>(edm::InputTag("chsCA15SubQGTag","qgLikelihood") ) ;
       chsCA15->jetRadius     = 1.5;
       chsCA15->skipEvent     = skipEvent;
+      chsCA15->reduceEvent   = reduceEvent;
       chsCA15->pfcands       = pfcands;
+      chsCA15->minimal       = false;
       obj.push_back(chsCA15);
     }
 
@@ -204,7 +231,9 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       puppiCA15->qgl_token     = mayConsume<edm::ValueMap<float>>(edm::InputTag("puppiCA15SubQGTag","qgLikelihood") ) ;
       puppiCA15->jetRadius     = 1.5;
       puppiCA15->skipEvent     = skipEvent;
+      puppiCA15->reduceEvent   = reduceEvent;
       puppiCA15->pfcands       = puppicands;
+      puppiCA15->minimal       = false;
       obj.push_back(puppiCA15);
     }
 
@@ -225,6 +254,8 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
 
 Ntupler::~Ntupler()
 {
+  delete skipEvent;
+  delete reduceEvent;
 }
 
 
@@ -248,7 +279,7 @@ void Ntupler::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 void Ntupler::beginJob()
 {
     tree_ = fileService_->make<TTree>("events", "events");
-    for(auto o : obj) {
+    for (auto o : obj) {
         o->init(tree_);
     }
 
@@ -277,6 +308,9 @@ void Ntupler::beginJob()
 
 void Ntupler::endJob() 
 {
+  for (auto o : obj) {
+    o->endJob();
+  }
 }
 
 

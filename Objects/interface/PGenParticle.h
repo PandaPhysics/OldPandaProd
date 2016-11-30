@@ -16,7 +16,8 @@ namespace panda
       {}
     ~PGenParticle(){}
     
-    int pdgid, parent;
+    int pdgid;
+    int parent; //!< used to track index of the parent of this particle in a VGenParticle
     ClassDef(PGenParticle,1)
   };
 

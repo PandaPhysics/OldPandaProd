@@ -23,8 +23,8 @@
 #include "fastjet/contrib/MeasureDefinition.hh"
 #include "fastjet/contrib/EnergyCorrelator.hh"
 
-#include "functions/EnergyCorrelations.h"
-#include "functions/HEPTopTaggerWrapperV2.h"
+#include "PandaProd/Utilities/interface/EnergyCorrelations.h"
+#include "PandaProd/Utilities/interface/HEPTopTaggerWrapperV2.h"
 
 #include <map>
 #include <string>

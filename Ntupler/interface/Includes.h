@@ -54,9 +54,11 @@ using namespace std;
 #include "DataFormats/PatCandidates/interface/PackedTriggerPrescales.h"
 #include "DataFormats/PatCandidates/interface/TriggerEvent.h"
 #include "PhysicsTools/PatUtils/interface/TriggerHelper.h"
-
 // B-TAG
 #include "DataFormats/BTauReco/interface/BoostedDoubleSVTagInfo.h"
+// PANDA
+
+#include "PandaUtilities/Common/interface/Common.h"
 
 // ROOT
 #include "TTree.h"

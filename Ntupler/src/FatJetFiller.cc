@@ -3,6 +3,7 @@
 #include "DataFormats/BTauReco/interface/TaggingVariable.h"
 #include "DataFormats/BTauReco/interface/JetTag.h"
 #include "DataFormats/BTauReco/interface/BoostedDoubleSVTagInfo.h"
+#include "../interface/JetIDFunc.h"
 
 using namespace panda;
 
@@ -100,9 +101,8 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       delete d;
     data->clear();
 
-    if (skipEvent!=0 && *skipEvent) {
+    if (SkipEvent())
       return 0;
-    }
 
     iEvent.getByToken(jet_token, jet_handle);
     iEvent.getByToken(rho_token,rho_handle);
@@ -245,7 +245,21 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       else std::cout<< "   not found matched double-b tag info  "<<std::endl;
 	
       if (pfcands!=0 || (!minimal && data->size()<2)) {
+      // reset the ECFs
+      std::vector<float> betas = {0.5,1.,2.,4.};
+      std::vector<int> Ns = {1,2,3,4};
+      std::vector<int> orders = {1,2,3};
+      for (unsigned int iB=0; iB!=4; ++iB) {
+        for (auto N : Ns) {
+          for (auto o : orders) {
+            jet->set_ecf(o,N,iB,-1);
+          }
+        }
+      }
+
+      if (!ReduceEvent() && (pfcands!=0 || (!minimal && data->size()<2))) {
         // either we want to associate to pf cands OR compute extra info about the first or second jet
+        // but do not do any of this if ReduceEvent() is tripped
 
         std::vector<edm::Ptr<reco::Candidate>> constituentPtrs = j.getJetConstituents();
 
@@ -255,20 +269,19 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
           std::vector<UShort_t> *constituents = jet->constituents;
 
           for (auto ptr : constituentPtrs) {
-            //const reco::PFCandidate *constituent = ptr.get();
             const reco::Candidate *constituent = ptr.get();
 
-            auto result_ = pfmap.find(constituent);
+            auto result_ = pfmap.find(constituent); // check if we know about this pf cand
             if (result_ == pfmap.end()) {
               PError("PandaProdNtupler::FatJetFiller",TString::Format("could not PF [%s] ...\n",treename.Data()));
             } else {
               constituents->push_back(result_->second);
-            }
-          }
-        } 
+            } 
+          } // loop through constituents from input
+        } // pfcands!=0 
 
         if (!minimal && data->size()<2) { 
-        // calculate ECFs, groomed tauN
+          // calculate ECFs, groomed tauN
           VPseudoJet vjet;
           for (auto ptr : constituentPtrs) { 
             // create vector of PseudoJets
@@ -289,11 +302,8 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
             VPseudoJet sdconstsFiltered(sdconsts.begin(),sdconsts.begin()+nFilter);
 
             // calculate ECFs
-            std::vector<float> betas = {0.5,1.,2.,4.};
-            std::vector<int> Ns = {1,2,3,4};
-            std::vector<int> orders = {1,2,3};
             for (unsigned int iB=0; iB!=4; ++iB) {
-              calcECFN(betas[iB],sdconstsFiltered,ecfnmanager);
+              calcECFN(betas[iB],sdconstsFiltered,ecfnmanager); // calculate for all Ns and os
               for (auto N : Ns) {
                 for (auto o : orders) {
                   float x = ecfnmanager->ecfns[TString::Format("%i_%i",N,o)];
@@ -302,9 +312,9 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
                     PError("PandaProd::Ntupler::FatJetFiller",
                         TString::Format("Could not save o=%i, N=%i, iB=%i",o,N,(int)iB));
                   }
-                }
-              }
-            }
+                } // o loop
+              } // N loop
+            } // beta loop
 
             jet->tau3SD = tau->getTau(3,sdconsts);
             jet->tau2SD = tau->getTau(2,sdconsts);
@@ -323,8 +333,8 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
             PError("PandaProd::Ntupler::FatJetFiller","Jet could not be clustered");
           }
 
-        } 
-      }
+        } // if not minimal and fewer than 2 
+      } // if extras are requested
 
       data->push_back(jet);
   
@@ -334,38 +344,3 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
     return 0;
 }
 
-/*
-bool FatJetFiller::JetId(const pat::Jet &j, std::string id)
-{
-
-  bool jetid = false;
-
-  float NHF    = j.neutralHadronEnergyFraction();
-  float NEMF   = j.neutralEmEnergyFraction();
-  float CHF    = j.chargedHadronEnergyFraction();
-  //float MUF    = j.muonEnergyFraction();                                                                                                                                                                
-  float CEMF   = j.chargedEmEnergyFraction();
-  int NumConst = j.chargedMultiplicity()+j.neutralMultiplicity();
-  int CHM      = j.chargedMultiplicity();
-  int NumNeutralParticle =j.neutralMultiplicity();
-  float eta = j.eta();
-
-  if (id=="loose" || id=="monojet" )
-    {
-      jetid = (NHF<0.99 && NEMF<0.99 && NumConst>1) && ((fabs(eta)<=2.4 && CHF>0 && CHM>0 && CEMF<0.99) || fabs(eta)>2.4) && fabs(eta)<=3.0;
-      jetid = jetid || (NEMF<0.90 && NumNeutralParticle>10 && fabs(eta)>3.0);
-    }
-
-  if (id=="tight")
-    {
-      jetid = (NHF<0.90 && NEMF<0.90 && NumConst>1) && ((fabs(eta)<=2.4 && CHF>0 && CHM>0 && CEMF<0.99) || fabs(eta)>2.4) && fabs(eta)<=3.0;
-      jetid = jetid || (NEMF<0.90 && NumNeutralParticle>10 && fabs(eta)>3.0 );
-    }
-
-  if (id=="monojet")
-    jetid = jetid && (NHF < 0.8 && CHF > 0.1);
-
-  return jetid;
-  
-}
-*/

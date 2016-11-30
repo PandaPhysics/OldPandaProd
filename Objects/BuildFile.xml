@@ -1,5 +1,5 @@
 <use name="root"/>
-<use name="PandaCore/Tools"/>
+<use name="PandaUtilities/Common" />
 <flags CXXFLAGS="-g -Wall"/>
 <export>
   <lib   name="1"/>

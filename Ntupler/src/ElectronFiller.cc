@@ -5,7 +5,6 @@ using namespace panda;
 ElectronFiller::ElectronFiller(TString n):
     BaseFiller()
 {
-  // data = new TClonesArray("panda::PElectron",100);
   data = new VElectron();
   treename = n;
 }
@@ -15,12 +14,10 @@ ElectronFiller::~ElectronFiller(){
 }
 
 void ElectronFiller::init(TTree *t) {
-//  PElectron::Class()->IgnoreTObjectStreamer();
   t->Branch(treename.Data(),&data);
 }
 
 int ElectronFiller::analyze(const edm::Event& iEvent){
-    // data->Clear();
     for (auto d : *data)
       delete d;
     data->clear(); 
@@ -39,7 +36,6 @@ int ElectronFiller::analyze(const edm::Event& iEvent){
     for (const pat::Electron& el : *el_handle) {
 
       if (el.pt()<minPt || fabs(el.eta())>maxEta || !(el.passConversionVeto()) ) {
-        // PDebug("PandaProd::Ntupler::ElectronFiller","Rejecting at first step...");
         continue;
       }
 
@@ -51,7 +47,6 @@ int ElectronFiller::analyze(const edm::Event& iEvent){
       bool tight = (*el_tightid_handle)[ref];
 
       if (!veto) {
-        // PDebug("PandaProd::Ntupler::ElectronFiller","Rejecting at second step...");
         continue;
       }
 
@@ -62,13 +57,8 @@ int ElectronFiller::analyze(const edm::Event& iEvent){
       float puiso= el.puChargedHadronIso();
 
       double ea = 0.; // effective area
-      if ( fabs(el.eta() ) < 1.0 ) ea= 0.1752 ; 
-      else if (fabs(el.eta() ) < 1.479 ) ea = 0.1862 ;
-      else if (fabs(el.eta() ) < 2.0 ) ea = 0.1411 ;
-      else if (fabs(el.eta() ) < 2.2 ) ea = 0.1534 ;
-      else if (fabs(el.eta() ) < 2.3 ) ea = 0.1903 ;
-      else if (fabs(el.eta() ) < 2.4 ) ea = 0.2243 ;
-      else if (fabs(el.eta() ) < 2.5 ) ea = 0.2687 ;
+      ea = effArea->getEffectiveArea(el.eta());
+
       float iso = chiso + TMath::Max(nhiso+phoiso-(evt->rho()*ea),(double)0);
 
       // fill
