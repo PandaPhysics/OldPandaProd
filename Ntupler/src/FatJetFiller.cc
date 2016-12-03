@@ -87,9 +87,8 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       delete d;
     data->clear();
 
-    if (skipEvent!=0 && *skipEvent) {
+    if (SkipEvent())
       return 0;
-    }
 
     iEvent.getByToken(jet_token, jet_handle);
     iEvent.getByToken(rho_token,rho_handle);
@@ -179,8 +178,9 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
         }
       }
 
-      if (pfcands!=0 || (!minimal && data->size()<2)) {
+      if (!ReduceEvent() && (pfcands!=0 || (!minimal && data->size()<2))) {
         // either we want to associate to pf cands OR compute extra info about the first or second jet
+        // but do not do any of this if ReduceEvent() is tripped
 
         std::vector<edm::Ptr<reco::Candidate>> constituentPtrs = j.getJetConstituents();
 
@@ -190,20 +190,19 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
           std::vector<UShort_t> *constituents = jet->constituents;
 
           for (auto ptr : constituentPtrs) {
-            //const reco::PFCandidate *constituent = ptr.get();
             const reco::Candidate *constituent = ptr.get();
 
-            auto result_ = pfmap.find(constituent);
+            auto result_ = pfmap.find(constituent); // check if we know about this pf cand
             if (result_ == pfmap.end()) {
               PError("PandaProdNtupler::FatJetFiller",TString::Format("could not PF [%s] ...\n",treename.Data()));
             } else {
               constituents->push_back(result_->second);
-            }
-          }
-        } 
+            } 
+          } // loop through constituents from input
+        } // pfcands!=0 
 
         if (!minimal && data->size()<2) { 
-        // calculate ECFs, groomed tauN
+          // calculate ECFs, groomed tauN
           VPseudoJet vjet;
           for (auto ptr : constituentPtrs) { 
             // create vector of PseudoJets
@@ -225,7 +224,7 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
 
             // calculate ECFs
             for (unsigned int iB=0; iB!=4; ++iB) {
-              calcECFN(betas[iB],sdconstsFiltered,ecfnmanager);
+              calcECFN(betas[iB],sdconstsFiltered,ecfnmanager); // calculate for all Ns and os
               for (auto N : Ns) {
                 for (auto o : orders) {
                   float x = ecfnmanager->ecfns[TString::Format("%i_%i",N,o)];
@@ -234,9 +233,9 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
                     PError("PandaProd::Ntupler::FatJetFiller",
                         TString::Format("Could not save o=%i, N=%i, iB=%i",o,N,(int)iB));
                   }
-                }
-              }
-            }
+                } // o loop
+              } // N loop
+            } // beta loop
 
             jet->tau3SD = tau->getTau(3,sdconsts);
             jet->tau2SD = tau->getTau(2,sdconsts);
@@ -255,8 +254,8 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
             PError("PandaProd::Ntupler::FatJetFiller","Jet could not be clustered");
           }
 
-        } 
-      }
+        } // if not minimal and fewer than 2 
+      } // if extras are requested
 
       data->push_back(jet);
   

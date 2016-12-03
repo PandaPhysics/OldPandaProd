@@ -29,12 +29,14 @@ namespace panda
     
     float rawPt,csv,qgl;
     float nhf,chf;
-    // std::vector<PPFCand> constituents;
-    // TClonesArray *constituents=0;
-    //VPFCand *constituents;
-    std::vector<UShort_t> *constituents;
+    std::vector<UShort_t> *constituents; //!< indicies of this jet's constituents in a VPFCand
     unsigned int id;
 
+    /**
+     * \brief Get the PPFCand of this jet corresponding to an index
+     * \param ipf index of the PF candidate
+     * \param VPFCand the PF candidate collection from which this jet was clustered
+     */
     PPFCand *getPFCand(unsigned int ipf, VPFCand *vpf) { return vpf->at(constituents->at(ipf)); }
 
     ClassDef(PJet,1)
