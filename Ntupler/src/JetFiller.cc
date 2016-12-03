@@ -84,7 +84,7 @@ int JetFiller::analyze(const edm::Event& iEvent){
           this_rawpt = j.pt()*j.jecFactor("Uncorrected");
       }
 
-      if (this_pt < minPt || this_rawpt < minPt) continue;
+      if (this_pt < minPt && this_rawpt < minPt) continue;
 
       PJet *jet = new PJet();
 
@@ -94,6 +94,9 @@ int JetFiller::analyze(const edm::Event& iEvent){
       jet->phi = j.phi();
       jet->m = j.mass();
       jet->csv = j.bDiscriminator("pfCombinedInclusiveSecondaryVertexV2BJetTags");
+
+      // PDebug(TString::Format("JetFiller::%s",treename.Data()),
+      //        TString::Format("csv=%.3f",jet->csv));
 
       jet->id = 0;
       jet->id |= PassJetID(j,PJet::kLoose) * PJet::kLoose;

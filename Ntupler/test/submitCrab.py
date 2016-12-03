@@ -124,6 +124,7 @@ if __name__ == '__main__':
     ###################################################
     config.Data.unitsPerJob = 50
 
+    '''
     submitList([
             '/MET/Run2016B-23Sep2016-v2/MINIAOD',
             '/MET/Run2016B-23Sep2016-v3/MINIAOD',
@@ -136,9 +137,14 @@ if __name__ == '__main__':
             '/MET/Run2016H-PromptReco-v2/MINIAOD',
             '/MET/Run2016H-PromptReco-v3/MINIAOD',
         ])
+    '''
     
     config.Data.unitsPerJob = 40
 
+    submitList([
+        '/SingleElectron/Run2016C-23Sep2016-v1/MINIAOD',
+        ])
+    '''
     submitList([
         '/SingleElectron/Run2016B-23Sep2016-v2/MINIAOD',
         '/SingleElectron/Run2016B-23Sep2016-v3/MINIAOD',
@@ -161,14 +167,19 @@ if __name__ == '__main__':
         '/SinglePhoton/Run2016H-PromptReco-v2/MINIAOD',
         '/SinglePhoton/Run2016H-PromptReco-v3/MINIAOD',
       ])
-
+    '''
     ###################################################
     setdata("False")
     ###################################################
 
     config.Data.splitting = 'EventAwareLumiBased'
     config.Data.unitsPerJob = 20000
+    '''
     submitList([
+        '/ZH_HToBB_ZToNuNu_M125_13TeV_powheg_pythia8/RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v2/MINIAODSIM',
+        '/ggZH_HToBB_ZToNuNu_M125_13TeV_powheg_pythia8/RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
+        '/WminusH_HToBB_WToLNu_M125_13TeV_powheg_pythia8/RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v2/MINIAODSIM',
+        '/WplusH_HToBB_WToLNu_M125_13TeV_powheg_pythia8/RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v3/MINIAODSIM',
         '/WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/MINIAODSIM',
         '/TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/MINIAODSIM',
         '/ZJetsToNuNu_HT-100To200_13TeV-madgraph/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
@@ -182,12 +193,14 @@ if __name__ == '__main__':
         '/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/MINIAODSIM',
         '/DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
     ])
+    '''
 
 
     ###################################################
     setdata("False")
     ###################################################
 
+    '''
     config.Data.splitting = 'FileBased'
     config.Data.unitsPerJob = 1
     submitList([ 
@@ -241,4 +254,5 @@ if __name__ == '__main__':
         '/TT_TuneEE5C_13TeV-powheg-herwigpp/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM'
     ])
 
+    '''
 
