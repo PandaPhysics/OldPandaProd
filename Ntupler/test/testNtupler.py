@@ -29,11 +29,13 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(200) )
 
 if isData:
    fileList = [
-       'file:/data/t3home000/snarayan/test/met_8020.root'
+       #'file:/data/t3home000/snarayan/test/met_8020.root'
+       'file:/afs/cern.ch/work/s/snarayan/met_8020.root'
        ]
 else:
    fileList = [
-       'file:/data/t3home000/snarayan/test/tt_8011.root'
+       #'file:/data/t3home000/snarayan/test/tt_8011.root'
+       'file:/afs/cern.ch/work/s/snarayan/tt_8020.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
@@ -84,11 +86,12 @@ process.load('PandaProd.Ntupler.PandaProd_cfi')
 
 #-----------------------JES/JER----------------------------------
 if isData:
-  jeclabel = 'Spring16_25nsV6_DATA'
+  jeclabel = 'Spring16_25nsV10All_DATA'
 else:
-  jeclabel = 'Spring16_25nsV6_MC'
+  jeclabel = 'Spring16_25nsV10_MC'
 process.jec =  cms.ESSource("PoolDBESSource",
                     CondDBSetup,
+                    timetype = cms.string('runnumber'),
                     toGet = cms.VPSet(
               cms.PSet(record  = cms.string('JetCorrectionsRecord'),
                        tag     = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK4PFPuppi'),
@@ -106,14 +109,6 @@ process.jec =  cms.ESSource("PoolDBESSource",
                        tag     = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK8PFchs'),
                        label   = cms.untracked.string('AK8chs')
                        ),
-              cms.PSet(record  = cms.string('JetCorrectionsRecord'),
-                       tag     = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK4PF'),
-                       label   = cms.untracked.string('AK4')
-                       ),
-               cms.PSet(record  = cms.string('JetCorrectionsRecord'),
-                        tag     = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK8PF'),
-                        label   = cms.untracked.string('AK8')
-                        )
                ),
 
         )  
