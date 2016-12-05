@@ -61,7 +61,7 @@ if __name__ == '__main__':
 
     # We want to put all the CRAB project directories from the tasks we submit here into one common directory.
     # That's why we need to set this parameter (here or above in the configuration file, it does not matter, we will not overwrite it).
-    config.General.workArea = 'Submission'
+    config.General.workArea = 'Submission2'
 
     def submit(config):
         ### for some reason only the first dataset is submitted correctly, work around
@@ -88,7 +88,7 @@ if __name__ == '__main__':
         if value=='True':
             config.Data.splitting = 'LumiBased'
             #config.Data.lumiMask=None
-            url = "https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions16/13TeV/ReReco/"
+            url = "https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions16/13TeV/ReReco/Final/"
             config.Data.lumiMask = url + "Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt"
         else:
             config.Data.lumiMask = None
