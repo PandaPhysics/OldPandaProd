@@ -1,0 +1,1726 @@
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Task name:			161201_233138:mcremone_crab_DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_233138%3Amcremone_crab_DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+
+Jobs status:			finished       97.1% (134/138)
+				transferring    2.9% (  4/138)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Task name:			161201_233027:mcremone_crab_DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Grid scheduler:			crab3@vocms0195.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_233027%3Amcremone_crab_DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+
+Jobs status:			finished       98.8% (418/423)
+				transferring    1.2% (  5/423)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Task name:			161201_234623:mcremone_crab_DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Grid scheduler:			crab3@vocms0199.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_234623%3Amcremone_crab_DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+
+Jobs status:			finished       92.3% (12/13)
+				running         7.7% ( 1/13)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Task name:			161201_233251:mcremone_crab_DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Grid scheduler:			crab3@vocms0107.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_233251%3Amcremone_crab_DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+
+Jobs status:			finished      100.0% (48/48)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Task name:			161202_000546:mcremone_crab_DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_000546%3Amcremone_crab_DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+
+Jobs status:			failed          1.7% (  2/117)
+				finished       89.7% (105/117)
+				running         8.5% ( 10/117)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+  2 jobs failed with exit code 50660
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Task name:			161201_234733:mcremone_crab_DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Grid scheduler:			crab3@vocms0144.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_234733%3Amcremone_crab_DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+
+Jobs status:			finished       90.0% (18/20)
+				running         5.0% ( 1/20)
+				transferring    5.0% ( 1/20)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Task name:			161202_000654:mcremone_crab_DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Grid scheduler:			crab3@vocms0195.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_000654%3Amcremone_crab_DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+
+Jobs status:			finished       93.8% (15/16)
+				running         6.2% ( 1/16)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Task name:			161201_233402:mcremone_crab_DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_233402%3Amcremone_crab_DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+
+Jobs status:			failed         92.9% (394/424)
+				finished        5.2% ( 22/424)
+				transferring    1.9% (  8/424)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+393 jobs failed with exit code 50660
+
+  1 jobs failed in postprocessing step
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Task name:			161201_233511:mcremone_crab_DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Grid scheduler:			crab3@vocms0144.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_233511%3Amcremone_crab_DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+
+Jobs status:			failed          0.2% (  1/414)
+				finished       86.7% (359/414)
+				running         1.4% (  6/414)
+				transferring   11.6% ( 48/414)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+  1 jobs failed with exit code 50660
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Task name:			161201_234511:mcremone_crab_DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Grid scheduler:			crab3@vocms0137.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_234511%3Amcremone_crab_DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+
+Jobs status:			finished       75.9% ( 82/108)
+				running         4.6% (  5/108)
+				transferring   19.4% ( 21/108)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_GJets_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Task name:			161202_000327:mcremone_crab_GJets_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Grid scheduler:			crab3@vocms0195.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_000327%3Amcremone_crab_GJets_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+
+Jobs status:			finished       79.6% (43/54)
+				running        20.4% (11/54)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_GJets_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_GJets_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Task name:			161202_000436:mcremone_crab_GJets_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Grid scheduler:			crab3@vocms0195.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_000436%3Amcremone_crab_GJets_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+
+Jobs status:			finished       92.7% (114/123)
+				running         7.3% (  9/123)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_GJets_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_GJets_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Task name:			161201_233934:mcremone_crab_GJets_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			FAILED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_233934%3Amcremone_crab_GJets_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+
+Jobs status:			failed          1.7% ( 1/59)
+				finished       98.3% (58/59)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+ 1 jobs failed with exit code 134
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_GJets_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_GJets_HT-600ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Task name:			161201_234135:mcremone_crab_GJets_HT-600ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Grid scheduler:			crab3@vocms0199.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_234135%3Amcremone_crab_GJets_HT-600ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+
+Jobs status:			finished      100.0% (58/58)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_GJets_HT-600ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016B-23Sep2016-v2
+Task name:			161201_224732:mcremone_crab_MET_Run2016B-23Sep2016-v2
+Task status:			SUBMITFAILED
+Failure message:		The CRAB3 server backend could not submit any job to the Grid scheduler: Splitting task 161201_224732:mcremone_crab_MET_Run2016B-23Sep2016-v2 on dataset /MET/Run2016B-23Sep2016-v2/MINIAOD with LumiBased method does not generate any job
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016B-23Sep2016-v2/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016B-23Sep2016-v3
+Task name:			161201_224843:mcremone_crab_MET_Run2016B-23Sep2016-v3
+Grid scheduler:			crab3@vocms0120.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_224843%3Amcremone_crab_MET_Run2016B-23Sep2016-v3
+
+Jobs status:			finished       73.0% ( 770/1055)
+				running         1.6% (  17/1055)
+				transferring   25.4% ( 268/1055)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016B-23Sep2016-v3/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016C-23Sep2016-v1
+Task name:			161201_224953:mcremone_crab_MET_Run2016C-23Sep2016-v1
+Grid scheduler:			crab3@vocms0107.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_224953%3Amcremone_crab_MET_Run2016C-23Sep2016-v1
+
+Jobs status:			failed          0.6% (  2/348)
+				finished       83.6% (291/348)
+				running         1.4% (  5/348)
+				transferring   14.4% ( 50/348)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+  2 jobs failed with exit code 60318
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016C-23Sep2016-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016D-23Sep2016-v1
+Task name:			161201_225111:mcremone_crab_MET_Run2016D-23Sep2016-v1
+Grid scheduler:			crab3@vocms0199.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_225111%3Amcremone_crab_MET_Run2016D-23Sep2016-v1
+
+Jobs status:			failed          0.2% (  1/584)
+				finished       71.9% (420/584)
+				running         2.6% ( 15/584)
+				transferring   25.3% (148/584)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+  1 jobs failed with exit code 60318
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016D-23Sep2016-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016E-23Sep2016-v1
+Task name:			161201_225219:mcremone_crab_MET_Run2016E-23Sep2016-v1
+Grid scheduler:			crab3@vocms0122.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_225219%3Amcremone_crab_MET_Run2016E-23Sep2016-v1
+
+Jobs status:			finished       66.5% (330/496)
+				running        15.1% ( 75/496)
+				transferring   18.3% ( 91/496)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016E-23Sep2016-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016F-23Sep2016-v1
+Task name:			161201_225329:mcremone_crab_MET_Run2016F-23Sep2016-v1
+Grid scheduler:			crab3@vocms0199.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_225329%3Amcremone_crab_MET_Run2016F-23Sep2016-v1
+
+Jobs status:			finished       61.4% (224/365)
+				running        11.2% ( 41/365)
+				transferring   27.4% (100/365)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016F-23Sep2016-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016G-23Sep2016-v1
+Task name:			161201_225437:mcremone_crab_MET_Run2016G-23Sep2016-v1
+Grid scheduler:			crab3@vocms0195.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_225437%3Amcremone_crab_MET_Run2016G-23Sep2016-v1
+
+Jobs status:			finished       51.9% (443/854)
+				running         6.6% ( 56/854)
+				transferring   41.6% (355/854)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016G-23Sep2016-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016H-PromptReco-v1
+Task name:			161201_225547:mcremone_crab_MET_Run2016H-PromptReco-v1
+Task status:			SUBMITFAILED
+Failure message:		The CRAB3 server backend could not submit any job to the Grid scheduler: Splitting task 161201_225547:mcremone_crab_MET_Run2016H-PromptReco-v1 on dataset /MET/Run2016H-PromptReco-v1/MINIAOD with LumiBased method does not generate any job
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016H-PromptReco-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016H-PromptReco-v2
+Task name:			161201_225656:mcremone_crab_MET_Run2016H-PromptReco-v2
+Grid scheduler:			crab3@vocms0195.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_225656%3Amcremone_crab_MET_Run2016H-PromptReco-v2
+
+Jobs status:			finished       86.6% (801/925)
+				running         3.6% ( 33/925)
+				transferring    9.8% ( 91/925)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016H-PromptReco-v2/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016H-PromptReco-v3
+Task name:			161201_225803:mcremone_crab_MET_Run2016H-PromptReco-v3
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_225803%3Amcremone_crab_MET_Run2016H-PromptReco-v3
+
+Jobs status:			finished       72.0% (18/25)
+				running         4.0% ( 1/25)
+				transferring   24.0% ( 6/25)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016H-PromptReco-v3/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-1000_13TeV-madgraph
+Task name:			161202_011047:mcremone_crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-1000_13TeV-madgraph
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_011047%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-1000_13TeV-madgraph
+
+Jobs status:			finished      100.0% (1/1)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-1000_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-10_13TeV-madgraph
+Task name:			161202_010934:mcremone_crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-10_13TeV-madgraph
+Grid scheduler:			crab3@vocms0121.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_010934%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-10_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-10_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-150_13TeV-madgraph
+Task name:			161202_011252:mcremone_crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-150_13TeV-madgraph
+Grid scheduler:			crab3@vocms0107.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_011252%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-150_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-150_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-1_13TeV-madgraph
+Task name:			161202_011150:mcremone_crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-1_13TeV-madgraph
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_011150%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-1_13TeV-madgraph
+
+Jobs status:			finished      100.0% (4/4)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-1_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-500_13TeV-madgraph
+Task name:			161202_011505:mcremone_crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-500_13TeV-madgraph
+Grid scheduler:			crab3@vocms0122.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_011505%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-500_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-500_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-50_13TeV-madgraph
+Task name:			161202_011357:mcremone_crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-50_13TeV-madgraph
+Grid scheduler:			crab3@vocms0120.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_011357%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-50_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-50_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-1000_MChi-1000_13TeV-madgraph
+Task name:			161202_011716:mcremone_crab_MonoHbb_ZpBaryonic_MZp-1000_MChi-1000_13TeV-madgraph
+Grid scheduler:			crab3@vocms0155.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_011716%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-1000_MChi-1000_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-1000_MChi-1000_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-1000_MChi-150_13TeV-madgraph
+Task name:			161202_011611:mcremone_crab_MonoHbb_ZpBaryonic_MZp-1000_MChi-150_13TeV-madgraph
+Grid scheduler:			crab3@vocms0122.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_011611%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-1000_MChi-150_13TeV-madgraph
+
+Jobs status:			finished       50.0% (1/2)
+				transferring   50.0% (1/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-1000_MChi-150_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-1000_MChi-1_13TeV-madgraph
+Task name:			161202_011926:mcremone_crab_MonoHbb_ZpBaryonic_MZp-1000_MChi-1_13TeV-madgraph
+Grid scheduler:			crab3@vocms0121.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_011926%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-1000_MChi-1_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-1000_MChi-1_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-100_MChi-10_13TeV-madgraph
+Task name:			161202_011822:mcremone_crab_MonoHbb_ZpBaryonic_MZp-100_MChi-10_13TeV-madgraph
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_011822%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-100_MChi-10_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-100_MChi-10_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-100_MChi-1_13TeV-madgraph
+Task name:			161202_012133:mcremone_crab_MonoHbb_ZpBaryonic_MZp-100_MChi-1_13TeV-madgraph
+Grid scheduler:			crab3@vocms0195.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_012133%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-100_MChi-1_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-100_MChi-1_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-1000_13TeV-madgraph
+Task name:			161202_012030:mcremone_crab_MonoHbb_ZpBaryonic_MZp-10_MChi-1000_13TeV-madgraph
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_012030%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-10_MChi-1000_13TeV-madgraph
+
+Jobs status:			finished      100.0% (1/1)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-1000_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-10_13TeV-madgraph
+Task name:			161202_012337:mcremone_crab_MonoHbb_ZpBaryonic_MZp-10_MChi-10_13TeV-madgraph
+Grid scheduler:			crab3@vocms0155.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_012337%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-10_MChi-10_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-10_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-150_13TeV-madgraph
+Task name:			161202_012235:mcremone_crab_MonoHbb_ZpBaryonic_MZp-10_MChi-150_13TeV-madgraph
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_012235%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-10_MChi-150_13TeV-madgraph
+
+Jobs status:			running       100.0% (1/1)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-150_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-1_13TeV-madgraph
+Task name:			161202_012547:mcremone_crab_MonoHbb_ZpBaryonic_MZp-10_MChi-1_13TeV-madgraph
+Grid scheduler:			crab3@vocms0122.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_012547%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-10_MChi-1_13TeV-madgraph
+
+Jobs status:			finished      100.0% (1/1)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-1_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-500_13TeV-madgraph
+Task name:			161202_012441:mcremone_crab_MonoHbb_ZpBaryonic_MZp-10_MChi-500_13TeV-madgraph
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_012441%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-10_MChi-500_13TeV-madgraph
+
+Jobs status:			finished      100.0% (4/4)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-500_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-50_13TeV-madgraph
+Task name:			161202_012757:mcremone_crab_MonoHbb_ZpBaryonic_MZp-10_MChi-50_13TeV-madgraph
+Grid scheduler:			crab3@vocms0195.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_012757%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-10_MChi-50_13TeV-madgraph
+
+Jobs status:			finished      100.0% (3/3)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-50_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-15_MChi-10_13TeV-madgraph
+Task name:			161202_012652:mcremone_crab_MonoHbb_ZpBaryonic_MZp-15_MChi-10_13TeV-madgraph
+Grid scheduler:			crab3@vocms0107.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_012652%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-15_MChi-10_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-15_MChi-10_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-1995_MChi-1000_13TeV-madgraph
+Task name:			161202_013007:mcremone_crab_MonoHbb_ZpBaryonic_MZp-1995_MChi-1000_13TeV-madgraph
+Grid scheduler:			crab3@vocms0120.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_013007%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-1995_MChi-1000_13TeV-madgraph
+
+Jobs status:			finished      100.0% (3/3)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-1995_MChi-1000_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-2000_MChi-1_13TeV-madgraph
+Task name:			161202_012901:mcremone_crab_MonoHbb_ZpBaryonic_MZp-2000_MChi-1_13TeV-madgraph
+Grid scheduler:			crab3@vocms0137.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_012901%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-2000_MChi-1_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-2000_MChi-1_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-2000_MChi-500_13TeV-madgraph
+Task name:			161202_013217:mcremone_crab_MonoHbb_ZpBaryonic_MZp-2000_MChi-500_13TeV-madgraph
+Grid scheduler:			crab3@vocms0155.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_013217%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-2000_MChi-500_13TeV-madgraph
+
+Jobs status:			finished       66.7% (2/3)
+				transferring   33.3% (1/3)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-2000_MChi-500_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-200_MChi-150_13TeV-madgraph
+Task name:			161202_013111:mcremone_crab_MonoHbb_ZpBaryonic_MZp-200_MChi-150_13TeV-madgraph
+Grid scheduler:			crab3@vocms0120.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_013111%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-200_MChi-150_13TeV-madgraph
+
+Jobs status:			finished      100.0% (3/3)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-200_MChi-150_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-200_MChi-1_13TeV-madgraph
+Task name:			161202_013425:mcremone_crab_MonoHbb_ZpBaryonic_MZp-200_MChi-1_13TeV-madgraph
+Grid scheduler:			crab3@vocms0199.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_013425%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-200_MChi-1_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-200_MChi-1_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-200_MChi-50_13TeV-madgraph
+Task name:			161202_013321:mcremone_crab_MonoHbb_ZpBaryonic_MZp-200_MChi-50_13TeV-madgraph
+Grid scheduler:			crab3@vocms0195.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_013321%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-200_MChi-50_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-200_MChi-50_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-20_MChi-1_13TeV-madgraph
+Task name:			161202_013630:mcremone_crab_MonoHbb_ZpBaryonic_MZp-20_MChi-1_13TeV-madgraph
+Grid scheduler:			crab3@vocms0120.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_013630%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-20_MChi-1_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-20_MChi-1_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-295_MChi-150_13TeV-madgraph
+Task name:			161202_013527:mcremone_crab_MonoHbb_ZpBaryonic_MZp-295_MChi-150_13TeV-madgraph
+Grid scheduler:			crab3@vocms0120.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_013527%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-295_MChi-150_13TeV-madgraph
+
+Jobs status:			finished      100.0% (3/3)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-295_MChi-150_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-300_MChi-1_13TeV-madgraph
+Task name:			161202_013836:mcremone_crab_MonoHbb_ZpBaryonic_MZp-300_MChi-1_13TeV-madgraph
+Grid scheduler:			crab3@vocms0199.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_013836%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-300_MChi-1_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-300_MChi-1_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-300_MChi-50_13TeV-madgraph
+Task name:			161202_013732:mcremone_crab_MonoHbb_ZpBaryonic_MZp-300_MChi-50_13TeV-madgraph
+Grid scheduler:			crab3@vocms0122.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_013732%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-300_MChi-50_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-300_MChi-50_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-500_MChi-150_13TeV-madgraph
+Task name:			161202_014045:mcremone_crab_MonoHbb_ZpBaryonic_MZp-500_MChi-150_13TeV-madgraph
+Grid scheduler:			crab3@vocms0195.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_014045%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-500_MChi-150_13TeV-madgraph
+
+Jobs status:			finished       50.0% (1/2)
+				transferring   50.0% (1/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-500_MChi-150_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-500_MChi-1_13TeV-madgraph
+Task name:			161202_013940:mcremone_crab_MonoHbb_ZpBaryonic_MZp-500_MChi-1_13TeV-madgraph
+Grid scheduler:			crab3@vocms0144.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_013940%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-500_MChi-1_13TeV-madgraph
+
+Jobs status:			running        50.0% (1/2)
+				transferring   50.0% (1/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-500_MChi-1_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-500_MChi-500_13TeV-madgraph
+Task name:			161202_014252:mcremone_crab_MonoHbb_ZpBaryonic_MZp-500_MChi-500_13TeV-madgraph
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_014252%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-500_MChi-500_13TeV-madgraph
+
+Jobs status:			finished      100.0% (1/1)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-500_MChi-500_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-50_MChi-10_13TeV-madgraph
+Task name:			161202_014147:mcremone_crab_MonoHbb_ZpBaryonic_MZp-50_MChi-10_13TeV-madgraph
+Grid scheduler:			crab3@vocms0106.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_014147%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-50_MChi-10_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-50_MChi-10_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-50_MChi-1_13TeV-madgraph
+Task name:			161202_014500:mcremone_crab_MonoHbb_ZpBaryonic_MZp-50_MChi-1_13TeV-madgraph
+Grid scheduler:			crab3@vocms0199.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_014500%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-50_MChi-1_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-50_MChi-1_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-50_MChi-50_13TeV-madgraph
+Task name:			161202_014355:mcremone_crab_MonoHbb_ZpBaryonic_MZp-50_MChi-50_13TeV-madgraph
+Grid scheduler:			crab3@vocms0122.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_014355%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-50_MChi-50_13TeV-madgraph
+
+Jobs status:			finished      100.0% (3/3)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-50_MChi-50_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-95_MChi-50_13TeV-madgraph
+Task name:			161202_014713:mcremone_crab_MonoHbb_ZpBaryonic_MZp-95_MChi-50_13TeV-madgraph
+Grid scheduler:			crab3@vocms0195.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_014713%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-95_MChi-50_13TeV-madgraph
+
+Jobs status:			finished      100.0% (1/1)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-95_MChi-50_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-995_MChi-500_13TeV-madgraph
+Task name:			161202_014608:mcremone_crab_MonoHbb_ZpBaryonic_MZp-995_MChi-500_13TeV-madgraph
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_014608%3Amcremone_crab_MonoHbb_ZpBaryonic_MZp-995_MChi-500_13TeV-madgraph
+
+Jobs status:			finished      100.0% (1/1)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-995_MChi-500_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Task name:			161201_235641:mcremone_crab_QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Grid scheduler:			crab3@vocms0120.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_235641%3Amcremone_crab_QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+
+Jobs status:			finished       99.6% (233/234)
+				transferring    0.4% (  1/234)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Task name:			161201_235534:mcremone_crab_QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Grid scheduler:			crab3@vocms0155.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_235534%3Amcremone_crab_QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+
+Jobs status:			finished       93.3% (83/89)
+				running         6.7% ( 6/89)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Task name:			161201_235412:mcremone_crab_QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Grid scheduler:			crab3@vocms0195.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_235412%3Amcremone_crab_QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+
+Jobs status:			finished       93.5% (43/46)
+				running         6.5% ( 3/46)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Task name:			161202_002110:mcremone_crab_QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Grid scheduler:			crab3@vocms0137.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_002110%3Amcremone_crab_QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+
+Jobs status:			finished       95.9% (462/482)
+				running         3.1% ( 15/482)
+				transferring    1.0% (  5/482)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Task name:			161202_002004:mcremone_crab_QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Grid scheduler:			crab3@vocms0155.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_002004%3Amcremone_crab_QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+
+Jobs status:			failed          0.2% (  1/454)
+				finished       95.8% (435/454)
+				running         4.0% ( 18/454)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+  1 jobs failed in postprocessing step
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Task name:			161202_001901:mcremone_crab_QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Grid scheduler:			crab3@vocms0122.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_001901%3Amcremone_crab_QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+
+Jobs status:			finished       96.6% (478/495)
+				running         3.4% ( 17/495)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Task name:			161201_235743:mcremone_crab_QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_235743%3Amcremone_crab_QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+
+Jobs status:			finished       98.5% (662/672)
+				running         1.0% (  7/672)
+				transferring    0.4% (  3/672)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ST_t-channel_antitop_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1
+Task name:			161202_001231:mcremone_crab_ST_t-channel_antitop_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1
+Grid scheduler:			crab3@vocms0120.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_001231%3Amcremone_crab_ST_t-channel_antitop_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1
+
+Jobs status:			finished       95.8% (249/260)
+				running         4.2% ( 11/260)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ST_t-channel_antitop_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ST_t-channel_top_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1
+Task name:			161202_001126:mcremone_crab_ST_t-channel_top_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1
+Grid scheduler:			crab3@vocms0195.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_001126%3Amcremone_crab_ST_t-channel_top_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1
+
+Jobs status:			finished       87.7% (142/162)
+				running        12.3% ( 20/162)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ST_t-channel_top_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1
+Task name:			161202_001442:mcremone_crab_ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_001442%3Amcremone_crab_ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1
+
+Jobs status:			finished       92.3% (12/13)
+				running         7.7% ( 1/13)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1
+Task name:			161202_001339:mcremone_crab_ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1
+Grid scheduler:			crab3@vocms0144.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_001339%3Amcremone_crab_ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1
+
+Jobs status:			finished       92.3% (12/13)
+				running         7.7% ( 1/13)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016B-23Sep2016-v2
+Task name:			161201_225909:mcremone_crab_SingleElectron_Run2016B-23Sep2016-v2
+Task status:			SUBMITFAILED
+Failure message:		The CRAB3 server backend could not submit any job to the Grid scheduler: Splitting task 161201_225909:mcremone_crab_SingleElectron_Run2016B-23Sep2016-v2 on dataset /SingleElectron/Run2016B-23Sep2016-v2/MINIAOD with LumiBased method does not generate any job
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016B-23Sep2016-v2/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016B-23Sep2016-v3
+Task name:			161201_230016:mcremone_crab_SingleElectron_Run2016B-23Sep2016-v3
+Grid scheduler:			crab3@vocms0155.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_230016%3Amcremone_crab_SingleElectron_Run2016B-23Sep2016-v3
+
+Jobs status:			finished       97.8% (2581/2639)
+				running         1.8% (  47/2639)
+				transferring    0.4% (  11/2639)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016B-23Sep2016-v3/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016C-23Sep2016-v1
+Task name:			161201_230126:mcremone_crab_SingleElectron_Run2016C-23Sep2016-v1
+Grid scheduler:			crab3@vocms0199.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_230126%3Amcremone_crab_SingleElectron_Run2016C-23Sep2016-v1
+
+Jobs status:			failed          0.1% (  1/869)
+				finished       73.0% (634/869)
+				running        26.5% (230/869)
+				transferring    0.5% (  4/869)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+  1 jobs failed with exit code 8004
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016C-23Sep2016-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016D-23Sep2016-v1
+Task name:			161201_230234:mcremone_crab_SingleElectron_Run2016D-23Sep2016-v1
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_230234%3Amcremone_crab_SingleElectron_Run2016D-23Sep2016-v1
+
+Jobs status:			finished       92.8% (1354/1459)
+				running         7.1% ( 103/1459)
+				transferring    0.1% (   2/1459)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016D-23Sep2016-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016E-23Sep2016-v1
+Task name:			161201_230344:mcremone_crab_SingleElectron_Run2016E-23Sep2016-v1
+Grid scheduler:			crab3@vocms0122.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_230344%3Amcremone_crab_SingleElectron_Run2016E-23Sep2016-v1
+
+Jobs status:			finished       96.2% (1192/1239)
+				running         3.7% (  46/1239)
+				transferring    0.1% (   1/1239)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016E-23Sep2016-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016F-23Sep2016-v1
+Task name:			161201_230458:mcremone_crab_SingleElectron_Run2016F-23Sep2016-v1
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_230458%3Amcremone_crab_SingleElectron_Run2016F-23Sep2016-v1
+
+Jobs status:			cooloff         0.1% (  1/904)
+				failed          0.8% (  7/904)
+				finished       63.5% (574/904)
+				running        35.4% (320/904)
+				transferring    0.2% (  2/904)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+  7 jobs failed with exit code 8028
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016F-23Sep2016-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016G-23Sep2016-v1
+Task name:			161201_230608:mcremone_crab_SingleElectron_Run2016G-23Sep2016-v1
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_230608%3Amcremone_crab_SingleElectron_Run2016G-23Sep2016-v1
+
+Jobs status:			cooloff         0.0% (   1/2135)
+				finished       83.4% (1781/2135)
+				running        16.0% ( 341/2135)
+				transferring    0.6% (  12/2135)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016G-23Sep2016-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016H-PromptReco-v1
+Task name:			161201_231512:mcremone_crab_SingleElectron_Run2016H-PromptReco-v1
+Task status:			SUBMITFAILED
+Failure message:		The CRAB3 server backend could not submit any job to the Grid scheduler: Splitting task 161201_231512:mcremone_crab_SingleElectron_Run2016H-PromptReco-v1 on dataset /SingleElectron/Run2016H-PromptReco-v1/MINIAOD with LumiBased method does not generate any job
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016H-PromptReco-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016H-PromptReco-v2
+Task name:			161201_231617:mcremone_crab_SingleElectron_Run2016H-PromptReco-v2
+Grid scheduler:			crab3@vocms0195.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_231617%3Amcremone_crab_SingleElectron_Run2016H-PromptReco-v2
+
+Jobs status:			finished       93.5% (2160/2311)
+				running         3.0% (  70/2311)
+				transferring    3.5% (  81/2311)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016H-PromptReco-v2/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016H-PromptReco-v3
+Task name:			161201_231725:mcremone_crab_SingleElectron_Run2016H-PromptReco-v3
+Grid scheduler:			crab3@vocms0122.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_231725%3Amcremone_crab_SingleElectron_Run2016H-PromptReco-v3
+
+Jobs status:			finished      100.0% (62/62)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016H-PromptReco-v3/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016B-23Sep2016-v1
+Task name:			161201_230714:mcremone_crab_SinglePhoton_Run2016B-23Sep2016-v1
+Task status:			SUBMITFAILED
+Failure message:		The CRAB3 server backend could not submit any job to the Grid scheduler: Splitting task 161201_230714:mcremone_crab_SinglePhoton_Run2016B-23Sep2016-v1 on dataset /SinglePhoton/Run2016B-23Sep2016-v1/MINIAOD with LumiBased method does not generate any job
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016B-23Sep2016-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016B-23Sep2016-v3
+Task name:			161201_230820:mcremone_crab_SinglePhoton_Run2016B-23Sep2016-v3
+Grid scheduler:			crab3@vocms0106.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_230820%3Amcremone_crab_SinglePhoton_Run2016B-23Sep2016-v3
+
+Jobs status:			finished       99.8% (2632/2636)
+				transferring    0.2% (   4/2636)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016B-23Sep2016-v3/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016C-23Sep2016-v1
+Task name:			161201_230929:mcremone_crab_SinglePhoton_Run2016C-23Sep2016-v1
+Grid scheduler:			crab3@vocms0199.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_230929%3Amcremone_crab_SinglePhoton_Run2016C-23Sep2016-v1
+
+Jobs status:			finished       97.1% (844/869)
+				running         0.1% (  1/869)
+				transferring    2.8% ( 24/869)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016C-23Sep2016-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016D-23Sep2016-v1
+Task name:			161201_231044:mcremone_crab_SinglePhoton_Run2016D-23Sep2016-v1
+Grid scheduler:			crab3@vocms0121.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_231044%3Amcremone_crab_SinglePhoton_Run2016D-23Sep2016-v1
+
+Jobs status:			failed          0.2% (   3/1458)
+				finished       97.9% (1428/1458)
+				running         0.3% (   4/1458)
+				transferring    1.6% (  23/1458)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+   3 jobs failed with exit code 60318
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016D-23Sep2016-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016E-23Sep2016-v1
+Task name:			161201_231152:mcremone_crab_SinglePhoton_Run2016E-23Sep2016-v1
+Grid scheduler:			crab3@vocms0120.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_231152%3Amcremone_crab_SinglePhoton_Run2016E-23Sep2016-v1
+
+Jobs status:			finished       95.6% (1185/1239)
+				transferring    4.4% (  54/1239)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016E-23Sep2016-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016F-23Sep2016-v1
+Task name:			161201_231257:mcremone_crab_SinglePhoton_Run2016F-23Sep2016-v1
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_231257%3Amcremone_crab_SinglePhoton_Run2016F-23Sep2016-v1
+
+Jobs status:			finished       96.7% (874/904)
+				running         0.3% (  3/904)
+				transferring    3.0% ( 27/904)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016F-23Sep2016-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016G-23Sep2016-v1
+Task name:			161201_231405:mcremone_crab_SinglePhoton_Run2016G-23Sep2016-v1
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_231405%3Amcremone_crab_SinglePhoton_Run2016G-23Sep2016-v1
+
+Jobs status:			finished       98.2% (2096/2135)
+				running         0.1% (   3/2135)
+				transferring    1.7% (  36/2135)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016G-23Sep2016-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016H-PromptReco-v1
+Task name:			161201_231837:mcremone_crab_SinglePhoton_Run2016H-PromptReco-v1
+Task status:			SUBMITFAILED
+Warning:			The CRAB3 server got a non-critical error while checking stageout permissions. Please use checkwrite to check if everything is fine.
+Failure message:		The CRAB3 server backend could not submit any job to the Grid scheduler: Splitting task 161201_231837:mcremone_crab_SinglePhoton_Run2016H-PromptReco-v1 on dataset /SinglePhoton/Run2016H-PromptReco-v1/MINIAOD with LumiBased method does not generate any job
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016H-PromptReco-v1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016H-PromptReco-v2
+Task name:			161201_231947:mcremone_crab_SinglePhoton_Run2016H-PromptReco-v2
+Grid scheduler:			crab3@vocms0155.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_231947%3Amcremone_crab_SinglePhoton_Run2016H-PromptReco-v2
+
+Jobs status:			finished       96.3% (2226/2311)
+				running         0.3% (   7/2311)
+				transferring    3.4% (  78/2311)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016H-PromptReco-v2/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016H-PromptReco-v3
+Task name:			161201_232057:mcremone_crab_SinglePhoton_Run2016H-PromptReco-v3
+Grid scheduler:			crab3@vocms0137.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_232057%3Amcremone_crab_SinglePhoton_Run2016H-PromptReco-v3
+
+Jobs status:			finished       46.8% (29/62)
+				transferring   53.2% (33/62)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016H-PromptReco-v3/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_TT_TuneCUETP8M1_13TeV-powheg-pythia8_ext4
+Task name:			161201_235254:mcremone_crab_TT_TuneCUETP8M1_13TeV-powheg-pythia8_ext4
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_235254%3Amcremone_crab_TT_TuneCUETP8M1_13TeV-powheg-pythia8_ext4
+
+Jobs status:			finished       95.9% (3758/3919)
+				running         1.1% (  44/3919)
+				transferring    3.0% ( 117/3919)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_TT_TuneCUETP8M1_13TeV-powheg-pythia8_ext4/crab.log
+Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_TT_TuneEE5C_13TeV-powheg-herwigpp
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Task name:			161201_232322:mcremone_crab_TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_232322%3Amcremone_crab_TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+
+Jobs status:			finished      100.0% (13/13)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Task name:			161201_235847:mcremone_crab_WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Grid scheduler:			crab3@vocms0155.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_235847%3Amcremone_crab_WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+
+Jobs status:			failed          0.3% (  1/321)
+				finished       93.1% (299/321)
+				running         6.5% ( 21/321)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+  1 jobs failed with exit code 50660
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Task name:			161201_233621:mcremone_crab_WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Grid scheduler:			crab3@vocms0199.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_233621%3Amcremone_crab_WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+
+Jobs status:			finished       90.6% (144/159)
+				running         8.8% ( 14/159)
+				transferring    0.6% (  1/159)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Task name:			161201_235951:mcremone_crab_WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Grid scheduler:			crab3@vocms0137.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_235951%3Amcremone_crab_WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+
+Jobs status:			finished       83.1% (143/172)
+				running        16.9% ( 29/172)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Task name:			161201_233749:mcremone_crab_WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_233749%3Amcremone_crab_WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+
+Jobs status:			finished      100.0% (8/8)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Task name:			161204_065308:mcremone_crab_WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161204_065308%3Amcremone_crab_WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Warning:			The CRAB3 server got a non-critical error while checking stageout permissions. Please use checkwrite to check if everything is fine.
+
+Jobs status:			running       100.0% (22/22)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Task name:			161202_000216:mcremone_crab_WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_000216%3Amcremone_crab_WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+
+Jobs status:			finished       93.3% (42/45)
+				running         6.7% ( 3/45)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Task name:			161201_232206:mcremone_crab_WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+Grid scheduler:			crab3@vocms0120.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_232206%3Amcremone_crab_WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+
+Jobs status:			failed          0.3% (  1/317)
+				finished       95.6% (303/317)
+				running         4.1% ( 13/317)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+  1 jobs failed with exit code 8028
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WW_TuneCUETP8M1_13TeV-pythia8
+Task name:			161202_001758:mcremone_crab_WW_TuneCUETP8M1_13TeV-pythia8
+Grid scheduler:			crab3@vocms0144.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_001758%3Amcremone_crab_WW_TuneCUETP8M1_13TeV-pythia8
+
+Jobs status:			finished      100.0% (12/12)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WW_TuneCUETP8M1_13TeV-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WZ_TuneCUETP8M1_13TeV-pythia8
+Task name:			161202_001549:mcremone_crab_WZ_TuneCUETP8M1_13TeV-pythia8
+Grid scheduler:			crab3@vocms0137.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_001549%3Amcremone_crab_WZ_TuneCUETP8M1_13TeV-pythia8
+
+Jobs status:			finished       91.7% (11/12)
+				transferring    8.3% ( 1/12)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WZ_TuneCUETP8M1_13TeV-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-100To200_13TeV-madgraph
+Task name:			161201_232430:mcremone_crab_ZJetsToNuNu_HT-100To200_13TeV-madgraph
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_232430%3Amcremone_crab_ZJetsToNuNu_HT-100To200_13TeV-madgraph
+
+Jobs status:			finished       98.4% (248/252)
+				running         0.4% (  1/252)
+				transferring    1.2% (  3/252)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-100To200_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-100To200_13TeV-madgraph_ext1
+Task name:			161201_232546:mcremone_crab_ZJetsToNuNu_HT-100To200_13TeV-madgraph_ext1
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_232546%3Amcremone_crab_ZJetsToNuNu_HT-100To200_13TeV-madgraph_ext1
+
+Jobs status:			failed          2.0% ( 18/913)
+				finished       95.6% (873/913)
+				transferring    2.4% ( 22/913)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+ 12 jobs failed with exit code 60318
+
+  6 jobs failed with exit code 50660
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-100To200_13TeV-madgraph_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-1200To2500_13TeV-madgraph
+Task name:			161201_234954:mcremone_crab_ZJetsToNuNu_HT-1200To2500_13TeV-madgraph
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_234954%3Amcremone_crab_ZJetsToNuNu_HT-1200To2500_13TeV-madgraph
+
+Jobs status:			finished      100.0% (12/12)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-1200To2500_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-1200To2500_13TeV-madgraph_ext1
+Task name:			161201_232917:mcremone_crab_ZJetsToNuNu_HT-1200To2500_13TeV-madgraph_ext1
+Grid scheduler:			crab3@vocms0121.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_232917%3Amcremone_crab_ZJetsToNuNu_HT-1200To2500_13TeV-madgraph_ext1
+
+Jobs status:			finished      100.0% (8/8)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-1200To2500_13TeV-madgraph_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-200To400_13TeV-madgraph
+Task name:			161202_000801:mcremone_crab_ZJetsToNuNu_HT-200To400_13TeV-madgraph
+Grid scheduler:			crab3@vocms0155.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_000801%3Amcremone_crab_ZJetsToNuNu_HT-200To400_13TeV-madgraph
+
+Jobs status:			finished       89.7% (26/29)
+				running        10.3% ( 3/29)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-200To400_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-200To400_13TeV-madgraph_ext1
+Task name:			161202_000909:mcremone_crab_ZJetsToNuNu_HT-200To400_13TeV-madgraph_ext1
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_000909%3Amcremone_crab_ZJetsToNuNu_HT-200To400_13TeV-madgraph_ext1
+
+Jobs status:			finished       92.7% (227/245)
+				running         7.3% ( 18/245)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-200To400_13TeV-madgraph_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-2500ToInf_13TeV-madgraph
+Task name:			161201_235104:mcremone_crab_ZJetsToNuNu_HT-2500ToInf_13TeV-madgraph
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_235104%3Amcremone_crab_ZJetsToNuNu_HT-2500ToInf_13TeV-madgraph
+
+Jobs status:			finished      100.0% (9/9)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-2500ToInf_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-400To600_13TeV-madgraph
+Task name:			161202_001019:mcremone_crab_ZJetsToNuNu_HT-400To600_13TeV-madgraph
+Grid scheduler:			crab3@vocms0144.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_001019%3Amcremone_crab_ZJetsToNuNu_HT-400To600_13TeV-madgraph
+
+Jobs status:			finished       69.2% ( 9/13)
+				running        30.8% ( 4/13)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-400To600_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-400To600_13TeV-madgraph_ext1
+Task name:			161201_232656:mcremone_crab_ZJetsToNuNu_HT-400To600_13TeV-madgraph_ext1
+Grid scheduler:			crab3@vocms0199.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_232656%3Amcremone_crab_ZJetsToNuNu_HT-400To600_13TeV-madgraph_ext1
+
+Jobs status:			finished       98.6% (410/416)
+				running         0.2% (  1/416)
+				transferring    1.2% (  5/416)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-400To600_13TeV-madgraph_ext1/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-600To800_13TeV-madgraph
+Task name:			161201_232807:mcremone_crab_ZJetsToNuNu_HT-600To800_13TeV-madgraph
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_232807%3Amcremone_crab_ZJetsToNuNu_HT-600To800_13TeV-madgraph
+
+Jobs status:			failed          1.7% (  5/287)
+				finished       58.9% (169/287)
+				running         1.7% (  5/287)
+				transferring   37.6% (108/287)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+  5 jobs failed with exit code 60318
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-600To800_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-800To1200_13TeV-madgraph
+Task name:			161201_234845:mcremone_crab_ZJetsToNuNu_HT-800To1200_13TeV-madgraph
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161201_234845%3Amcremone_crab_ZJetsToNuNu_HT-800To1200_13TeV-madgraph
+
+Jobs status:			finished       95.7% (45/47)
+				running         4.3% ( 2/47)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-800To1200_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZZ_TuneCUETP8M1_13TeV-pythia8
+Task name:			161202_001653:mcremone_crab_ZZ_TuneCUETP8M1_13TeV-pythia8
+Grid scheduler:			crab3@vocms0199.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_001653%3Amcremone_crab_ZZ_TuneCUETP8M1_13TeV-pythia8
+
+Jobs status:			finished      100.0% (13/13)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZZ_TuneCUETP8M1_13TeV-pythia8/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-400_13TeV-madgraph
+Task name:			161202_002317:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-400_13TeV-madgraph
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_002317%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-400_13TeV-madgraph
+
+Jobs status:			finished      100.0% (3/3)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-400_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-500_13TeV-madgraph
+Task name:			161202_002422:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-500_13TeV-madgraph
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_002422%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-500_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-500_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-600_13TeV-madgraph
+Task name:			161202_002528:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-600_13TeV-madgraph
+Grid scheduler:			crab3@vocms0122.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_002528%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-600_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-600_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-700_13TeV-madgraph
+Task name:			161202_002634:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-700_13TeV-madgraph
+Grid scheduler:			crab3@vocms0121.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_002634%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-700_13TeV-madgraph
+
+Jobs status:			finished      100.0% (3/3)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-700_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-800_13TeV-madgraph
+Task name:			161202_002738:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-800_13TeV-madgraph
+Grid scheduler:			crab3@vocms0144.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_002738%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-800_13TeV-madgraph
+
+Jobs status:			finished      100.0% (1/1)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-800_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-300_13TeV-madgraph
+Task name:			161202_002841:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-300_13TeV-madgraph
+Grid scheduler:			crab3@vocms0122.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_002841%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-300_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-300_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-400_13TeV-madgraph
+Task name:			161202_002943:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-400_13TeV-madgraph
+Grid scheduler:			crab3@vocms0155.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_002943%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-400_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-400_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-500_13TeV-madgraph
+Task name:			161202_003047:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-500_13TeV-madgraph
+Grid scheduler:			crab3@vocms0199.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_003047%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-500_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-500_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-600_13TeV-madgraph
+Task name:			161202_003157:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-600_13TeV-madgraph
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_003157%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-600_13TeV-madgraph
+
+Jobs status:			finished       50.0% (1/2)
+				running        50.0% (1/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-600_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-700_13TeV-madgraph
+Task name:			161202_003304:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-700_13TeV-madgraph
+Grid scheduler:			crab3@vocms0122.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_003304%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-700_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-700_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-800_13TeV-madgraph
+Task name:			161202_003415:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-800_13TeV-madgraph
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_003415%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-800_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-800_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-300_13TeV-madgraph
+Task name:			161202_003523:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-300_13TeV-madgraph
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_003523%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-300_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-300_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-400_13TeV-madgraph
+Task name:			161202_003629:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-400_13TeV-madgraph
+Grid scheduler:			crab3@vocms0199.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_003629%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-400_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-400_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-500_13TeV-madgraph
+Task name:			161202_003939:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-500_13TeV-madgraph
+Grid scheduler:			crab3@vocms0137.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_003939%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-500_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-500_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-600_13TeV-madgraph
+Task name:			161202_004045:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-600_13TeV-madgraph
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_004045%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-600_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-600_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-700_13TeV-madgraph
+Task name:			161202_004149:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-700_13TeV-madgraph
+Grid scheduler:			crab3@vocms0155.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_004149%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-700_13TeV-madgraph
+
+Jobs status:			finished       50.0% (1/2)
+				running        50.0% (1/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-700_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-800_13TeV-madgraph
+Task name:			161202_004252:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-800_13TeV-madgraph
+Grid scheduler:			crab3@vocms0137.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_004252%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-800_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-800_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-300_13TeV-madgraph
+Task name:			161202_004355:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-300_13TeV-madgraph
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_004355%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-300_13TeV-madgraph
+
+Jobs status:			finished      100.0% (1/1)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-300_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-400_13TeV-madgraph
+Task name:			161202_004458:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-400_13TeV-madgraph
+Grid scheduler:			crab3@vocms0120.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_004458%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-400_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-400_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-500_13TeV-madgraph
+Task name:			161202_004602:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-500_13TeV-madgraph
+Grid scheduler:			crab3@vocms0121.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_004602%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-500_13TeV-madgraph
+
+Jobs status:			finished      100.0% (3/3)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-500_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-600_13TeV-madgraph
+Task name:			161202_004704:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-600_13TeV-madgraph
+Grid scheduler:			crab3@vocms0106.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_004704%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-600_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-600_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-700_13TeV-madgraph
+Task name:			161202_004806:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-700_13TeV-madgraph
+Grid scheduler:			crab3@vocms0199.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_004806%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-700_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-700_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-800_13TeV-madgraph
+Task name:			161202_004908:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-800_13TeV-madgraph
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_004908%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-800_13TeV-madgraph
+
+Jobs status:			finished      100.0% (1/1)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-800_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-300_13TeV-madgraph
+Task name:			161202_005011:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-300_13TeV-madgraph
+Grid scheduler:			crab3@vocms0121.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_005011%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-300_13TeV-madgraph
+
+Jobs status:			finished      100.0% (1/1)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-300_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-400_13TeV-madgraph
+Task name:			161202_005115:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-400_13TeV-madgraph
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_005115%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-400_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-400_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-500_13TeV-madgraph
+Task name:			161202_005219:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-500_13TeV-madgraph
+Grid scheduler:			crab3@vocms0106.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_005219%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-500_13TeV-madgraph
+
+Jobs status:			finished      100.0% (4/4)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-500_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-600_13TeV-madgraph
+Task name:			161202_005321:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-600_13TeV-madgraph
+Grid scheduler:			crab3@vocms0144.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_005321%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-600_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-600_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-700_13TeV-madgraph
+Task name:			161202_005423:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-700_13TeV-madgraph
+Grid scheduler:			crab3@vocms0122.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_005423%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-700_13TeV-madgraph
+
+Jobs status:			running        50.0% (1/2)
+				transferring   50.0% (1/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-700_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-800_13TeV-madgraph
+Task name:			161202_005526:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-800_13TeV-madgraph
+Grid scheduler:			crab3@vocms0155.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_005526%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-800_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-800_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-300_13TeV-madgraph
+Task name:			161202_005628:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-300_13TeV-madgraph
+Grid scheduler:			crab3@vocms0107.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_005628%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-300_13TeV-madgraph
+
+Jobs status:			finished      100.0% (1/1)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-300_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-400_13TeV-madgraph
+Task name:			161202_005729:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-400_13TeV-madgraph
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_005729%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-400_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-400_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-500_13TeV-madgraph
+Task name:			161202_005832:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-500_13TeV-madgraph
+Grid scheduler:			crab3@vocms0119.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_005832%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-500_13TeV-madgraph
+
+Jobs status:			finished      100.0% (1/1)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-500_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-600_13TeV-madgraph
+Task name:			161202_005936:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-600_13TeV-madgraph
+Grid scheduler:			crab3@vocms0195.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_005936%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-600_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-600_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-700_13TeV-madgraph
+Task name:			161202_010053:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-700_13TeV-madgraph
+Grid scheduler:			crab3@vocms0194.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_010053%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-700_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-700_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-800_13TeV-madgraph
+Task name:			161202_010156:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-800_13TeV-madgraph
+Grid scheduler:			crab3@vocms0120.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_010156%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-800_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-800_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-600_MA0-300_13TeV-madgraph
+Task name:			161202_010300:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-600_MA0-300_13TeV-madgraph
+Grid scheduler:			crab3@vocms0106.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_010300%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-600_MA0-300_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-600_MA0-300_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-600_MA0-400_13TeV-madgraph
+Task name:			161202_010407:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-600_MA0-400_13TeV-madgraph
+Grid scheduler:			crab3@vocms0155.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_010407%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-600_MA0-400_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-600_MA0-400_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-300_13TeV-madgraph
+Task name:			161204_065415:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-300_13TeV-madgraph
+Grid scheduler:			crab3@vocms0197.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161204_065415%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-300_13TeV-madgraph
+Warning:			The CRAB3 server got a non-critical error while checking stageout permissions. Please use checkwrite to check if everything is fine.
+
+Jobs status:			running       100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-300_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-400_13TeV-madgraph
+Task name:			161202_010616:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-400_13TeV-madgraph
+Grid scheduler:			crab3@vocms0121.cern.ch
+Task status:			SUBMITTED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_010616%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-400_13TeV-madgraph
+
+Jobs status:			finished       66.7% (2/3)
+				running        33.3% (1/3)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-400_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-500_13TeV-madgraph
+Task name:			161202_010722:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-500_13TeV-madgraph
+Grid scheduler:			crab3@vocms0106.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_010722%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-500_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-500_13TeV-madgraph/crab.log
+CRAB project directory:		/afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-600_13TeV-madgraph
+Task name:			161202_010828:mcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-600_13TeV-madgraph
+Grid scheduler:			crab3@vocms0107.cern.ch
+Task status:			COMPLETED
+Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mcremone&table=Mains&pattern=161202_010828%3Amcremone_crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-600_13TeV-madgraph
+
+Jobs status:			finished      100.0% (2/2)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-600_13TeV-madgraph/crab.log

@@ -1,0 +1,854 @@
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_GJets_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_GJets_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_GJets_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: df430e3927c7ee99258999dce22b4dc1
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_GJets_HT-600ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016B-23Sep2016-v2/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016B-23Sep2016-v3/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016C-23Sep2016-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016D-23Sep2016-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016E-23Sep2016-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016F-23Sep2016-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016G-23Sep2016-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016H-PromptReco-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016H-PromptReco-v2/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MET_Run2016H-PromptReco-v3/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: cc70c85278f21faf6c90e6a9d1c34e22
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-1000_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: a085777d4185cc010103321a520be0f1
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-10_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: eb2ae91a7ffc4a18d2b97006fecc4d6f
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-150_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: cc52e2254f258d215c2eb2bedbbfb32b
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-1_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 13b708430e4f42ac4dc20dd9bc41145c
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-500_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: ff70c07acfca03d3cb6f1a05f9b43e8b
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10000_MChi-50_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: d7231413e831fd3012ef809ce5a69fb9
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-1000_MChi-1000_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-1000_MChi-150_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 241acba281de63c22d5ceaf7c1086cdd
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-1000_MChi-1_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 602f2dcef9896d48b7119c28b349a9f1
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-100_MChi-10_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 64f1fabde37e8c14cbfc3fd631be689a
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-100_MChi-1_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: e20500de97f33583f7231eebe5e68d01
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-1000_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: e42f35bfa3a8955b894189005c8c1a8b
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-10_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-150_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 48ba5a19f33766ee35bfc54e813f326c
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-1_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 16c321807aae312981d8058a01cf9641
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-500_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 2018897290fdbe003774ce3dda06b6cb
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-10_MChi-50_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 0ce525a778d8078cecd5ab09e486b412
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-15_MChi-10_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 54580cfc8cea114c4fb34986ef5bd9f8
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-1995_MChi-1000_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: ca771f7bc538614465ef637015824667
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-2000_MChi-1_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-2000_MChi-500_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 35f988bc4fb806ffe45537b2c6f4d1b2
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-200_MChi-150_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: a25b8855b2e33c68e9f4fe192b93e9da
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-200_MChi-1_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 59aebbaef0d8ee0587bc4c818ca23a09
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-200_MChi-50_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 16c1d739a89d05e4ae87d49d1519ac8b
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-20_MChi-1_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: eeba6851286e88dd53386bc2be845d8e
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-295_MChi-150_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: a9acaf7af8f8a37cdd38c163ad1e5198
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-300_MChi-1_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 035010cd7eb0bd03aa27643bebcc2ddd
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-300_MChi-50_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-500_MChi-150_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-500_MChi-1_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: f4cdee15a95989f13919fea0d88097f7
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-500_MChi-500_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 8be97da85144064ae6b7c270be681cee
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-50_MChi-10_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: d7c791c3b867190fdd36e2943f89f34a
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-50_MChi-1_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 391841978e7c60ee868b625407ba9395
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-50_MChi-50_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: bd0ffa55e06048d63b61fea57b71ce47
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-95_MChi-50_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: e0e7da11442254749a2b46e70836a2f8
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_MonoHbb_ZpBaryonic_MZp-995_MChi-500_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ST_t-channel_antitop_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ST_t-channel_top_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016B-23Sep2016-v2/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016B-23Sep2016-v3/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016C-23Sep2016-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016D-23Sep2016-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016E-23Sep2016-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016F-23Sep2016-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016G-23Sep2016-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016H-PromptReco-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016H-PromptReco-v2/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 13e319b8f5985bfd54c93dcf30b3b1bc
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SingleElectron_Run2016H-PromptReco-v3/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016B-23Sep2016-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016B-23Sep2016-v3/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016C-23Sep2016-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016D-23Sep2016-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016E-23Sep2016-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016F-23Sep2016-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016G-23Sep2016-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016H-PromptReco-v1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016H-PromptReco-v2/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_SinglePhoton_Run2016H-PromptReco-v3/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_TT_TuneCUETP8M1_13TeV-powheg-pythia8_ext4/crab.log
+Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_TT_TuneEE5C_13TeV-powheg-herwigpp
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 5485820bdc008ea968802b8d460642df
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 6b9d83bd0ee99e8eb744b13537aca1bc
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: There are no jobs to resubmit. Only jobs in status ['failed'] can be resubmitted. Jobs in status ['finished'] can also be resubmitted, but only if the jobid is specified and the force option is set.
+Error Id: 85220ddad5faa6986a7330fd2a08efd3
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 793a009b64a806d2c45fbb7bfcf41676
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WW_TuneCUETP8M1_13TeV-pythia8/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_WZ_TuneCUETP8M1_13TeV-pythia8/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-100To200_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-100To200_13TeV-madgraph_ext1/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 32023ca7841fe57f1a843f7630eeca56
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-1200To2500_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: c84528c3729f5ec70d6113b0985b0af4
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-1200To2500_13TeV-madgraph_ext1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-200To400_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-200To400_13TeV-madgraph_ext1/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 2b45e088233be86df52f06ca115f0e95
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-2500ToInf_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-400To600_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-400To600_13TeV-madgraph_ext1/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-600To800_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZJetsToNuNu_HT-800To1200_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 402d96005b3e1d2d16da5b43995ceed1
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZZ_TuneCUETP8M1_13TeV-pythia8/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 21afffc6ed5090c1c7ff71865873d434
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-400_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: c01824efa53e71166857dbc39d57e6fc
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-500_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: c605a0f4ade294226aaa2cee9f432e97
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-600_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 9cb6cac30601e99714bb013e936ab6bb
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-700_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: da83aa263e1de691ebdbd1157946c21c
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1000_MA0-800_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: bd9edaedb7e8a3266fe6a9377027bd69
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-300_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: b2729bcaae47e6287b062e009a875b0f
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-400_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: f65afd1944846e9200399eecd65a11a3
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-500_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-600_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 594d4f1853353e9b252b1e9a03fda614
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-700_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: b77c1fe60301188277fa3e4be8bbb1cc
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-800_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: bc2637cc4cef5d5697ba1a2e0b98119c
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-300_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: cc7f739fd6a15c20f4ff2302b5695ddf
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-400_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 2efa4e88579c107d889467b6ee2ce1cf
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-500_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 87b3e61561f4e2b0fc56128c5837938f
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-600_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-700_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: cbf6fb3ade8bbd3d02cb93dcc8e9aa71
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1400_MA0-800_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 9224099e64a315328a516aa65e269198
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-300_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: aead74b64bd3a92bc8b6e5302b3d785f
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-400_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 0c1e46f9ac0d37f24c6f2e778340940d
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-500_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: c327be5c82f5fab43ec417a56b8106f6
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-600_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 99a12133b51cf92e48481d62803b0bf0
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-700_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 965cf11df1c648fbd21b227c6fccda6e
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-1700_MA0-800_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: ea37bbbd52482faa093b41c4901735d6
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-300_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 5944a4ab732fdb47802ca8f9a656fd18
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-400_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 701138e48c23767de20bb3684b519e05
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-500_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: f6babf836e248cb6f2f9524a53d03a2d
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-600_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-700_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 9977f3cc1bcb532dc070511ff747ad1f
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2000_MA0-800_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 0eef4a37793af7bdf9ace269a6b02e0d
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-300_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 2a194d6b6f08c8938c423ca4b8013f1d
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-400_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 1bc722fcd4fe9083d2c6d79f9144f27a
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-500_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: dfc2b89cfe1811dafa0a527cd30c51c4
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-600_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: eab17667c3874b476c1f3ece1ecdfb1a
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-700_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: d5b3a45c4c8fd0417554cf123543df98
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-2500_MA0-800_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 6769804f0bc5044db6490027d12a70fb
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-600_MA0-300_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: d09c218fed443c3273857ef746634c3c
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-600_MA0-400_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: There are no jobs to resubmit. Only jobs in status ['failed'] can be resubmitted. Jobs in status ['finished'] can also be resubmitted, but only if the jobid is specified and the force option is set.
+Error Id: 27cb0c1e5d0a9d199ac4df0e45fe89f3
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-300_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+Resubmit request sent to the server.
+Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-400_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 128b3d83754d936e80cd32b9989f334e
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-500_13TeV-madgraph/crab.log
+Sending resubmit request to the server.
+The server answered with an error.
+Server answered with: Execution error
+Reason is: Task status is COMPLETED. To resubmit jobs from a task in status COMPLETED, specify the job ids and use the force option. To resubmit publications use the publication option.
+Error Id: 02be4de1f09174ce73deed77286b2d3f
+Log file is /afs/cern.ch/work/m/mcremone/public/Panda/CMSSW_8_0_20/src/PandaProd/Ntupler/test/Submission/crab_ZprimeToA0hToA0chichihbb_2HDM_MZp-800_MA0-600_13TeV-madgraph/crab.log

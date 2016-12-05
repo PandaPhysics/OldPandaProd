@@ -23,13 +23,13 @@ isData = options.isData
 process.load("FWCore.MessageService.MessageLogger_cfi")
 # If you run over many samples and you save the log, remember to reduce
 # the size of the output by prescaling the report of the event number
-process.MessageLogger.cerr.FwkReport.reportEvery = 1000
+process.MessageLogger.cerr.FwkReport.reportEvery = 10
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1000) )
 
 if isData:
    fileList = [
-       'file:/tmp/mcremone/2CF02CDC-D819-E611-AA68-02163E011A52.root'
+       'file:/tmp/mcremone/data/0A8AEEBA-A633-E611-A5FC-02163E01377C.root'
        ]
 else:
    fileList = [
@@ -74,13 +74,14 @@ from CondCore.DBCommon.CondDBSetup_cfi import *
 #if isData and not options.isGrid and False: ## dont load the lumiMaks, will be called by crab
 if isData:
     import FWCore.PythonUtilities.LumiList as LumiList
-    process.source.lumisToProcess = LumiList.LumiList(filename='Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt').getVLuminosityBlockRange()
+    process.source.lumisToProcess = LumiList.LumiList(filename='/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions16/13TeV/ReReco/Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt').getVLuminosityBlockRange()
     print "Using local JSON"
 
 ### LOAD CONFIGURATION
 process.load('PandaProd.Filter.infoProducerSequence_cff')
 process.load('PandaProd.Filter.MonoXFilterSequence_cff')
 process.load('PandaProd.Ntupler.PandaProd_cfi')
+#process.load('PandaProd.Ntupler.VBF_cfi')
 
 #-----------------------JES/JER----------------------------------
 if isData:
@@ -271,65 +272,7 @@ process.jetSequence += process.pfInclusiveSecondaryVertexFinderTagInfosPFAK4Pupp
 process.jetSequence += process.pfCombinedInclusiveSecondaryVertexV2BJetTagsPFAK4Puppi
 process.jetSequence += process.patJetsPFAK4Puppi
 
-<<<<<<< HEAD
-        )  
-if isData:
-  process.jec.connect = cms.string('sqlite:jec/Spring16_25nsV6_DATA.db')
-else:
-  process.jec.connect = cms.string('sqlite:jec/Spring16_25nsV6_MC.db')
-process.es_prefer_jec = cms.ESPrefer('PoolDBESSource', 'jec')
-
-from JetMETCorrections.Configuration.JetCorrectorsAllAlgos_cff  import *
-jetlabel='AK4PFPuppi'
-process.ak4PuppiL1  = ak4PFCHSL1FastjetCorrector.clone (algorithm = cms.string(jetlabel))
-process.ak4PuppiL2  = ak4PFCHSL2RelativeCorrector.clone(algorithm = cms.string(jetlabel))
-process.ak4PuppiL3  = ak4PFCHSL3AbsoluteCorrector.clone(algorithm = cms.string(jetlabel))
-process.ak4PuppiRes = ak4PFCHSResidualCorrector.clone  (algorithm = cms.string(jetlabel))
-process.puppiJetMETSequence += process.ak4PuppiL1
-process.puppiJetMETSequence += process.ak4PuppiL2
-process.puppiJetMETSequence += process.ak4PuppiL3
-
-process.ak4PuppiCorrector = ak4PFL1FastL2L3Corrector.clone(
-        correctors = cms.VInputTag("ak4PuppiL1", 
-                                    "ak4PuppiL2",
-                                    "ak4PuppiL3")
-    )
-process.ak4PuppiCorrectorRes = ak4PFL1FastL2L3Corrector.clone(
-        correctors = cms.VInputTag("ak4PuppiL1", 
-                                    "ak4PuppiL2",
-                                    "ak4PuppiL3",
-                                    'ak4PuppiRes')
-    )
-if isData:
-    process.puppiJetMETSequence += process.ak4PuppiRes
-    process.puppiJetMETSequence += process.ak4PuppiCorrectorRes
-    correctorLabel = 'ak4PuppiCorrectorRes'
-else:
-    process.puppiJetMETSequence += process.ak4PuppiCorrector
-    correctorLabel = 'ak4PuppiCorrector'
-
-# correct puppi MET
-process.puppiMETcorr = cms.EDProducer("PFJetMETcorrInputProducer",
-    src = cms.InputTag('ak4PFJetsPuppi'),
-    offsetCorrLabel = cms.InputTag('ak4PuppiL1'),
-    jetCorrLabel = cms.InputTag(correctorLabel),
-    jetCorrLabelRes = cms.InputTag('ak4PuppiCorrectorRes'),
-    jetCorrEtaMax = cms.double(9.9),
-    type1JetPtThreshold = cms.double(15.0),
-    skipEM = cms.bool(True),
-    skipEMfractionThreshold = cms.double(0.90),
-    skipMuons = cms.bool(True),
-    skipMuonSelection = cms.string("isGlobalMuon | isStandAloneMuon")
-)
-process.type1PuppiMET = cms.EDProducer("CorrectedPFMETProducer",
-    src = cms.InputTag('pfMETPuppi'),
-    srcCorrections = cms.VInputTag(cms.InputTag('puppiMETcorr', 'type1')),
-)   
-process.puppiJetMETSequence += process.puppiMETcorr
-process.puppiJetMETSequence += process.type1PuppiMET
-=======
 ##################### FAT JETS #############################
->>>>>>> e36e2e225da92060452a75c8b3324f87c772ddfb
 
 from PandaProd.Ntupler.makeFatJets_cff import *
 fatjetInitSequence = initFatJets(process,isData)

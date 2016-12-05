@@ -33,8 +33,7 @@ if isData:
        ]
 else:
    fileList = [
-#       'file:/tmp/snarayan/miniaod_ttdm.root'
-       'file:/tmp/mcremone/30F60D71-0626-E611-ADA0-003048F5ADEC.root'
+       'file:/data/t3home000/snarayan/test/tt_8011.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
@@ -273,58 +272,7 @@ process.jetSequence += process.pfInclusiveSecondaryVertexFinderTagInfosPFAK4Pupp
 process.jetSequence += process.pfCombinedInclusiveSecondaryVertexV2BJetTagsPFAK4Puppi
 process.jetSequence += process.patJetsPFAK4Puppi
 
-<<<<<<< HEAD
-from JetMETCorrections.Configuration.JetCorrectorsAllAlgos_cff  import *
-jetlabel='AK4PFPuppi'
-process.ak4PuppiL1  = ak4PFCHSL1FastjetCorrector.clone (algorithm = cms.string(jetlabel))
-process.ak4PuppiL2  = ak4PFCHSL2RelativeCorrector.clone(algorithm = cms.string(jetlabel))
-process.ak4PuppiL3  = ak4PFCHSL3AbsoluteCorrector.clone(algorithm = cms.string(jetlabel))
-process.ak4PuppiRes = ak4PFCHSResidualCorrector.clone  (algorithm = cms.string(jetlabel))
-process.puppiJetMETSequence += process.ak4PuppiL1
-process.puppiJetMETSequence += process.ak4PuppiL2
-process.puppiJetMETSequence += process.ak4PuppiL3
-
-process.ak4PuppiCorrector = ak4PFL1FastL2L3Corrector.clone(
-        correctors = cms.VInputTag("ak4PuppiL1", 
-                                    "ak4PuppiL2",
-                                    "ak4PuppiL3")
-    )
-process.ak4PuppiCorrectorRes = ak4PFL1FastL2L3Corrector.clone(
-        correctors = cms.VInputTag("ak4PuppiL1", 
-                                    "ak4PuppiL2",
-                                    "ak4PuppiL3",
-                                    'ak4PuppiRes')
-    )
-if isData:
-    process.puppiJetMETSequence += process.ak4PuppiRes
-    process.puppiJetMETSequence += process.ak4PuppiCorrectorRes
-    correctorLabel = 'ak4PuppiCorrectorRes'
-else:
-    process.puppiJetMETSequence += process.ak4PuppiCorrector
-    correctorLabel = 'ak4PuppiCorrector'
-
-# correct puppi MET
-process.puppiMETcorr = cms.EDProducer("PFJetMETcorrInputProducer",
-    src = cms.InputTag('ak4PFJetsPuppi'),
-    offsetCorrLabel = cms.InputTag('ak4PuppiL1'),
-    jetCorrLabel = cms.InputTag(correctorLabel),
-    jetCorrLabelRes = cms.InputTag('ak4PuppiCorrectorRes'),
-    jetCorrEtaMax = cms.double(9.9),
-    type1JetPtThreshold = cms.double(15.0),
-    skipEM = cms.bool(True),
-    skipEMfractionThreshold = cms.double(0.90),
-    skipMuons = cms.bool(True),
-    skipMuonSelection = cms.string("isGlobalMuon | isStandAloneMuon")
-)
-process.type1PuppiMET = cms.EDProducer("CorrectedPFMETProducer",
-    src = cms.InputTag('pfMETPuppi'),
-    srcCorrections = cms.VInputTag(cms.InputTag('puppiMETcorr', 'type1')),
-)   
-process.puppiJetMETSequence += process.puppiMETcorr
-process.puppiJetMETSequence += process.type1PuppiMET
-=======
 ##################### FAT JETS #############################
->>>>>>> e36e2e225da92060452a75c8b3324f87c772ddfb
 
 from PandaProd.Ntupler.makeFatJets_cff import *
 fatjetInitSequence = initFatJets(process,isData)
@@ -380,7 +328,7 @@ process.p = cms.Path(
                         process.puppiMETSequence *             # builds all the puppi collections
                         process.egmPhotonIDSequence *          # baseline photon ID for puppi correction
                         process.fullPatMetSequencePuppi *      # puppi MET
-                        # process.monoXFilterSequence *          # filter
+                        process.monoXFilterSequence *          # filter
                         process.jetSequence *                  # patify ak4puppi and do all fatjet stuff
                         process.metfilterSequence *
                         process.PandaNtupler
