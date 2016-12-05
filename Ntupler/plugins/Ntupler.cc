@@ -167,7 +167,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       JetFiller *puppiAK4     = new JetFiller("puppiAK4");
       puppiAK4->rho_token     = consumes<double>(iConfig.getParameter<edm::InputTag>("rho"));
       puppiAK4->jet_token     = consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("puppiAK4"));
-      puppiAK4->applyJEC      = true;
+      puppiAK4->applyJEC      = false;
       puppiAK4->minPt         = 15;
       puppiAK4->skipEvent     = skipEvent;
       obj.push_back(puppiAK4);
