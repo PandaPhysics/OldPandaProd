@@ -13,7 +13,8 @@ namespace panda
         kVeto   = 1UL<<0,
         kLoose  = 1UL<<1,
         kMedium = 1UL<<2,
-        kTight  = 1UL<<3
+        kTight  = 1UL<<3,
+        kEleVeto= 1UL<<4
       };
       PPhoton():
         PObject(),

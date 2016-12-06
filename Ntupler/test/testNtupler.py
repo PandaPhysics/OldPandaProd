@@ -23,9 +23,9 @@ isData = options.isData
 process.load("FWCore.MessageService.MessageLogger_cfi")
 # If you run over many samples and you save the log, remember to reduce
 # the size of the output by prescaling the report of the event number
-process.MessageLogger.cerr.FwkReport.reportEvery = 10
+process.MessageLogger.cerr.FwkReport.reportEvery = 100
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(200) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(5000) )
 
 if isData:
    fileList = [
@@ -35,7 +35,9 @@ if isData:
 else:
    fileList = [
        #'file:/data/t3home000/snarayan/test/tt_8011.root'
-       'file:/afs/cern.ch/work/s/snarayan/tt_8020.root'
+       #'file:/afs/cern.ch/work/s/snarayan/tt_8020.root'
+       #'/store/mc/RunIISpring16MiniAODv2/TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/40000/1AF1FDE9-EF25-E611-82DA-02163E011D1C.root'
+       'file:/afs/cern.ch/work/s/snarayan/8011_ttdm.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
@@ -82,7 +84,7 @@ if isData:
 process.load('PandaProd.Filter.infoProducerSequence_cff')
 process.load('PandaProd.Filter.MonoXFilterSequence_cff')
 process.load('PandaProd.Ntupler.PandaProd_cfi')
-#process.load('PandaProd.Ntupler.VBF_cfi')
+process.load('PandaProd.Ntupler.VBF_cfi')
 
 #-----------------------JES/JER----------------------------------
 if isData:
@@ -322,7 +324,7 @@ process.p = cms.Path(
                         process.puppiMETSequence *             # builds all the puppi collections
                         process.egmPhotonIDSequence *          # baseline photon ID for puppi correction
                         process.fullPatMetSequencePuppi *      # puppi MET
-                        process.monoXFilterSequence *          # filter
+                        # process.monoXFilterSequence *          # filter
                         process.jetSequence *                  # patify ak4puppi and do all fatjet stuff
                         process.metfilterSequence *
                         process.PandaNtupler

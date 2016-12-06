@@ -33,6 +33,8 @@ int EventFiller::analyze(const edm::Event& iEvent){
     data->eventNumber   = iEvent.id().event();
     data->isData        = iEvent.isRealData();
 
+    //PDebug("EventFiller",TString::Format("Filling run=%i, lumi=%i, event=%llu",data->runNumber,data->lumiNumber,data->eventNumber));
+
     if (firstEntry) {
       firstEntry = false;
       if (!data->isData) {
