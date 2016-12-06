@@ -43,7 +43,7 @@ config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = 10
 config.Data.totalUnits = -1
 
-config.Data.outLFNDirBase = '/store/group/phys_exotica/monotop/pandaprod/v_8022_0/' 
+config.Data.outLFNDirBase = '/store/group/phys_exotica/monotop/pandaprod/v_8022_1/' 
 #config.Data.outLFNDirBase = '/store/user/%s/scramjet/' % (getUsernameFromSiteDB())
 config.Data.publication = False
 config.Data.outputDatasetTag ='PandA'
@@ -88,7 +88,7 @@ if __name__ == '__main__':
         if value=='True':
             config.Data.splitting = 'LumiBased'
             #config.Data.lumiMask=None
-            url = "https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions16/13TeV/ReReco/"
+            url = "https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions16/13TeV/ReReco/Final/"
             config.Data.lumiMask = url + "Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt"
         else:
             config.Data.lumiMask = None
@@ -122,9 +122,8 @@ if __name__ == '__main__':
     ###################################################
     setdata("True")
     ###################################################
-    config.Data.unitsPerJob = 50
+    config.Data.unitsPerJob = 70
 
-    '''
     submitList([
             '/MET/Run2016B-23Sep2016-v2/MINIAOD',
             '/MET/Run2016B-23Sep2016-v3/MINIAOD',
@@ -138,21 +137,26 @@ if __name__ == '__main__':
             '/MET/Run2016H-PromptReco-v3/MINIAOD',
         ])
     '''
+    '''
     
-    config.Data.unitsPerJob = 40
+    config.Data.unitsPerJob = 30
 
     submitList([
-        '/SingleElectron/Run2016C-23Sep2016-v1/MINIAOD',
+          '/SingleElectron/Run2016B-23Sep2016-v2/MINIAOD',
+          '/SingleElectron/Run2016B-23Sep2016-v3/MINIAOD',
+          '/SingleElectron/Run2016C-23Sep2016-v1/MINIAOD',
+          '/SingleElectron/Run2016D-23Sep2016-v1/MINIAOD',
+          '/SingleElectron/Run2016E-23Sep2016-v1/MINIAOD',
+          '/SingleElectron/Run2016F-23Sep2016-v1/MINIAOD',
+          '/SingleElectron/Run2016G-23Sep2016-v1/MINIAOD',
+          '/SingleElectron/Run2016H-PromptReco-v1/MINIAOD',
+          '/SingleElectron/Run2016H-PromptReco-v2/MINIAOD',
+          '/SingleElectron/Run2016H-PromptReco-v3/MINIAOD',
         ])
-    '''
+
+    config.Data.unitsPerJob = 60
+
     submitList([
-        '/SingleElectron/Run2016B-23Sep2016-v2/MINIAOD',
-        '/SingleElectron/Run2016B-23Sep2016-v3/MINIAOD',
-        '/SingleElectron/Run2016C-23Sep2016-v1/MINIAOD',
-        '/SingleElectron/Run2016D-23Sep2016-v1/MINIAOD',
-        '/SingleElectron/Run2016E-23Sep2016-v1/MINIAOD',
-        '/SingleElectron/Run2016F-23Sep2016-v1/MINIAOD',
-        '/SingleElectron/Run2016G-23Sep2016-v1/MINIAOD',
         '/SinglePhoton/Run2016B-23Sep2016-v1/MINIAOD',
         '/SinglePhoton/Run2016B-23Sep2016-v3/MINIAOD',
         '/SinglePhoton/Run2016C-23Sep2016-v1/MINIAOD',
@@ -160,13 +164,11 @@ if __name__ == '__main__':
         '/SinglePhoton/Run2016E-23Sep2016-v1/MINIAOD',
         '/SinglePhoton/Run2016F-23Sep2016-v1/MINIAOD',
         '/SinglePhoton/Run2016G-23Sep2016-v1/MINIAOD',
-        '/SingleElectron/Run2016H-PromptReco-v1/MINIAOD',
-        '/SingleElectron/Run2016H-PromptReco-v2/MINIAOD',
-        '/SingleElectron/Run2016H-PromptReco-v3/MINIAOD',
         '/SinglePhoton/Run2016H-PromptReco-v1/MINIAOD',
         '/SinglePhoton/Run2016H-PromptReco-v2/MINIAOD',
         '/SinglePhoton/Run2016H-PromptReco-v3/MINIAOD',
       ])
+    '''
     '''
     ###################################################
     setdata("False")
@@ -174,7 +176,6 @@ if __name__ == '__main__':
 
     config.Data.splitting = 'EventAwareLumiBased'
     config.Data.unitsPerJob = 20000
-    '''
     submitList([
         '/ZH_HToBB_ZToNuNu_M125_13TeV_powheg_pythia8/RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v2/MINIAODSIM',
         '/ggZH_HToBB_ZToNuNu_M125_13TeV_powheg_pythia8/RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
@@ -194,13 +195,13 @@ if __name__ == '__main__':
         '/DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
     ])
     '''
+    '''
 
 
     ###################################################
     setdata("False")
     ###################################################
 
-    '''
     config.Data.splitting = 'FileBased'
     config.Data.unitsPerJob = 1
     submitList([ 
@@ -214,7 +215,6 @@ if __name__ == '__main__':
         '/ZJetsToNuNu_HT-800To1200_13TeV-madgraph/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v3/MINIAODSIM',
         '/ZJetsToNuNu_HT-1200To2500_13TeV-madgraph/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
         '/ZJetsToNuNu_HT-2500ToInf_13TeV-madgraph/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
-        '/TT_TuneCUETP8M1_13TeV-powheg-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext4-v1/MINIAODSIM',
         '/QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
         '/QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v3/MINIAODSIM',
         '/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/MINIAODSIM', 
@@ -223,6 +223,7 @@ if __name__ == '__main__':
 
     config.Data.unitsPerJob = 2
     submitList([ 
+        '/TT_TuneCUETP8M1_13TeV-powheg-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext4-v1/MINIAODSIM',
         '/WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/MINIAODSIM',
         '/WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/MINIAODSIM',
         '/WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
@@ -254,5 +255,6 @@ if __name__ == '__main__':
         '/TT_TuneEE5C_13TeV-powheg-herwigpp/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM'
     ])
 
+    '''
     '''
 
