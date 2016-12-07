@@ -43,7 +43,7 @@ config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = 10
 config.Data.totalUnits = -1
 
-config.Data.outLFNDirBase = '/store/group/phys_exotica/monotop/pandaprod/v_8022_1/' 
+config.Data.outLFNDirBase = '/store/group/phys_exotica/monotop/pandaprod/v_8022_2_snarayan/' 
 #config.Data.outLFNDirBase = '/store/user/%s/scramjet/' % (getUsernameFromSiteDB())
 config.Data.publication = False
 config.Data.outputDatasetTag ='PandA'
@@ -124,6 +124,7 @@ if __name__ == '__main__':
     ###################################################
     config.Data.unitsPerJob = 70
 
+    '''
     submitList([
             '/MET/Run2016B-23Sep2016-v2/MINIAOD',
             '/MET/Run2016B-23Sep2016-v3/MINIAOD',
@@ -137,10 +138,13 @@ if __name__ == '__main__':
             '/MET/Run2016H-PromptReco-v3/MINIAOD',
         ])
     '''
-    '''
     
     config.Data.unitsPerJob = 30
+    submitList([
+          '/SingleElectron/Run2016E-23Sep2016-v1/MINIAOD',
+      ])
 
+    '''
     submitList([
           '/SingleElectron/Run2016B-23Sep2016-v2/MINIAOD',
           '/SingleElectron/Run2016B-23Sep2016-v3/MINIAOD',
@@ -153,9 +157,15 @@ if __name__ == '__main__':
           '/SingleElectron/Run2016H-PromptReco-v2/MINIAOD',
           '/SingleElectron/Run2016H-PromptReco-v3/MINIAOD',
         ])
+    '''
 
     config.Data.unitsPerJob = 60
+    submitList([
+        '/SinglePhoton/Run2016E-23Sep2016-v1/MINIAOD',
+        '/SinglePhoton/Run2016F-23Sep2016-v1/MINIAOD',
+      ])
 
+    '''
     submitList([
         '/SinglePhoton/Run2016B-23Sep2016-v1/MINIAOD',
         '/SinglePhoton/Run2016B-23Sep2016-v3/MINIAOD',
@@ -169,11 +179,11 @@ if __name__ == '__main__':
         '/SinglePhoton/Run2016H-PromptReco-v3/MINIAOD',
       ])
     '''
-    '''
     ###################################################
     setdata("False")
     ###################################################
 
+    '''
     config.Data.splitting = 'EventAwareLumiBased'
     config.Data.unitsPerJob = 20000
     submitList([
@@ -195,13 +205,16 @@ if __name__ == '__main__':
         '/DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
     ])
     '''
-    '''
 
 
     ###################################################
     setdata("False")
     ###################################################
 
+    submitList([
+      '/MonoHbb_ZpBaryonic_MZp-10_MChi-150_13TeV-madgraph/RunIISpring16MiniAODv2-premix_withHLT_80X_mcRun2_asymptotic_v14-v1/MINIAODSIM',
+      ])
+    '''
     config.Data.splitting = 'FileBased'
     config.Data.unitsPerJob = 1
     submitList([ 
@@ -254,6 +267,7 @@ if __name__ == '__main__':
         '/ZprimeToA0hToA0chichihbb_2HDM_MZp-1200_MA0-300_13TeV-madgraph/RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM', 
         '/TT_TuneEE5C_13TeV-powheg-herwigpp/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM'
     ])
+    '''
 
     '''
     '''
