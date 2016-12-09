@@ -43,7 +43,7 @@ config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = 10
 config.Data.totalUnits = -1
 
-config.Data.outLFNDirBase = '/store/group/phys_exotica/monoHiggs/pandaprod/8_0_20_v1' 
+config.Data.outLFNDirBase = '/store/group/phys_exotica/monoHiggs/pandaprod/8_0_20_v2' 
 #config.Data.outLFNDirBase = '/store/user/%s/scramjet/' % (getUsernameFromSiteDB())
 config.Data.publication = False
 config.Data.outputDatasetTag ='PandA'
@@ -118,7 +118,7 @@ if __name__ == '__main__':
     #############################################################################################
     ## From now on that's what users should modify: this is the a-la-CRAB2 configuration part. ##
     #############################################################################################
-
+    '''
     ###################################################
     setdata("True")
     ###################################################
@@ -161,7 +161,48 @@ if __name__ == '__main__':
         '/SinglePhoton/Run2016H-PromptReco-v2/MINIAOD',
         '/SinglePhoton/Run2016H-PromptReco-v3/MINIAOD',
       ])
+    '''
+    '''
+    ###################################################                                                                                                                                                  
+    setdata("False")
+    ###################################################                                                                                                                                                     
 
+    config.Data.splitting = 'EventAwareLumiBased'
+    config.Data.unitsPerJob = 20000
+
+    submitList([
+        '/DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
+        '/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/MINIAODSIM',
+    ])
+
+    ###################################################                                                                                                                                               
+    setdata("False")
+    ###################################################  
+    config.Data.unitsPerJob = 2                                                                                                                                                                         
+    submitList([                                                                                                                                                                                         
+        '/DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/MINIAODSIM',                              
+        '/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
+    ])
+    '''
+    ###################################################
+    setdata("False")
+    ###################################################
+
+    config.Data.splitting = 'FileBased'
+    config.Data.unitsPerJob = 1
+    submitList([ 
+        '/WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/MINIAODSIM',
+        '/WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM',
+    ])
+
+    setdata("False")
+    config.Data.unitsPerJob = 2
+    submitList([
+        '/MonoHbb_ZpBaryonic_MZp-10000_MChi-150_13TeV-madgraph/RunIISpring16MiniAODv2-premix_withHLT_80X_mcRun2_asymptotic_v14-v1/MINIAODSIM',
+        '/MonoHbb_ZpBaryonic_MZp-1000_MChi-150_13TeV-madgraph/RunIISpring16MiniAODv2-premix_withHLT_80X_mcRun2_asymptotic_v14-v1/MINIAODSIM'
+    ])
+
+    '''
     ###################################################
     setdata("False")
     ###################################################
@@ -321,3 +362,4 @@ if __name__ == '__main__':
         '/MonoHbb_ZpBaryonic_MZp-995_MChi-500_13TeV-madgraph/RunIISpring16MiniAODv2-premix_withHLT_80X_mcRun2_asymptotic_v14-v1/MINIAODSIM',
         '/MonoHbb_ZpBaryonic_MZp-95_MChi-50_13TeV-madgraph/RunIISpring16MiniAODv2-premix_withHLT_80X_mcRun2_asymptotic_v14-v1/MINIAODSIM',
     ])
+    '''
