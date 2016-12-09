@@ -37,8 +37,10 @@ int PhotonFiller::analyze(const edm::Event& iEvent){
     // iEvent.getByToken(pho_nhiso_token,pho_nhiso_handle);
     // iEvent.getByToken(pho_phoiso_token,pho_phoiso_handle);
 
-    unsigned int iA=0;
+    unsigned int iA=-1;
     for (const pat::Photon& pho : *pho_handle) {
+
+      ++iA;
 
       if (pho.pt()<minPt || fabs(pho.eta())>maxEta 
           || pho.chargedHadronIso()/pho.pt()>0.3)
@@ -71,11 +73,11 @@ int PhotonFiller::analyze(const edm::Event& iEvent){
       photon->id |= (unsigned(loose)*PPhoton::kLoose);
       photon->id |= (unsigned(medium)*PPhoton::kMedium);
       photon->id |= (unsigned(tight)*PPhoton::kTight);
+      photon->id |= (unsigned(pho.passElectronVeto())*PPhoton::kEleVeto);
 
 
       data->push_back(photon);
 
-      ++iA;
     }
 
     std::sort(data->begin(),data->end(),SortPObjects);
