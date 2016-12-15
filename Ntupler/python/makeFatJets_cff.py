@@ -124,7 +124,7 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
                                                 jetAlgorithm = cms.string(jetAlgo),
                                                 rParam = cms.double(jetRadius),
                                                 src = cms.InputTag(pfCandidates),
-                                                jetPtMin = cms.double(180)
+                                                jetPtMin = cms.double(100)
                                             )
   )
   if not(hasattr(process,"genJetsNoNuSoftDrop"+rLabel)) and isMC:
@@ -147,7 +147,7 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
                                                           writeCompound = cms.bool(True),
                                                           useExplicitGhosts = cms.bool(True),
                                                           jetCollInstanceName=cms.string("SubJets"),
-                                                          jetPtMin = cms.double(180)
+                                                          jetPtMin = cms.double(100)
                                                       )
   )
   process.dump = cms.EDAnalyzer("EventContentAnalyzer")
