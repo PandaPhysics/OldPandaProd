@@ -3,6 +3,7 @@
 #include "PandaProd/Ntupler/interface/JetSkimmer.h"
 #include "PandaProd/Ntupler/interface/RecoilFilter.h"
 #include "PandaProd/Ntupler/interface/EventFiller.h"
+#include "PandaProd/Ntupler/interface/GenInfoFiller.h"
 #include "PandaProd/Ntupler/interface/METFiller.h"
 #include "PandaProd/Ntupler/interface/PFCandFiller.h"
 #include "PandaProd/Ntupler/interface/MuonFiller.h"
@@ -249,6 +250,11 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     genjet->genjet_token        = mayConsume<reco::GenJetCollection>(edm::InputTag("ak4GenJetsYesNu"));
     genjet->skipEvent           = skipEvent;
     obj.push_back(genjet);
+    
+    GenInfoFiller *geninfo  = new GenInfoFiller("geninfo");
+    geninfo->lhe_token      = mayConsume<LHEEventProduct>(iConfig.getParameter<edm::InputTag>("lhe"));
+    geninfo->skipEvent           = skipEvent;
+    obj.push_back(geninfo);
 }
 
 

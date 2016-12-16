@@ -2,6 +2,7 @@
 #define PANDA_OBJECTS_LINKDEF_H
 #include "PandaProd/Objects/interface/PObject.h"
 #include "PandaProd/Objects/interface/PEvent.h"
+#include "PandaProd/Objects/interface/PGenInfo.h"
 #include "PandaProd/Objects/interface/PPFCand.h"
 #include "PandaProd/Objects/interface/PMET.h"
 #include "PandaProd/Objects/interface/PJet.h"
@@ -24,6 +25,7 @@
 
 #pragma link C++ class panda::PObject+;
 #pragma link C++ class panda::PEvent+;
+#pragma link C++ class panda::PGenInfo+;
 #pragma link C++ class panda::PMET+;
 #pragma link C++ class panda::PPFCand+;
 #pragma link C++ class panda::PJet+;

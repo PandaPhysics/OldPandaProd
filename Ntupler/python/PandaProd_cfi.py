@@ -57,6 +57,7 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
 
     # gen
     generator = cms.InputTag("generator"),
+    lhe = cms.InputTag("externalLHEProducer"),
     genjets = cms.InputTag("slimmedGenJets"),
     prunedgen = cms.InputTag("prunedGenParticles"),
     packedgen = cms.InputTag("packedGenParticles"),
