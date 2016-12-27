@@ -61,11 +61,11 @@ process.load("Configuration.StandardSequences.MagneticField_cff")
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
 if (isData):
     # sept reprocessing
-    process.GlobalTag.globaltag = '80X_dataRun2_2016SeptRepro_v4'
+    process.GlobalTag.globaltag = '80X_dataRun2_2016SeptRepro_v3'
 else:
     ## tranch IV v6 ... is this correct?
-    #process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_miniAODv2' # for 8011 MC? 
-    process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_TrancheIV_v6'
+    process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_miniAODv2' # for 8011 MC? 
+    #process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_TrancheIV_v6'
 
 ### LOAD DATABASE
 from CondCore.DBCommon.CondDBSetup_cfi import *
@@ -73,7 +73,7 @@ from CondCore.DBCommon.CondDBSetup_cfi import *
 
 ######## LUMI MASK
 #if isData and not options.isGrid and False: ## dont load the lumiMaks, will be called by crab
-if isData:
+if isData and False:
     import FWCore.PythonUtilities.LumiList as LumiList
     process.source.lumisToProcess = LumiList.LumiList(filename='Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt').getVLuminosityBlockRange()
     print "Using local JSON"

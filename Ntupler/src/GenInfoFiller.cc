@@ -37,8 +37,8 @@ int GenInfoFiller::analyze(const edm::Event& iEvent){
     data->mcWeights_syst_id->resize(9); 
     //for( unsigned int iweight = 0 ; iweight<lhe_handle->weights().size() ;iweight++){
     for( unsigned int iweight = 0 ; iweight<9 ;iweight++){
-	data->mcWeights_syst->at(iweight) = float(lhe_handle -> weights() . at(iweight) . wgt );
-	data->mcWeights_syst_id->at(iweight) = lhe_handle -> weights() . at(iweight) . id . c_str() ;
+      data->mcWeights_syst->at(iweight) = float(lhe_handle -> weights() . at(iweight) . wgt );
+      data->mcWeights_syst_id->at(iweight) = lhe_handle -> weights() . at(iweight) . id . c_str() ;
     }
   }
 
