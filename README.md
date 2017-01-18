@@ -27,6 +27,6 @@ scram b -j$(nproc)
 
 ## Running
 
-The `cmsRun` executables are in `PandaProd/test`. 
+The `cmsRun` executables are in `PandaProd/Ntupler/test`. 
 You can use `testNtupler.py` to run a few events locally. 
 To run on the grid, `runNtupler.py` is the configuration, and `submitCrab.py` is used to submit the jobs.
