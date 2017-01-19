@@ -1,4 +1,3 @@
-
 import FWCore.ParameterSet.Config as cms
 #-----------------------FAT JET CLUSTERING-----------------------
 from RecoJets.JetProducers.ak4PFJets_cfi import ak4PFJets
@@ -125,7 +124,7 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
                                                 jetAlgorithm = cms.string(jetAlgo),
                                                 rParam = cms.double(jetRadius),
                                                 src = cms.InputTag(pfCandidates),
-                                                jetPtMin = cms.double(180)
+                                                jetPtMin = cms.double(100)
                                             )
   )
   if not(hasattr(process,"genJetsNoNuSoftDrop"+rLabel)) and isMC:
@@ -148,7 +147,7 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
                                                           writeCompound = cms.bool(True),
                                                           useExplicitGhosts = cms.bool(True),
                                                           jetCollInstanceName=cms.string("SubJets"),
-                                                          jetPtMin = cms.double(180)
+                                                          jetPtMin = cms.double(100)
                                                       )
   )
   process.dump = cms.EDAnalyzer("EventContentAnalyzer")
@@ -196,9 +195,8 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
   newSeq += getattr(process,customLabel+'SubQGTag')
 
   ### subjet b-tagging ###
-
   setattr(process,customLabel+'PFImpactParameterTagInfos',
-      pfImpactParameterTagInfos.clone(
+    pfImpactParameterTagInfos.clone(
           jets      = cms.InputTag('PFJets'+"SoftDrop"+customLabel,'SubJets'),
           maxDeltaR = cms.double(0.4),
           primaryVertex = cms.InputTag('offlineSlimmedPrimaryVertices'),
@@ -220,9 +218,55 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
       )
     )
   )
+
+  ### doubleb###  
+  setattr(process, customLabel+'PFImpactParameterDoubleSVTagInfos', 
+      pfImpactParameterTagInfos.clone(
+            jets      = cms.InputTag("PFJets"+customLabel),
+            primaryVertex = cms.InputTag('offlineSlimmedPrimaryVertices'),
+            maxDeltaR = cms.double(jetRadius),
+            candidates = cms.InputTag('packedPFCandidates')
+      ))
+  setattr(process, customLabel+'PFInclusiveSecondaryVertexFinderDoubleSVTagInfos',
+      pfInclusiveSecondaryVertexFinderTagInfos.clone(
+           trackIPTagInfos = cms.InputTag(customLabel+"PFImpactParameterDoubleSVTagInfos"),
+           extSVCollection = cms.InputTag('slimmedSecondaryVertices')
+      ))
+
+  if jetRadius < 1.0:
+    setattr(process, customLabel+'PFBoostedDoubleSVTagInfos',
+        pfBoostedDoubleSVAK8TagInfos.clone(
+           svTagInfos = cms.InputTag(customLabel+'PFInclusiveSecondaryVertexFinderDoubleSVTagInfos')
+        )
+    ) 
+    setattr(process, customLabel+'PFBoostedDoubleSecondaryVertexBJetTags',
+        pfBoostedDoubleSecondaryVertexAK8BJetTags.clone(
+            tagInfos = cms.VInputTag(
+                cms.InputTag(customLabel+"PFBoostedDoubleSVTagInfos")
+             )
+        )
+    )    
+  else:
+    setattr(process, customLabel+'PFBoostedDoubleSVTagInfos',
+        pfBoostedDoubleSVCA15TagInfos.clone(
+            svTagInfos = cms.InputTag(customLabel+'PFInclusiveSecondaryVertexFinderDoubleSVTagInfos')
+        )
+    )
+    setattr(process, customLabel+'PFBoostedDoubleSecondaryVertexBJetTags',
+        pfBoostedDoubleSecondaryVertexCA15BJetTags.clone(
+             tagInfos = cms.VInputTag(
+                cms.InputTag(customLabel+"PFBoostedDoubleSVTagInfos") 
+             )
+        )
+    )    
+
   newSeq += getattr(process,customLabel+'PFImpactParameterTagInfos')
   newSeq += getattr(process,customLabel+'PFInclusiveSecondaryVertexFinderTagInfos')
   newSeq += getattr(process,customLabel+'PFCombinedInclusiveSecondaryVertexV2BJetTags')
+  newSeq += getattr(process,customLabel+'PFImpactParameterDoubleSVTagInfos')
+  newSeq += getattr(process,customLabel+'PFInclusiveSecondaryVertexFinderDoubleSVTagInfos')
+  newSeq += getattr(process,customLabel+'PFBoostedDoubleSVTagInfos')
+  newSeq += getattr(process,customLabel+'PFBoostedDoubleSecondaryVertexBJetTags')
   
   bTagInfos = ['None']
   bTagDiscriminators = ['None']

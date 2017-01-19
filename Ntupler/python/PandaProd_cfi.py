@@ -24,7 +24,7 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
     # jet toggles
     savePuppiCands = cms.bool(False),
     saveCHSCands = cms.bool(False), 
-    doCHSAK4 = cms.bool(True),
+    doCHSAK4 = cms.bool(False),
     doPuppiAK4 = cms.bool(True),
     doPuppiCA15 = cms.bool(True),
     doCHSCA15 = cms.bool(False),
