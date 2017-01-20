@@ -33,9 +33,9 @@ int PhotonFiller::analyze(const edm::Event& iEvent){
     iEvent.getByToken(pho_looseid_token,pho_looseid_handle);
     iEvent.getByToken(pho_mediumid_token,pho_mediumid_handle);
     iEvent.getByToken(pho_tightid_token,pho_tightid_handle);
-    // iEvent.getByToken(pho_chiso_token,pho_chiso_handle);
-    // iEvent.getByToken(pho_nhiso_token,pho_nhiso_handle);
-    // iEvent.getByToken(pho_phoiso_token,pho_phoiso_handle);
+    iEvent.getByToken(iso_ch_token,iso_ch_handle);
+    iEvent.getByToken(iso_nh_token,iso_nh_handle);
+    iEvent.getByToken(iso_pho_token,iso_pho_handle);
 
     unsigned int iA=-1;
     for (const pat::Photon& pho : *pho_handle) {
@@ -48,10 +48,10 @@ int PhotonFiller::analyze(const edm::Event& iEvent){
 
       edm::RefToBase<pat::Photon> ref ( edm::Ref< pat::PhotonCollection >(pho_handle, iA) ) ;
 
-      // float chiso = (*pho_chiso_handle)[ref];
-      // float nhiso = (*pho_nhiso_handle)[ref];
-      // float phoiso = (*pho_phoiso_handle)[ref];
-      // float iso = chiso + nhiso + phoiso;
+      float chiso = (*iso_ch_handle)[ref];
+      float nhiso = (*iso_nh_handle)[ref];
+      float phoiso = (*iso_pho_handle)[ref];
+      float iso = chiso + nhiso + phoiso;
 
       bool medium = (*pho_mediumid_handle)[ref];
       bool loose = (*pho_looseid_handle)[ref];
@@ -67,7 +67,7 @@ int PhotonFiller::analyze(const edm::Event& iEvent){
       photon->eta = pho.eta();
       photon->phi = pho.phi();
       photon->m = pho.mass();
-      // photon->iso = iso;
+      photon->iso = iso;
 
       photon->id = 0;
       photon->id |= (unsigned(loose)*PPhoton::kLoose);

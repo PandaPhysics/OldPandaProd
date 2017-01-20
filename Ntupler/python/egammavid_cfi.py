@@ -5,7 +5,6 @@ import re,os
 
 def initEGammaVID(process, options):
 	replace = {'bx' : '25ns', 'vs' : 'V1'}
-
 	toProduce={}
 	for obj in ['ele','pho']:
 		toProduce[obj]={}
@@ -25,14 +24,15 @@ def initEGammaVID(process, options):
 			myid = re.sub('_standalone.*','',myid)
 			if obj=="ele":
 				myid = "cutBasedElectronID_Summer16_80X_%(vs)s"%replace
-
-			toProduce[obj][ directory + '.Identification.' + myid + "_cff"] = 1 #remove duplicates
+			if obj != 'pho': ## photon is different in Spring16, added below 
+				toProduce[obj][ directory + '.Identification.' + myid + "_cff"] = 1 #remove duplicates
 	### INIT MODULES
 	dataFormat = DataFormat.MiniAOD
 
 	## add the NonTrigValueMap
-	#toProduce['ele']["RecoEgamma.ElectronIdentification.Identification.cutBasedElectronHLTPreselecition_Summer16_V1_cff"] = 1
-	#toProduce['ele']["RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Spring16_GeneralPurpose_V1_cff"] = 1
+	toProduce['ele']["RecoEgamma.ElectronIdentification.Identification.cutBasedElectronHLTPreselecition_Summer16_V1_cff"] = 1
+	toProduce['ele']["RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Spring16_GeneralPurpose_V1_cff"] = 1
+	toProduce['pho']['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Spring16_V2p2_cff'] =1
 
 	switchOnVIDElectronIdProducer(process, dataFormat)
 	### # define which IDs we want to produce. it is silly to redifine them here hard coded

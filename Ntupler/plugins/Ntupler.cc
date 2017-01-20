@@ -130,6 +130,10 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     photon->pho_looseid_token   = consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoLooseIdMap"));
     photon->pho_mediumid_token  = consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoMediumIdMap"));
     photon->pho_tightid_token   = consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoTightIdMap"));
+    photon->iso_ch_token        = consumes<edm::ValueMap<float>>(iConfig.getParameter<edm::InputTag>("phoChargedIsolation"));
+    photon->iso_nh_token        = consumes<edm::ValueMap<float>>(iConfig.getParameter<edm::InputTag>("phoNeutralHadronIsolation"));
+    photon->iso_pho_token       = consumes<edm::ValueMap<float>>(iConfig.getParameter<edm::InputTag>("phoPhotonIsolation"));
+    photon->iso_wch_token       = consumes<edm::ValueMap<float>>(iConfig.getParameter<edm::InputTag>("phoWorstChargedIsolation"));
     obj.push_back(photon);
 
 

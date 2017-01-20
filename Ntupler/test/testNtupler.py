@@ -23,9 +23,9 @@ isData = options.isData
 process.load("FWCore.MessageService.MessageLogger_cfi")
 # If you run over many samples and you save the log, remember to reduce
 # the size of the output by prescaling the report of the event number
-process.MessageLogger.cerr.FwkReport.reportEvery = 100
+process.MessageLogger.cerr.FwkReport.reportEvery = 5
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(200) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
 
 if isData:
    fileList = [
@@ -35,9 +35,7 @@ if isData:
 else:
    fileList = [
        #'file:/data/t3home000/snarayan/test/tt_8011.root'
-       #'file:/afs/cern.ch/work/s/snarayan/tt_8020.root'
-       #'/store/mc/RunIISpring16MiniAODv2/TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/40000/1AF1FDE9-EF25-E611-82DA-02163E011D1C.root'
-       'file:/afs/cern.ch/work/s/snarayan/public/tt_8011.root'
+       'file:/afs/cern.ch/work/s/snarayan/tt_8020.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
@@ -63,8 +61,7 @@ process.load("Configuration.StandardSequences.MagneticField_cff")
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
 if (isData):
     # sept reprocessing
-    #process.GlobalTag.globaltag = '80X_dataRun2_2016SeptRepro_v4'
-    process.GlobalTag.globaltag = '80X_dataRun2_Prompt_v8'
+    process.GlobalTag.globaltag = '80X_dataRun2_2016SeptRepro_v3'
 else:
     ## tranch IV v6 ... is this correct?
     process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_miniAODv2' # for 8011 MC? 
@@ -76,7 +73,7 @@ from CondCore.DBCommon.CondDBSetup_cfi import *
 
 ######## LUMI MASK
 #if isData and not options.isGrid and False: ## dont load the lumiMaks, will be called by crab
-if isData:
+if isData and False:
     import FWCore.PythonUtilities.LumiList as LumiList
     process.source.lumisToProcess = LumiList.LumiList(filename='Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt').getVLuminosityBlockRange()
     print "Using local JSON"
@@ -325,7 +322,7 @@ process.p = cms.Path(
                         process.puppiMETSequence *             # builds all the puppi collections
                         process.egmPhotonIDSequence *          # baseline photon ID for puppi correction
                         process.fullPatMetSequencePuppi *      # puppi MET
-                        # process.monoXFilterSequence *          # filter
+                        process.monoXFilterSequence *          # filter
                         process.jetSequence *                  # patify ak4puppi and do all fatjet stuff
                         process.metfilterSequence *
                         process.PandaNtupler

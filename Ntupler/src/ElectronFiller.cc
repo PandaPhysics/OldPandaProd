@@ -31,6 +31,7 @@ int ElectronFiller::analyze(const edm::Event& iEvent){
     iEvent.getByToken(el_looseid_token,el_looseid_handle);
     iEvent.getByToken(el_mediumid_token,el_mediumid_handle);
     iEvent.getByToken(el_tightid_token,el_tightid_handle);
+    iEvent.getByToken(el_hltid_token,el_hltid_handle);
 
     unsigned int iE=-1;
     for (const pat::Electron& el : *el_handle) {
@@ -51,6 +52,7 @@ int ElectronFiller::analyze(const edm::Event& iEvent){
       bool medium = (*el_mediumid_handle)[ref];
       bool loose = (*el_looseid_handle)[ref];
       bool tight = (*el_tightid_handle)[ref];
+      bool hltsafe = (*el_hltid_handle)[ref];
 
       if (!veto) {
         continue;
@@ -88,6 +90,7 @@ int ElectronFiller::analyze(const edm::Event& iEvent){
       electron->id |= (unsigned(loose)*PElectron::kLoose);
       electron->id |= (unsigned(medium)*PElectron::kMedium);
       electron->id |= (unsigned(tight)*PElectron::kTight);
+      electron->id |= (unsigned(hltsafe)*PElectron::kHLTPresel);
 
       data->push_back(electron);
     }

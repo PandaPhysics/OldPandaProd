@@ -26,12 +26,18 @@ class ElectronFiller : virtual public BaseFiller
 
         edm::EDGetTokenT<edm::ValueMap<bool> >  el_vetoid_token;
         edm::Handle<edm::ValueMap<bool> > el_vetoid_handle;
+
         edm::EDGetTokenT<edm::ValueMap<bool> >  el_looseid_token;
         edm::Handle<edm::ValueMap<bool> > el_looseid_handle;
+
         edm::EDGetTokenT<edm::ValueMap<bool> >  el_mediumid_token;
         edm::Handle<edm::ValueMap<bool> > el_mediumid_handle;
+
         edm::EDGetTokenT<edm::ValueMap<bool> >  el_tightid_token;
         edm::Handle<edm::ValueMap<bool> > el_tightid_handle;
+
+        edm::EDGetTokenT<edm::ValueMap<bool> >  el_hltid_token;
+        edm::Handle<edm::ValueMap<bool> > el_hltid_handle;
 
         std::unique_ptr<EffectiveAreas> effArea;
 
