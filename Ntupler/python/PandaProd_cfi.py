@@ -67,11 +67,11 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
     maxAK4Eta = cms.double (4.7),
 
     #ak8
-    minAK8Pt  = cms.double (180.),
+    minAK8Pt  = cms.double (100.),
     maxAK8Eta = cms.double (2.5),
 
     #ca15
-    minCA15Pt  = cms.double (180.),
+    minCA15Pt  = cms.double (100.),
     maxCA15Eta = cms.double (2.5),
 
     #gen

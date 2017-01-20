@@ -89,9 +89,9 @@ process.load('PandaProd.Ntupler.PandaProd_cfi')
 
 #-----------------------JES/JER----------------------------------
 if isData:
-  jeclabel = 'Spring16_25nsV10All_DATA'
+  jeclabel = 'Spring16_23Sep2016AllV2_DATA'
 else:
-  jeclabel = 'Spring16_25nsV10_MC'
+  jeclabel = 'Spring16_23Sep2016V2_MC'
 process.jec =  cms.ESSource("PoolDBESSource",
                     CondDBSetup,
                     timetype = cms.string('runnumber'),
