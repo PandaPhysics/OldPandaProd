@@ -1,4 +1,5 @@
 #include "PandaProd/Ntupler/interface/EventFiller.h"
+#include "PandaUtilities/Common/interface/DataTools.h"
 
 #include "DataFormats/HLTReco/interface/TriggerTypeDefs.h"
 
@@ -71,8 +72,9 @@ int EventFiller::analyze(const edm::Event& iEvent){
             continue;
           string name = tn.triggerName(iT);
           for (unsigned int jP=0; jP!=nP; ++jP) {
-            if (name.find(trigger_paths[jP]) != string::npos) {
-              data->tiggers->at(jP) = trigger_handle->accept(iT);
+            //if (name.find(trigger_paths[jP]) != string::npos) {
+            if (matchTriggerName(trigger_paths[jP],name)) {
+              data->tiggers->at(jP) = true; // trigger_handle->accept(iT);
             } // if paths match
           } // loop over saved triggers
         } // loop over all triggers

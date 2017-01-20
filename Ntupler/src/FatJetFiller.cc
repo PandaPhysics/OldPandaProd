@@ -115,13 +115,13 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
           break;
         }
       }
-			PDebug("FatJEtFiller::analyze",TString::Format("Using data corrector (%s)",thisEraGroup.Data()));
+			//PDebug("FatJetFiller::analyze",TString::Format("Using data corrector (%s)",thisEraGroup.Data()));
     } else {
       corrector = mMCJetCorrector;
-			PDebug("FatJEtFiller::analyze","Using MC corrector");
+			//PDebug("FatJetFiller::analyze","Using MC corrector");
     }
     if (corrector==0) {
-      PError("Ntupler::FatJetFiller::analyze",TString::Format("Could not determine era for run %i",(int)iEvent.id().run()));
+      PError("FatJetFiller::analyze",TString::Format("Could not determine era for run %i",(int)iEvent.id().run()));
       assert(0);
     }
 

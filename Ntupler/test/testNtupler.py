@@ -84,6 +84,16 @@ process.load('PandaProd.Filter.MonoXFilterSequence_cff')
 process.load('PandaProd.Ntupler.PandaProd_cfi')
 #process.load('PandaProd.Ntupler.VBF_cfi')
 
+process.PandaNtupler.isData = isData
+if isData:
+	process.triggerFilter = cms.EDFilter('TriggerFilter',
+																triggerPaths = process.PandaNtupler.triggerPaths,
+																trigger = process.PandaNtupler.trigger
+															)
+	process.triggerFilterSequence = cms.Sequence( process.triggerFilter )
+else:
+	process.triggerFilterSequence = cms.Sequence()
+
 #-----------------------JES/JER----------------------------------
 if isData:
   jeclabel = 'Spring16_23Sep2016AllV2_DATA'
@@ -313,6 +323,7 @@ if DEBUG:
 
 process.p = cms.Path(
                         process.infoProducerSequence *
+												process.triggerFilterSequence *
                         process.jecSequence *
                         process.egmGsfElectronIDSequence *
                         process.egmPhotonIDSequence *
@@ -322,7 +333,7 @@ process.p = cms.Path(
                         process.puppiMETSequence *             # builds all the puppi collections
                         process.egmPhotonIDSequence *          # baseline photon ID for puppi correction
                         process.fullPatMetSequencePuppi *      # puppi MET
-#                        process.monoXFilterSequence *          # filter
+                        process.monoXFilterSequence *          # filter
                         process.jetSequence *                  # patify ak4puppi and do all fatjet stuff
                         process.metfilterSequence *
                         process.PandaNtupler

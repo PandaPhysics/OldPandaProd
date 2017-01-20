@@ -241,28 +241,32 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
 
 
     // GEN FILLER -------------------------------------------
-    GenParticleFiller *gen   = new GenParticleFiller("gen");
-    gen->packed_token        = consumes<edm::View<pat::PackedGenParticle> >(iConfig.getParameter<edm::InputTag>("packedgen"));
-    gen->pruned_token        = consumes<edm::View<reco::GenParticle> >(iConfig.getParameter<edm::InputTag>("prunedgen")) ;
-    gen->skipEvent           = skipEvent;
-    obj.push_back(gen);
+		if (! iConfig.getParameter<bool>("isData") ) {
+			GenParticleFiller *gen   = new GenParticleFiller("gen");
+			gen->packed_token        = consumes<edm::View<pat::PackedGenParticle> >(iConfig.getParameter<edm::InputTag>("packedgen"));
+			gen->pruned_token        = consumes<edm::View<reco::GenParticle> >(iConfig.getParameter<edm::InputTag>("prunedgen")) ;
+			gen->skipEvent           = skipEvent;
+			obj.push_back(gen);
 
-    GenJetFiller *genjet        = new GenJetFiller("genjet");
-    genjet->genjet_token        = mayConsume<reco::GenJetCollection>(edm::InputTag("ak4GenJetsYesNu"));
-    genjet->skipEvent           = skipEvent;
-    obj.push_back(genjet);
-    
-    if (iConfig.getParameter<bool>("doPuppiCA15")) {
-			GenJetFiller *genCA15       = new GenJetFiller("genCA15");
-			genCA15->genjet_token       = mayConsume<reco::GenJetCollection>(edm::InputTag("genJetsNoNuCA15"));
-			genCA15->skipEvent          = skipEvent;
-			obj.push_back(genCA15);
+			GenJetFiller *genjet        = new GenJetFiller("genjet");
+			genjet->genjet_token        = mayConsume<reco::GenJetCollection>(edm::InputTag("ak4GenJetsYesNu"));
+			genjet->skipEvent           = skipEvent;
+			obj.push_back(genjet);
+			
+			if (iConfig.getParameter<bool>("doPuppiCA15")) {
+				GenJetFiller *genCA15       = new GenJetFiller("genCA15");
+				genCA15->genjet_token       = mayConsume<reco::GenJetCollection>(edm::InputTag("genJetsNoNuCA15"));
+				genCA15->skipEvent          = skipEvent;
+				genCA15->minPt              = 150;
+				genCA15->maxEta             = 3;
+				obj.push_back(genCA15);
+			}
+			
+			GenInfoFiller *geninfo  = new GenInfoFiller("geninfo");
+			geninfo->lhe_token      = mayConsume<LHEEventProduct>(iConfig.getParameter<edm::InputTag>("lhe"));
+			geninfo->skipEvent           = skipEvent;
+			obj.push_back(geninfo);
 		}
-    
-    GenInfoFiller *geninfo  = new GenInfoFiller("geninfo");
-    geninfo->lhe_token      = mayConsume<LHEEventProduct>(iConfig.getParameter<edm::InputTag>("lhe"));
-    geninfo->skipEvent           = skipEvent;
-    obj.push_back(geninfo);
 }
 
 

@@ -9,6 +9,7 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
 
     info = cms.string("PandaNtupler"),
     cmssw = cms.string( os.environ['CMSSW_VERSION'] ) , # no need to ship it with the grid option
+		isData = cms.bool(False), # gets overridden by process
 
     vertices = cms.InputTag("offlineSlimmedPrimaryVertices"),
     rho = cms.InputTag("fixedGridRhoFastjetAll"),
