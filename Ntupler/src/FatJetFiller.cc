@@ -35,23 +35,23 @@ FatJetFiller::~FatJetFiller(){
 
 void FatJetFiller::init(TTree *t) {
   t->Branch(treename.Data(),&data,99);
-  std::string jecDir = "jec/";
+  std::string jecDir = "jec/23Sep2016V2/";
  
   std::vector<JetCorrectorParameters> mcParams;
-  mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016V2_MC_L1FastJet_AK8PFPuppi.txt"));
-  mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016V2_MC_L2Relative_AK8PFPuppi.txt"));
-  mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016V2_MC_L3Absolute_AK8PFPuppi.txt"));
-  mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016V2_MC_L2L3Residual_AK8PFPuppi.txt"));
+  mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016V2_MC/Spring16_23Sep2016V2_MC_L1FastJet_AK8PFPuppi.txt"));
+  mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016V2_MC/Spring16_23Sep2016V2_MC_L2Relative_AK8PFPuppi.txt"));
+  mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016V2_MC/Spring16_23Sep2016V2_MC_L3Absolute_AK8PFPuppi.txt"));
+  mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016V2_MC/Spring16_23Sep2016V2_MC_L2L3Residual_AK8PFPuppi.txt"));
   mMCJetCorrector = new FactorizedJetCorrector(mcParams);
  
   std::vector<std::string> eraGroups = {"BCD","EF","G","H"};
   std::map<std::string,std::vector<JetCorrectorParameters>> dataParams;
   for (auto e : eraGroups) {
     dataParams[e].clear();
-    dataParams[e].push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016"+e+"V2_DATA_L1FastJet_AK8PFPuppi.txt"));
-    dataParams[e].push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016"+e+"V2_DATA_L2Relative_AK8PFPuppi.txt"));
-    dataParams[e].push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016"+e+"V2_DATA_L3Absolute_AK8PFPuppi.txt"));
-    dataParams[e].push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016"+e+"V2_DATA_L2L3Residual_AK8PFPuppi.txt"));
+    dataParams[e].push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016"+e+"V2_DATA/Spring16_23Sep2016"+e+"V2_DATA_L1FastJet_AK8PFPuppi.txt"));
+    dataParams[e].push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016"+e+"V2_DATA/Spring16_23Sep2016"+e+"V2_DATA_L2Relative_AK8PFPuppi.txt"));
+    dataParams[e].push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016"+e+"V2_DATA/Spring16_23Sep2016"+e+"V2_DATA_L3Absolute_AK8PFPuppi.txt"));
+    dataParams[e].push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016"+e+"V2_DATA/Spring16_23Sep2016"+e+"V2_DATA_L2L3Residual_AK8PFPuppi.txt"));
     mDataJetCorrectors[e.c_str()] = new FactorizedJetCorrector(dataParams[e]);
   }
   eras = new EraHandler(2016);
@@ -107,14 +107,18 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
     if (iEvent.isRealData()) {
       int thisRun = iEvent.id().run();
       TString thisEra = eras->getEra(thisRun);
+			TString thisEraGroup;
       for (auto &iter : mDataJetCorrectors) {
         if (iter.first.Contains(thisEra)) {
+					thisEraGroup = iter.first;
           corrector = iter.second;
           break;
         }
       }
+			PDebug("FatJEtFiller::analyze",TString::Format("Using data corrector (%s)",thisEraGroup.Data()));
     } else {
       corrector = mMCJetCorrector;
+			PDebug("FatJEtFiller::analyze","Using MC corrector");
     }
     if (corrector==0) {
       PError("Ntupler::FatJetFiller::analyze",TString::Format("Could not determine era for run %i",(int)iEvent.id().run()));

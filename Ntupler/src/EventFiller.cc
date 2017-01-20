@@ -2,6 +2,7 @@
 
 #include "DataFormats/HLTReco/interface/TriggerTypeDefs.h"
 
+# define SAVEMCTRIGGERS true
 
 using namespace panda;
 
@@ -33,11 +34,9 @@ int EventFiller::analyze(const edm::Event& iEvent){
     data->eventNumber   = iEvent.id().event();
     data->isData        = iEvent.isRealData();
 
-    //PDebug("EventFiller",TString::Format("Filling run=%i, lumi=%i, event=%llu",data->runNumber,data->lumiNumber,data->eventNumber));
-
     if (firstEntry) {
       firstEntry = false;
-      if (!data->isData) {
+      if (!(data->isData) && !SAVEMCTRIGGERS) {
         // if this is MC, don't bother saving triggers 
         data->tiggers->clear();
       }
@@ -58,7 +57,7 @@ int EventFiller::analyze(const edm::Event& iEvent){
       rho_ = *rho_handle;
 
       unsigned int nP = trigger_paths.size();
-      if (data->isData) {
+      if (data->isData || SAVEMCTRIGGERS) {
         for (unsigned int jP=0; jP!=nP; ++jP) {
           data->tiggers->at(jP) = false;
         }
@@ -110,7 +109,7 @@ int EventFiller::analyze(const edm::Event& iEvent){
       passesAll = passesAll && (passes_badpfmuon && passes_badchcand);
 
       data->metfilters->at(0) = passesAll; // AND of all required filters
-    } // isData
+    } // minimal 
 
     return 0;
 }

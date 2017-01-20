@@ -110,6 +110,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     electron->el_looseid_token  = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleLooseIdMap"));
     electron->el_mediumid_token = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleMediumIdMap"));
     electron->el_tightid_token  = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleTightIdMap"));
+    electron->el_hltid_token    = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleHLTIdMap"));
     electron->effArea.reset(
       new EffectiveAreas(
         edm::FileInPath(iConfig.getParameter<std::string>("eleEA")).fullPath()
@@ -251,10 +252,12 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     genjet->skipEvent           = skipEvent;
     obj.push_back(genjet);
     
-    GenJetFiller *genCA15       = new GenJetFiller("genCA15");
-    genCA15->genjet_token       = mayConsume<reco::GenJetCollection>(edm::InputTag("genJetsNoNuCA15"));
-    genCA15->skipEvent          = skipEvent;
-    obj.push_back(genCA15);
+    if (iConfig.getParameter<bool>("doPuppiCA15")) {
+			GenJetFiller *genCA15       = new GenJetFiller("genCA15");
+			genCA15->genjet_token       = mayConsume<reco::GenJetCollection>(edm::InputTag("genJetsNoNuCA15"));
+			genCA15->skipEvent          = skipEvent;
+			obj.push_back(genCA15);
+		}
     
     GenInfoFiller *geninfo  = new GenInfoFiller("geninfo");
     geninfo->lhe_token      = mayConsume<LHEEventProduct>(iConfig.getParameter<edm::InputTag>("lhe"));

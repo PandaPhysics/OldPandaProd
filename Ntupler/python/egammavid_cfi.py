@@ -12,6 +12,8 @@ def initEGammaVID(process, options):
 		if obj=='pho': directory = 'RecoEgamma.PhotonIdentification'
 		for ID in ['veto','medium','loose','tight']:
 			if obj == 'pho' and ID == 'veto' : continue
+			if obj == 'pho' :
+				replace['vs'] = 'V2p2'
 
 			replace['id'] = ID
 			cmd = 'string = process.PandaNtupler.' + obj + ID.title() + 'IdMap.value()'
