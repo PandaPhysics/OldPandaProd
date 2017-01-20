@@ -247,6 +247,11 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     genjet->skipEvent           = skipEvent;
     obj.push_back(genjet);
     
+    GenJetFiller *genCA15       = new GenJetFiller("genCA15");
+    genCA15->genjet_token       = mayConsume<reco::GenJetCollection>(edm::InputTag("genJetsNoNuCA15"));
+    genCA15->skipEvent          = skipEvent;
+    obj.push_back(genCA15);
+    
     GenInfoFiller *geninfo  = new GenInfoFiller("geninfo");
     geninfo->lhe_token      = mayConsume<LHEEventProduct>(iConfig.getParameter<edm::InputTag>("lhe"));
     geninfo->skipEvent           = skipEvent;
