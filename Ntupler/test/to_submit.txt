@@ -1,6 +1,0 @@
-DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
-DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
-WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
-WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
-MonoHbb_ZpBaryonic_MZp-10000_MChi-150_13TeV-madgraph
-MonoHbb_ZpBaryonic_MZp-1000_MChi-150_13TeV-madgraph

@@ -1,6 +1,0 @@
-<use name="root"/>
-<use name="roottmva"/>
-<flags CXXFLAGS="-g -Wall"/>
-<export>
-  <lib name="1"/>
-</export>

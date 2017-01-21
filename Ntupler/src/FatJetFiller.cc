@@ -72,7 +72,7 @@ void FatJetFiller::init(TTree *t) {
   std::string cmssw_base_src = getenv("CMSSW_BASE");
   cmssw_base_src += "/src/";
 
-  fWeightFile  =  (cmssw_base_src + "PandaProd/Utils/data/BoostedSVDoubleCA15_withSubjet_v4.weights.xml");
+  fWeightFile  =  (cmssw_base_src + "PandaProd/Utilities/data/BoostedSVDoubleCA15_withSubjet_v4.weights.xml");
   initBoostedBtaggingJetId();
 
   //htt
@@ -180,22 +180,19 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       }
       
       //Bosted b tagging for CA15
+
       // reco::BoostedDoubleSVTagInfo const *bdsvTagInfo = static_cast<reco::BoostedDoubleSVTagInfo const *>(j.tagInfo("pfBoostedDoubleSVCA15"));
       // const reco::TaggingVariableList vars = bdsvTagInfo.taggingVariables();
       iEvent.getByToken(doubleb_token,doubleb_handle);
-      // std::cout << doubleb_handle.isValid() << std::endl;
       
-      // //match to jet 
+      //match to jet 
       reco::BoostedDoubleSVTagInfoCollection::const_iterator matchTI = doubleb_handle->end();
       for( reco::BoostedDoubleSVTagInfoCollection::const_iterator itTI = doubleb_handle->begin(); itTI != doubleb_handle->end(); ++itTI )
        	{
        	  const reco::JetBaseRef jetTI = itTI->jet();
-	  // 	  //	  if( jetTI->px() ==  jetBaseRef->px()  && jetTI->pz() ==  jetBaseRef->pz() )
-	  //std::cout << "jetTI->px() = " << jetTI->px() << ", j.px() = " << j.px() << ", jetTI->pz() = " << jetTI->pz() << ", j.pz() = " << j.pz() << std::endl;
     	  if( fabs((jetTI->px()-j.px())/j.px()) < 0.01  && fabs((jetTI->pz()-j.pz())/j.pz()) < 0.01 )
      	    {
 	      matchTI = itTI;
-	      //  std::cout << "found" << std::endl;
      	      break;
      	    }
      	}

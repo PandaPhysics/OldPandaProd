@@ -4,7 +4,7 @@
 #include "BaseFiller.h"
 #include "PFCandFiller.h"
 #include "PandaProd/Objects/interface/PFatJet.h"
-#include "PandaProd/Utils/interface/BoostedBtaggingMVACalculator.hh"
+#include "PandaProd/Utilities/interface/BoostedBtaggingMVACalculator.hh"
 
 #include "CondFormats/JetMETObjects/interface/JetCorrectorParameters.h"
 #include "CondFormats/JetMETObjects/interface/FactorizedJetCorrector.h"

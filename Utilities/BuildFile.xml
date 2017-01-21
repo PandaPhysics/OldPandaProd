@@ -35,6 +35,7 @@
 <use name="PandaUtilities/Common"/>
 <use name="clhep"/>
 <use name="root"/>
+<use name="roottmva"/>
 <use name="fastjet"/>
 <use name="fastjet-contrib"/>
 <export>
