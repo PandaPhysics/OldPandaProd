@@ -14,31 +14,31 @@
 namespace panda {
 class JetFiller : virtual public BaseFiller
 {
-    public:
-        JetFiller(TString n);
-        ~JetFiller();
-        static bool JetId(const pat::Jet &, string id);
-        int analyze(const edm::Event& iEvent);
-        virtual inline string name(){return "JetFiller";};
-        void init(TTree *t);
+		public:
+				JetFiller(TString n);
+				~JetFiller();
+				static bool JetId(const pat::Jet &, string id);
+				int analyze(const edm::Event& iEvent);
+				virtual inline string name(){return "JetFiller";};
+				void init(TTree *t);
 
-        edm::Handle<pat::JetCollection> jet_handle; 
-        edm::EDGetTokenT<pat::JetCollection> jet_token;
+				edm::Handle<pat::JetCollection> jet_handle; 
+				edm::EDGetTokenT<pat::JetCollection> jet_token;
 
-        edm::Handle<double> rho_handle;
-        edm::EDGetTokenT<double> rho_token;
+				edm::Handle<double> rho_handle;
+				edm::EDGetTokenT<double> rho_token;
 
-        bool applyJEC=true;
+				bool applyJEC=true;
 
-        float minPt=15, maxEta=4.7;
+				float minPt=15, maxEta=4.7;
 
-    private:
-        // TClonesArray *data;
-        panda::VJet *data;
-        TString treename;
+		private:
+				// TClonesArray *data;
+				panda::VJet *data;
+				TString treename;
 
-        FactorizedJetCorrector *mMCJetCorrector;   // needed for puppi fat jets
-        FactorizedJetCorrector *mDataJetCorrector; 
+				FactorizedJetCorrector *mMCJetCorrector;	 // needed for puppi fat jets
+				FactorizedJetCorrector *mDataJetCorrector; 
 
 };
 }

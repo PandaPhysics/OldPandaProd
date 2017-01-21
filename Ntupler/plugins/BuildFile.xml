@@ -4,7 +4,7 @@
 <use name="FWCore/Framework"/>
 <use name="FWCore/PluginManager"/>
 <use name="FWCore/ParameterSet"/>
-<!--  -->
+<!--	-->
 <use name="DataFormats/PatCandidates"/>
 <use name="DataFormats/VertexReco"/>
 <use name="DataFormats/EgammaCandidates"/>
@@ -12,17 +12,17 @@
 <use name="DataFormats/JetReco"/>
 <use name="DataFormats/Candidate" />
 <use name="DataFormats/HepMCCandidate" />
-<!--  -->
+<!--	-->
 <use name="CommonTools/UtilAlgos"/>
 <use name="CommonTools/Utils"/>
-<!--  -->
+<!--	-->
 <use name="SimDataFormats/GeneratorProducts"/>
 <use name="SimDataFormats/PileupSummaryInfo"/>
-<!--  -->
+<!--	-->
 <use name="CondFormats/JetMETObjects"/>
 <!-- -->
 <use name="EgammaAnalysis/ElectronTools"/>
-<!--  -->
+<!--	-->
 <use name="clhep"/>
 <use name="root"/>
 <use name="RooFit"/>
