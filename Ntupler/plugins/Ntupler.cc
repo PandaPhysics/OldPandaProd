@@ -264,7 +264,8 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
 			
 			GenInfoFiller *geninfo  = new GenInfoFiller("geninfo");
 			geninfo->lhe_token      = mayConsume<LHEEventProduct>(iConfig.getParameter<edm::InputTag>("lhe"));
-			geninfo->skipEvent           = skipEvent;
+			geninfo->skipEvent      = skipEvent;
+			geninfo->nsyst          = iConfig.getParameter<int>("nSystWeight");
 			obj.push_back(geninfo);
 		}
 }
@@ -309,17 +310,17 @@ void Ntupler::beginJob()
     TString triggerTable("");
     std::vector<std::string> trigger_paths = event->trigger_paths;
     for (unsigned int iT=0; iT!=trigger_paths.size(); ++iT) {
-      triggerTable += TString::Format("%i:%s\n",int(iT),trigger_paths.at(iT).c_str());
+      triggerTable += TString::Format("\n%i:%s",int(iT),trigger_paths.at(iT).c_str());
     }
     fileService_->make<TNamed>("triggerTable",triggerTable.Data());
 
-    TString metFilterTable("0:AllFilters\n");
+    TString metFilterTable("\n0:AllFilters");
     std::vector<std::string> metfilter_paths = event->metfilter_paths;
     for (unsigned int iF=0; iF!=metfilter_paths.size(); ++iF) {
-      metFilterTable += TString::Format("%i:%s\n",int(iF+1),metfilter_paths.at(iF).c_str());
+      metFilterTable += TString::Format("\n%i:%s",int(iF+1),metfilter_paths.at(iF).c_str());
     }
-    metFilterTable += TString::Format("%i:BadChargedCandidateFilter\n",int(metfilter_paths.size()+1));
-    metFilterTable += TString::Format("%i:BadPFMuonFilter\n",int(metfilter_paths.size()+2));
+    metFilterTable += TString::Format("\n%i:BadChargedCandidateFilter",int(metfilter_paths.size()+1));
+    metFilterTable += TString::Format("\n%i:BadPFMuonFilter",int(metfilter_paths.size()+2));
     fileService_->make<TNamed>("metFilterTable",metFilterTable.Data());
 } 
 
@@ -327,6 +328,11 @@ void Ntupler::beginJob()
 void Ntupler::endJob() 
 {
   for (auto o : obj) {
+		string desc = o->description();
+		if (desc.size()>0) {
+			string title = o->name() + "Description"; // TODO - need a more descriptive name
+			fileService_->make<TNamed>(title.c_str(),desc.c_str());
+		}
     o->endJob();
   }
 }

@@ -14,6 +14,12 @@ options.register('isData',
         VarParsing.VarParsing.varType.bool,
         "True if running on Data, False if running on MC")
 
+options.register('isSignal',
+        False,
+        VarParsing.VarParsing.multiplicity.singleton,
+        VarParsing.VarParsing.varType.bool,
+        "True if running on MC signal samples")
+
 options.register('isGrid', False, VarParsing.VarParsing.multiplicity.singleton,VarParsing.VarParsing.varType.bool,"Set it to true if running on Grid")
 
 options.parseArguments()
@@ -30,12 +36,12 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 if isData:
    fileList = [
        #'file:/data/t3home000/snarayan/test/met_8020.root'
-       'file:/afs/cern.ch/work/s/snarayan/met_8020.root'
+       'file:/afs/cern.ch/work/s/snarayan/8020_met.root'
        ]
 else:
    fileList = [
        #'file:/data/t3home000/snarayan/test/tt_8011.root'
-       'file:/afs/cern.ch/work/s/snarayan/tt_8020.root'
+       'file:/afs/cern.ch/work/s/snarayan/8024_tt.root'
        ]
 ### do not remove the line below!
 ###FILELIST###
@@ -83,6 +89,19 @@ process.load('PandaProd.Filter.infoProducerSequence_cff')
 process.load('PandaProd.Filter.MonoXFilterSequence_cff')
 process.load('PandaProd.Ntupler.PandaProd_cfi')
 #process.load('PandaProd.Ntupler.VBF_cfi')
+
+process.PandaNtupler.isData = isData
+if isData:
+	process.triggerFilter = cms.EDFilter('TriggerFilter',
+																triggerPaths = process.PandaNtupler.triggerPaths,
+																trigger = process.PandaNtupler.trigger
+															)
+	process.triggerFilterSequence = cms.Sequence( process.triggerFilter )
+else:
+	process.triggerFilterSequence = cms.Sequence()
+
+if options.isSignal:
+	process.PandaNtupler.nSystWeight = -1
 
 #-----------------------JES/JER----------------------------------
 if isData:
@@ -313,6 +332,7 @@ if DEBUG:
 
 process.p = cms.Path(
                         process.infoProducerSequence *
+												process.triggerFilterSequence *
                         process.jecSequence *
                         process.egmGsfElectronIDSequence *
                         process.egmPhotonIDSequence *

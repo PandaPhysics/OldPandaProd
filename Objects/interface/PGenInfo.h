@@ -11,15 +11,13 @@ namespace panda
   {
     public:
       PGenInfo()
-         {
-	   mcWeights_syst = new std::vector<float>;
-	   mcWeights_syst_id = new std::vector<std::string>;
-	 }
-    ~PGenInfo(){ delete mcWeights_syst; delete mcWeights_syst_id; }
+			{
+				mcWeights_syst = new std::vector<float>;
+			}
+			~PGenInfo(){ delete mcWeights_syst; }
     
-    std::vector<float> *mcWeights_syst;
-    std::vector<std::string> *mcWeights_syst_id;
-    ClassDef(PGenInfo,1)
+			std::vector<float> *mcWeights_syst;
+			ClassDef(PGenInfo,1)
   };
 }
 #endif

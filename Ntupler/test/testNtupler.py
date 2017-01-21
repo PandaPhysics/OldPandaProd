@@ -14,6 +14,12 @@ options.register('isData',
         VarParsing.VarParsing.varType.bool,
         "True if running on Data, False if running on MC")
 
+options.register('isSignal',
+        False,
+        VarParsing.VarParsing.multiplicity.singleton,
+        VarParsing.VarParsing.varType.bool,
+        "True if running on MC signal samples")
+
 options.register('isGrid', False, VarParsing.VarParsing.multiplicity.singleton,VarParsing.VarParsing.varType.bool,"Set it to true if running on Grid")
 
 options.parseArguments()
@@ -93,6 +99,9 @@ if isData:
 	process.triggerFilterSequence = cms.Sequence( process.triggerFilter )
 else:
 	process.triggerFilterSequence = cms.Sequence()
+
+if options.isSignal:
+	process.PandaNtupler.nSystWeight = -1
 
 #-----------------------JES/JER----------------------------------
 if isData:
