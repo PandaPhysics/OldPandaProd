@@ -110,6 +110,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     electron->el_looseid_token  = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleLooseIdMap"));
     electron->el_mediumid_token = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleMediumIdMap"));
     electron->el_tightid_token  = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleTightIdMap"));
+    electron->el_hltid_token    = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleHLTIdMap"));
     electron->effArea.reset(
       new EffectiveAreas(
         edm::FileInPath(iConfig.getParameter<std::string>("eleEA")).fullPath()
@@ -130,6 +131,10 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
     photon->pho_looseid_token   = consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoLooseIdMap"));
     photon->pho_mediumid_token  = consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoMediumIdMap"));
     photon->pho_tightid_token   = consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoTightIdMap"));
+    photon->iso_ch_token        = consumes<edm::ValueMap<float>>(iConfig.getParameter<edm::InputTag>("phoChargedIsolation"));
+    photon->iso_nh_token        = consumes<edm::ValueMap<float>>(iConfig.getParameter<edm::InputTag>("phoNeutralHadronIsolation"));
+    photon->iso_pho_token       = consumes<edm::ValueMap<float>>(iConfig.getParameter<edm::InputTag>("phoPhotonIsolation"));
+    photon->iso_wch_token       = consumes<edm::ValueMap<float>>(iConfig.getParameter<edm::InputTag>("phoWorstChargedIsolation"));
     obj.push_back(photon);
 
 
@@ -240,21 +245,33 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
 
 
     // GEN FILLER -------------------------------------------
-    GenParticleFiller *gen   = new GenParticleFiller("gen");
-    gen->packed_token        = consumes<edm::View<pat::PackedGenParticle> >(iConfig.getParameter<edm::InputTag>("packedgen"));
-    gen->pruned_token        = consumes<edm::View<reco::GenParticle> >(iConfig.getParameter<edm::InputTag>("prunedgen")) ;
-    gen->skipEvent           = skipEvent;
-    obj.push_back(gen);
+		if (! iConfig.getParameter<bool>("isData") ) {
+			GenParticleFiller *gen   = new GenParticleFiller("gen");
+			gen->packed_token        = consumes<edm::View<pat::PackedGenParticle> >(iConfig.getParameter<edm::InputTag>("packedgen"));
+			gen->pruned_token        = consumes<edm::View<reco::GenParticle> >(iConfig.getParameter<edm::InputTag>("prunedgen")) ;
+			gen->skipEvent           = skipEvent;
+			obj.push_back(gen);
 
-    GenJetFiller *genjet        = new GenJetFiller("genjet");
-    genjet->genjet_token        = mayConsume<reco::GenJetCollection>(edm::InputTag("ak4GenJetsYesNu"));
-    genjet->skipEvent           = skipEvent;
-    obj.push_back(genjet);
-    
-    GenInfoFiller *geninfo  = new GenInfoFiller("geninfo");
-    geninfo->lhe_token      = mayConsume<LHEEventProduct>(iConfig.getParameter<edm::InputTag>("lhe"));
-    geninfo->skipEvent           = skipEvent;
-    obj.push_back(geninfo);
+			GenJetFiller *genjet        = new GenJetFiller("genjet");
+			genjet->genjet_token        = mayConsume<reco::GenJetCollection>(edm::InputTag("ak4GenJetsYesNu"));
+			genjet->skipEvent           = skipEvent;
+			obj.push_back(genjet);
+			
+			if (iConfig.getParameter<bool>("doPuppiCA15")) {
+				GenJetFiller *genCA15       = new GenJetFiller("genCA15");
+				genCA15->genjet_token       = mayConsume<reco::GenJetCollection>(edm::InputTag("genJetsNoNuCA15"));
+				genCA15->skipEvent          = skipEvent;
+				genCA15->minPt              = 150;
+				genCA15->maxEta             = 3;
+				obj.push_back(genCA15);
+			}
+			
+			GenInfoFiller *geninfo  = new GenInfoFiller("geninfo");
+			geninfo->lhe_token      = mayConsume<LHEEventProduct>(iConfig.getParameter<edm::InputTag>("lhe"));
+			geninfo->skipEvent      = skipEvent;
+			geninfo->nsyst          = iConfig.getParameter<int>("nSystWeight");
+			obj.push_back(geninfo);
+		}
 }
 
 
@@ -297,17 +314,17 @@ void Ntupler::beginJob()
     TString triggerTable("");
     std::vector<std::string> trigger_paths = event->trigger_paths;
     for (unsigned int iT=0; iT!=trigger_paths.size(); ++iT) {
-      triggerTable += TString::Format("%i:%s\n",int(iT),trigger_paths.at(iT).c_str());
+      triggerTable += TString::Format("\n%i:%s",int(iT),trigger_paths.at(iT).c_str());
     }
     fileService_->make<TNamed>("triggerTable",triggerTable.Data());
 
-    TString metFilterTable("0:AllFilters\n");
+    TString metFilterTable("\n0:AllFilters");
     std::vector<std::string> metfilter_paths = event->metfilter_paths;
     for (unsigned int iF=0; iF!=metfilter_paths.size(); ++iF) {
-      metFilterTable += TString::Format("%i:%s\n",int(iF+1),metfilter_paths.at(iF).c_str());
+      metFilterTable += TString::Format("\n%i:%s",int(iF+1),metfilter_paths.at(iF).c_str());
     }
-    metFilterTable += TString::Format("%i:BadChargedCandidateFilter\n",int(metfilter_paths.size()+1));
-    metFilterTable += TString::Format("%i:BadPFMuonFilter\n",int(metfilter_paths.size()+2));
+    metFilterTable += TString::Format("\n%i:BadChargedCandidateFilter",int(metfilter_paths.size()+1));
+    metFilterTable += TString::Format("\n%i:BadPFMuonFilter",int(metfilter_paths.size()+2));
     fileService_->make<TNamed>("metFilterTable",metFilterTable.Data());
 } 
 
@@ -315,6 +332,11 @@ void Ntupler::beginJob()
 void Ntupler::endJob() 
 {
   for (auto o : obj) {
+		string desc = o->description();
+		if (desc.size()>0) {
+			string title = o->name() + "Description"; // TODO - need a more descriptive name
+			fileService_->make<TNamed>(title.c_str(),desc.c_str());
+		}
     o->endJob();
   }
 }

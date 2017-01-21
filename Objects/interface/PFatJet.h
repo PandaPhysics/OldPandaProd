@@ -23,18 +23,10 @@ namespace panda
 			 subjets(0)
 			{ }
 		~PFatJet() { for (auto *s : *subjets) delete s; delete subjets; }
-
-<<<<<<< HEAD
-    float tau1, tau2, tau3;
-    float mSD, tau1SD=-1, tau2SD=-1, tau3SD=-1;
-    float Double_sub=-3;
-    float htt_mass, htt_frec;
-=======
 		float tau1, tau2, tau3; //!< N-subjettiness
 		float mSD, tau1SD=-1, tau2SD=-1, tau3SD=-1; //!< groomed quantities
+		float Double_sub=-3;
 		float htt_mass, htt_frec; //!< HEPTopTagger quantities
->>>>>>> a81a9a2cd7f7b4fcfaf493bbc1f05c039480df12
-
 		float ecfs[3][4][4]; //!< (groomed,normalized) energy correlation functions; 
 												 // [o-1][N-1][beta] = x
 												 // beta = .5, 1, 2, 4

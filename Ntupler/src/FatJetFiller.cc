@@ -1,23 +1,23 @@
 #include "../interface/FatJetFiller.h"
+#include "../interface/JetIDFunc.h"
 #include "DataFormats/BTauReco/interface/TaggingVariable.h"
 #include "DataFormats/BTauReco/interface/JetTag.h"
 #include "DataFormats/BTauReco/interface/BoostedDoubleSVTagInfo.h"
-#include "../interface/JetIDFunc.h"
 
 using namespace panda;
 
 FatJetFiller::FatJetFiller(TString n):
-  BaseFiller()
+    BaseFiller()
 {
   data = new VFatJet();
   treename = n;
-  
+
   int activeAreaRepeats = 1;
   double ghostArea = 0.01;
   double ghostEtaMax = 7.0;
   activeArea = new fastjet::GhostedAreaSpec(ghostEtaMax,activeAreaRepeats,ghostArea);
   areaDef = new fastjet::AreaDefinition(fastjet::active_area_explicit_ghosts,*activeArea);
-  
+
   ecfnmanager = new ECFNManager();
 }
 
@@ -31,31 +31,37 @@ FatJetFiller::~FatJetFiller(){
   delete ecfnmanager;
   delete htt;
   delete mMCJetCorrector;
-  delete mDataJetCorrector;
+  for (auto& iter : mDataJetCorrectors)
+    delete iter.second;
+  delete eras;
 }
 void FatJetFiller::initBoostedBtaggingJetId(){
   fJetBoostedBtaggingMVACalc.initialize(
-					"BDT",fWeightFile);
+                                        "BDT",fWeightFile);
 
 }
-
 void FatJetFiller::init(TTree *t) {
   t->Branch(treename.Data(),&data,99);
-  std::string jecDir = "jec/";
+  std::string jecDir = "jec/23Sep2016V2/";
  
   std::vector<JetCorrectorParameters> mcParams;
-  mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_25nsV6_MC_L1FastJet_AK8PFPuppi.txt"));
-  mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_25nsV6_MC_L2Relative_AK8PFPuppi.txt"));
-  mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_25nsV6_MC_L3Absolute_AK8PFPuppi.txt"));
-  mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_25nsV6_MC_L2L3Residual_AK8PFPuppi.txt"));
+  mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016V2_MC/Spring16_23Sep2016V2_MC_L1FastJet_AK8PFPuppi.txt"));
+  mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016V2_MC/Spring16_23Sep2016V2_MC_L2Relative_AK8PFPuppi.txt"));
+  mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016V2_MC/Spring16_23Sep2016V2_MC_L3Absolute_AK8PFPuppi.txt"));
+  mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016V2_MC/Spring16_23Sep2016V2_MC_L2L3Residual_AK8PFPuppi.txt"));
   mMCJetCorrector = new FactorizedJetCorrector(mcParams);
  
-  std::vector<JetCorrectorParameters> dataParams;
-  dataParams.push_back(JetCorrectorParameters(jecDir + "Spring16_25nsV6_DATA_L1FastJet_AK8PFPuppi.txt"));
-  dataParams.push_back(JetCorrectorParameters(jecDir + "Spring16_25nsV6_DATA_L2Relative_AK8PFPuppi.txt"));
-  dataParams.push_back(JetCorrectorParameters(jecDir + "Spring16_25nsV6_DATA_L3Absolute_AK8PFPuppi.txt"));
-  dataParams.push_back(JetCorrectorParameters(jecDir + "Spring16_25nsV6_DATA_L2L3Residual_AK8PFPuppi.txt"));
-  mDataJetCorrector = new FactorizedJetCorrector(dataParams);
+  std::vector<std::string> eraGroups = {"BCD","EF","G","H"};
+  std::map<std::string,std::vector<JetCorrectorParameters>> dataParams;
+  for (auto e : eraGroups) {
+    dataParams[e].clear();
+    dataParams[e].push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016"+e+"V2_DATA/Spring16_23Sep2016"+e+"V2_DATA_L1FastJet_AK8PFPuppi.txt"));
+    dataParams[e].push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016"+e+"V2_DATA/Spring16_23Sep2016"+e+"V2_DATA_L2Relative_AK8PFPuppi.txt"));
+    dataParams[e].push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016"+e+"V2_DATA/Spring16_23Sep2016"+e+"V2_DATA_L3Absolute_AK8PFPuppi.txt"));
+    dataParams[e].push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016"+e+"V2_DATA/Spring16_23Sep2016"+e+"V2_DATA_L2L3Residual_AK8PFPuppi.txt"));
+    mDataJetCorrectors[e.c_str()] = new FactorizedJetCorrector(dataParams[e]);
+  }
+  eras = new EraHandler(2016);
 
   jetDefCA = new fastjet::JetDefinition(fastjet::cambridge_algorithm, radius);
 
@@ -71,12 +77,10 @@ void FatJetFiller::init(TTree *t) {
   tau = new fastjet::contrib::Njettiness(onepass, fastjet::contrib::NormalizedMeasure(1., radius));
   std::string cmssw_base_src = getenv("CMSSW_BASE");
   cmssw_base_src += "/src/";
-
   fWeightFile  =  (cmssw_base_src + "PandaProd/Utilities/data/BoostedSVDoubleCA15_withSubjet_v4.weights.xml");
   initBoostedBtaggingJetId();
 
   //htt
-
   bool optimalR=true; bool doHTTQ=false;
   double minSJPt=0.; double minCandPt=0.;
   double sjmass=30.; double mucut=0.8;
@@ -86,13 +90,14 @@ void FatJetFiller::init(TTree *t) {
   double minM23Cut=0.; double minM13Cut=0.;
   double maxM13Cut=9999999.;  bool rejectMinR=false;
   htt = new fastjet::HEPTopTaggerV2(optimalR,doHTTQ,
-				    minSJPt,minCandPt,
-				    sjmass,mucut,
-				    filtR,filtN,
-				    mode,minCandMass,
-				    maxCandMass,massRatioWidth,
-				    minM23Cut,minM13Cut,
-				    maxM13Cut,rejectMinR);
+                           minSJPt,minCandPt,
+                           sjmass,mucut,
+                           filtR,filtN,
+                           mode,minCandMass,
+                           maxCandMass,massRatioWidth,
+                           minM23Cut,minM13Cut,
+                           maxM13Cut,rejectMinR);
+
 }
 
 int FatJetFiller::analyze(const edm::Event& iEvent){
@@ -110,7 +115,26 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
     iEvent.getByToken(qgl_token,qgl_handle);
 
     FactorizedJetCorrector *corrector=0;
-    corrector = ( iEvent.isRealData() ) ? mDataJetCorrector : mMCJetCorrector;
+    if (iEvent.isRealData()) {
+      int thisRun = iEvent.id().run();
+      TString thisEra = eras->getEra(thisRun);
+			TString thisEraGroup;
+      for (auto &iter : mDataJetCorrectors) {
+        if (iter.first.Contains(thisEra)) {
+					thisEraGroup = iter.first;
+          corrector = iter.second;
+          break;
+        }
+      }
+			//PDebug("FatJetFiller::analyze",TString::Format("Using data corrector (%s)",thisEraGroup.Data()));
+    } else {
+      corrector = mMCJetCorrector;
+			//PDebug("FatJetFiller::analyze","Using MC corrector");
+    }
+    if (corrector==0) {
+      PError("FatJetFiller::analyze",TString::Format("Could not determine era for run %i",(int)iEvent.id().run()));
+      assert(0);
+    }
 
     const reco::PFJetCollection *subjetCol = subjets_handle.product();
 
@@ -133,11 +157,11 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
         jecFactor = corrector->getCorrection();
         this_pt *= jecFactor;
       }
-      
+
       if (this_pt < minPt || this_rawpt < minPt) continue;
-      
+
       PFatJet *jet = new PFatJet();
-      
+
       jet->pt = this_pt;
       jet->rawPt = this_rawpt;
       jet->eta = j.eta();
@@ -148,37 +172,37 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
       jet->tau2 = j.userFloat(treename+"Njettiness:tau2");
       jet->tau3 = j.userFloat(treename+"Njettiness:tau3");
       jet->mSD  = j.userFloat(treename+"SDKinematics:Mass");
-      
+
       jet->id = 0;
       jet->id |= PassJetID(j,PJet::kLoose) * PJet::kLoose;
       jet->id |= PassJetID(j,PJet::kTight) * PJet::kTight;
       jet->id |= PassJetID(j,PJet::kMonojet) * PJet::kMonojet;
       jet->nhf = j.neutralHadronEnergyFraction();
       jet->chf = j.chargedHadronEnergyFraction();
-      
+
       jet->subjets = new VJet();
       VJet *subjet_data = jet->subjets;
-      
+
       for (reco::PFJetCollection::const_iterator i = subjetCol->begin(); i!=subjetCol->end(); ++i) {
-	
+
         if (reco::deltaR(i->eta(),i->phi(),j.eta(),j.phi())>jetRadius) 
           continue;
-	
+
         PJet *subjet = new PJet();
-	
+
         subjet->pt = i->pt();
         subjet->eta = i->eta();
         subjet->phi = i->phi();
         subjet->m = i->mass();
-	
+
         reco::JetBaseRef sjBaseRef(reco::PFJetRef(subjets_handle,i-subjetCol->begin()));
         subjet->csv = (float)(*(btags_handle.product()))[sjBaseRef];
         subjet->qgl = (float)(*(qgl_handle.product()))[sjBaseRef];
-	
+
         subjet_data->push_back(subjet);
         
       }
-      
+
       //Bosted b tagging for CA15
 
       // reco::BoostedDoubleSVTagInfo const *bdsvTagInfo = static_cast<reco::BoostedDoubleSVTagInfo const *>(j.tagInfo("pfBoostedDoubleSVCA15"));
@@ -239,19 +263,19 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
 	jet->Double_sub = fJetBoostedBtaggingMVACalc.mvaValue(massPruned_, flavour_, nbHadrons_, ptPruned_, etaPruned_,SubJet_csv_,z_ratio_,trackSipdSig_3_,trackSipdSig_2_,trackSipdSig_1_,trackSipdSig_0_,trackSipdSig_1_0_,trackSipdSig_0_0_,trackSipdSig_1_1_,trackSipdSig_0_1_,trackSip2dSigAboveCharm_0_,trackSip2dSigAboveBottom_0_,trackSip2dSigAboveBottom_1_,tau0_trackEtaRel_0_,tau0_trackEtaRel_1_,tau0_trackEtaRel_2_,tau1_trackEtaRel_0_,tau1_trackEtaRel_1_,tau1_trackEtaRel_2_,tau_vertexMass_0_,tau_vertexEnergyRatio_0_,tau_vertexDeltaR_0_,tau_flightDistance2dSig_0_,tau_vertexMass_1_,tau_vertexEnergyRatio_1_,tau_flightDistance2dSig_1_,jetNTracks_,nSV_, false);
       }
       else std::cout<< "   not found matched double-b tag info  "<<std::endl;
-      
+
       // reset the ECFs
       std::vector<float> betas = {0.5,1.,2.,4.};
       std::vector<int> Ns = {1,2,3,4};
       std::vector<int> orders = {1,2,3};
       for (unsigned int iB=0; iB!=4; ++iB) {
-	for (auto N : Ns) {
-	  for (auto o : orders) {
-	    jet->set_ecf(o,N,iB,-1);
-	  }
-	}
+        for (auto N : Ns) {
+          for (auto o : orders) {
+            jet->set_ecf(o,N,iB,-1);
+          }
+        }
       }
-      
+
       if (!ReduceEvent() && (pfcands!=0 || (!minimal && data->size()<2))) {
         // either we want to associate to pf cands OR compute extra info about the first or second jet
         // but do not do any of this if ReduceEvent() is tripped

@@ -1,3 +1,4 @@
+
 import FWCore.ParameterSet.Config as cms
 #-----------------------FAT JET CLUSTERING-----------------------
 from RecoJets.JetProducers.ak4PFJets_cfi import ak4PFJets
@@ -195,8 +196,9 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
   newSeq += getattr(process,customLabel+'SubQGTag')
 
   ### subjet b-tagging ###
+
   setattr(process,customLabel+'PFImpactParameterTagInfos',
-    pfImpactParameterTagInfos.clone(
+      pfImpactParameterTagInfos.clone(
           jets      = cms.InputTag('PFJets'+"SoftDrop"+customLabel,'SubJets'),
           maxDeltaR = cms.double(0.4),
           primaryVertex = cms.InputTag('offlineSlimmedPrimaryVertices'),
@@ -267,7 +269,7 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
   newSeq += getattr(process,customLabel+'PFInclusiveSecondaryVertexFinderDoubleSVTagInfos')
   newSeq += getattr(process,customLabel+'PFBoostedDoubleSVTagInfos')
   newSeq += getattr(process,customLabel+'PFBoostedDoubleSecondaryVertexBJetTags')
-  
+
   bTagInfos = ['None']
   bTagDiscriminators = ['None']
 

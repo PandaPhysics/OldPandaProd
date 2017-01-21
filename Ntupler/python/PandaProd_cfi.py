@@ -9,6 +9,7 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
 
     info = cms.string("PandaNtupler"),
     cmssw = cms.string( os.environ['CMSSW_VERSION'] ) , # no need to ship it with the grid option
+		isData = cms.bool(False), # gets overridden by process
 
     vertices = cms.InputTag("offlineSlimmedPrimaryVertices"),
     rho = cms.InputTag("fixedGridRhoFastjetAll"),
@@ -16,6 +17,7 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
     electrons = cms.InputTag("slimmedElectrons"),
     taus = cms.InputTag("slimmedTaus"),
     photons = cms.InputTag("slimmedPhotons"),
+		nSystWeight = cms.int32(9),
 
     # offline skimming
     doJetSkim = cms.bool(False),
@@ -24,11 +26,11 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
     # jet toggles
     savePuppiCands = cms.bool(False),
     saveCHSCands = cms.bool(False), 
-    doCHSAK4 = cms.bool(False),
+    doCHSAK4 = cms.bool(True),
     doPuppiAK4 = cms.bool(True),
     doPuppiCA15 = cms.bool(True),
     doCHSCA15 = cms.bool(False),
-    doPuppiAK8 = cms.bool(True),
+    doPuppiAK8 = cms.bool(False),
     doCHSAK8 = cms.bool(False),
 
     chsAK4 = cms.InputTag("slimmedJets"),
@@ -51,9 +53,16 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
     eleLooseIdMap  = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-%(vs)s-loose"),
     eleMediumIdMap = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-%(vs)s-medium"),
     eleTightIdMap  = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-%(vs)s-tight"),
-    phoLooseIdMap  = cms.InputTag("egmPhotonIDs:cutBasedPhotonID-Spring15-%(bx)s-%(vs)s-standalone-loose"),
-    phoMediumIdMap = cms.InputTag("egmPhotonIDs:cutBasedPhotonID-Spring15-%(bx)s-%(vs)s-standalone-medium"),
-    phoTightIdMap  = cms.InputTag("egmPhotonIDs:cutBasedPhotonID-Spring15-%(bx)s-%(vs)s-standalone-tight"),
+    eleHLTIdMap    = cms.InputTag("egmGsfElectronIDs:cutBasedElectronHLTPreselection-Summer16-V1"),
+    eleMvaMap      = cms.InputTag("electronMVAValueMapProducer:ElectronMVAEstimatorRun2Spring16GeneralPurposeV1Values"),
+
+    phoLooseIdMap  = cms.InputTag("egmPhotonIDs:cutBasedPhotonID-Spring16-%(vs)s-loose"),
+    phoMediumIdMap = cms.InputTag("egmPhotonIDs:cutBasedPhotonID-Spring16-%(vs)s-medium"),
+    phoTightIdMap  = cms.InputTag("egmPhotonIDs:cutBasedPhotonID-Spring16-%(vs)s-tight"),
+    phoChargedIsolation = cms.InputTag("photonIDValueMapProducer:phoChargedIsolation"),
+    phoNeutralHadronIsolation = cms.InputTag("photonIDValueMapProducer:phoNeutralHadronIsolation"),
+    phoPhotonIsolation = cms.InputTag("photonIDValueMapProducer:phoPhotonIsolation"),
+    phoWorstChargedIsolation = cms.InputTag("photonIDValueMapProducer:phoWorstChargedIsolation"),
 
     # gen
     generator = cms.InputTag("generator"),
@@ -67,11 +76,11 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
     maxAK4Eta = cms.double (4.7),
 
     #ak8
-    minAK8Pt  = cms.double (180.),
+    minAK8Pt  = cms.double (100.),
     maxAK8Eta = cms.double (2.5),
 
     #ca15
-    minCA15Pt  = cms.double (180.),
+    minCA15Pt  = cms.double (100.),
     maxCA15Eta = cms.double (2.5),
 
     #gen
@@ -81,31 +90,57 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
     # triggers
     trigger = cms.InputTag("TriggerResults","","HLT"),
     triggerPaths = cms.vstring([
-                                 'HLT_PFMET170_NoiseCleaned_v',                 # MET
-                                 'HLT_PFMET170_JetIdCleaned_v',
-                                 'HLT_PFMET170_HBHECleaned_v',
-                                 'HLT_PFMETNoMu90_PFMHTNoMu90_IDTight_v',
-                                 'HLT_PFMETNoMu100_PFMHTNoMu100_IDTight_v',
-                                 'HLT_PFMETNoMu110_PFMHTNoMu110_IDTight_v',
-                                 'HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_v',
-                                 'HLT_IsoMu18_v',                               # MUON
-                                 'HLT_IsoMu20_v',
+                                 'HLT_PFMET170_NoiseCleaned',                   # MET
+                                 'HLT_PFMETNoMu120_NoiseCleaned_PFMHTNoMu120_IDTight',
+                                 'HLT_PFMETNoMu110_NoiseCleaned_PFMHTNoMu110_IDTight',
+                                 'HLT_PFMETNoMu90_NoiseCleaned_PFMHTNoMu90_IDTight',
+                                 'HLT_PFMET170_HBHECleaned',                            
+                                 'HLT_PFMET170_JetIdCleaned',                           
+                                 'HLT_PFMET170_NotCleaned',                             
+                                 'HLT_PFMET170_HBHE_BeamHaloCleaned',                   
+                                 'HLT_PFMETNoMu90_PFMHTNoMu90_IDTight',
+                                 'HLT_PFMETNoMu100_PFMHTNoMu100_IDTight',
+                                 'HLT_PFMETNoMu110_PFMHTNoMu110_IDTight',
+                                 'HLT_PFMETNoMu120_PFMHTNoMu120_IDTight',
+
+                                 'HLT_DiPFJet40_DEta3p5_MJJ600_PFMETNoMu140_v', # VBF
+
+                                 'HLT_IsoMu20_v',                               # MUON
+                                 'HLT_IsoTkMu20_v',
                                  'HLT_IsoMu22_v',
+                                 'HLT_IsoTkMu22_v',
                                  'HLT_IsoMu24',
-                                 'HLT_IsoMu27_v',
-                                 'HLT_IsoTkMu18_v',
                                  'HLT_IsoTkMu24_v',
+                                 'HLT_IsoMu27_v',
+                                 'HLT_IsoTkMu27_v',
+                                 'HLT_Mu45_eta2p1_v',                                     
+                                 'HLT_Mu50_v',                                            
+                                 'HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_v',                    
+                                 'HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_v',                  
+                                 'HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v',                 
+                                 'HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v',               
+
                                  'HLT_Ele25_eta2p1_WPTight_Gsf_v',              # ELECTRON
                                  'HLT_Ele27_eta2p1_WPLoose_Gsf_v',
                                  'HLT_Ele27_WPTight_Gsf_v',
+                                 'HLT_Ele30_WPTight_Gsf_v',          
+                                 'HLT_Ele32_eta2p1_WPTight_Gsf_v',   
                                  'HLT_Ele35_WPLoose_Gsf_v',
+                                 'HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v',  
+                                 'HLT_DoubleEle24_22_eta2p1_WPLoose_Gsf_v',      
                                  'HLT_Ele105_CaloIdVT_GsfTrkIdT_v', 
+
                                  'HLT_ECALHT800_v',                             # ELECTRON+PHOTON
+
                                  'HLT_Photon175_v',                             # PHOTON
                                  'HLT_Photon165_HE10_v',
-                                 'HLT_Photon120_R9Id90_HE10_Iso40_EBOnly_PFMET40_v', 
-                                 'HLT_Photon135_PFMET100_v',
-                                 'HLT_Photon300_NoHE_v',
+                                 'HLT_Photon36_R9Id90_HE10_IsoM_v', 
+                                 'HLT_Photon50_R9Id90_HE10_IsoM_v', 
+                                 'HLT_Photon75_R9Id90_HE10_IsoM_v', 
+                                 'HLT_Photon90_R9Id90_HE10_IsoM_v', 
+                                 'HLT_Photon120_R9Id90_HE10_IsoM_v',
+                                 'HLT_Photon165_R9Id90_HE10_IsoM_v',
+
                             ]),
 
     metfilter = cms.InputTag('TriggerResults','','RECO'),

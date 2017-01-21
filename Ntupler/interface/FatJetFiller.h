@@ -26,6 +26,8 @@
 #include "PandaProd/Utilities/interface/EnergyCorrelations.h"
 #include "PandaProd/Utilities/interface/HEPTopTaggerWrapperV2.h"
 
+#include "PandaUtilities/Common/interface/DataTools.h"
+
 #include <map>
 #include <string>
 
@@ -78,7 +80,7 @@ class FatJetFiller : virtual public BaseFiller
         TString treename;
 
         FactorizedJetCorrector *mMCJetCorrector;   
-        FactorizedJetCorrector *mDataJetCorrector; 
+	std::map<TString,FactorizedJetCorrector *> mDataJetCorrectors;  // map from era to corrector
 
         fastjet::AreaDefinition *areaDef;
         fastjet::GhostedAreaSpec *activeArea;
@@ -86,7 +88,8 @@ class FatJetFiller : virtual public BaseFiller
         fastjet::contrib::SoftDrop *softdrop=0;
         fastjet::contrib::Njettiness *tau=0;
 
-        ECFNManager *ecfnmanager;
+        ECFNManager *ecfnmanager=0;
+	EraHandler *eras=0;
         fastjet::HEPTopTaggerV2 *htt=0;
 
 };
