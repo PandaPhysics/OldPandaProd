@@ -30,55 +30,55 @@
 namespace panda {
 class FatJetFiller : virtual public BaseFiller
 {
-    public:
-        FatJetFiller(TString n);
-        ~FatJetFiller();
-        static bool JetId(const pat::Jet &, string id);
-        int analyze(const edm::Event& iEvent);
-        virtual inline string name(){return "FatJetFiller";};
-        void init(TTree *t);
-        TString get_treename() { return treename; }
+		public:
+				FatJetFiller(TString n);
+				~FatJetFiller();
+				static bool JetId(const pat::Jet &, string id);
+				int analyze(const edm::Event& iEvent);
+				virtual inline string name(){return "FatJetFiller";};
+				void init(TTree *t);
+				TString get_treename() { return treename; }
 
-        edm::Handle<pat::JetCollection> jet_handle; 
-        edm::EDGetTokenT<pat::JetCollection> jet_token;
+				edm::Handle<pat::JetCollection> jet_handle; 
+				edm::EDGetTokenT<pat::JetCollection> jet_token;
 
-        edm::Handle<double> rho_handle;
-        edm::EDGetTokenT<double> rho_token;
+				edm::Handle<double> rho_handle;
+				edm::EDGetTokenT<double> rho_token;
 
-        edm::Handle<reco::PFJetCollection> subjets_handle;
-        edm::EDGetTokenT<reco::PFJetCollection> subjets_token;
+				edm::Handle<reco::PFJetCollection> subjets_handle;
+				edm::EDGetTokenT<reco::PFJetCollection> subjets_token;
 
-        edm::Handle<reco::JetTagCollection> btags_handle;
-        edm::EDGetTokenT<reco::JetTagCollection> btags_token;
+				edm::Handle<reco::JetTagCollection> btags_handle;
+				edm::EDGetTokenT<reco::JetTagCollection> btags_token;
 
-        edm::Handle<edm::ValueMap<float>> qgl_handle;
-        edm::EDGetTokenT<edm::ValueMap<float>> qgl_token;
+				edm::Handle<edm::ValueMap<float>> qgl_handle;
+				edm::EDGetTokenT<edm::ValueMap<float>> qgl_token;
 
-        float minPt=180, maxEta=2.5;
-        float jetRadius;
+				float minPt=180, maxEta=2.5;
+				float jetRadius;
 
-        PFCandFiller *pfcands=0; // pointer to the relevant pf cand filler, used to get a map
+				PFCandFiller *pfcands=0; // pointer to the relevant pf cand filler, used to get a map
 
-        bool minimal = false;
-        float radius=1.5;
+				bool minimal = false;
+				float radius=1.5;
 
-    private:
-        panda::VFatJet *data;
-        TString treename;
+		private:
+				panda::VFatJet *data;
+				TString treename;
 
-        FactorizedJetCorrector *mMCJetCorrector;   
-        std::map<TString,FactorizedJetCorrector *> mDataJetCorrectors;  // map from era to corrector
+				FactorizedJetCorrector *mMCJetCorrector;	 
+				std::map<TString,FactorizedJetCorrector *> mDataJetCorrectors;	// map from era to corrector
 
-        fastjet::AreaDefinition *areaDef;
-        fastjet::GhostedAreaSpec *activeArea;
-        fastjet::JetDefinition *jetDefCA=0;
-        fastjet::contrib::SoftDrop *softdrop=0;
-        fastjet::contrib::Njettiness *tau=0;
+				fastjet::AreaDefinition *areaDef;
+				fastjet::GhostedAreaSpec *activeArea;
+				fastjet::JetDefinition *jetDefCA=0;
+				fastjet::contrib::SoftDrop *softdrop=0;
+				fastjet::contrib::Njettiness *tau=0;
 
-        ECFNManager *ecfnmanager=0;
-        fastjet::HEPTopTaggerV2 *htt=0;
+				ECFNManager *ecfnmanager=0;
+				fastjet::HEPTopTaggerV2 *htt=0;
 
-        EraHandler *eras=0;
+				EraHandler *eras=0;
 
 };
 

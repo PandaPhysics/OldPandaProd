@@ -7,17 +7,17 @@ from re import findall
 ### CHECK THAT CMS env and it is correct
 pwd = os.environ['PWD']
 if 'CMSSW_VERSION' not in os.environ:
-    print "Do cmsenv!"
-    exit(0)
+		print "Do cmsenv!"
+		exit(0)
 version = os.environ['CMSSW_VERSION']
 ok = False
 for dir in reversed(pwd.split('/')):
-    if version == dir : 
-        ok = True
-        break
+		if version == dir : 
+				ok = True
+				break
 if not ok:
-    print "Do (redo) cmsenv (2) !"
-    exit(0)
+		print "Do (redo) cmsenv (2) !"
+		exit(0)
 
 
 config = config()
@@ -73,9 +73,9 @@ if __name__ == '__main__':
 			return
 		if len(sys.argv) > 1:
 			## if it is not in the request try the next
-			if sys.argv[1] !=  config.General.requestName: return
+			if sys.argv[1] !=	config.General.requestName: return
 			###
-			print "--- Submitting " + "\033[01;32m" + config.Data.inputDataset.split('/')[1] + "\033[00m"  + " ---"
+			print "--- Submitting " + "\033[01;32m" + config.Data.inputDataset.split('/')[1] + "\033[00m"	+ " ---"
 			config.Data.outputDatasetTag = config.General.requestName
 			try:
 				crabCommand('submit', config = config)
@@ -105,7 +105,7 @@ if __name__ == '__main__':
 				config.JobType.pyCfgParams[idx] = "isSignal=" + value
 				return 
 
-            
+						
 	def submitList(l):
 		for ll in l:
 			split = ll.split('/')
@@ -122,61 +122,61 @@ if __name__ == '__main__':
 				config.General.requestName = split[1]
 			submit(config)
 
-  #############################################################################################
-  ## From now on that's what users should modify: this is the a-la-CRAB2 configuration part. ##
-  #############################################################################################
-  
-  ###################################################
+	#############################################################################################
+	## From now on that's what users should modify: this is the a-la-CRAB2 configuration part. ##
+	#############################################################################################
+	
+	###################################################
 	setdata("True")
 	###################################################
 	config.Data.unitsPerJob = 150
 	
 	submitList([
-	        '/MET/Run2016B-23Sep2016-v2/MINIAOD',
-	        '/MET/Run2016B-23Sep2016-v3/MINIAOD',
-	        '/MET/Run2016C-23Sep2016-v1/MINIAOD',
-	        '/MET/Run2016D-23Sep2016-v1/MINIAOD',
-	        '/MET/Run2016E-23Sep2016-v1/MINIAOD',
-	        '/MET/Run2016F-23Sep2016-v1/MINIAOD',
-	        '/MET/Run2016G-23Sep2016-v1/MINIAOD',
-	        '/MET/Run2016H-PromptReco-v1/MINIAOD',
-	        '/MET/Run2016H-PromptReco-v2/MINIAOD',
-	        '/MET/Run2016H-PromptReco-v3/MINIAOD',
-	    ])
+					'/MET/Run2016B-23Sep2016-v2/MINIAOD',
+					'/MET/Run2016B-23Sep2016-v3/MINIAOD',
+					'/MET/Run2016C-23Sep2016-v1/MINIAOD',
+					'/MET/Run2016D-23Sep2016-v1/MINIAOD',
+					'/MET/Run2016E-23Sep2016-v1/MINIAOD',
+					'/MET/Run2016F-23Sep2016-v1/MINIAOD',
+					'/MET/Run2016G-23Sep2016-v1/MINIAOD',
+					'/MET/Run2016H-PromptReco-v1/MINIAOD',
+					'/MET/Run2016H-PromptReco-v2/MINIAOD',
+					'/MET/Run2016H-PromptReco-v3/MINIAOD',
+			])
 	'''
 	'''
 	
 	config.Data.unitsPerJob = 60
 	
 	submitList([
-	      '/SingleElectron/Run2016B-23Sep2016-v2/MINIAOD',
-	      '/SingleElectron/Run2016B-23Sep2016-v3/MINIAOD',
-	      '/SingleElectron/Run2016C-23Sep2016-v1/MINIAOD',
-	      '/SingleElectron/Run2016D-23Sep2016-v1/MINIAOD',
-	      '/SingleElectron/Run2016E-23Sep2016-v1/MINIAOD',
-	      '/SingleElectron/Run2016F-23Sep2016-v1/MINIAOD',
-	      '/SingleElectron/Run2016G-23Sep2016-v1/MINIAOD',
-	      '/SingleElectron/Run2016H-PromptReco-v1/MINIAOD',
-	      '/SingleElectron/Run2016H-PromptReco-v2/MINIAOD',
-	      '/SingleElectron/Run2016H-PromptReco-v3/MINIAOD',
-	    ])
+				'/SingleElectron/Run2016B-23Sep2016-v2/MINIAOD',
+				'/SingleElectron/Run2016B-23Sep2016-v3/MINIAOD',
+				'/SingleElectron/Run2016C-23Sep2016-v1/MINIAOD',
+				'/SingleElectron/Run2016D-23Sep2016-v1/MINIAOD',
+				'/SingleElectron/Run2016E-23Sep2016-v1/MINIAOD',
+				'/SingleElectron/Run2016F-23Sep2016-v1/MINIAOD',
+				'/SingleElectron/Run2016G-23Sep2016-v1/MINIAOD',
+				'/SingleElectron/Run2016H-PromptReco-v1/MINIAOD',
+				'/SingleElectron/Run2016H-PromptReco-v2/MINIAOD',
+				'/SingleElectron/Run2016H-PromptReco-v3/MINIAOD',
+			])
 	'''
 	'''
 	
 	config.Data.unitsPerJob = 120
 	
 	submitList([
-	    '/SinglePhoton/Run2016B-23Sep2016-v1/MINIAOD',
-	    '/SinglePhoton/Run2016B-23Sep2016-v3/MINIAOD',
-	    '/SinglePhoton/Run2016C-23Sep2016-v1/MINIAOD',
-	    '/SinglePhoton/Run2016D-23Sep2016-v1/MINIAOD',
-	    '/SinglePhoton/Run2016E-23Sep2016-v1/MINIAOD',
-	    '/SinglePhoton/Run2016F-23Sep2016-v1/MINIAOD',
-	    '/SinglePhoton/Run2016G-23Sep2016-v1/MINIAOD',
-	    '/SinglePhoton/Run2016H-PromptReco-v1/MINIAOD',
-	    '/SinglePhoton/Run2016H-PromptReco-v2/MINIAOD',
-	    '/SinglePhoton/Run2016H-PromptReco-v3/MINIAOD',
-	  ])
+			'/SinglePhoton/Run2016B-23Sep2016-v1/MINIAOD',
+			'/SinglePhoton/Run2016B-23Sep2016-v3/MINIAOD',
+			'/SinglePhoton/Run2016C-23Sep2016-v1/MINIAOD',
+			'/SinglePhoton/Run2016D-23Sep2016-v1/MINIAOD',
+			'/SinglePhoton/Run2016E-23Sep2016-v1/MINIAOD',
+			'/SinglePhoton/Run2016F-23Sep2016-v1/MINIAOD',
+			'/SinglePhoton/Run2016G-23Sep2016-v1/MINIAOD',
+			'/SinglePhoton/Run2016H-PromptReco-v1/MINIAOD',
+			'/SinglePhoton/Run2016H-PromptReco-v2/MINIAOD',
+			'/SinglePhoton/Run2016H-PromptReco-v3/MINIAOD',
+		])
 	'''
 	'''
 	###################################################

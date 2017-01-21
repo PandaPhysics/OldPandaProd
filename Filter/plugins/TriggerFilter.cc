@@ -27,16 +27,16 @@
 
 class TriggerFilter : public edm::EDFilter {
 public:
-    explicit TriggerFilter(const edm::ParameterSet&);
-    ~TriggerFilter();
-    
-    static void fillDescriptions(edm::ConfigurationDescriptions& descriptions);
+		explicit TriggerFilter(const edm::ParameterSet&);
+		~TriggerFilter();
+		
+		static void fillDescriptions(edm::ConfigurationDescriptions& descriptions);
 
 private:
-    virtual bool filter(edm::Event&, const edm::EventSetup&) override;
+		virtual bool filter(edm::Event&, const edm::EventSetup&) override;
 
 		std::vector<std::string> trigger_paths;
-		edm::Handle< edm::TriggerResults  > trigger_handle;
+		edm::Handle< edm::TriggerResults	> trigger_handle;
 		edm::EDGetTokenT< edm::TriggerResults > trigger_token;
 
 };
@@ -55,7 +55,7 @@ TriggerFilter::~TriggerFilter()
 bool
 TriggerFilter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup)
 {
-    using namespace edm;
+		using namespace edm;
 
 		if (! iEvent.isRealData() )
 			return true; // do not filter on MC
@@ -84,14 +84,14 @@ TriggerFilter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup)
 		return passesAny;
 }
 
-// ------------ method fills 'descriptions' with the allowed parameters for the module  ------------
+// ------------ method fills 'descriptions' with the allowed parameters for the module	------------
 void
 TriggerFilter::fillDescriptions(edm::ConfigurationDescriptions& descriptions) {
-    //The following says we do not know what parameters are allowed so do no validation
-    // Please change this to state exactly what you do use, even if it is no parameters
-    edm::ParameterSetDescription desc;
-    desc.setUnknown();
-    descriptions.addDefault(desc);
+		//The following says we do not know what parameters are allowed so do no validation
+		// Please change this to state exactly what you do use, even if it is no parameters
+		edm::ParameterSetDescription desc;
+		desc.setUnknown();
+		descriptions.addDefault(desc);
 }
 
 //define this as a plug-in
