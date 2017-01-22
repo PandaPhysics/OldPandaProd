@@ -1,5 +1,8 @@
 #include "../interface/FatJetFiller.h"
 #include "../interface/JetIDFunc.h"
+#include "DataFormats/BTauReco/interface/TaggingVariable.h"
+#include "DataFormats/BTauReco/interface/JetTag.h"
+#include "DataFormats/BTauReco/interface/BoostedDoubleSVTagInfo.h"
 
 using namespace panda;
 
@@ -38,20 +41,36 @@ void FatJetFiller::init(TTree *t) {
 	std::string jecDir = "jec/23Sep2016V2/";
  
 	std::vector<JetCorrectorParameters> mcParams;
-	mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016V2_MC/Spring16_23Sep2016V2_MC_L1FastJet_AK8PFPuppi.txt"));
-	mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016V2_MC/Spring16_23Sep2016V2_MC_L2Relative_AK8PFPuppi.txt"));
-	mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016V2_MC/Spring16_23Sep2016V2_MC_L3Absolute_AK8PFPuppi.txt"));
-	mcParams.push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016V2_MC/Spring16_23Sep2016V2_MC_L2L3Residual_AK8PFPuppi.txt"));
+	mcParams.push_back(
+			JetCorrectorParameters(
+				jecDir + "Spring16_23Sep2016V2_MC/Spring16_23Sep2016V2_MC_L1FastJet_AK8PFPuppi.txt"));
+	mcParams.push_back(
+			JetCorrectorParameters(
+				jecDir + "Spring16_23Sep2016V2_MC/Spring16_23Sep2016V2_MC_L2Relative_AK8PFPuppi.txt"));
+	mcParams.push_back(
+			JetCorrectorParameters(
+				jecDir + "Spring16_23Sep2016V2_MC/Spring16_23Sep2016V2_MC_L3Absolute_AK8PFPuppi.txt"));
+	mcParams.push_back(
+			JetCorrectorParameters(
+				jecDir + "Spring16_23Sep2016V2_MC/Spring16_23Sep2016V2_MC_L2L3Residual_AK8PFPuppi.txt"));
 	mMCJetCorrector = new FactorizedJetCorrector(mcParams);
  
 	std::vector<std::string> eraGroups = {"BCD","EF","G","H"};
 	std::map<std::string,std::vector<JetCorrectorParameters>> dataParams;
 	for (auto e : eraGroups) {
 		dataParams[e].clear();
-		dataParams[e].push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016"+e+"V2_DATA/Spring16_23Sep2016"+e+"V2_DATA_L1FastJet_AK8PFPuppi.txt"));
-		dataParams[e].push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016"+e+"V2_DATA/Spring16_23Sep2016"+e+"V2_DATA_L2Relative_AK8PFPuppi.txt"));
-		dataParams[e].push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016"+e+"V2_DATA/Spring16_23Sep2016"+e+"V2_DATA_L3Absolute_AK8PFPuppi.txt"));
-		dataParams[e].push_back(JetCorrectorParameters(jecDir + "Spring16_23Sep2016"+e+"V2_DATA/Spring16_23Sep2016"+e+"V2_DATA_L2L3Residual_AK8PFPuppi.txt"));
+		dataParams[e].push_back(
+				JetCorrectorParameters(
+					jecDir + "Spring16_23Sep2016"+e+"V2_DATA/Spring16_23Sep2016"+e+"V2_DATA_L1FastJet_AK8PFPuppi.txt"));
+		dataParams[e].push_back(
+				JetCorrectorParameters(
+					jecDir + "Spring16_23Sep2016"+e+"V2_DATA/Spring16_23Sep2016"+e+"V2_DATA_L2Relative_AK8PFPuppi.txt"));
+		dataParams[e].push_back(
+				JetCorrectorParameters(
+					jecDir + "Spring16_23Sep2016"+e+"V2_DATA/Spring16_23Sep2016"+e+"V2_DATA_L3Absolute_AK8PFPuppi.txt"));
+		dataParams[e].push_back(
+				JetCorrectorParameters(
+					jecDir + "Spring16_23Sep2016"+e+"V2_DATA/Spring16_23Sep2016"+e+"V2_DATA_L2L3Residual_AK8PFPuppi.txt"));
 		mDataJetCorrectors[e.c_str()] = new FactorizedJetCorrector(dataParams[e]);
 	}
 	eras = new EraHandler(2016);
@@ -87,6 +106,11 @@ void FatJetFiller::init(TTree *t) {
 													 minM23Cut,minM13Cut,
 													 maxM13Cut,rejectMinR);
 
+	// doubleb
+	std::string cmssw_base = getenv("CMSSW_BASE");
+	std::string fweight = cmssw_base+"/src/PandaProd/Utilities/data/BoostedSVDoubleCA15_withSubjet_v4.weights.xml";
+	mJetBoostedBtaggingMVACalc.initialize("BDT",fweight);
+
 }
 
 int FatJetFiller::analyze(const edm::Event& iEvent){
@@ -101,6 +125,7 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
 		iEvent.getByToken(rho_token,rho_handle);
 		iEvent.getByToken(subjets_token,subjets_handle);
 		iEvent.getByToken(btags_token,btags_handle);
+		iEvent.getByToken(doubleb_token,doubleb_handle);
 		iEvent.getByToken(qgl_token,qgl_handle);
 
 		FactorizedJetCorrector *corrector=0;
@@ -115,10 +140,8 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
 					break;
 				}
 			}
-			// PDebug("FatJetFiller::analyze",TString::Format("Using data corrector (%s) corresponding to run=%i,era=%s",thisEraGroup.Data(),thisRun,thisEra.Data()));
 		} else {
 			corrector = mMCJetCorrector;
-			// PDebug("FatJetFiller::analyze","Using MC corrector");
 		}
 		if (corrector==0) {
 			PError("FatJetFiller::analyze",TString::Format("Could not determine data era for run %i",(int)iEvent.id().run()));
@@ -279,6 +302,100 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
 					} else {
 						PError("PandaProd::Ntupler::FatJetFiller","Jet could not be clustered");
 					}
+
+					// now we do the double-b
+					reco::BoostedDoubleSVTagInfoCollection::const_iterator matchTI = doubleb_handle->end();
+					for(reco::BoostedDoubleSVTagInfoCollection::const_iterator itTI = doubleb_handle->begin(); 
+							itTI != doubleb_handle->end(); ++itTI ) 
+					{
+						const reco::JetBaseRef jetTI = itTI->jet();
+						if( fabs((jetTI->px()-j.px())/j.px()) < 0.01  
+								&& fabs((jetTI->pz()-j.pz())/j.pz()) < 0.01 ) 
+						{
+							matchTI = itTI;
+							break;
+						}
+					}
+					
+					if( matchTI != doubleb_handle->end() ) {
+						float SubJet_csv_ = 999;
+						for (auto *sj : *subjets) {
+							SubJet_csv_ = TMath::Min(SubJet_csv_,sj->csv);
+						}
+						if ((SubJet_csv_ < -1) || (SubJet_csv_ > 1)) SubJet_csv_ = -1;
+
+						const reco::TaggingVariableList vars = matchTI->taggingVariables();
+						float z_ratio_ = vars.get(reco::btau::z_ratio);
+						float trackSipdSig_3_ = vars.get(reco::btau::trackSip3dSig_3);
+						float trackSipdSig_2_ = vars.get(reco::btau::trackSip3dSig_2);
+						float trackSipdSig_1_ = vars.get(reco::btau::trackSip3dSig_1);
+						float trackSipdSig_0_ = vars.get(reco::btau::trackSip3dSig_0);
+						float trackSipdSig_1_0_ = vars.get(reco::btau::tau2_trackSip3dSig_0);
+						float trackSipdSig_0_0_ = vars.get(reco::btau::tau1_trackSip3dSig_0);
+						float trackSipdSig_1_1_ = vars.get(reco::btau::tau2_trackSip3dSig_1);
+						float trackSipdSig_0_1_ = vars.get(reco::btau::tau1_trackSip3dSig_1);
+						float trackSip2dSigAboveCharm_0_ = vars.get(reco::btau::trackSip2dSigAboveCharm);
+						float trackSip2dSigAboveBottom_0_ = vars.get(reco::btau::trackSip2dSigAboveBottom_0);
+						float trackSip2dSigAboveBottom_1_ = vars.get(reco::btau::trackSip2dSigAboveBottom_1);
+						float tau1_trackEtaRel_0_ = vars.get(reco::btau::tau2_trackEtaRel_0);
+						float tau1_trackEtaRel_1_ = vars.get(reco::btau::tau2_trackEtaRel_1);
+						float tau1_trackEtaRel_2_ = vars.get(reco::btau::tau2_trackEtaRel_2);
+						float tau0_trackEtaRel_0_ = vars.get(reco::btau::tau1_trackEtaRel_0);
+						float tau0_trackEtaRel_1_ = vars.get(reco::btau::tau1_trackEtaRel_1);
+						float tau0_trackEtaRel_2_ = vars.get(reco::btau::tau1_trackEtaRel_2);
+						float tau_vertexMass_0_ = vars.get(reco::btau::tau1_vertexMass);
+						float tau_vertexEnergyRatio_0_ = vars.get(reco::btau::tau1_vertexEnergyRatio);
+						float tau_vertexDeltaR_0_ = vars.get(reco::btau::tau1_vertexDeltaR);
+						float tau_flightDistance2dSig_0_ = vars.get(reco::btau::tau1_flightDistance2dSig);
+						float tau_vertexMass_1_ = vars.get(reco::btau::tau2_vertexMass);
+						float tau_vertexEnergyRatio_1_ = vars.get(reco::btau::tau2_vertexEnergyRatio);
+						float tau_flightDistance2dSig_1_ = vars.get(reco::btau::tau2_flightDistance2dSig);
+						float jetNTracks_ = vars.get(reco::btau::jetNTracks);
+						float nSV_ = vars.get(reco::btau::jetNSecondaryVertices);
+						float massPruned_ =jet->m;
+						float flavour_ = -1;   //j.partonFlavor();   // they're spectator variables
+						float nbHadrons_ = -1; //j.hadronFlavor(); // 
+						float ptPruned_ =j.pt();
+						float etaPruned_ =j.eta();
+	
+						jet->double_sub = mJetBoostedBtaggingMVACalc.mvaValue(
+							         	massPruned_,
+							         	flavour_,
+							         	nbHadrons_,
+							         	ptPruned_,
+							         	etaPruned_,
+							         	SubJet_csv_,
+							         	z_ratio_,
+							         	trackSipdSig_3_,
+							         	trackSipdSig_2_,
+							         	trackSipdSig_1_,
+							         	trackSipdSig_0_,
+							         	trackSipdSig_1_0_,
+							         	trackSipdSig_0_0_,
+							         	trackSipdSig_1_1_,
+							         	trackSipdSig_0_1_,
+							         	trackSip2dSigAboveCharm_0_,
+							         	trackSip2dSigAboveBottom_0_,
+							         	trackSip2dSigAboveBottom_1_,
+							         	tau0_trackEtaRel_0_,
+							         	tau0_trackEtaRel_1_,
+							         	tau0_trackEtaRel_2_,
+							         	tau1_trackEtaRel_0_,
+							         	tau1_trackEtaRel_1_,
+							         	tau1_trackEtaRel_2_,
+							         	tau_vertexMass_0_,
+							         	tau_vertexEnergyRatio_0_,
+							         	tau_vertexDeltaR_0_,
+							         	tau_flightDistance2dSig_0_,
+							         	tau_vertexMass_1_,
+							         	tau_vertexEnergyRatio_1_,
+							         	tau_flightDistance2dSig_1_,
+							         	jetNTracks_,
+							         	nSV_,
+							         	false
+								);
+					} // if matchTI is good
+					
 
 				} // if not minimal and fewer than 2 
 			} // if extras are requested

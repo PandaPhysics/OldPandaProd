@@ -9,6 +9,8 @@
 #include "CondFormats/JetMETObjects/interface/FactorizedJetCorrector.h"
 #include "CondFormats/JetMETObjects/interface/JetCorrectionUncertainty.h"
 
+#include "DataFormats/BTauReco/interface/BoostedDoubleSVTagInfo.h"
+
 // fastjet
 #include "fastjet/PseudoJet.hh"
 #include "fastjet/JetDefinition.hh"
@@ -22,6 +24,7 @@
 
 #include "PandaProd/Utilities/interface/EnergyCorrelations.h"
 #include "PandaProd/Utilities/interface/HEPTopTaggerWrapperV2.h"
+#include "PandaProd/Utilities/interface/BoostedBtaggingMVACalculator.hh"
 #include "PandaUtilities/Common/interface/DataTools.h"
 
 #include <map>
@@ -51,6 +54,9 @@ class FatJetFiller : virtual public BaseFiller
 				edm::Handle<reco::JetTagCollection> btags_handle;
 				edm::EDGetTokenT<reco::JetTagCollection> btags_token;
 
+				edm::Handle<reco::BoostedDoubleSVTagInfoCollection> doubleb_handle;
+				edm::EDGetTokenT<reco::BoostedDoubleSVTagInfoCollection>  doubleb_token; 
+
 				edm::Handle<edm::ValueMap<float>> qgl_handle;
 				edm::EDGetTokenT<edm::ValueMap<float>> qgl_token;
 
@@ -68,6 +74,8 @@ class FatJetFiller : virtual public BaseFiller
 
 				FactorizedJetCorrector *mMCJetCorrector;	 
 				std::map<TString,FactorizedJetCorrector *> mDataJetCorrectors;	// map from era to corrector
+
+				BoostedBtaggingMVACalculator mJetBoostedBtaggingMVACalc;
 
 				fastjet::AreaDefinition *areaDef;
 				fastjet::GhostedAreaSpec *activeArea;

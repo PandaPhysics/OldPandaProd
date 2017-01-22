@@ -20,13 +20,15 @@ namespace panda
 				mSD(-1),
 				htt_mass(-1),
 				htt_frec(-1),
-			 subjets(0)
+				double_sub(-1),
+			  subjets(0)
 			{ }
 		~PFatJet() { for (auto *s : *subjets) delete s; delete subjets; }
 
 		float tau1, tau2, tau3; //!< N-subjettiness
 		float mSD, tau1SD=-1, tau2SD=-1, tau3SD=-1; //!< groomed quantities
 		float htt_mass, htt_frec; //!< HEPTopTagger quantities
+		float double_sub; //!< double b-tagger
 
 		float ecfs[3][4][4]; //!< (groomed,normalized) energy correlation functions; 
 												 // [o-1][N-1][beta] = x
@@ -58,7 +60,7 @@ namespace panda
 
 		VJet *subjets; //!< vector of subjets, which are really PJet pointers
 
-		ClassDef(PFatJet,1)
+		ClassDef(PFatJet,2)
 		
 	};
 
