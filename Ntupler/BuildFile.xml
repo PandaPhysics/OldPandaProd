@@ -46,6 +46,7 @@
 <use name="clhep"/>
 <use name="RooFit"/>
 <use name="root"/>
+<use name="roottmva"/>
 <use name="fastjet"/>
 <use name="fastjet-contrib"/>
 <export>

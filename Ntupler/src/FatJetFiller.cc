@@ -319,7 +319,7 @@ int FatJetFiller::analyze(const edm::Event& iEvent){
 					
 					if( matchTI != doubleb_handle->end() ) {
 						float SubJet_csv_ = 999;
-						for (auto *sj : *subjets) {
+						for (auto *sj : *subjet_data) {
 							SubJet_csv_ = TMath::Min(SubJet_csv_,sj->csv);
 						}
 						if ((SubJet_csv_ < -1) || (SubJet_csv_ > 1)) SubJet_csv_ = -1;

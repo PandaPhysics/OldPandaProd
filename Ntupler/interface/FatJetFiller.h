@@ -24,7 +24,7 @@
 
 #include "PandaProd/Utilities/interface/EnergyCorrelations.h"
 #include "PandaProd/Utilities/interface/HEPTopTaggerWrapperV2.h"
-#include "PandaProd/Utilities/interface/BoostedBtaggingMVACalculator.hh"
+#include "PandaProd/Utilities/interface/BoostedBtaggingMVACalculator.h"
 #include "PandaUtilities/Common/interface/DataTools.h"
 
 #include <map>
