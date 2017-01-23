@@ -9,6 +9,8 @@
 #include "CondFormats/JetMETObjects/interface/FactorizedJetCorrector.h"
 #include "CondFormats/JetMETObjects/interface/JetCorrectionUncertainty.h"
 
+#include "DataFormats/BTauReco/interface/BoostedDoubleSVTagInfo.h"
+
 // fastjet
 #include "fastjet/PseudoJet.hh"
 #include "fastjet/JetDefinition.hh"
@@ -22,6 +24,8 @@
 
 #include "PandaProd/Utilities/interface/EnergyCorrelations.h"
 #include "PandaProd/Utilities/interface/HEPTopTaggerWrapperV2.h"
+#include "PandaProd/Utilities/interface/BoostedBtaggingMVACalculator.h"
+#include "PandaUtilities/Common/interface/DataTools.h"
 
 #include <map>
 #include <string>
@@ -29,55 +33,60 @@
 namespace panda {
 class FatJetFiller : virtual public BaseFiller
 {
-    public:
-        FatJetFiller(TString n);
-        ~FatJetFiller();
-        static bool JetId(const pat::Jet &, string id);
-        int analyze(const edm::Event& iEvent);
-        virtual inline string name(){return "FatJetFiller";};
-        void init(TTree *t);
-        TString get_treename() { return treename; }
+		public:
+				FatJetFiller(TString n);
+				~FatJetFiller();
+				static bool JetId(const pat::Jet &, string id);
+				int analyze(const edm::Event& iEvent);
+				virtual inline string name(){return "FatJetFiller";};
+				void init(TTree *t);
+				TString get_treename() { return treename; }
 
-        edm::Handle<pat::JetCollection> jet_handle; 
-        edm::EDGetTokenT<pat::JetCollection> jet_token;
+				edm::Handle<pat::JetCollection> jet_handle; 
+				edm::EDGetTokenT<pat::JetCollection> jet_token;
 
-        edm::Handle<double> rho_handle;
-        edm::EDGetTokenT<double> rho_token;
+				edm::Handle<double> rho_handle;
+				edm::EDGetTokenT<double> rho_token;
 
-        edm::Handle<reco::PFJetCollection> subjets_handle;
-        edm::EDGetTokenT<reco::PFJetCollection> subjets_token;
+				edm::Handle<reco::PFJetCollection> subjets_handle;
+				edm::EDGetTokenT<reco::PFJetCollection> subjets_token;
 
-        edm::Handle<reco::JetTagCollection> btags_handle;
-        edm::EDGetTokenT<reco::JetTagCollection> btags_token;
+				edm::Handle<reco::JetTagCollection> btags_handle;
+				edm::EDGetTokenT<reco::JetTagCollection> btags_token;
 
-        edm::Handle<edm::ValueMap<float>> qgl_handle;
-        edm::EDGetTokenT<edm::ValueMap<float>> qgl_token;
+				edm::Handle<reco::BoostedDoubleSVTagInfoCollection> doubleb_handle;
+				edm::EDGetTokenT<reco::BoostedDoubleSVTagInfoCollection>  doubleb_token; 
 
-        float minPt=180, maxEta=2.5;
-        float jetRadius;
+				edm::Handle<edm::ValueMap<float>> qgl_handle;
+				edm::EDGetTokenT<edm::ValueMap<float>> qgl_token;
 
-        PFCandFiller *pfcands=0; // pointer to the relevant pf cand filler, used to get a map
+				float minPt=180, maxEta=2.5;
+				float jetRadius;
 
-        bool minimal = false;
-        float radius=1.5;
+				PFCandFiller *pfcands=0; // pointer to the relevant pf cand filler, used to get a map
 
-    private:
-        // TClonesArray *data;
-        panda::VFatJet *data;
-        //panda::VJet    *subjet_data;
-        TString treename;
+				bool minimal = false;
+				float radius=1.5;
 
-        FactorizedJetCorrector *mMCJetCorrector;   
-        FactorizedJetCorrector *mDataJetCorrector; 
+		private:
+				panda::VFatJet *data;
+				TString treename;
 
-        fastjet::AreaDefinition *areaDef;
-        fastjet::GhostedAreaSpec *activeArea;
-        fastjet::JetDefinition *jetDefCA=0;
-        fastjet::contrib::SoftDrop *softdrop=0;
-        fastjet::contrib::Njettiness *tau=0;
+				FactorizedJetCorrector *mMCJetCorrector;	 
+				std::map<TString,FactorizedJetCorrector *> mDataJetCorrectors;	// map from era to corrector
 
-        ECFNManager *ecfnmanager;
-        fastjet::HEPTopTaggerV2 *htt=0;
+				BoostedBtaggingMVACalculator mJetBoostedBtaggingMVACalc;
+
+				fastjet::AreaDefinition *areaDef;
+				fastjet::GhostedAreaSpec *activeArea;
+				fastjet::JetDefinition *jetDefCA=0;
+				fastjet::contrib::SoftDrop *softdrop=0;
+				fastjet::contrib::Njettiness *tau=0;
+
+				ECFNManager *ecfnmanager=0;
+				fastjet::HEPTopTaggerV2 *htt=0;
+
+				EraHandler *eras=0;
 
 };
 

@@ -10,22 +10,22 @@
 namespace panda {
 class TauFiller : virtual public BaseFiller
 {
-    public:
-        TauFiller(TString n);
-        ~TauFiller();
-        int analyze(const edm::Event& iEvent);
-        virtual inline string name(){return "TauFiller";};
-        void init(TTree *t);
+		public:
+				TauFiller(TString n);
+				~TauFiller();
+				int analyze(const edm::Event& iEvent);
+				virtual inline string name(){return "TauFiller";};
+				void init(TTree *t);
 
-        edm::EDGetTokenT<pat::TauCollection> tau_token;
-        edm::Handle<pat::TauCollection> tau_handle;
+				edm::EDGetTokenT<pat::TauCollection> tau_token;
+				edm::Handle<pat::TauCollection> tau_handle;
 
-        float minPt=10, maxEta=2.5, maxIso=7;
+				float minPt=10, maxEta=2.5, maxIso=7;
 
-    private:
-        // TClonesArray *data;
-        panda::VTau *data;
-        TString treename;
+		private:
+				// TClonesArray *data;
+				panda::VTau *data;
+				TString treename;
 
 };
 }
