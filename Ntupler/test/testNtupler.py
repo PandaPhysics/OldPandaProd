@@ -41,8 +41,8 @@ if isData:
 else:
 	 fileList = [
 			 #'file:/data/t3home000/snarayan/test/tt_8011.root'
-			 #'file:/afs/cern.ch/work/s/snarayan/8024_tt.root'
-			 'file:/afs/cern.ch/work/s/snarayan/8024_monotop.root'
+			 'file:/afs/cern.ch/work/s/snarayan/8024_tt.root'
+			 #'file:/afs/cern.ch/work/s/snarayan/8024_monotop.root'
 			 ]
 ### do not remove the line below!
 ###FILELIST###

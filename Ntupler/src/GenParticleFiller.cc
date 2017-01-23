@@ -46,11 +46,10 @@ int GenParticleFiller::analyze(const edm::Event& iEvent){
 				if (!gen->isLastCopy() && !gen->statusFlags().isFirstCopy()) continue;
 
 
-				if ( apdg == 15 || apdg == 11 || apdg == 13 || // leps
-							 ( apdg >= 22 && apdg <26 ) ||	 // Z(23) W(24) H(25) gamma(22)
-								apdg <= 6 || // quarks 
-								apdg == 21 || // gluons (21)
-								apdg > 1000000 // BSM 
+				if (  (apdg >= 11 && apdg <= 16 ) || // leps
+					  	(apdg >= 21 && apdg <= 25 ) ||	 // g(21) Z(23) W(24) H(25) gamma(22)
+					  	apdg <= 6 || // quarks 
+					  	apdg > 1000000 // BSM 
 						)	
 				{
 
