@@ -5,8 +5,8 @@
 First, set up `CMSSW`:
 
 ```bash
-cmsrel CMSSW_8_0_20
-cd CMSSW_8_0_20/src
+cmsrel CMSSW_8_0_24_patch1
+cd CMSSW_8_0_24/src
 cmsenv
 git cms-init
 ```
