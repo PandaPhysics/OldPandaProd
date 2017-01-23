@@ -25,6 +25,8 @@ class GenInfoFiller : virtual public BaseFiller
 				TString treename;
 				TString systTable="";
 				bool firstEvent=true;
+
+				int nsyst_internal;
 };
 }
 

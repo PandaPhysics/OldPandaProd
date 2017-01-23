@@ -41,7 +41,8 @@ if isData:
 else:
 	 fileList = [
 			 #'file:/data/t3home000/snarayan/test/tt_8011.root'
-			 'file:/afs/cern.ch/work/s/snarayan/8024_tt.root'
+			 #'file:/afs/cern.ch/work/s/snarayan/8024_tt.root'
+			 'file:/afs/cern.ch/work/s/snarayan/8024_monotop.root'
 			 ]
 ### do not remove the line below!
 ###FILELIST###
@@ -81,7 +82,7 @@ from CondCore.DBCommon.CondDBSetup_cfi import *
 #if isData and not options.isGrid and False: ## dont load the lumiMaks, will be called by crab
 if isData:
 		import FWCore.PythonUtilities.LumiList as LumiList
-		process.source.lumisToProcess = LumiList.LumiList(filename='Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt').getVLuminosityBlockRange()
+		process.source.lumisToProcess = LumiList.LumiList(filename='goodlumis/Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt').getVLuminosityBlockRange()
 		print "Using local JSON"
 
 ### LOAD CONFIGURATION
