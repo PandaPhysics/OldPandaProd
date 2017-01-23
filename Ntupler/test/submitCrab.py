@@ -50,7 +50,7 @@ config.Data.outputDatasetTag ='PandA'
 
 config.Site.storageSite = 'T2_CH_CERN'
 #config.Site.blacklist = [ 'T2_US_Florida','T2_US_Vanderbilt']
-config.Site.blacklist = ['T3_US_UCR','T3_TW_NTU_HEP','T3_US_Miss','T2_EE_Estonia']
+config.Site.blacklist = ['T3_US_UCR','T3_TW_NTU_HEP','T3_US_UMiss','T2_EE_Estonia']
 
 
 if __name__ == '__main__':
