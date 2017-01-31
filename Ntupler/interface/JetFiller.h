@@ -28,7 +28,7 @@ class JetFiller : virtual public BaseFiller
 				edm::Handle<double> rho_handle;
 				edm::EDGetTokenT<double> rho_token;
 
-				bool applyJEC=true;
+				bool applyJEC=false; // should deprecate this soon?
 
 				float minPt=15, maxEta=4.7;
 

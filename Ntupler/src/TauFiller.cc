@@ -5,7 +5,6 @@ using namespace panda;
 TauFiller::TauFiller(TString n):
 		BaseFiller()
 {
-	// data = new TClonesArray("panda::PTau",100);
 	data = new VTau();
 	treename = n;
 }
@@ -15,12 +14,10 @@ TauFiller::~TauFiller(){
 }
 
 void TauFiller::init(TTree *t) {
-//	PTau::Class()->IgnoreTObjectStreamer();
 	t->Branch(treename.Data(),&data);
 }
 
 int TauFiller::analyze(const edm::Event& iEvent){
-		// data->Clear();
 		for (auto d : *data)
 			delete d;
 		data->clear(); 
@@ -60,9 +57,14 @@ int TauFiller::analyze(const edm::Event& iEvent){
 			tauon->isoDeltaBetaCorr = isodbcorr;
 
 			tauon->id = 0;
-			tauon->id |= (unsigned(tau.tauID("decayModeFindingNewDMs"))*PTau::kBaseline);
-			tauon->id |= (unsigned(tau.tauID("decayModeFindingNewDMs"))*PTau::kDecayModeFindingNewDMs);
-			tauon->id |= (unsigned(tau.tauID("decayModeFinding"))*PTau::kDecayModeFinding);
+			tauon->id |= (unsigned(tau.tauID("decayModeFindingNewDMs"))
+					          *PTau::kBaseline);
+			tauon->id |= (unsigned(tau.tauID("decayModeFindingNewDMs"))
+					          *PTau::kDecayModeFindingNewDMs);
+			tauon->id |= (unsigned(tau.tauID("decayModeFinding"))
+					          *PTau::kDecayModeFinding);
+			tauon->id |= (unsigned(tau.tauID("byVLooseIsolationMVArun2v1DBnewDMwLT"))
+					          *PTau::kVLooseIsolationMVArun2v1DBnewDMwLT);
 
 			data->push_back(tauon);
 

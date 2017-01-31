@@ -19,8 +19,6 @@ def initFatJets(process,isData):
 	########################################
 
 	## Load standard PAT objects
-	process.load("PhysicsTools.PatAlgos.producersLayer1.patCandidates_cff")
-	process.load("PhysicsTools.PatAlgos.selectionLayer1.selectedPatCandidates_cff")
 
 	process.pfCHS = cms.EDFilter("CandPtrSelector", src = cms.InputTag("packedPFCandidates"), cut = cms.string("fromPV"))
 	addGenNoNu=False
@@ -78,29 +76,29 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
 	elSource = 'slimmedElectrons'
 	bTagInfos = [
 			'pfImpactParameterTagInfos'
-		 ,'pfSecondaryVertexTagInfos'
+#		 ,'pfSecondaryVertexTagInfos'
 		 ,'pfInclusiveSecondaryVertexFinderTagInfos'
-		 ,'softPFMuonsTagInfos'
-		 ,'softPFElectronsTagInfos'
+#		 ,'softPFMuonsTagInfos'
+#		 ,'softPFElectronsTagInfos'
 	]
 	## b-tag discriminators
 	bTagDiscriminators = [
-			'pfCombinedSecondaryVertexV2BJetTags'
-			,'pfCombinedInclusiveSecondaryVertexV2BJetTags'
+#			'pfCombinedSecondaryVertexV2BJetTags',
+			'pfCombinedInclusiveSecondaryVertexV2BJetTags'
 	]
 
 
 	bTagInfosSubjets = [
 			'pfImpactParameterTagInfos'
-		 ,'pfSecondaryVertexTagInfos'
+#		 ,'pfSecondaryVertexTagInfos'
 		 ,'pfInclusiveSecondaryVertexFinderTagInfos'
-		 ,'softPFMuonsTagInfos'
-		 ,'softPFElectronsTagInfos'
+#		 ,'softPFMuonsTagInfos'
+#		 ,'softPFElectronsTagInfos'
 	]
 	## b-tag discriminators
 	bTagDiscriminatorsSubjets = [
-			'pfCombinedSecondaryVertexV2BJetTags'
-			,'pfCombinedInclusiveSecondaryVertexV2BJetTags'
+#			'pfCombinedSecondaryVertexV2BJetTags',
+			'pfCombinedInclusiveSecondaryVertexV2BJetTags'
 	]
 
 	bTagInfosSubjets=['None']

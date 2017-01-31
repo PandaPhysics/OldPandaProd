@@ -20,6 +20,7 @@ namespace panda
 				rawPt(0),
 				csv(-1),
 				qgl(-1),
+				area(-1),
 				nhf(-1),
 				chf(-1),
 				constituents(0),
@@ -27,7 +28,7 @@ namespace panda
 			{	}
 		~PJet(){ delete constituents; }
 		
-		float rawPt,csv,qgl;
+		float rawPt,csv,qgl,area;
 		float nhf,chf;
 		std::vector<UShort_t> *constituents; //!< indicies of this jet's constituents in a VPFCand
 		unsigned int id;
