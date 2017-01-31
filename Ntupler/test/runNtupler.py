@@ -27,20 +27,16 @@ isData = options.isData
 
 
 process.load("FWCore.MessageService.MessageLogger_cfi")
-# If you run over many samples and you save the log, remember to reduce
-# the size of the output by prescaling the report of the event number
 process.MessageLogger.cerr.FwkReport.reportEvery = 5000
 
 process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 
 if isData:
 	 fileList = [
-			 #'file:/data/t3home000/snarayan/test/met_8020.root'
 			 'file:/afs/cern.ch/work/s/snarayan/8020_met.root'
 			 ]
 else:
 	 fileList = [
-			 #'file:/data/t3home000/snarayan/test/tt_8011.root'
 			 'file:/afs/cern.ch/work/s/snarayan/8024_tt.root'
 			 ]
 ### do not remove the line below!
@@ -72,10 +68,8 @@ else:
 
 ### LOAD DATABASE
 from CondCore.DBCommon.CondDBSetup_cfi import *
-#from CondCore.CondDB.CondDB_cfi import *
 
 ######## LUMI MASK
-#if isData and not options.isGrid and False: ## dont load the lumiMaks, will be called by crab
 if isData and False:
 		import FWCore.PythonUtilities.LumiList as LumiList
 		process.source.lumisToProcess = LumiList.LumiList(filename='/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions16/13TeV/ReReco/Final/Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt').getVLuminosityBlockRange()
@@ -85,7 +79,6 @@ if isData and False:
 process.load('PandaProd.Filter.infoProducerSequence_cff')
 process.load('PandaProd.Filter.MonoXFilterSequence_cff')
 process.load('PandaProd.Ntupler.PandaProd_cfi')
-#process.load('PandaProd.Ntupler.VBF_cfi')
 
 ### ##ISO
 process.load("RecoEgamma/PhotonIdentification/PhotonIDValueMapProducer_cfi")
@@ -104,29 +97,28 @@ if isData:
 else:
 	jeclabel = 'Summer16_23Sep2016V3_MC'
 process.jec =	cms.ESSource("PoolDBESSource",
-#										CondDBSetup,
 										DBParameters = cms.PSet(
 											messageLevel = cms.untracked.int32(0)
 											),
 										timetype = cms.string('runnumber'),
 										toGet = cms.VPSet(
-							cms.PSet(record	= cms.string('JetCorrectionsRecord'),
-											 tag		 = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK4PFPuppi'),
-											 label	 = cms.untracked.string('AK4PFPuppi')
-											 ),
-							 cms.PSet(record	= cms.string('JetCorrectionsRecord'),
-												tag		 = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK8PFPuppi'),
-												label	 = cms.untracked.string('AK8PFPuppi')
-												),
-							cms.PSet(record	= cms.string('JetCorrectionsRecord'),
-											 tag		 = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK4PFchs'),
-											 label	 = cms.untracked.string('AK4PFchs')
-											 ),
-							cms.PSet(record	= cms.string('JetCorrectionsRecord'),
-											 tag		 = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK8PFchs'),
-											 label	 = cms.untracked.string('AK8PFchs')
-											 ),
-							 ),
+										cms.PSet(record	= cms.string('JetCorrectionsRecord'),
+														 tag		 = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK4PFPuppi'),
+														 label	 = cms.untracked.string('AK4PFPuppi')
+														 ),
+										cms.PSet(record	= cms.string('JetCorrectionsRecord'),
+															tag		 = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK8PFPuppi'),
+															label	 = cms.untracked.string('AK8PFPuppi')
+															),
+										cms.PSet(record	= cms.string('JetCorrectionsRecord'),
+														 tag		 = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK4PFchs'),
+														 label	 = cms.untracked.string('AK4PFchs')
+														 ),
+										cms.PSet(record	= cms.string('JetCorrectionsRecord'),
+														 tag		 = cms.string('JetCorrectorParametersCollection_'+jeclabel+'_AK8PFchs'),
+														 label	 = cms.untracked.string('AK8PFchs')
+														 ),
+										 ),
 
 				)	
 process.jec.connect = cms.string('sqlite:jec/%s.db'%jeclabel)
@@ -137,7 +129,6 @@ if isData:
 else:
 	jerlabel = 'Spring16_25nsV6_MC'
 process.jer = cms.ESSource("PoolDBESSource",
-#										CondDBSetup,
 										DBParameters = cms.PSet(
 											messageLevel = cms.untracked.int32(0)
 											),
@@ -326,10 +317,6 @@ if not isData:
 
 ###############################
 
-DEBUG=False
-if DEBUG:
-	print "Process=",process, process.__dict__.keys()
-
 process.p = cms.Path(
 												process.infoProducerSequence *
 												process.triggerFilterSequence *
@@ -347,11 +334,3 @@ process.p = cms.Path(
 												process.metfilterSequence *
 												process.PandaNtupler
 										)
-
-if DEBUG:
-	process.output = cms.OutputModule("PoolOutputModule",
-																		fileName = cms.untracked.string('pool.root'))
-	process.output_step = cms.EndPath(process.output)
-
-	process.schedule = cms.Schedule(process.p,
-																	process.output_step)

@@ -10,9 +10,10 @@ namespace panda
 	{
 		public:
 			enum TauID {
-				kBaseline								= 1UL<<0,
-				kDecayModeFindingNewDMs	= 1UL<<1,
-				kDecayModeFinding				= 1UL<<2
+				kBaseline                           = 1UL<<0,
+				kDecayModeFindingNewDMs	            = 1UL<<1,
+				kDecayModeFinding                   = 1UL<<2,
+				kVLooseIsolationMVArun2v1DBnewDMwLT = 1UL<<3
 			};
 			PTau():
 				PObject(),
