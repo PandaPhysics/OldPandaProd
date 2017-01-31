@@ -93,6 +93,7 @@ int JetFiller::analyze(const edm::Event& iEvent){
 			jet->eta = j.eta();
 			jet->phi = j.phi();
 			jet->m = j.mass();
+			jet->area = j.jetArea();
 			jet->csv = j.bDiscriminator("pfCombinedInclusiveSecondaryVertexV2BJetTags");
 
 			// PDebug(TString::Format("JetFiller::%s",treename.Data()),

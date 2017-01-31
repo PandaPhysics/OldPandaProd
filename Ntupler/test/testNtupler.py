@@ -36,7 +36,7 @@ process.load("FWCore.MessageService.MessageLogger_cfi")
 # the size of the output by prescaling the report of the event number
 process.MessageLogger.cerr.FwkReport.reportEvery = 5
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(5000) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(500) )
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(5) )
 
 if options.infile:
@@ -244,6 +244,7 @@ makePuppiesFromMiniAOD(process,True)
 process.puppi.useExistingWeights = False # I still don't trust miniaod...
 process.puppiNoLep.useExistingWeights = False
 
+
 runMetCorAndUncFromMiniAOD(process,				 ## Puppi MET
 														isData=options.isData,
 														metType="Puppi",
@@ -345,7 +346,7 @@ if not isData:
 
 ###############################
 
-DEBUG=True
+DEBUG=False
 if DEBUG:
 	pass
 #	print "Process=",process, process.__dict__.keys()

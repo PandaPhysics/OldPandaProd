@@ -16,7 +16,8 @@ namespace panda
 				eventNumber(0),
 				isData(false),
 				npv(0),
-				mcWeight(-1)
+				mcWeight(-1),
+				rho(0)
 				{
 					metfilters = new std::vector<bool>;
 					tiggers = new std::vector<bool>;
@@ -27,7 +28,7 @@ namespace panda
 		ULong64_t eventNumber;
 		bool isData;
 		int npv;
-		float mcWeight;
+		float mcWeight,rho;
 		std::vector<bool> *metfilters, *tiggers;
 		ClassDef(PEvent,1)
 	};
