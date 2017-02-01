@@ -236,6 +236,7 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
       puppiCA15->doubleb_token = consumes<reco::BoostedDoubleSVTagInfoCollection> (iConfig.getUntrackedParameter<std::string>("puppiCA15BoostedDoubleSVTagInfos","puppiCA15PFBoostedDoubleSVTagInfos"));
 			puppiCA15->qgl_token     = mayConsume<edm::ValueMap<float>>(edm::InputTag("puppiCA15SubQGTag","qgLikelihood") ) ;
 			puppiCA15->jetRadius     = 1.5;
+			puppiCA15->minPt         = 100;
 			puppiCA15->skipEvent     = skipEvent;
 			puppiCA15->reduceEvent   = reduceEvent;
 			puppiCA15->pfcands       = puppicands;
