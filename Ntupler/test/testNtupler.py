@@ -36,8 +36,8 @@ process.load("FWCore.MessageService.MessageLogger_cfi")
 # the size of the output by prescaling the report of the event number
 process.MessageLogger.cerr.FwkReport.reportEvery = 5
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(5000) )
-#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(5) )
+#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(5000) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 
 if options.infile:
 	fileList = ['file:'+options.infile]
@@ -362,7 +362,7 @@ process.p = cms.Path(
 												process.fullPatMetSequence *					 # pf MET 
 												process.puppiMETSequence *						 # builds all the puppi collections
 												process.fullPatMetSequencePuppi *			# puppi MET
-#												process.monoXFilterSequence *					# filter
+												process.monoXFilterSequence *					# filter
 												process.jetSequence *									# patify ak4puppi and do all fatjet stuff
 												process.metfilterSequence *
 												process.PandaNtupler
