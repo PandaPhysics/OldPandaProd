@@ -38,13 +38,13 @@ int ElectronFiller::analyze(const edm::Event& iEvent){
 
 			++iE;
 
-			//PDebug("ElectronFiller",TString::Format("Considering electron with pT=%.3f, eta=%.3f",el.pt(),el.eta()));
+			PDebug("ElectronFiller",TString::Format("Considering electron with pT=%.3f, eta=%.3f",el.pt(),el.eta()));
 
 			if (el.pt()<minPt || fabs(el.eta())>maxEta || !(el.passConversionVeto()) ) {
 				continue;
 			}
 
-			//PDebug("ElectronFiller",TString::Format("Passed kinematics and conv veto"));
+			PDebug("ElectronFiller",TString::Format("Passed kinematics and conv veto"));
 
 			edm::RefToBase<pat::Electron> ref ( edm::Ref< pat::ElectronCollection >(el_handle, iE) ) ;
 
@@ -58,7 +58,7 @@ int ElectronFiller::analyze(const edm::Event& iEvent){
 				continue;
 			}
 
-			//PDebug("ElectronFiller",TString::Format("Passed veto"));
+			PDebug("ElectronFiller",TString::Format("Passed veto"));
 
 			// compute isolation
 			float chiso = el.pfIsolationVariables().sumChargedHadronPt;
