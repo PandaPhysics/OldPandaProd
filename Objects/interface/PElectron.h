@@ -24,13 +24,15 @@ namespace panda
 				chiso(0),
 				nhiso(0),
 				phoiso(0),
-				puiso(0)
+				puiso(0),
+				pt_unsmeared(-1)
 			{	}
 		~PElectron(){ }
 		
 		int q;
 		unsigned int id;
 		float iso, chiso, nhiso, phoiso, puiso;
+		float pt_unsmeared;
 
 		ClassDef(PElectron,1)
 	};

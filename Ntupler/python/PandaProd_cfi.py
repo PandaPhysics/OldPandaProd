@@ -21,7 +21,7 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
 
 		# offline skimming
 		doJetSkim = cms.bool(False),
-		doRecoilFilter = cms.bool(True),
+		doRecoilFilter = cms.bool(False),
 
 		# jet toggles
 		savePuppiCands = cms.bool(False),
@@ -29,19 +29,21 @@ PandaNtupler = cms.EDAnalyzer("Ntupler",
 		doCHSAK4 = cms.bool(True),
 		doPuppiAK4 = cms.bool(True),
 		doPuppiCA15 = cms.bool(True),
-		doCHSCA15 = cms.bool(False),
+		doCHSCA15 = cms.bool(True),
 		doPuppiAK8 = cms.bool(True),
-		doCHSAK8 = cms.bool(False),
+		doCHSAK8 = cms.bool(True),
 
 		chsAK4 = cms.InputTag("slimmedJets"),
 		puppiAK4 = cms.InputTag("slimmedJetsPuppi"),
-		#puppiAK4 = cms.InputTag("patJetsPFAK4Puppi"),
 		chsAK8 = cms.InputTag("packedPatJetsPFchsAK8"),
 		puppiAK8 = cms.InputTag("packedPatJetsPFpuppiAK8"),
 		chsCA15 = cms.InputTag("packedPatJetsPFchsCA15"),
 		puppiCA15 = cms.InputTag("packedPatJetsPFpuppiCA15"),
 
-		pfmet = cms.InputTag("slimmedMETs"),
+		pfmet = cms.InputTag("slimmedMETsMuEGClean"),
+		pfmet_cleanmu = cms.InputTag('slimmedMETs'),
+		pfmet_cleaneg = cms.InputTag('slimmedMETsEGClean'),
+		pfmet_unclean = cms.InputTag('slimmedMETsUncorrected'),
 		puppimet = cms.InputTag("slimmedMETsPuppi"),
 
 		puppiPFCands = cms.InputTag("puppi"),

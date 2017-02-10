@@ -20,6 +20,9 @@ class PhotonFiller : virtual public BaseFiller
 				edm::EDGetTokenT<pat::PhotonCollection> pho_token;
 				edm::Handle<pat::PhotonCollection> pho_handle;
 
+				edm::EDGetTokenT<pat::PhotonCollection> pho_unsmeared_token;
+				edm::Handle<pat::PhotonCollection> pho_unsmeared_handle;
+
 				edm::EDGetTokenT<edm::ValueMap<bool> >	pho_looseid_token;
 				edm::Handle<edm::ValueMap<bool> > pho_looseid_handle;
 

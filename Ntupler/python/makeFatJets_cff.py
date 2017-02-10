@@ -18,7 +18,7 @@ def initFatJets(process,isData):
 	##				 INITIAL SETUP							##
 	########################################
 
-	## Load standard PAT objects
+	## load chs and genparticles ## 
 
 	process.pfCHS = cms.EDFilter("CandPtrSelector", src = cms.InputTag("packedPFCandidates"), cut = cms.string("fromPV"))
 	addGenNoNu=False
@@ -33,6 +33,13 @@ def initFatJets(process,isData):
 	else:
 		process.fatjetInitSequence = cms.Sequence()
 	process.fatjetInitSequence += process.pfCHS
+
+	## load basic b-tag stuff ##
+	process.load("RecoBTag.ImpactParameter.impactParameter_EventSetup_cff")
+	process.load("RecoBTag.SecondaryVertex.secondaryVertex_EventSetup_cff")
+	process.load("RecoBTag.SoftLepton.softLepton_EventSetup_cff")
+	process.load("RecoBTag.Combined.combinedMVA_EventSetup_cff")
+	process.load("RecoBTag.CTagging.cTagging_EventSetup_cff")
 
 	return process.fatjetInitSequence
 
@@ -103,6 +110,9 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
 
 	bTagInfosSubjets=['None']
 	bTagDiscriminatorsSubjets=['None']
+	
+	bTagInfos = ['None']
+	bTagDiscriminators = ['None']
 
 	### jet clustering ### 
 	########################################
@@ -114,40 +124,40 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
 	if not(hasattr(process,"genJetsNoNu"+rLabel)) and isMC:
 		addingGenJets = True
 		setattr(process,"genJetsNoNu"+rLabel, ak4GenJets.clone(
-															   jetAlgorithm = cms.string(jetAlgo),
-															   rParam = cms.double(jetRadius),
-															   src = cms.InputTag("packedGenParticlesForJetsNoNu")
-															   )
+                                 jetAlgorithm = cms.string(jetAlgo),
+                                 rParam = cms.double(jetRadius),
+                                 src = cms.InputTag("packedGenParticlesForJetsNoNu")
+                                 )
 		)
 	setattr(process,"PFJets"+customLabel, ak4PFJets.clone(
-																								jetAlgorithm = cms.string(jetAlgo),
-																								rParam = cms.double(jetRadius),
-																								src = cms.InputTag(pfCandidates),
-																								jetPtMin = cms.double(100)
-																						)
+                                                jetAlgorithm = cms.string(jetAlgo),
+                                                rParam = cms.double(jetRadius),
+                                                src = cms.InputTag(pfCandidates),
+                                                jetPtMin = cms.double(100)
+                                            )
 	)
 	if not(hasattr(process,"genJetsNoNuSoftDrop"+rLabel)) and isMC:
 		addingGenJets = True
 		setattr(process,"genJetsNoNuSoftDrop"+rLabel, getattr(process,'genJetsNoNu'+rLabel).clone(
-																											R0 = cms.double(jetRadius),
-																											useSoftDrop = cms.bool(True),
-																											zcut = cms.double(sdZcut),
-																											beta = cms.double(sdBeta),
-																											writeCompound = cms.bool(True),
-																											useExplicitGhosts = cms.bool(True),
-																											jetCollInstanceName=cms.string("SubJets")
-																									)
+                                                      R0 = cms.double(jetRadius),
+                                                      useSoftDrop = cms.bool(True),
+                                                      zcut = cms.double(sdZcut),
+                                                      beta = cms.double(sdBeta),
+                                                      writeCompound = cms.bool(True),
+                                                      useExplicitGhosts = cms.bool(True),
+                                                      jetCollInstanceName=cms.string("SubJets")
+                                                  )
 		)
 	setattr(process,"PFJets"+"SoftDrop"+customLabel, getattr(process,'PFJets'+customLabel).clone(
-																													useSoftDrop = cms.bool(True),
-																													R0 = cms.double(jetRadius),
-																													zcut = cms.double(sdZcut),
-																													beta = cms.double(sdBeta),
-																													writeCompound = cms.bool(True),
-																													useExplicitGhosts = cms.bool(True),
-																													jetCollInstanceName=cms.string("SubJets"),
-																													jetPtMin = cms.double(100)
-																											)
+                                                          useSoftDrop = cms.bool(True),
+                                                          R0 = cms.double(jetRadius),
+                                                          zcut = cms.double(sdZcut),
+                                                          beta = cms.double(sdBeta),
+                                                          writeCompound = cms.bool(True),
+                                                          useExplicitGhosts = cms.bool(True),
+                                                          jetCollInstanceName=cms.string("SubJets"),
+                                                          jetPtMin = cms.double(100)
+                                                      )
 	)
 	process.dump = cms.EDAnalyzer("EventContentAnalyzer")
 	if addingGenJets and not(isData):
@@ -162,20 +172,20 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
 	#######################################
 
 	setattr(process,customLabel+'Njettiness',													
-					Njettiness.clone(																			
-						src = cms.InputTag('PFJets'+customLabel),			 
-						R0 = cms.double(jetRadius),
-						Njets = cms.vuint32(1,2,3,4)
-					)
+          Njettiness.clone(                                      
+            src = cms.InputTag('PFJets'+customLabel),       
+            R0 = cms.double(jetRadius),
+            Njets = cms.vuint32(1,2,3,4)
+          )
 	)
 
 	setattr(process,customLabel+'SDKinematics',
 			cms.EDProducer('RecoJetDeltaRValueMapProducer',
-						src = cms.InputTag('PFJets'+customLabel),
-						matched = cms.InputTag('PFJets'+"SoftDrop"+customLabel),
-						distMax = cms.double(1.5),
-						values = cms.vstring('mass'),
-						valueLabels = cms.vstring('Mass'),
+            src = cms.InputTag('PFJets'+customLabel),
+            matched = cms.InputTag('PFJets'+"SoftDrop"+customLabel),
+            distMax = cms.double(1.5),
+            values = cms.vstring('mass'),
+            valueLabels = cms.vstring('Mass'),
 			)
 	)
 
@@ -197,10 +207,10 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
 
 	setattr(process,customLabel+'PFImpactParameterTagInfos',
 			pfImpactParameterTagInfos.clone(
-					jets			= cms.InputTag('PFJets'+"SoftDrop"+customLabel,'SubJets'),
-					maxDeltaR = cms.double(0.4),
-					primaryVertex = cms.InputTag('offlineSlimmedPrimaryVertices'),
-					candidates = cms.InputTag('packedPFCandidates')
+          jets      = cms.InputTag('PFJets'+"SoftDrop"+customLabel,'SubJets'),
+          maxDeltaR = cms.double(0.4),
+          primaryVertex = cms.InputTag('offlineSlimmedPrimaryVertices'),
+          candidates = cms.InputTag('packedPFCandidates')
 			)
 	)
 
@@ -222,7 +232,7 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
 	newSeq += getattr(process,customLabel+'PFInclusiveSecondaryVertexFinderTagInfos')
 	newSeq += getattr(process,customLabel+'PFCombinedInclusiveSecondaryVertexV2BJetTags')
 
-	### doubleb###	
+	### doubleb ###	
 	setattr(process, customLabel+'PFImpactParameterDoubleSVTagInfos', 
 			pfImpactParameterTagInfos.clone(
 						jets			= cms.InputTag("PFJets"+customLabel),
@@ -271,9 +281,6 @@ def makeFatJets(process,isData,pfCandidates,algoLabel,jetRadius):
 	newSeq += getattr(process,customLabel+'PFBoostedDoubleSVTagInfos')
 	newSeq += getattr(process,customLabel+'PFBoostedDoubleSecondaryVertexBJetTags')
 
-	
-	bTagInfos = ['None']
-	bTagDiscriminators = ['None']
 
 	########################################
 	##					MAKE PAT JETS						 ##

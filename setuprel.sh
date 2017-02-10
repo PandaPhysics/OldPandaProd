@@ -1,9 +1,7 @@
 #!/bin/bash
 
 # fixes for MET
-git cms-merge-topic -u cms-met:fromCMSSW_8_0_20_postICHEPfilter
-git cms-merge-topic ahinzmann:METRecipe_8020_Moriond17
-git cms-merge-topic cms-met:METRecipe_8020
+git cms-merge-topic zdemirag:conflict_met_resolved
 
 # ecal smearing
 git cms-merge-topic emanueledimarco:ecal_smear_fix_80X
@@ -20,8 +18,11 @@ git clone -b egm_id_80X_v1 https://github.com/ikrav/RecoEgamma-PhotonIdentificat
 rsync -avP RecoEgamma/PhotonIdentification/data.new/* RecoEgamma/PhotonIdentification/data/
 rm -rf RecoEgamma/PhotonIdentification/data.new/
 
-# it's okay, at least our detector isn't on fire
+# ECAL smearing 
 git cms-add-pkg EgammaAnalysis/ElectronTools
 git cms-merge-topic shervin86:Moriond2017_JEC_energyScales
 git clone git@github.com:ECALELFS/ScalesSmearings.git EgammaAnalysis/ElectronTools/data/ScalesSmearings.new
 rsync -avP EgammaAnalysis/ElectronTools/data/ScalesSmearings.new/* EgammaAnalysis/ElectronTools/data/ScalesSmearings/
+
+# ECAL regression
+git cms-merge-topic rafaellopesdesa:Regression80XEgammaAnalysis_v2

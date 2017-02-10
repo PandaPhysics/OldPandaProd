@@ -36,6 +36,7 @@ int PhotonFiller::analyze(const edm::Event& iEvent){
 		iEvent.getByToken(iso_ch_token,iso_ch_handle);
 		iEvent.getByToken(iso_nh_token,iso_nh_handle);
 		iEvent.getByToken(iso_pho_token,iso_pho_handle);
+		iEvent.getByToken(pho_unsmeared_token, pho_unsmeared_handle);
 
 		unsigned int iA=-1;
 		for (const pat::Photon& pho : *pho_handle) {
@@ -75,6 +76,8 @@ int PhotonFiller::analyze(const edm::Event& iEvent){
 			photon->id |= (unsigned(tight)*PPhoton::kTight);
 			photon->id |= (unsigned(pho.passElectronVeto())*PPhoton::kEleVeto);
 
+			// get unsmeared momentum
+			photon->pt_unsmeared = (*pho_unsmeared_handle)[iA].pt();
 
 			data->push_back(photon);
 
