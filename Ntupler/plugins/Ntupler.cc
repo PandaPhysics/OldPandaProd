@@ -80,37 +80,39 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
 		// MET FILLERS -----------------------------------------------
 		METFiller *pfmet					 = new METFiller("pfmet");
 		pfmet->skipEvent					 = skipEvent;
-		pfmet->rerun							 = false;
 		pfmet->met_token					 = consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("pfmet"));
+		pfmet->cleanmu_met_token	 = consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("pfmet_cleanmu"));
+		pfmet->cleaneg_met_token	 = consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("pfmet_cleaneg"));
+		pfmet->unclean_met_token	 = consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("pfmet_unclean"));
 		pfmet->pat_token					 = consumes<pat::PackedCandidateCollection>(iConfig.getParameter<edm::InputTag>("chsPFCands")); // these are not actually CHS, so don't worry
-		pfmet->which_cand					= METFiller::kPat;
+		pfmet->which_cand					 = METFiller::kPat;
 		pfmet->minimal						 = false;
 		obj.push_back(pfmet);
 
 		METFiller *puppimet				 = new METFiller("puppimet");
 		puppimet->skipEvent				 = skipEvent;
-		puppimet->rerun						 = false;
 		puppimet->met_token				 = consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("puppimet"));
 		puppimet->minimal					 = true;
 		obj.push_back(puppimet);
 
 
 		// LEPTON FILLERS --------------------------------------------
-		MuonFiller *muon					 = new MuonFiller("muon");
-		muon->skipEvent						= skipEvent;
-		muon->evt									= event;
-		muon->mu_token						 = consumes<pat::MuonCollection>(iConfig.getParameter<edm::InputTag>("muons"));
+		MuonFiller *muon            = new MuonFiller("muon");
+		muon->skipEvent             = skipEvent;
+		muon->evt                   = event;
+		muon->mu_token              = consumes<pat::MuonCollection>(iConfig.getParameter<edm::InputTag>("muons"));
 		obj.push_back(muon);
 
-		ElectronFiller *electron		= new ElectronFiller("electron");
-		electron->evt							 = event;
-		electron->skipEvent				 = skipEvent;
-		electron->el_token					= consumes<pat::ElectronCollection>(iConfig.getParameter<edm::InputTag>("electrons"));
-		electron->el_vetoid_token	 = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleVetoIdMap"));
-		electron->el_looseid_token	= consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleLooseIdMap"));
-		electron->el_mediumid_token = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleMediumIdMap"));
-		electron->el_tightid_token	= consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleTightIdMap"));
-		electron->el_hltid_token		= consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleHLTIdMap"));
+		ElectronFiller *electron        = new ElectronFiller("electron");
+		electron->evt                   = event;
+		electron->skipEvent             = skipEvent;
+		electron->el_token              = consumes<pat::ElectronCollection>(iConfig.getParameter<edm::InputTag>("electrons"));
+		electron->el_unsmeared_token    = consumes<pat::ElectronCollection>(edm::InputTag("slimmedElectrons")); 
+		electron->el_vetoid_token	      = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleVetoIdMap"));
+		electron->el_looseid_token	    = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleLooseIdMap"));
+		electron->el_mediumid_token     = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleMediumIdMap"));
+		electron->el_tightid_token	    = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleTightIdMap"));
+		electron->el_hltid_token		    = consumes<edm::ValueMap<bool> >(iConfig.getParameter<edm::InputTag>("eleHLTIdMap"));
 		electron->effArea.reset(
 			new EffectiveAreas(
 				edm::FileInPath(iConfig.getParameter<std::string>("eleEA")).fullPath()
@@ -125,16 +127,17 @@ Ntupler::Ntupler(const edm::ParameterSet& iConfig)
 
 
 		// PHOTON FILLER --------------------------------------------
-		PhotonFiller *photon				= new PhotonFiller("photon");
-		photon->skipEvent					 = skipEvent;
-		photon->pho_token					 = consumes<pat::PhotonCollection>(iConfig.getParameter<edm::InputTag>("photons"));
-		photon->pho_looseid_token	 = consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoLooseIdMap"));
-		photon->pho_mediumid_token	= consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoMediumIdMap"));
-		photon->pho_tightid_token	 = consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoTightIdMap"));
-		photon->iso_ch_token				= consumes<edm::ValueMap<float>>(iConfig.getParameter<edm::InputTag>("phoChargedIsolation"));
-		photon->iso_nh_token				= consumes<edm::ValueMap<float>>(iConfig.getParameter<edm::InputTag>("phoNeutralHadronIsolation"));
-		photon->iso_pho_token			 = consumes<edm::ValueMap<float>>(iConfig.getParameter<edm::InputTag>("phoPhotonIsolation"));
-		photon->iso_wch_token			 = consumes<edm::ValueMap<float>>(iConfig.getParameter<edm::InputTag>("phoWorstChargedIsolation"));
+		PhotonFiller *photon            = new PhotonFiller("photon");
+		photon->skipEvent               = skipEvent;
+		photon->pho_token               = consumes<pat::PhotonCollection>(iConfig.getParameter<edm::InputTag>("photons"));
+		photon->pho_unsmeared_token     = consumes<pat::PhotonCollection>(edm::InputTag("slimmedPhotons")); 
+		photon->pho_looseid_token       = consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoLooseIdMap"));
+		photon->pho_mediumid_token      = consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoMediumIdMap"));
+		photon->pho_tightid_token       = consumes<edm::ValueMap<bool>>(iConfig.getParameter<edm::InputTag>("phoTightIdMap"));
+		photon->iso_ch_token            = consumes<edm::ValueMap<float>>(iConfig.getParameter<edm::InputTag>("phoChargedIsolation"));
+		photon->iso_nh_token            = consumes<edm::ValueMap<float>>(iConfig.getParameter<edm::InputTag>("phoNeutralHadronIsolation"));
+		photon->iso_pho_token	          = consumes<edm::ValueMap<float>>(iConfig.getParameter<edm::InputTag>("phoPhotonIsolation"));
+		photon->iso_wch_token	          = consumes<edm::ValueMap<float>>(iConfig.getParameter<edm::InputTag>("phoWorstChargedIsolation"));
 		obj.push_back(photon);
 
 

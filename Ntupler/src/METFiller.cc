@@ -17,40 +17,42 @@ void METFiller::init(TTree *t) {
 	t->Branch(treename.Data(),&data);
 }
 
-void METFiller::fillMETs(std::vector<const reco::Candidate*> pfs) {
-}
-
 
 int METFiller::analyze(const edm::Event& iEvent){
 		if (skipEvent!=0 && *skipEvent) {
 			return 0;
 		}
 
-		if (!rerun) {
-			iEvent.getByToken(met_token,met_handle);
-			const pat::MET &met = met_handle->front();
-			data->pt = met.pt();
-			data->phi = met.phi();
-			data->sumETRaw = met.uncorSumEt();
-			data->raw_pt = met.uncorPt();
-			data->raw_phi = met.uncorPhi(); 
-			data->calo_pt = met.caloMETPt();
-			data->calo_phi = met.caloMETPhi();
-		} else {
-			iEvent.getByToken(remet_token,remet_handle);
-			iEvent.getByToken(remetuncorr_token,remetuncorr_handle);
-			auto &met = remet_handle->front();
-			auto &metuncorr = remetuncorr_handle->front();
-			data->pt = met.pt();
-			data->phi = met.phi();
-			data->sumETRaw = metuncorr.sumEt();
-			data->raw_pt = metuncorr.pt();
-			data->raw_phi = metuncorr.phi();
-			data->calo_pt = -1; data->calo_phi = -999;
-		}
+		iEvent.getByToken(met_token,met_handle);
+		const pat::MET &met = met_handle->front();
+		data->pt = met.pt();
+		data->phi = met.phi();
+		data->sumETRaw = met.uncorSumEt();
+		data->raw_pt = met.uncorPt();
+		data->raw_phi = met.uncorPhi(); 
 
 		if (minimal)
 			return 0;
+
+		data->calo_pt = met.caloMETPt();
+		data->calo_phi = met.caloMETPhi();
+
+		iEvent.getByToken(cleanmu_met_token,cleanmu_met_handle);
+		const pat::MET &cleanmu_met = cleanmu_met_handle->front();
+		data->cleanMu_pt = cleanmu_met.pt();
+		data->cleanMu_phi = cleanmu_met.phi();
+
+		if (iEvent.isRealData()) {
+			iEvent.getByToken(cleaneg_met_token,cleaneg_met_handle);
+			const pat::MET &cleaneg_met = cleaneg_met_handle->front();
+			data->cleanEG_pt = cleaneg_met.pt();
+			data->cleanEG_phi = cleaneg_met.phi();
+
+			iEvent.getByToken(unclean_met_token,unclean_met_handle);
+			const pat::MET &unclean_met = unclean_met_handle->front();
+			data->unclean_pt = unclean_met.pt();
+			data->unclean_phi = unclean_met.phi();
+		}
 
 		std::vector<const reco::Candidate*> pfcands;
 		if (which_cand==kPat) {

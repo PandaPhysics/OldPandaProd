@@ -38,21 +38,21 @@ FatJetFiller::~FatJetFiller(){
 
 void FatJetFiller::init(TTree *t) {
 	t->Branch(treename.Data(),&data,99);
-	std::string jecDir = "jec/23Sep2016V3/";
+	std::string jecDir = "jec/23Sep2016V4/";
  
 	std::vector<JetCorrectorParameters> mcParams;
 	mcParams.push_back(
 			JetCorrectorParameters(
-				jecDir + "Summer16_23Sep2016V3_MC/Summer16_23Sep2016V3_MC_L1FastJet_AK8PFPuppi.txt"));
+				jecDir + "Summer16_23Sep2016V4_MC/Summer16_23Sep2016V4_MC_L1FastJet_AK8PFPuppi.txt"));
 	mcParams.push_back(
 			JetCorrectorParameters(
-				jecDir + "Summer16_23Sep2016V3_MC/Summer16_23Sep2016V3_MC_L2Relative_AK8PFPuppi.txt"));
+				jecDir + "Summer16_23Sep2016V4_MC/Summer16_23Sep2016V4_MC_L2Relative_AK8PFPuppi.txt"));
 	mcParams.push_back(
 			JetCorrectorParameters(
-				jecDir + "Summer16_23Sep2016V3_MC/Summer16_23Sep2016V3_MC_L3Absolute_AK8PFPuppi.txt"));
+				jecDir + "Summer16_23Sep2016V4_MC/Summer16_23Sep2016V4_MC_L3Absolute_AK8PFPuppi.txt"));
 	mcParams.push_back(
 			JetCorrectorParameters(
-				jecDir + "Summer16_23Sep2016V3_MC/Summer16_23Sep2016V3_MC_L2L3Residual_AK8PFPuppi.txt"));
+				jecDir + "Summer16_23Sep2016V4_MC/Summer16_23Sep2016V4_MC_L2L3Residual_AK8PFPuppi.txt"));
 	mMCJetCorrector = new FactorizedJetCorrector(mcParams);
  
 	std::vector<std::string> eraGroups = {"BCD","EF","G","H"};
@@ -61,16 +61,16 @@ void FatJetFiller::init(TTree *t) {
 		dataParams[e].clear();
 		dataParams[e].push_back(
 				JetCorrectorParameters(
-					jecDir + "Summer16_23Sep2016"+e+"V3_DATA/Summer16_23Sep2016"+e+"V3_DATA_L1FastJet_AK8PFPuppi.txt"));
+					jecDir + "Summer16_23Sep2016"+e+"V4_DATA/Summer16_23Sep2016"+e+"V4_DATA_L1FastJet_AK8PFPuppi.txt"));
 		dataParams[e].push_back(
 				JetCorrectorParameters(
-					jecDir + "Summer16_23Sep2016"+e+"V3_DATA/Summer16_23Sep2016"+e+"V3_DATA_L2Relative_AK8PFPuppi.txt"));
+					jecDir + "Summer16_23Sep2016"+e+"V4_DATA/Summer16_23Sep2016"+e+"V4_DATA_L2Relative_AK8PFPuppi.txt"));
 		dataParams[e].push_back(
 				JetCorrectorParameters(
-					jecDir + "Summer16_23Sep2016"+e+"V3_DATA/Summer16_23Sep2016"+e+"V3_DATA_L3Absolute_AK8PFPuppi.txt"));
+					jecDir + "Summer16_23Sep2016"+e+"V4_DATA/Summer16_23Sep2016"+e+"V4_DATA_L3Absolute_AK8PFPuppi.txt"));
 		dataParams[e].push_back(
 				JetCorrectorParameters(
-					jecDir + "Summer16_23Sep2016"+e+"V3_DATA/Summer16_23Sep2016"+e+"V3_DATA_L2L3Residual_AK8PFPuppi.txt"));
+					jecDir + "Summer16_23Sep2016"+e+"V4_DATA/Summer16_23Sep2016"+e+"V4_DATA_L2L3Residual_AK8PFPuppi.txt"));
 		mDataJetCorrectors[e.c_str()] = new FactorizedJetCorrector(dataParams[e]);
 	}
 	eras = new EraHandler(2016);

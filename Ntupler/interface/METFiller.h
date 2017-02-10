@@ -23,16 +23,17 @@ class METFiller : virtual public BaseFiller
 				virtual inline string name(){return "METFiller";};
 				void init(TTree *t);
 
-				bool rerun=false;
-
 				edm::EDGetTokenT<pat::METCollection> met_token;
 				edm::Handle<pat::METCollection> met_handle;
 
-				// rerun
-				edm::EDGetTokenT<reco::PFMETCollection> remet_token;
-				edm::Handle<reco::PFMETCollection> remet_handle;
-				edm::EDGetTokenT<reco::PFMETCollection> remetuncorr_token;
-				edm::Handle<reco::PFMETCollection> remetuncorr_handle;
+				edm::EDGetTokenT<pat::METCollection> cleanmu_met_token;
+				edm::Handle<pat::METCollection> cleanmu_met_handle;
+
+				edm::EDGetTokenT<pat::METCollection> cleaneg_met_token;
+				edm::Handle<pat::METCollection> cleaneg_met_handle;
+
+				edm::EDGetTokenT<pat::METCollection> unclean_met_token;
+				edm::Handle<pat::METCollection> unclean_met_handle;
 
 				// pf cands - used to recalc some raw METs
 				edm::EDGetTokenT<pat::PackedCandidateCollection> pat_token;
@@ -43,7 +44,6 @@ class METFiller : virtual public BaseFiller
 				
 				pfcandtype which_cand=kPat;
 
-				void fillMETs(std::vector<const reco::Candidate*> pfs);
 				bool minimal=true;
 
 		private:

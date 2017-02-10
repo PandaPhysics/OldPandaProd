@@ -19,12 +19,14 @@ namespace panda
 			PPhoton():
 				PObject(),
 				id(0),
-				iso(0)
+				iso(0),
+				pt_unsmeared(-1)
 			{	}
 		~PPhoton(){ }
 		
 		unsigned int id;
 		float iso;
+		float pt_unsmeared;
 
 		ClassDef(PPhoton,1)
 	};

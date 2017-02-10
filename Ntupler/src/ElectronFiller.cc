@@ -32,19 +32,20 @@ int ElectronFiller::analyze(const edm::Event& iEvent){
 		iEvent.getByToken(el_mediumid_token,el_mediumid_handle);
 		iEvent.getByToken(el_tightid_token,el_tightid_handle);
 		iEvent.getByToken(el_hltid_token,el_hltid_handle);
+		iEvent.getByToken(el_unsmeared_token, el_unsmeared_handle);
 
 		unsigned int iE=-1;
 		for (const pat::Electron& el : *el_handle) {
 
 			++iE;
 
-			PDebug("ElectronFiller",TString::Format("Considering electron with pT=%.3f, eta=%.3f",el.pt(),el.eta()));
+			// PDebug("ElectronFiller",TString::Format("Considering electron with pT=%.3f, eta=%.3f",el.pt(),el.eta()));
 
 			if (el.pt()<minPt || fabs(el.eta())>maxEta || !(el.passConversionVeto()) ) {
 				continue;
 			}
 
-			PDebug("ElectronFiller",TString::Format("Passed kinematics and conv veto"));
+			// PDebug("ElectronFiller",TString::Format("Passed kinematics and conv veto"));
 
 			edm::RefToBase<pat::Electron> ref ( edm::Ref< pat::ElectronCollection >(el_handle, iE) ) ;
 
@@ -58,7 +59,8 @@ int ElectronFiller::analyze(const edm::Event& iEvent){
 				continue;
 			}
 
-			PDebug("ElectronFiller",TString::Format("Passed veto"));
+			// PDebug("ElectronFiller",TString::Format("Passed veto"));
+
 
 			// compute isolation
 			float chiso = el.pfIsolationVariables().sumChargedHadronPt;
@@ -91,6 +93,9 @@ int ElectronFiller::analyze(const edm::Event& iEvent){
 			electron->id |= (unsigned(medium)*PElectron::kMedium);
 			electron->id |= (unsigned(tight)*PElectron::kTight);
 			electron->id |= (unsigned(hltsafe)*PElectron::kHLTPresel);
+
+			// get the unsmeared momentum
+			electron->pt_unsmeared = (*el_unsmeared_handle)[iE].pt();
 
 			data->push_back(electron);
 		}

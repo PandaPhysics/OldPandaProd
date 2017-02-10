@@ -12,6 +12,9 @@ namespace panda
 			~PMET(){ }
 		
 		float pt=0, phi=0;								 //!< type-1 corrected MET
+		float cleanMu_pt=0, cleanMu_phi=0; //!< fix fake muon problem
+		float cleanEG_pt=0, cleanEG_phi=0; //!< fix ECAL problem (data only)
+		float unclean_pt=0, unclean_phi=0; //!< fix fake muon problem
 		float sumETRaw;										//!< sum E_T, uncorrected
 		float raw_pt=0, raw_phi=0;				 //!< raw, uncorrected
 		float calo_pt=0, calo_phi=0;			 //!< calorimeter-only

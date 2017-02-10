@@ -24,6 +24,9 @@ class ElectronFiller : virtual public BaseFiller
 				edm::EDGetTokenT<pat::ElectronCollection> el_token;
 				edm::Handle<pat::ElectronCollection> el_handle;
 
+				edm::EDGetTokenT<pat::ElectronCollection> el_unsmeared_token;
+				edm::Handle<pat::ElectronCollection> el_unsmeared_handle;
+
 				edm::EDGetTokenT<edm::ValueMap<bool> >	el_vetoid_token;
 				edm::Handle<edm::ValueMap<bool> > el_vetoid_handle;
 
